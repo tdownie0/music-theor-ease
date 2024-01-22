@@ -17,7 +17,14 @@ const config: Config = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["winter"],
+    themes: [
+      "light",    
+      "dark",
+      "retro",
+      "aqua",
+      "valentine",
+      "winter"
+    ],
   },
 };
 export default config;

@@ -26,6 +26,7 @@ export enum Note {
     Note.E, Note.F, Note.Fs, Note.G,
     Note.Gs, Note.A, Note.As, Note.B
   ];
+
   
   export const notesWithSharps: Record<Note, Note> = Object.fromEntries(
     notesWithSharpsArray.map(note => [note, note])
@@ -36,7 +37,7 @@ export enum Note {
     Note.E, Note.F, Note.Gb, Note.G,
     Note.Ab, Note.A, Note.Bb, Note.B
   ];
-  
+
   const notesWithFlats: Record<Note, Note> = Object.fromEntries(
     notesWithFlatsArray.map(note => [note, note])
   ) as Record<Note, Note>;
@@ -53,9 +54,10 @@ export enum Note {
   
   const circleOfFourthsArray: Note[] = [
     Note.C, Note.F, Note.Bb, Note.Eb,
-    Note.Ab, Note.Db, Note.Gb, Note.Fs,
-    Note.B, Note.E, Note.A, Note.D
+    Note.Ab, Note.Db, Note.Gb, Note.B,
+    Note.E, Note.A, Note.D, Note.G
   ];
+  
   
   const circleOfFourths: Record<Note, Note> = Object.fromEntries(
     circleOfFourthsArray.map(note => [note, note])
