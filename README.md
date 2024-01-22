@@ -1,3 +1,11 @@
+
+
+### Thanks to
+
+Videos: 
+Shows proper layout for theme changing.
+Theming with Daisy UI: https://www.youtube.com/watch?v=ZxrNzv0rEws
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
