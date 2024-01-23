@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
@@ -7,13 +6,8 @@ const Navbar = () => {
   const { changeTheme } = useContext(ThemeContext);
   return (
     <div>
-      <ul className="flex justify-between pt-5 items-center">
-        <div>
-          <Link href="/">
-            <li>Home</li>
-          </Link>
-        </div>
-        <div className="flex gap-5">
+      <ul className="flex justify-between pt-5 items-center mr-4">
+        <div className="flex gap-5 ml-auto">
           <button className="btn" onClick={() => changeTheme("light")}>
             Light
           </button>
