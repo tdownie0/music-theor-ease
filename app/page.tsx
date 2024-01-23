@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { notesWithSharps } from "./utils/musicLogic";
 
 export default function Home() {
 
