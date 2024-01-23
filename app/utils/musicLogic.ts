@@ -7,7 +7,6 @@ export enum Note {
   Eb = "Eb",
   E = "E",
   Fb = "Fb",
-  Es = "E#",
   F = "F",
   Fs = "F#",
   Gb = "Gb",
@@ -21,43 +20,51 @@ export enum Note {
   Bs = "B#",
 }
 
-const notesWithSharpsArray: Note[] = [
+export enum SharpNote {
+  Cs = Note.Cs,
+  Ds = Note.Ds,
+  Fs = Note.Fs,
+  Gs = Note.Gs,
+  As = Note.As,
+}
+
+export const notesWithSharpsArray: (Note | SharpNote)[] = [
   Note.C,
-  Note.Cs,
+  SharpNote.Cs,
   Note.D,
-  Note.Ds,
+  SharpNote.Ds,
   Note.E,
   Note.F,
-  Note.Fs,
+  SharpNote.Fs,
   Note.G,
-  Note.Gs,
+  SharpNote.Gs,
   Note.A,
-  Note.As,
+  SharpNote.As,
   Note.B,
 ];
 
-export const notesWithSharps: Record<Note, Note> = Object.fromEntries(
-  notesWithSharpsArray.map((note) => [note, note])
-) as Record<Note, Note>;
+export enum FlatNote {
+  Db = Note.Db,
+  Eb = Note.Eb,
+  Gb = Note.Gb,
+  Ab = Note.Ab,
+  Bb = Note.Bb,
+}
 
-const notesWithFlatsArray: Note[] = [
+export const notesWithFlatsArray: (Note | FlatNote)[] = [
   Note.C,
-  Note.Db,
+  FlatNote.Db,
   Note.D,
-  Note.Eb,
+  FlatNote.Eb,
   Note.E,
   Note.F,
-  Note.Gb,
+  FlatNote.Gb,
   Note.G,
-  Note.Ab,
+  FlatNote.Ab,
   Note.A,
-  Note.Bb,
+  FlatNote.Bb,
   Note.B,
 ];
-
-const notesWithFlats: Record<Note, Note> = Object.fromEntries(
-  notesWithFlatsArray.map((note) => [note, note])
-) as Record<Note, Note>;
 
 const circleOfFifthsArray: Note[] = [
   Note.C,
@@ -76,11 +83,10 @@ const circleOfFifthsArray: Note[] = [
 
 const circleOfFifths: Record<Note, Note> = {} as Record<Note, Note>;
 
-// Populate the circleOfFifths mapping
 let lengthOfCircleOfFifthsArray: number = circleOfFifthsArray.length;
 for (let i: number = 0; i < lengthOfCircleOfFifthsArray; i++) {
   const currentNote: Note = circleOfFifthsArray[i];
-  const fifthIndex: number = (i + 1) % lengthOfCircleOfFifthsArray; // Calculate the index of the fifth note
+  const fifthIndex: number = (i + 1) % lengthOfCircleOfFifthsArray; 
   const fifthNote: Note = circleOfFifthsArray[fifthIndex];
   circleOfFifths[currentNote] = fifthNote;
 }
@@ -120,7 +126,7 @@ const circleOfFourths: Record<Note, Note> = {} as Record<Note, Note>;
 let lengthOfCircleOfFourthsArray:number = circleOfFourthsArray.length;
 for (let i: number = 0; i < lengthOfCircleOfFourthsArray; i++) {
   const currentNote: Note = circleOfFourthsArray[i];
-  const fourthIndex: number = (i + 1) % lengthOfCircleOfFourthsArray; // Calculate the index of the fourth note
+  const fourthIndex: number = (i + 1) % lengthOfCircleOfFourthsArray; 
   const fourthNote: Note = circleOfFourthsArray[fourthIndex];
   circleOfFourths[currentNote] = fourthNote;
 }
