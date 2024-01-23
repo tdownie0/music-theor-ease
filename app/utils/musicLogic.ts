@@ -6,7 +6,6 @@ export enum Note {
   Ds = "D#",
   Eb = "Eb",
   E = "E",
-  Fb = "Fb",
   F = "F",
   Fs = "F#",
   Gb = "Gb",
@@ -17,7 +16,6 @@ export enum Note {
   As = "A#",
   Bb = "Bb",
   B = "B",
-  Bs = "B#",
 }
 
 export enum SharpNote {
