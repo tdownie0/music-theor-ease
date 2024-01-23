@@ -10,7 +10,7 @@ export default function Home() {
       </div>
 
       <div className="mt-8 text-lg text-winter-600">
-        Introduction to the pillars in music concepts
+        Introduction to the pillars of music concepts
       </div>
     </main>
   );

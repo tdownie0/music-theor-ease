@@ -14,25 +14,35 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const [theme, setTheme] = useState<string>(
-    () => localStorage.getItem("theme") || "light"
-  );
+  const [theme, setTheme] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      const storedTheme = localStorage.getItem("theme") || "light";
+      return storedTheme;
+    }
+    return "light";
+  });
+
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
-    const storedTheme = localStorage.getItem("theme") || theme;
-    setTheme(storedTheme);
-  }, [theme]);
+    const loadTheme = () => {
+      const storedTheme = localStorage.getItem("theme") || "light";
+      setTheme(storedTheme);
+      setIsMounted(true);
+    };
+
+    // Simulate asynchronous loading
+    setTimeout(loadTheme, 0);
+  }, []); // Make sure the dependency array is empty to run it only once
+
+  const changeTheme = (nextTheme: string) => {
+    setTheme(nextTheme);
+    localStorage.setItem("theme", nextTheme);
+  };
 
   if (!isMounted) {
-    return <>Loading...</>
+    return <>Loading...</>;
   }
-
-  const changeTheme = (theme: string) => {
-    setTheme(theme);
-    localStorage.setItem("theme", theme);
-  };
 
   return (
     <ThemeContext.Provider value={{ theme, changeTheme }}>
