@@ -28,7 +28,7 @@ export enum SharpNote {
   As = Note.As,
 }
 
-export const notesWithSharpsArray: (Note | SharpNote)[] = [
+export let notesWithSharpsArray: (Note | SharpNote)[] = [
   Note.C,
   SharpNote.Cs,
   Note.D,
@@ -51,7 +51,7 @@ export enum FlatNote {
   Bb = Note.Bb,
 }
 
-export const notesWithFlatsArray: (Note | FlatNote)[] = [
+export let notesWithFlatsArray: (Note | FlatNote)[] = [
   Note.C,
   FlatNote.Db,
   Note.D,
@@ -66,7 +66,7 @@ export const notesWithFlatsArray: (Note | FlatNote)[] = [
   Note.B,
 ];
 
-const circleOfFifthsArray: Note[] = [
+let circleOfFifthsArray: Note[] = [
   Note.C,
   Note.G,
   Note.D,
@@ -81,13 +81,13 @@ const circleOfFifthsArray: Note[] = [
   Note.F,
 ];
 
-const circleOfFifths: Record<Note, Note> = {} as Record<Note, Note>;
+let circleOfFifths: Record<Note, Note> = {} as Record<Note, Note>;
 
 let lengthOfCircleOfFifthsArray: number = circleOfFifthsArray.length;
 for (let i: number = 0; i < lengthOfCircleOfFifthsArray; i++) {
-  const currentNote: Note = circleOfFifthsArray[i];
-  const fifthIndex: number = (i + 1) % lengthOfCircleOfFifthsArray; 
-  const fifthNote: Note = circleOfFifthsArray[fifthIndex];
+  let currentNote: Note = circleOfFifthsArray[i];
+  let fifthIndex: number = (i + 1) % lengthOfCircleOfFifthsArray; 
+  let fifthNote: Note = circleOfFifthsArray[fifthIndex];
   circleOfFifths[currentNote] = fifthNote;
 }
 
@@ -106,7 +106,7 @@ enum CircleOfFifthsEnum {
   F = Note.C,
 }
 
-const circleOfFourthsArray: Note[] = [
+let circleOfFourthsArray: Note[] = [
   Note.C,
   Note.F,
   Note.Bb,
@@ -121,13 +121,13 @@ const circleOfFourthsArray: Note[] = [
   Note.G,
 ];
 
-const circleOfFourths: Record<Note, Note> = {} as Record<Note, Note>;
+let circleOfFourths: Record<Note, Note> = {} as Record<Note, Note>;
 
 let lengthOfCircleOfFourthsArray:number = circleOfFourthsArray.length;
 for (let i: number = 0; i < lengthOfCircleOfFourthsArray; i++) {
-  const currentNote: Note = circleOfFourthsArray[i];
-  const fourthIndex: number = (i + 1) % lengthOfCircleOfFourthsArray; 
-  const fourthNote: Note = circleOfFourthsArray[fourthIndex];
+  let currentNote: Note = circleOfFourthsArray[i];
+  let fourthIndex: number = (i + 1) % lengthOfCircleOfFourthsArray; 
+  let fourthNote: Note = circleOfFourthsArray[fourthIndex];
   circleOfFourths[currentNote] = fourthNote;
 }
 
@@ -146,10 +146,10 @@ enum CircleOfFourthsEnum {
   G = Note.C,
 }
 
-const IonianArray: string[] = ["1", "2", "3", "4", "5", "6", "7"];
-const DorianArray: string[] = ["1", "2", "b3", "4", "5", "6", "b7"];
-const PhrygianArray: string[] = ["1", "b2", "b3", "4", "5", "b6", "b7"];
-const LydianArray: string[] = ["1", "2", "3", "#4", "5", "6", "7"];
-const MixolydianArray: string[] = ["1", "2", "3", "4", "5", "6", "b7"];
-const AeolianArray: string[] = ["1", "2", "b3", "4", "5", "b6", "b7"];
-const LocrianArray: string[] = ["1", "b2", "b3", "4", "b5", "b6", "b7"];
+let IonianArray: string[] = ["1", "2", "3", "4", "5", "6", "7"];
+let DorianArray: string[] = ["1", "2", "b3", "4", "5", "6", "b7"];
+let PhrygianArray: string[] = ["1", "b2", "b3", "4", "5", "b6", "b7"];
+let LydianArray: string[] = ["1", "2", "3", "#4", "5", "6", "7"];
+let MixolydianArray: string[] = ["1", "2", "3", "4", "5", "6", "b7"];
+let AeolianArray: string[] = ["1", "2", "b3", "4", "5", "b6", "b7"];
+let LocrianArray: string[] = ["1", "b2", "b3", "4", "b5", "b6", "b7"];
