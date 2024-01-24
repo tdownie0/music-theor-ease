@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import CircleOfFifths from "../components/CircleOfFifths";
 
 const Circles = () => {
   return (
@@ -17,6 +18,9 @@ const Circles = () => {
         </li>
       </ul>
       <div className="text-4xl font-semibold mt-8">Circles</div>
+      <div>
+        <CircleOfFifths />
+      </div>
     </main>
   );
 };

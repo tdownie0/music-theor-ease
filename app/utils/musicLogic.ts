@@ -64,7 +64,7 @@ export let notesWithFlatsArray: (Note | FlatNote)[] = [
   Note.B,
 ];
 
-let circleOfFifthsArray: Note[] = [
+export let circleOfFifthsArray: Note[] = [
   Note.C,
   Note.G,
   Note.D,
@@ -78,6 +78,26 @@ let circleOfFifthsArray: Note[] = [
   Note.Bb,
   Note.F,
 ];
+
+export const getCircleOfFifthsArrayAsync = async (): Promise<Note[]> => {
+  // Simulate an asynchronous operation, e.g., fetching data from an API
+  return new Promise((resolve, reject) => {
+    // Simulate delay
+    setTimeout(() => {
+      try {
+        // Replace this with your actual data fetching logic
+        const fetchedData: Note[] = circleOfFifthsArray;  // Replace with your actual data
+
+        // Update circleOfFifthsArray with fetched data
+        circleOfFifthsArray = fetchedData;
+
+        resolve(fetchedData);
+      } catch (error) {
+        reject(error);
+      }
+    }, 100);  // Simulated delay of 0.1 second
+  });
+};
 
 let circleOfFifths: Record<Note, Note> = {} as Record<Note, Note>;
 
