@@ -30,8 +30,6 @@ const CircleOfFifths: React.FC = () => {
       {circleOfFifthsArray.map(
         (note, index) => {
           const angle = (index - 3) * (360 / 12) * (Math.PI / 180);
-          console.log("Index: ", index)
-          console.log("Angle: ", angle)
           const x = 150 + 120 * Math.cos(angle);
           const y = 150 + 120 * Math.sin(angle);
 
