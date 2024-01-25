@@ -6,7 +6,7 @@ const sizeOfCircle: number = 150;
 const radiusOfCircle: number = 100;
 const placementRadius: number = radiusOfCircle + 20;
 const degreesToRadians: number = Math.PI / 180;
-const angleIncrement: number = 360 / 12;
+let angleIncrement: number = 0;
 
 const CircleOfFifths: React.FC = () => {
   const [circleOfFifthsArray, setCircleOfFifthsArray] = useState<Note[]>([]);
@@ -15,6 +15,7 @@ const CircleOfFifths: React.FC = () => {
     // Fetch data asynchronously and update state
     const fetchData = async () => {
       const data = await getCircleOfFifthsArrayAsync();
+      angleIncrement = 360 / data.length;
       setCircleOfFifthsArray(data);
     };
 
