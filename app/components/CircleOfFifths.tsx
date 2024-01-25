@@ -25,9 +25,9 @@ const CircleOfFifths: React.FC = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
       <circle
-        cx="150"
-        cy="150"
-        r="100"
+        cx={sizeOfCircle}
+        cy={sizeOfCircle}
+        r={radiusOfCircle}
         fill="#f0f0f0"
         stroke="#333"
         strokeWidth="2"
