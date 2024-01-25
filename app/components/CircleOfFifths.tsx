@@ -4,8 +4,7 @@ import { Note, getCircleOfFifthsArrayAsync } from "../utils/musicLogic";
 
 const sizeOfCircle: number = 150;
 const radiusOfCircle: number = 100;
-const radiusOutsideOfCircle: number = 20;
-const placementRadius: number = radiusOfCircle + radiusOutsideOfCircle;
+const placementRadius: number = radiusOfCircle + 20;
 const degreesToRadians: number = Math.PI / 180;
 const angleIncrement: number = 360 / 12;
 
