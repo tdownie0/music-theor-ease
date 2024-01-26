@@ -17,9 +17,10 @@ const Circles = () => {
           </Link>
         </li>
       </ul>
-      <div className="text-4xl font-semibold mt-8">Circles</div>
+      <div className="text-4xl font-semibold mt-8 mb-8">Circles</div>
       <div className="hero flex flex-col">
-        <p>
+        <div className="text-5xl mb-8">Circle of Fifths</div>
+        <p className="mb-4">
           The circle of fifths is a fundamental concept in music theory,
           providing a visual representation of the relationships between the 12
           tones of the chromatic scale. Arranged in a circular fashion, each
@@ -33,7 +34,9 @@ const Circles = () => {
           navigating the complexities of musical harmony.
         </p>
         <CircleOfNotes />
-        <p>
+        <div className="border-t border-gray-300 w-full mt-8 mr-4"></div>
+        <div className="text-5xl mt-8 mb-8">Circle of Fourths</div>
+        <p className="mb-4">
           The circle of fourths is a conceptual framework in music theory that
           presents the relationship between musical keys in a reverse order
           compared to the more commonly known circle of fifths. In the circle of
