@@ -13,7 +13,10 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
-export const ThemeProvider = ({ children }: ThemeProviderProps) => {
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({
+  children,
+}: ThemeProviderProps) => {
+  const [isMounted, setIsMounted] = useState(false);
   const [theme, setTheme] = useState<string>(() => {
     if (typeof window !== "undefined") {
       const storedTheme = localStorage.getItem("theme") || "light";
@@ -22,23 +25,25 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     return "light";
   });
 
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    const loadTheme = () => {
-      const storedTheme = localStorage.getItem("theme") || "light";
-      setTheme(storedTheme);
-      setIsMounted(true);
-    };
-
-    // Simulate asynchronous loading
-    setTimeout(loadTheme, 0);
-  }, []); // Make sure the dependency array is empty to run it only once
-
   const changeTheme = (nextTheme: string) => {
     setTheme(nextTheme);
     localStorage.setItem("theme", nextTheme);
   };
+
+  // #region -- Load Theme
+  const loadTheme = () => {
+    const storedTheme = localStorage.getItem("theme") || "light";
+    setTheme(storedTheme);
+    setIsMounted(true);
+  };
+
+  /* Simulate asynchronous loading to ensure the component mounts after
+   * the initial render
+   */
+  useEffect(() => {
+    setTimeout(loadTheme, 0);
+  }, []);
+  // #endregion -- Load Theme
 
   if (!isMounted) {
     return <>Loading...</>;
