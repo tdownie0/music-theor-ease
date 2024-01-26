@@ -1,6 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Note, getCircleOfFifthsArrayAsync } from "../utils/musicLogic";
+import { Note, getCircleOfFifthsNotes } from "../utils/musicLogic";
+
+interface CircleOfNotesProps {
+  circleType?: string;
+}
 
 const circleCoordinateX: number = 150;
 const circleCoordinateY: number = 150;
@@ -11,19 +15,25 @@ const radiusOffset: number = circleRadius + 20;
 const degreesToRadians: number = Math.PI / 180;
 let angleIncrement: number = 0;
 
-const CircleOfFifths: React.FC = () => {
-  const [circleOfFifthsArray, setCircleOfFifthsArray] = useState<Note[]>([]);
+const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
+  const [notes, setNotes] = useState<Note[]>([]);
 
   useEffect(() => {
-    // Fetch data asynchronously and update state
     const fetchData = async () => {
-      const data = await getCircleOfFifthsArrayAsync();
+      const data = await getCircleOfFifthsNotes();
       angleIncrement = 360 / data.length;
-      setCircleOfFifthsArray(data);
+
+      if (circleType === "fourths") {
+        const reversedData = data.slice().reverse();
+        setNotes(reversedData);
+      } else {
+        setNotes(data);
+      }
     };
 
+    // Fetch data asynchronously and update state
     fetchData();
-  }, []);
+  }, [circleType]);
 
   return (
     <svg
@@ -41,7 +51,7 @@ const CircleOfFifths: React.FC = () => {
       />
 
       {/* Text labels for each key on the outer rim */}
-      {circleOfFifthsArray.map((note, index) => {
+      {notes.map((note, index) => {
         const angle = (index - 3) * angleIncrement * degreesToRadians;
         const x = circleCoordinateX + radiusOffset * Math.cos(angle);
         const y = circleCoordinateY + radiusOffset * Math.sin(angle);
@@ -64,4 +74,4 @@ const CircleOfFifths: React.FC = () => {
   );
 };
 
-export default CircleOfFifths;
+export default CircleOfNotes;
