@@ -2,9 +2,12 @@
 import React, { useEffect, useState } from "react";
 import { Note, getCircleOfFifthsArrayAsync } from "../utils/musicLogic";
 
-const sizeOfCircle: number = 150;
-const radiusOfCircle: number = 100;
-const placementRadius: number = radiusOfCircle + 20;
+const circleCoordinateX: number = 150;
+const circleCoordinateY: number = 150;
+const circleWidth: number = 300;
+const circleHeight: number = 300;
+const circleRadius: number = 100;
+const radiusOffset: number = circleRadius + 20;
 const degreesToRadians: number = Math.PI / 180;
 let angleIncrement: number = 0;
 
@@ -23,11 +26,15 @@ const CircleOfFifths: React.FC = () => {
   }, []);
 
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={circleWidth}
+      height={circleHeight}
+    >
       <circle
-        cx={sizeOfCircle}
-        cy={sizeOfCircle}
-        r={radiusOfCircle}
+        cx={circleCoordinateX}
+        cy={circleCoordinateY}
+        r={circleRadius}
         fill="#f0f0f0"
         stroke="#333"
         strokeWidth="2"
@@ -36,8 +43,8 @@ const CircleOfFifths: React.FC = () => {
       {/* Text labels for each key on the outer rim */}
       {circleOfFifthsArray.map((note, index) => {
         const angle = (index - 3) * angleIncrement * degreesToRadians;
-        const x = sizeOfCircle + placementRadius * Math.cos(angle);
-        const y = sizeOfCircle + placementRadius * Math.sin(angle);
+        const x = circleCoordinateX + radiusOffset * Math.cos(angle);
+        const y = circleCoordinateY + radiusOffset * Math.sin(angle);
 
         return (
           <text
