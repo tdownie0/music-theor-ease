@@ -79,11 +79,11 @@ export let circleOfFifthsArray: Note[] = [
   Note.F,
 ];
 
-export const getCircleOfFifthsNotes = async (): Promise<Note[]> => {
+export const getCircleOfFifthsNotes = async function fetchFifths(): Promise<Note[]> {
   // Simulate an asynchronous operation, e.g., fetching data from an API
   return new Promise((resolve, reject) => {
     // Simulate delay
-    setTimeout(() => {
+    setTimeout(function fetchNotes() {
       try {
         // Replace this with your actual data fetching logic
         const fetchedData: Note[] = circleOfFifthsArray;  // Replace with your actual data
