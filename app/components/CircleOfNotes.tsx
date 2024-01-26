@@ -20,11 +20,11 @@ const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getCircleOfFifthsNotes();
+      const data: Note[] = await getCircleOfFifthsNotes();
       angleIncrement = 360 / data.length;
 
       if (circleType === "fourths") {
-        const reversedData = data.slice().reverse();
+        const reversedData: Note[] = data.slice().reverse();
         setNotes(reversedData);
       } else {
         setNotes(data);
