@@ -24,7 +24,7 @@ export default function RootLayout({
           <ClientThemeWrapper>
             <div className="mx-auto max-w-5xl text-2xl">
               <NavbarAnimation />
-              {children}
+              <div className="relative z-10">{children}</div>
             </div>
           </ClientThemeWrapper>
         </ThemeProvider>
