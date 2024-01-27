@@ -2,42 +2,52 @@
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
-const Navbar = () => {
+interface NavbarProps {
+  toggleCanvas: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ toggleCanvas }) => {
   const { changeTheme } = useContext(ThemeContext);
+
+  const handleButtonClick = function themeButtonClicked(theme: string) {
+    toggleCanvas();
+    changeTheme(theme);
+  };
+
   return (
     <div>
       <ul className="flex justify-between pt-5 items-center mr-4">
-        <div className="flex gap-5 ml-auto">
-          <button className="btn" onClick={() => changeTheme("light")}>
+        <div className="flex gap-5 ml-auto z-10">
+          <button className="btn" onClick={() => handleButtonClick("light")}>
             Light
           </button>
           <button
             className="btn bg-gray-900 text-white"
-            onClick={() => changeTheme("dark")}
+            onClick={() => handleButtonClick("dark")}
           >
             Dark
           </button>
           <button
             className="btn btn-primary"
-            onClick={() => changeTheme("winter")}
+            onClick={() => handleButtonClick("winter")}
           >
             Winter
           </button>
           <button
             className="btn btn-secondary"
-            onClick={() => changeTheme("valentine")}
+            onClick={() => handleButtonClick("valentine")}
           >
             Valentine
           </button>
           <button
             className="btn btn-accent"
-            onClick={() => changeTheme("retro")}
+            onClick={() => handleButtonClick("retro")}
           >
             Retro
           </button>
           <button
             className="btn btn-neutral"
-            onClick={() => changeTheme("aqua")}
+            onClick={() => handleButtonClick("aqua")}
           >
             Aqua 
           </button>

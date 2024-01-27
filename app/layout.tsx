@@ -3,8 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext";
 import ClientThemeWrapper from "./context/ClientThemeWrapper";
-import Navbar from "./components/Navbar";
-import DreamBackground from "./components/DreamBackground";
+import NavbarAnimation from "./components/NavbarAnimation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,8 +23,7 @@ export default function RootLayout({
         <ThemeProvider>
           <ClientThemeWrapper>
             <div className="mx-auto max-w-5xl text-2xl">
-              <DreamBackground />
-              <Navbar />
+              <NavbarAnimation />
               {children}
             </div>
           </ClientThemeWrapper>
