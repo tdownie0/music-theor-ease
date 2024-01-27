@@ -11,6 +11,11 @@ const DreamBackground: React.FC<{
     const ctx = canvasElement?.getContext("2d");
     if (!ctx) return;
 
+    const colorRange: number = 255;
+    const radiusMinimum = 5;
+    const radiusMultiplier = 20;
+    const velocityMinimum = 1;
+    const velocityMultiplier = 2;
     let width = (canvasElement.width = window.innerWidth);
     let height = (canvasElement.height = window.innerHeight);
 
@@ -41,18 +46,23 @@ const DreamBackground: React.FC<{
       }
     }
 
-    const circles: Circle[] = [];
-    const numCircles = 200;
-    for (let i = 0; i < numCircles; i++) {
+    function createRandomCircle(width: number, height: number): Circle {
       const x = Math.random() * width;
       const y = Math.random() * height;
-      const radius = Math.random() * 20 + 5;
-      const color = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
-        Math.random() * 255
-      })`;
-      const velocity = Math.random() * 2 + 1;
-      circles.push(new Circle(x, y, radius, color, velocity));
+      const radius = Math.random() * radiusMultiplier + radiusMinimum;
+      const color = `rgb(${Math.random() * colorRange}, ${
+        Math.random() * colorRange
+      }, ${Math.random() * colorRange})`;
+      const velocity = Math.random() * velocityMultiplier + velocityMinimum;
+      return new Circle(x, y, radius, color, velocity);
     }
+
+    const circles: Circle[] = Array.from(
+      { length: 200 },
+      function circleFactory() {
+        return createRandomCircle(width, height);
+      }
+    );
 
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
