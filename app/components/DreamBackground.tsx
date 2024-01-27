@@ -2,7 +2,10 @@
 "use client";
 import React, { useEffect } from "react";
 
-const DreamBackground: React.FC<{ showCanvas: boolean; canvasElement: HTMLCanvasElement | null }> = ({ showCanvas, canvasElement }) => {
+const DreamBackground: React.FC<{
+  showCanvas: boolean;
+  canvasElement: HTMLCanvasElement | null;
+}> = ({ showCanvas, canvasElement }) => {
   useEffect(() => {
     let animationFrameId: number | null = null;
     const ctx = canvasElement?.getContext("2d");
@@ -44,7 +47,9 @@ const DreamBackground: React.FC<{ showCanvas: boolean; canvasElement: HTMLCanvas
       const x = Math.random() * width;
       const y = Math.random() * height;
       const radius = Math.random() * 20 + 5;
-      const color = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+      const color = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
+        Math.random() * 255
+      })`;
       const velocity = Math.random() * 2 + 1;
       circles.push(new Circle(x, y, radius, color, velocity));
     }
@@ -75,17 +80,17 @@ const DreamBackground: React.FC<{ showCanvas: boolean; canvasElement: HTMLCanvas
       // Update the canvas dimensions
       canvasElement.width = window.innerWidth;
       canvasElement.height = window.innerHeight;
-    
+
       // Recalculate circle positions and sizes based on new canvas dimensions
       width = canvasElement.width;
       height = canvasElement.height;
-      circles.forEach(circle => {
-        circle.x *= (canvasElement.width / width);
-        circle.y *= (canvasElement.height / height);
-        circle.radius *= (canvasElement.width / width + canvasElement.height / height) / 2;
+      circles.forEach((circle) => {
+        circle.x *= canvasElement.width / width;
+        circle.y *= canvasElement.height / height;
+        circle.radius *=
+          (canvasElement.width / width + canvasElement.height / height) / 2;
       });
     });
-    
 
     return () => {
       stopAnimation();
@@ -96,4 +101,3 @@ const DreamBackground: React.FC<{ showCanvas: boolean; canvasElement: HTMLCanvas
 };
 
 export default DreamBackground;
-

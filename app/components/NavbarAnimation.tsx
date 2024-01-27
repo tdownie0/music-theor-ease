@@ -29,18 +29,17 @@ const NavbarAnimation: React.FC = ({ children }) => {
         clearTimeout(debounceTimer);
       }
 
-      // Set a new debounce timer to hide the canvas after 5 seconds
+      // Set a new debounce timer to hide the canvas after 4 seconds
       setDebounceTimer(
         setTimeout(() => {
           setCanvasVisible(false);
         }, 4000)
-      ); // Adjust the debounce delay as needed
+      );
     }
   };
 
   return (
     <>
-      {/* Pass the canvasVisible state to the DreamBackground component */}
       <DreamBackground
         showCanvas={canvasVisible}
         canvasElement={canvasElement}
