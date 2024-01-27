@@ -8,8 +8,8 @@ const DreamBackground: React.FC<{ showCanvas: boolean; canvasElement: HTMLCanvas
     const ctx = canvasElement?.getContext("2d");
     if (!ctx) return;
 
-    const width = (canvasElement.width = window.innerWidth);
-    const height = (canvasElement.height = window.innerHeight);
+    let width = (canvasElement.width = window.innerWidth);
+    let height = (canvasElement.height = window.innerHeight);
 
     class Circle {
       constructor(
@@ -71,11 +71,21 @@ const DreamBackground: React.FC<{ showCanvas: boolean; canvasElement: HTMLCanvas
     } else {
       stopAnimation();
     }
-
     window.addEventListener("resize", () => {
+      // Update the canvas dimensions
       canvasElement.width = window.innerWidth;
       canvasElement.height = window.innerHeight;
+    
+      // Recalculate circle positions and sizes based on new canvas dimensions
+      width = canvasElement.width;
+      height = canvasElement.height;
+      circles.forEach(circle => {
+        circle.x *= (canvasElement.width / width);
+        circle.y *= (canvasElement.height / height);
+        circle.radius *= (canvasElement.width / width + canvasElement.height / height) / 2;
+      });
     });
+    
 
     return () => {
       stopAnimation();

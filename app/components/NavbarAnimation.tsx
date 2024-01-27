@@ -33,7 +33,7 @@ const NavbarAnimation: React.FC = ({ children }) => {
       setDebounceTimer(
         setTimeout(() => {
           setCanvasVisible(false);
-        }, 2000)
+        }, 4000)
       ); // Adjust the debounce delay as needed
     }
   };
