@@ -17,10 +17,10 @@ const Circles = () => {
           </Link>
         </li>
       </ul>
-      <div className="text-4xl font-semibold mt-8 mb-8">Circles</div>
+      <h1 className="text-4xl font-semibold mt-8 mb-8">Circles</h1>
       <div className="hero flex flex-col">
         <div className="hero-content flex-col">
-          <div className="text-5xl mb-8">Circle of Fifths</div>
+          <h2 className="text-5xl mb-8">Circle of Fifths</h2>
           <p className="mb-4">
             The circle of fifths is a fundamental concept in music theory,
             providing a visual representation of the relationships between the
@@ -39,7 +39,7 @@ const Circles = () => {
 
         <div className="border-t border-gray-300 w-full mt-8 mr-4"></div>
         <div className="hero-content flex-col">
-          <div className="text-5xl mt-8 mb-8">Circle of Fourths</div>
+          <h2 className="text-5xl mt-8 mb-8">Circle of Fourths</h2>
           <p className="mb-4">
             The circle of fourths is a conceptual framework in music theory that
             presents the relationship between musical keys in a reverse order

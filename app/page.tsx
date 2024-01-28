@@ -15,7 +15,7 @@ export default function Home() {
           </Link>
         </li>
       </ul>
-      <div className="text-4xl font-bold mt-8">Music Theor-ease</div>
+      <h1 className="text-4xl font-bold mt-8">Music Theor-ease</h1>
 
       <div className="mt-8 text-lg">
         Introduction to the pillars of music concepts
