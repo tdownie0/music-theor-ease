@@ -21,7 +21,7 @@ const NavbarAnimation: React.FC = ({ children }) => {
     }
   };
 
-  const setCanvas = function setCanvasConfig() {
+  const setCanvas = function setCanvasConfig(): HTMLCanvasElement {
     const canvas = document.createElement("canvas");
     canvas.style.position = "fixed";
     canvas.style.top = "0";
