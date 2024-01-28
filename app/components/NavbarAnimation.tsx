@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DreamBackground from "./DreamBackground";
 import Navbar from "./Navbar";
 
@@ -8,35 +8,31 @@ const NavbarAnimation: React.FC = ({ children }) => {
     null
   );
   const [canvasVisible, setCanvasVisible] = useState(false);
-  const [debounceTimer, setDebounceTimer] = useState<NodeJS.Timeout | null>(
-    null
-  );
 
   const toggleCanvas = () => {
     if (!canvasElement) {
-      // Create a new canvas element if it doesn't exist
       const canvas = document.createElement("canvas");
       setCanvasElement(canvas);
       document.body.appendChild(canvas);
     }
 
-    // Toggle the visibility of the canvas only if it's currently false
     if (!canvasVisible) {
       setCanvasVisible(true);
-
-      // Clear the existing debounce timer if it exists
-      if (debounceTimer) {
-        clearTimeout(debounceTimer);
-      }
-
-      // Set a new debounce timer to hide the canvas after 4 seconds
-      setDebounceTimer(
-        setTimeout(() => {
-          setCanvasVisible(false);
-        }, 4000)
-      );
     }
   };
+
+  useEffect(() => {
+    if (canvasElement) {
+      const handleAnimationEnd = () => {
+        setCanvasVisible(false);
+      };
+      canvasElement.addEventListener("animationend", handleAnimationEnd);
+      canvasElement.classList.toggle("fade-in-out", canvasVisible);
+      return () => {
+        canvasElement.removeEventListener("animationend", handleAnimationEnd);
+      };
+    }
+  }, [canvasVisible]);
 
   return (
     <>
