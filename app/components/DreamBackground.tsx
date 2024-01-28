@@ -14,8 +14,12 @@ const DreamBackground: React.FC<{
     const colorRange: number = 255;
     const radiusMinimum = 5;
     const radiusMultiplier = 20;
-    const velocityMinimum = 1;
-    const velocityMultiplier = 2;
+    const velocityMinimum = 0.01;
+    const velocityMultiplier = 0.001;
+    const amplitudeMinimum = 50;
+    const amplitudeMultiplier = 10;
+    const frequencyMinimum = 0.3;
+    const frequencyMultiplier = 0.1;
     let width = (canvasElement.width = window.innerWidth);
     let height = (canvasElement.height = window.innerHeight);
 
@@ -25,25 +29,35 @@ const DreamBackground: React.FC<{
         public y: number,
         public radius: number,
         public color: string,
-        public velocity: number
+        public velocity: number,
+        public frequency: number,
+        public amplitude: number
       ) {}
 
       draw() {
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y + 100, this.radius, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
         ctx.fill();
       }
 
       update() {
-        this.y += this.velocity;
-        this.x += Math.sin(this.y / 30) * 2;
-
-        if (this.y - this.radius > height) {
-          this.y = -this.radius;
-          this.x = Math.random() * width;
+        // Adjust the x position linearly
+        this.x += this.velocity;
+        
+        // Calculate the y position with a bend in the middle
+        const fourthHeight = height / 5;
+        const bendFactor = 1; // Adjust this value to control the intensity of the bend
+        const bendOffset = -bendFactor * Math.sin(this.x / (width / 2)) * fourthHeight;
+        this.y = fourthHeight + Math.sin(this.x / this.frequency) * this.amplitude + bendOffset;
+        
+        // Reset the position if the circle goes off-screen
+        if (this.x - this.radius > width) {
+          this.x = -this.radius;
+          this.y = Math.random() * height;
         }
       }
+      
     }
 
     function createRandomCircle(width: number, height: number): Circle {
@@ -54,11 +68,13 @@ const DreamBackground: React.FC<{
         Math.random() * colorRange
       }, ${Math.random() * colorRange})`;
       const velocity = Math.random() * velocityMultiplier + velocityMinimum;
-      return new Circle(x, y, radius, color, velocity);
+      const frequency = Math.random() * frequencyMultiplier + frequencyMinimum;
+      const amplitude = Math.random() * amplitudeMultiplier + amplitudeMinimum;
+      return new Circle(x, y, radius, color, velocity, frequency, amplitude);
     }
 
     const circles: Circle[] = Array.from(
-      { length: 200 },
+      { length: 60 },
       function circleFactory() {
         return createRandomCircle(width, height);
       }
