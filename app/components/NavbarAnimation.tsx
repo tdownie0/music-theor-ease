@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import DreamBackground from "./DreamBackground";
 import Navbar from "./Navbar";
+import styles from "./NavbarAnimation.module.css";
 
 const NavbarAnimation: React.FC = ({ children }) => {
   const [canvasElement, setCanvasElement] = useState<HTMLCanvasElement | null>(
@@ -9,10 +10,9 @@ const NavbarAnimation: React.FC = ({ children }) => {
   );
   const [canvasVisible, setCanvasVisible] = useState(false);
 
-  const toggleCanvas = () => {
+  const toggleCanvas = function createCircleCanvas() {
     if (!canvasElement) {
-      const canvas = document.createElement("canvas");
-      setCanvasElement(canvas);
+      const canvas = setCanvas();
       document.body.appendChild(canvas);
     }
 
@@ -21,13 +21,25 @@ const NavbarAnimation: React.FC = ({ children }) => {
     }
   };
 
+  const setCanvas = function setCanvasConfig() {
+    const canvas = document.createElement("canvas");
+    canvas.style.position = "fixed";
+    canvas.style.top = "0";
+    canvas.style.left = "0";
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
+    canvas.style.opacity = "0";
+    setCanvasElement(canvas);
+    return canvas;
+  };
+
   useEffect(() => {
     if (canvasElement) {
       const handleAnimationEnd = () => {
         setCanvasVisible(false);
       };
       canvasElement.addEventListener("animationend", handleAnimationEnd);
-      canvasElement.classList.toggle("fade-in-out", canvasVisible);
+      canvasElement.classList.toggle(styles["fade-in-out"], canvasVisible);
       return () => {
         canvasElement.removeEventListener("animationend", handleAnimationEnd);
       };
