@@ -79,14 +79,16 @@ export let circleOfFifthsArray: Note[] = [
   Note.F,
 ];
 
-export const getCircleOfFifthsNotes = async function fetchFifths(): Promise<Note[]> {
+export const getCircleOfFifthsNotes = async function fetchFifths(): Promise<
+  Note[]
+> {
   // Simulate an asynchronous operation, e.g., fetching data from an API
   return new Promise((resolve, reject) => {
     // Simulate delay
     setTimeout(function fetchNotes() {
       try {
         // Replace this with your actual data fetching logic
-        const fetchedData: Note[] = circleOfFifthsArray;  // Replace with your actual data
+        const fetchedData: Note[] = circleOfFifthsArray; // Replace with your actual data
 
         // Update circleOfFifthsArray with fetched data
         circleOfFifthsArray = fetchedData;
@@ -95,7 +97,7 @@ export const getCircleOfFifthsNotes = async function fetchFifths(): Promise<Note
       } catch (error) {
         reject(error);
       }
-    }, 100);  // Simulated delay of 0.1 second
+    }, 100); // Simulated delay of 0.1 second
   });
 };
 
@@ -104,7 +106,7 @@ let circleOfFifths: Record<Note, Note> = {} as Record<Note, Note>;
 let lengthOfCircleOfFifthsArray: number = circleOfFifthsArray.length;
 for (let i: number = 0; i < lengthOfCircleOfFifthsArray; i++) {
   let currentNote: Note = circleOfFifthsArray[i];
-  let fifthIndex: number = (i + 1) % lengthOfCircleOfFifthsArray; 
+  let fifthIndex: number = (i + 1) % lengthOfCircleOfFifthsArray;
   let fifthNote: Note = circleOfFifthsArray[fifthIndex];
   circleOfFifths[currentNote] = fifthNote;
 }
@@ -141,10 +143,10 @@ let circleOfFourthsArray: Note[] = [
 
 let circleOfFourths: Record<Note, Note> = {} as Record<Note, Note>;
 
-let lengthOfCircleOfFourthsArray:number = circleOfFourthsArray.length;
+let lengthOfCircleOfFourthsArray: number = circleOfFourthsArray.length;
 for (let i: number = 0; i < lengthOfCircleOfFourthsArray; i++) {
   let currentNote: Note = circleOfFourthsArray[i];
-  let fourthIndex: number = (i + 1) % lengthOfCircleOfFourthsArray; 
+  let fourthIndex: number = (i + 1) % lengthOfCircleOfFourthsArray;
   let fourthNote: Note = circleOfFourthsArray[fourthIndex];
   circleOfFourths[currentNote] = fourthNote;
 }
@@ -164,10 +166,20 @@ enum CircleOfFourthsEnum {
   G = Note.C,
 }
 
-let IonianArray: string[] = ["1", "2", "3", "4", "5", "6", "7"];
-let DorianArray: string[] = ["1", "2", "b3", "4", "5", "6", "b7"];
-let PhrygianArray: string[] = ["1", "b2", "b3", "4", "5", "b6", "b7"];
-let LydianArray: string[] = ["1", "2", "3", "#4", "5", "6", "7"];
-let MixolydianArray: string[] = ["1", "2", "3", "4", "5", "6", "b7"];
-let AeolianArray: string[] = ["1", "2", "b3", "4", "5", "b6", "b7"];
-let LocrianArray: string[] = ["1", "b2", "b3", "4", "b5", "b6", "b7"];
+const IonianArray: string[] = ["1", "2", "3", "4", "5", "6", "7"];
+const DorianArray: string[] = ["1", "2", "b3", "4", "5", "6", "b7"];
+const PhrygianArray: string[] = ["1", "b2", "b3", "4", "5", "b6", "b7"];
+const LydianArray: string[] = ["1", "2", "3", "#4", "5", "6", "7"];
+const MixolydianArray: string[] = ["1", "2", "3", "4", "5", "6", "b7"];
+const AeolianArray: string[] = ["1", "2", "b3", "4", "5", "b6", "b7"];
+const LocrianArray: string[] = ["1", "b2", "b3", "4", "b5", "b6", "b7"];
+
+export const modesList: Record<string, string[]> = {
+  "Ionian": IonianArray,
+  "Dorian": DorianArray,
+  "Phygrian": PhrygianArray,
+  "Lydian": LydianArray,
+  "Mixolydian": MixolydianArray,
+  "Aeolian": AeolianArray,
+  "Locrian": LocrianArray,
+};

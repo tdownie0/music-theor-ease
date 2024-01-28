@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import ModesTable from "../components/ModesTable";
 
 const Modes = () => {
   return (
@@ -36,6 +37,7 @@ const Modes = () => {
             colors to explore and express diverse emotions and musical ideas.
           </p>
         </div>
+        <ModesTable />
       </div>
     </main>
   );
