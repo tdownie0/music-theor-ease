@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import CircleOfNotes from "../components/CircleOfNotes";
 
-const Circles = () => {
+const Circles: React.FC = () => {
   return (
     <main className="primary min-h-screen mt-16 ml-4">
       <ul className="flex">

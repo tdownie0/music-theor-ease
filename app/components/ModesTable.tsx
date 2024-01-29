@@ -1,7 +1,7 @@
 import React from "react";
 import { modesList } from "../utils/musicLogic";
 
-const ModesTable = () => {
+const ModesTable: React.FC = () => {
   return (
     <div className="overflow-x-auto rounded-lg">
       <table className="table w-full border-collapse border border-primary-content bg-secondary text-secondary-content">
