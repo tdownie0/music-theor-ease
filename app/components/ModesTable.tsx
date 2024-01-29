@@ -6,21 +6,27 @@ const ModesTable = () => {
     <div className="overflow-x-auto rounded-lg">
       <table className="table w-full border-collapse border border-primary-content bg-secondary text-secondary-content">
         <thead>
-          <tr className="bg-primary text-primary-content">
+          <tr className="bg-primary text-primary-content text-center">
             <th className="border border-primary-content px-4 py-2">Mode</th>
-            <th className="border border-primary-content px-4 py-2">1</th>
-            <th className="border border-primary-content px-4 py-2">2</th>
-            <th className="border border-primary-content px-4 py-2">3</th>
-            <th className="border border-primary-content px-4 py-2">4</th>
-            <th className="border border-primary-content px-4 py-2">5</th>
-            <th className="border border-primary-content px-4 py-2">6</th>
-            <th className="border border-primary-content px-4 py-2">7</th>
+            {[...Array(7)].map(function addColumnNumber(_, index) {
+              return (
+                <th
+                  key={index}
+                  className="border border-primary-content px-4 py-2"
+                >
+                  {index + 1}
+                </th>
+              );
+            })}
           </tr>
         </thead>
         <tbody>
           {Object.entries(modesList).map(([modeName, modeArray], index) => (
-            <tr key={index}>
-              <td className="border border-primary-content px-4 py-2">
+            <tr key={index} className="text-center">
+              <td
+                key={modeName}
+                className="border border-primary-content px-4 py-2"
+              >
                 {modeName}
               </td>
               {modeArray.map((note, noteIndex) => (
