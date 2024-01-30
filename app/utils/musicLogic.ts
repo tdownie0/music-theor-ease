@@ -26,7 +26,7 @@ export enum SharpNote {
   As = Note.As,
 }
 
-export let notesWithSharpsArray: (Note | SharpNote)[] = [
+export const notesWithSharpsArray: (Note | SharpNote)[] = [
   Note.C,
   SharpNote.Cs,
   Note.D,
@@ -49,7 +49,7 @@ export enum FlatNote {
   Bb = Note.Bb,
 }
 
-export let notesWithFlatsArray: (Note | FlatNote)[] = [
+export const notesWithFlatsArray: (Note | FlatNote)[] = [
   Note.C,
   FlatNote.Db,
   Note.D,
@@ -64,7 +64,7 @@ export let notesWithFlatsArray: (Note | FlatNote)[] = [
   Note.B,
 ];
 
-export let circleOfFifthsArray: Note[] = [
+let circleOfFifthsArray: Note[] = [
   Note.C,
   Note.G,
   Note.D,
@@ -101,9 +101,9 @@ export const getCircleOfFifthsNotes = async function fetchFifths(): Promise<
   });
 };
 
-let circleOfFifths: Record<Note, Note> = {} as Record<Note, Note>;
+const circleOfFifths: Record<Note, Note> = {} as Record<Note, Note>;
 
-let lengthOfCircleOfFifthsArray: number = circleOfFifthsArray.length;
+const lengthOfCircleOfFifthsArray: number = circleOfFifthsArray.length;
 for (let i: number = 0; i < lengthOfCircleOfFifthsArray; i++) {
   let currentNote: Note = circleOfFifthsArray[i];
   let fifthIndex: number = (i + 1) % lengthOfCircleOfFifthsArray;
@@ -126,14 +126,14 @@ enum CircleOfFifthsEnum {
   F = Note.C,
 }
 
-let circleOfFourthsArray: Note[] = [
+const circleOfFourthsArray: (Note | FlatNote)[] = [
   Note.C,
   Note.F,
-  Note.Bb,
-  Note.Eb,
-  Note.Ab,
-  Note.Db,
-  Note.Gb,
+  FlatNote.Bb,
+  FlatNote.Eb,
+  FlatNote.Ab,
+  FlatNote.Db,
+  FlatNote.Gb,
   Note.B,
   Note.E,
   Note.A,
@@ -141,13 +141,16 @@ let circleOfFourthsArray: Note[] = [
   Note.G,
 ];
 
-let circleOfFourths: Record<Note, Note> = {} as Record<Note, Note>;
+const circleOfFourths: Record<Note | FlatNote, Note | FlatNote> = {} as Record<
+  Note | FlatNote,
+  Note | FlatNote
+>;
 
-let lengthOfCircleOfFourthsArray: number = circleOfFourthsArray.length;
+const lengthOfCircleOfFourthsArray: number = circleOfFourthsArray.length;
 for (let i: number = 0; i < lengthOfCircleOfFourthsArray; i++) {
-  let currentNote: Note = circleOfFourthsArray[i];
+  let currentNote: Note | FlatNote = circleOfFourthsArray[i];
   let fourthIndex: number = (i + 1) % lengthOfCircleOfFourthsArray;
-  let fourthNote: Note = circleOfFourthsArray[fourthIndex];
+  let fourthNote: Note | FlatNote = circleOfFourthsArray[fourthIndex];
   circleOfFourths[currentNote] = fourthNote;
 }
 
