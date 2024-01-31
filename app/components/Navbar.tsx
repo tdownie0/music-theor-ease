@@ -16,7 +16,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleCanvas }) => {
 
   return (
     <div>
-      <ul className="flex justify-between pt-5 items-center mr-4">
+      <ul className="flex justify-between pt-5 items-center">
         <div className="flex gap-5 ml-auto z-10">
           <button className="btn" onClick={() => handleButtonClick("light")}>
             Light
