@@ -102,13 +102,14 @@ export const getCircleOfFifthsNotes = async function fetchFifths(): Promise<
 };
 
 const circleOfFifths: Record<Note, Note> = {} as Record<Note, Note>;
+const lengthOfCircleOfFifthsArray: number = circleOfFifthsArray.length; 
 
 circleOfFifthsArray.forEach(function fillCircleOfFifthsObject(
   currentNote: Note,
   index: number,
   currentArray: Note[]
 ): void {
-  const fifthIndex: number = (index + 1) % currentArray.length;
+  const fifthIndex: number = (index + 1) % lengthOfCircleOfFifthsArray;
   const fifthNote: Note = currentArray[fifthIndex];
   circleOfFifths[currentNote] = fifthNote;
 });
@@ -147,13 +148,14 @@ const circleOfFourths: Record<Note | FlatNote, Note | FlatNote> = {} as Record<
   Note | FlatNote,
   Note | FlatNote
 >;
+const lengthOfCircleOfFourthsArray: number = circleOfFourthsArray.length; 
 
 circleOfFourthsArray.forEach(function fillCircleOfFourthsObject(
   currentNote: Note | FlatNote,
   index: number,
   currentArray: (Note | FlatNote)[]
 ): void {
-  const fourthIndex: number = (index + 1) % currentArray.length;
+  const fourthIndex: number = (index + 1) % lengthOfCircleOfFourthsArray;
   const fourthNote: Note | FlatNote = currentArray[fourthIndex];
   circleOfFourths[currentNote] = fourthNote;
 });
