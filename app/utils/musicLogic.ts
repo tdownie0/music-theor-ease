@@ -103,13 +103,15 @@ export const getCircleOfFifthsNotes = async function fetchFifths(): Promise<
 
 const circleOfFifths: Record<Note, Note> = {} as Record<Note, Note>;
 
-const lengthOfCircleOfFifthsArray: number = circleOfFifthsArray.length;
-for (let i: number = 0; i < lengthOfCircleOfFifthsArray; i++) {
-  let currentNote: Note = circleOfFifthsArray[i];
-  let fifthIndex: number = (i + 1) % lengthOfCircleOfFifthsArray;
-  let fifthNote: Note = circleOfFifthsArray[fifthIndex];
+circleOfFifthsArray.forEach(function fillCircleOfFifthsObject(
+  currentNote: Note,
+  index: number,
+  currentArray: Note[]
+): void {
+  const fifthIndex: number = (index + 1) % currentArray.length;
+  const fifthNote: Note = currentArray[fifthIndex];
   circleOfFifths[currentNote] = fifthNote;
-}
+});
 
 enum CircleOfFifthsEnum {
   C = Note.G,
@@ -146,13 +148,15 @@ const circleOfFourths: Record<Note | FlatNote, Note | FlatNote> = {} as Record<
   Note | FlatNote
 >;
 
-const lengthOfCircleOfFourthsArray: number = circleOfFourthsArray.length;
-for (let i: number = 0; i < lengthOfCircleOfFourthsArray; i++) {
-  let currentNote: Note | FlatNote = circleOfFourthsArray[i];
-  let fourthIndex: number = (i + 1) % lengthOfCircleOfFourthsArray;
-  let fourthNote: Note | FlatNote = circleOfFourthsArray[fourthIndex];
+circleOfFourthsArray.forEach(function fillCircleOfFourthsObject(
+  currentNote: Note | FlatNote,
+  index: number,
+  currentArray: (Note | FlatNote)[]
+): void {
+  const fourthIndex: number = (index + 1) % currentArray.length;
+  const fourthNote: Note | FlatNote = currentArray[fourthIndex];
   circleOfFourths[currentNote] = fourthNote;
-}
+});
 
 enum CircleOfFourthsEnum {
   C = Note.F,
@@ -178,11 +182,11 @@ const AeolianArray: string[] = ["1", "2", "b3", "4", "5", "b6", "b7"];
 const LocrianArray: string[] = ["1", "b2", "b3", "4", "b5", "b6", "b7"];
 
 export const modesList: Record<string, string[]> = {
-  "Ionian": IonianArray,
-  "Dorian": DorianArray,
-  "Phygrian": PhrygianArray,
-  "Lydian": LydianArray,
-  "Mixolydian": MixolydianArray,
-  "Aeolian": AeolianArray,
-  "Locrian": LocrianArray,
+  Ionian: IonianArray,
+  Dorian: DorianArray,
+  Phygrian: PhrygianArray,
+  Lydian: LydianArray,
+  Mixolydian: MixolydianArray,
+  Aeolian: AeolianArray,
+  Locrian: LocrianArray,
 };
