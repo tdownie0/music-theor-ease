@@ -1,6 +1,3 @@
-import React from "react";
-import Link from "next/link";
-import CircleOfNotes from "../components/CircleOfNotes";
 import NavigationLinks from "../components/NavigationLinks";
 
 const linkNames: string[] = ["Home", "Circles", "Modes"];

@@ -1,9 +1,5 @@
-import React from "react";
-import Link from "next/link";
 import CircleOfNotes from "../components/CircleOfNotes";
 import NavigationLinks from '../components/NavigationLinks';
-
-const linkNames: string[] = ["Home", "Modes", "Quiz"];
 
 const Circles: React.FC = () => {
   return (

@@ -1,9 +1,5 @@
-import React from "react";
-import Link from "next/link";
 import ModesTable from "../components/ModesTable";
 import NavigationLinks from "../components/NavigationLinks";
-
-const linkNames: string[] = ["Home", "Circles", "Quiz"];
 
 const Modes: React.FC = () => {
   return (
