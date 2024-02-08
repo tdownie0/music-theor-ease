@@ -2,20 +2,38 @@ import React from "react";
 import Link from "next/link";
 import CircleOfNotes from "../components/CircleOfNotes";
 
+const linkNames: string[] = ["Home", "Modes", "Quiz"];
+
 const Circles: React.FC = () => {
-  return (
-    <main className="primary min-h-screen mt-16 ml-4">
-      <ul className="flex">
-        <li className="mr-4">
+  const renderLink = (linkName: string, index: number): JSX.Element => {
+    if (index === 0) {
+      return (
+        <li className="mr-4" key={index}>
           <Link href="/" className="link hover:text-primary">
-            Home
+            {linkName}
           </Link>
         </li>
-        <li>
-          <Link href="/modes" className="link hover:text-accent">
-            Modes
+      );
+    } else {
+      return (
+        <li className="mr-4" key={index}>
+          <Link
+            href={"/" + linkName.toLowerCase()}
+            className="link hover:text-primary"
+          >
+            {linkName}
           </Link>
         </li>
+      );
+    }
+  };
+
+  return (
+    <div className="primary min-h-screen mt-16 ml-4">
+      <ul className="flex">
+        {linkNames.map(function renderLinks(linkName, index) {
+          return renderLink(linkName, index);
+        })}
       </ul>
       <h1 className="text-4xl font-semibold mt-8 mb-8">Circles</h1>
       <div className="hero flex flex-col">
@@ -59,7 +77,7 @@ const Circles: React.FC = () => {
           <CircleOfNotes circleType="fourths" />
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 
