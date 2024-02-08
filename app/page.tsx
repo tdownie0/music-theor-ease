@@ -1,3 +1,4 @@
+import React from 'react'; 
 import NavigationLinks from "./components/NavigationLinks";
 
 const Home: React.FC = () => {

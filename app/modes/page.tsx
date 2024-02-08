@@ -1,3 +1,4 @@
+import React from 'react'; 
 import ModesTable from "../components/ModesTable";
 import NavigationLinks from "../components/NavigationLinks";
 

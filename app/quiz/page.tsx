@@ -1,3 +1,4 @@
+import React from 'react'; 
 import NavigationLinks from "../components/NavigationLinks";
 
 const linkNames: string[] = ["Home", "Circles", "Modes"];

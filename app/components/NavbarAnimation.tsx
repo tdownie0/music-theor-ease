@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import DreamBackground from "./DreamBackground";
 import Navbar from "./Navbar";
 import styles from "./NavbarAnimation.module.css";

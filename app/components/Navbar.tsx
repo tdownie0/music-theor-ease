@@ -1,5 +1,5 @@
 "use client";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
 interface NavbarProps {

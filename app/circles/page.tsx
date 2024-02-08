@@ -1,3 +1,4 @@
+import React from 'react'; 
 import CircleOfNotes from "../components/CircleOfNotes";
 import NavigationLinks from '../components/NavigationLinks';
 
