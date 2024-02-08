@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NavigationLinks from "./components/NavigationLinks";
 
 const renderLink = (linkName: string): JSX.Element => (
   <li className="mr-4" key={linkName}>
@@ -16,11 +17,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="primary min-h-screen mt-16 ml-4">
-      <ul className="flex">
-        {linkNames.map(function renderLinks(linkName) {
-          return renderLink(linkName)
-        })}
-      </ul>
+      <NavigationLinks />
       <h1 className="text-4xl font-bold mt-8">Music Theor-ease</h1>
       <div className="mt-8 text-lg">Introduction to the pillars of music concepts</div>
     </div>

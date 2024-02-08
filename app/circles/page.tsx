@@ -1,40 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import CircleOfNotes from "../components/CircleOfNotes";
+import NavigationLinks from '../components/NavigationLinks';
 
 const linkNames: string[] = ["Home", "Modes", "Quiz"];
 
 const Circles: React.FC = () => {
-  const renderLink = (linkName: string, index: number): JSX.Element => {
-    if (index === 0) {
-      return (
-        <li className="mr-4" key={index}>
-          <Link href="/" className="link hover:text-primary">
-            {linkName}
-          </Link>
-        </li>
-      );
-    } else {
-      return (
-        <li className="mr-4" key={index}>
-          <Link
-            href={"/" + linkName.toLowerCase()}
-            className="link hover:text-primary"
-          >
-            {linkName}
-          </Link>
-        </li>
-      );
-    }
-  };
-
   return (
     <div className="primary min-h-screen mt-16 ml-4">
-      <ul className="flex">
-        {linkNames.map(function renderLinks(linkName, index) {
-          return renderLink(linkName, index);
-        })}
-      </ul>
+      <NavigationLinks linkType="circles" />
       <h1 className="text-4xl font-semibold mt-8 mb-8">Circles</h1>
       <div className="hero flex flex-col">
         <div className="hero-content flex-col">
