@@ -27,7 +27,7 @@ const NavigationLinks: React.FC<NavigationLinksProps> = ({ linkType }) => {
     const isHomePage = linkName === LinkName.Home;
     const linkPath = isHomePage ? "/" : `/${linkName.toLowerCase()}`;
     const hoverColors = ["hover:text-primary", "hover:text-secondary", "hover:text-accent"];
-    const hoverColor = hoverColors[index % hoverColors.length];
+    const hoverColor = hoverColors[index];
     const linkClassName = `link ${hoverColor}`;
 
     return (
