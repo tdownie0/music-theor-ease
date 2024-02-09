@@ -17,14 +17,14 @@ class Circle {
     public ctx: CanvasRenderingContext2D
   ) {}
 
-  draw() {
+  draw(): void {
     this.ctx.beginPath();
     this.ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
     this.ctx.fillStyle = this.color;
     this.ctx.fill();
   }
 
-  update(width: number, height: number) {
+  update(width: number, height: number): void {
     this.y += this.velocity;
     this.x += Math.sin(this.y / 30) * 2;
 
@@ -69,7 +69,7 @@ const DreamBackground: React.FC<{
       }
     );
 
-    const animate = () => {
+    const animate = function run(): void {
       ctx.clearRect(0, 0, width, height);
       circles.forEach((circle) => {
         circle.draw();
@@ -78,11 +78,11 @@ const DreamBackground: React.FC<{
       animationFrameId = requestAnimationFrame(animate);
     };
 
-    const startAnimation = () => {
+    const startAnimation = function start(): void {
       animationFrameId = requestAnimationFrame(animate);
     };
 
-    const stopAnimation = () => {
+    const stopAnimation = function stop(): void {
       cancelAnimationFrame(animationFrameId!);
     };
 
@@ -91,7 +91,8 @@ const DreamBackground: React.FC<{
     } else {
       stopAnimation();
     }
-    window.addEventListener("resize", () => {
+
+    const handleResize = function listenForResize(): void {
       // Update the canvas dimensions
       canvasElement.width = window.innerWidth;
       canvasElement.height = window.innerHeight;
@@ -105,9 +106,12 @@ const DreamBackground: React.FC<{
         circle.radius *=
           (canvasElement.width / width + canvasElement.height / height) / 2;
       });
-    });
+    };
+
+    window.addEventListener("resize", handleResize);
 
     return () => {
+      window.removeEventListener("resize", handleResize);
       stopAnimation();
     };
   }, [showCanvas, canvasElement]);
