@@ -1,25 +1,13 @@
 import React from 'react'; 
 import Link from "next/link";
-
-enum LinkType {
-  Circles = "circles",
-  Modes = "modes",
-  Quiz = "quiz",
-}
-
-enum LinkName {
-  Home = "Home",
-  Circles = "Circles",
-  Modes = "Modes",
-  Quiz = "Quiz",
-}
+import { LinkType, LinkName } from "../utils/enums";
 
 interface NavigationLinksProps {
-  linkType?: LinkType | string;
+  linkType?: LinkType;
 }
 
 const NavigationLinks: React.FC<NavigationLinksProps> = ({ linkType }) => {
-  let linkNames: string[] = [];
+  let linkNames: LinkName[] = [];
 
   switch (linkType) {
     case LinkType.Circles:
@@ -35,7 +23,7 @@ const NavigationLinks: React.FC<NavigationLinksProps> = ({ linkType }) => {
       linkNames = [LinkName.Circles, LinkName.Modes, LinkName.Quiz];
   }
 
-  const renderLink = (linkName: string, index: number): JSX.Element => {
+  const renderLink = (linkName: LinkName, index: number): JSX.Element => {
     const isHomePage = linkName === LinkName.Home;
     const linkPath = isHomePage ? "/" : `/${linkName.toLowerCase()}`;
     const hoverColors = ["hover:text-primary", "hover:text-secondary", "hover:text-accent"];
