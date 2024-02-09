@@ -102,7 +102,7 @@ export const getCircleOfFifthsNotes = async function fetchFifths(): Promise<
 };
 
 const circleOfFifths: Record<Note, Note> = {} as Record<Note, Note>;
-const lengthOfCircleOfFifthsArray: number = circleOfFifthsArray.length; 
+const lengthOfCircleOfFifthsArray: number = circleOfFifthsArray.length;
 
 circleOfFifthsArray.forEach(function fillCircleOfFifthsObject(
   currentNote: Note,
@@ -129,7 +129,9 @@ enum CircleOfFifthsEnum {
   F = Note.C,
 }
 
-const circleOfFourthsArray: (Note | FlatNote)[] = [
+type NotesAndFlats = Note | FlatNote;
+
+const circleOfFourthsArray: NotesAndFlats[] = [
   Note.C,
   Note.F,
   FlatNote.Bb,
@@ -144,19 +146,19 @@ const circleOfFourthsArray: (Note | FlatNote)[] = [
   Note.G,
 ];
 
-const circleOfFourths: Record<Note | FlatNote, Note | FlatNote> = {} as Record<
-  Note | FlatNote,
-  Note | FlatNote
+const circleOfFourths: Record<NotesAndFlats, NotesAndFlats> = {} as Record<
+  NotesAndFlats,
+  NotesAndFlats
 >;
-const lengthOfCircleOfFourthsArray: number = circleOfFourthsArray.length; 
+const lengthOfCircleOfFourthsArray: number = circleOfFourthsArray.length;
 
 circleOfFourthsArray.forEach(function fillCircleOfFourthsObject(
-  currentNote: Note | FlatNote,
+  currentNote: NotesAndFlats,
   index: number,
-  currentArray: (Note | FlatNote)[]
+  currentArray: NotesAndFlats[]
 ): void {
   const fourthIndex: number = (index + 1) % lengthOfCircleOfFourthsArray;
-  const fourthNote: Note | FlatNote = currentArray[fourthIndex];
+  const fourthNote: NotesAndFlats = currentArray[fourthIndex];
   circleOfFourths[currentNote] = fourthNote;
 });
 
