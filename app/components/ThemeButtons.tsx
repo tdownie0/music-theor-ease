@@ -2,11 +2,11 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
-interface NavbarProps {
+interface ThemeButtonsProps {
   toggleCanvas: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ toggleCanvas }) => {
+const ThemeButtons: React.FC<ThemeButtonsProps> = ({ toggleCanvas }) => {
   const { changeTheme } = useContext(ThemeContext);
 
   const handleButtonClick = function themeButtonClicked(theme: string) {
@@ -57,4 +57,4 @@ const Navbar: React.FC<NavbarProps> = ({ toggleCanvas }) => {
   );
 };
 
-export default Navbar;
+export default ThemeButtons;

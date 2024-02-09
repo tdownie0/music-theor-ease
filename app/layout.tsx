@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext";
 import ClientThemeWrapper from "./context/ClientThemeWrapper";
-import NavbarAnimation from "./components/NavbarAnimation";
+import ThemeButtonsAnimation from "./components/ThemeButtonsAnimation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +23,7 @@ export default function RootLayout({
         <ThemeProvider>
           <ClientThemeWrapper>
             <div className="mx-auto max-w-5xl px-4 pb-4 text-2xl">
-              <NavbarAnimation />
+              <ThemeButtonsAnimation />
               <div className="relative z-10">{children}</div>
             </div>
           </ClientThemeWrapper>

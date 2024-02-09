@@ -1,10 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import DreamBackground from "./DreamBackground";
-import Navbar from "./Navbar";
-import styles from "./NavbarAnimation.module.css";
+import ThemeButtons from "./ThemeButtons";
+import styles from "./ThemeButtonsAnimation.module.css";
 
-const NavbarAnimation: React.FC = ({ children }) => {
+const ThemeButtonsAnimation: React.FC = ({ children }) => {
   const [canvasElement, setCanvasElement] = useState<HTMLCanvasElement | null>(
     null
   );
@@ -52,10 +52,10 @@ const NavbarAnimation: React.FC = ({ children }) => {
         showCanvas={canvasVisible}
         canvasElement={canvasElement}
       />
-      <Navbar toggleCanvas={toggleCanvas} />
+      <ThemeButtons toggleCanvas={toggleCanvas} />
       {children}
     </>
   );
 };
 
-export default NavbarAnimation;
+export default ThemeButtonsAnimation;
