@@ -1,6 +1,55 @@
 "use client";
 import React, { useEffect } from "react";
 
+const colorRange: number = 255;
+const radiusMinimum = 5;
+const radiusMultiplier = 20;
+const velocityMinimum = 1;
+const velocityMultiplier = 2;
+
+class Circle {
+  constructor(
+    public x: number,
+    public y: number,
+    public radius: number,
+    public color: string,
+    public velocity: number,
+    public ctx: CanvasRenderingContext2D
+  ) {}
+
+  draw() {
+    this.ctx.beginPath();
+    this.ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    this.ctx.fillStyle = this.color;
+    this.ctx.fill();
+  }
+
+  update(width: number, height: number) {
+    this.y += this.velocity;
+    this.x += Math.sin(this.y / 30) * 2;
+
+    if (this.y - this.radius > height) {
+      this.y = -this.radius;
+      this.x = Math.random() * width;
+    }
+  }
+}
+
+function createRandomCircle(
+  width: number,
+  height: number,
+  ctx: CanvasRenderingContext2D
+): Circle {
+  const x = Math.random() * width;
+  const y = Math.random() * height;
+  const radius = Math.random() * radiusMultiplier + radiusMinimum;
+  const color = `rgb(${Math.random() * colorRange}, ${
+    Math.random() * colorRange
+  }, ${Math.random() * colorRange})`;
+  const velocity = Math.random() * velocityMultiplier + velocityMinimum;
+  return new Circle(x, y, radius, color, velocity, ctx);
+}
+
 const DreamBackground: React.FC<{
   showCanvas: boolean;
   canvasElement: HTMLCanvasElement | null;
@@ -10,56 +59,13 @@ const DreamBackground: React.FC<{
     const ctx = canvasElement?.getContext("2d");
     if (!ctx) return;
 
-    const colorRange: number = 255;
-    const radiusMinimum = 5;
-    const radiusMultiplier = 20;
-    const velocityMinimum = 1;
-    const velocityMultiplier = 2;
     let width = (canvasElement.width = window.innerWidth);
     let height = (canvasElement.height = window.innerHeight);
-
-    class Circle {
-      constructor(
-        public x: number,
-        public y: number,
-        public radius: number,
-        public color: string,
-        public velocity: number
-      ) {}
-
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-      }
-
-      update() {
-        this.y += this.velocity;
-        this.x += Math.sin(this.y / 30) * 2;
-
-        if (this.y - this.radius > height) {
-          this.y = -this.radius;
-          this.x = Math.random() * width;
-        }
-      }
-    }
-
-    function createRandomCircle(width: number, height: number): Circle {
-      const x = Math.random() * width;
-      const y = Math.random() * height;
-      const radius = Math.random() * radiusMultiplier + radiusMinimum;
-      const color = `rgb(${Math.random() * colorRange}, ${
-        Math.random() * colorRange
-      }, ${Math.random() * colorRange})`;
-      const velocity = Math.random() * velocityMultiplier + velocityMinimum;
-      return new Circle(x, y, radius, color, velocity);
-    }
 
     const circles: Circle[] = Array.from(
       { length: 200 },
       function circleFactory() {
-        return createRandomCircle(width, height);
+        return createRandomCircle(width, height, ctx);
       }
     );
 
@@ -67,7 +73,7 @@ const DreamBackground: React.FC<{
       ctx.clearRect(0, 0, width, height);
       circles.forEach((circle) => {
         circle.draw();
-        circle.update();
+        circle.update(width, height);
       });
       animationFrameId = requestAnimationFrame(animate);
     };
