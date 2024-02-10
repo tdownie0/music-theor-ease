@@ -9,6 +9,15 @@ interface ThemeButtonsProps {
 const ThemeButtons: React.FC<ThemeButtonsProps> = ({ toggleCanvas }) => {
   const { changeTheme } = useContext(ThemeContext);
 
+  const themes = [
+    { name: "Light", className: "btn" },
+    { name: "Dark", className: "btn bg-gray-900 text-white" },
+    { name: "Winter", className: "btn btn-primary" },
+    { name: "Valentine", className: "btn btn-secondary" },
+    { name: "Retro", className: "btn btn-accent" },
+    { name: "Aqua", className: "btn btn-neutral" },
+  ];
+
   const handleButtonClick = function themeButtonClicked(theme: string) {
     toggleCanvas();
     changeTheme(theme);
@@ -18,39 +27,15 @@ const ThemeButtons: React.FC<ThemeButtonsProps> = ({ toggleCanvas }) => {
     <div>
       <ul className="flex justify-between pt-5 items-center">
         <div className="flex gap-5 ml-auto z-10">
-          <button className="btn" onClick={() => handleButtonClick("light")}>
-            Light
-          </button>
-          <button
-            className="btn bg-gray-900 text-white"
-            onClick={() => handleButtonClick("dark")}
-          >
-            Dark
-          </button>
-          <button
-            className="btn btn-primary"
-            onClick={() => handleButtonClick("winter")}
-          >
-            Winter
-          </button>
-          <button
-            className="btn btn-secondary"
-            onClick={() => handleButtonClick("valentine")}
-          >
-            Valentine
-          </button>
-          <button
-            className="btn btn-accent"
-            onClick={() => handleButtonClick("retro")}
-          >
-            Retro
-          </button>
-          <button
-            className="btn btn-neutral"
-            onClick={() => handleButtonClick("aqua")}
-          >
-            Aqua 
-          </button>
+        {themes.map((theme, index) => (
+            <button
+              key={index}
+              className={theme.className}
+              onClick={() => handleButtonClick(theme.name.toLowerCase())}
+            >
+              {theme.name}
+            </button>
+          ))}
         </div>
       </ul>
     </div>
