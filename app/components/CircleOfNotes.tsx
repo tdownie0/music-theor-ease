@@ -61,8 +61,6 @@ const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
             key={index}
             x={x}
             y={y}
-            fill="text-primary"
-            className="text-primary" // Use inline style with dynamic color class
             textAnchor="middle"
             alignmentBaseline="middle"
           >
