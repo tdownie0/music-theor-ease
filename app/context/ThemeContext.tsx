@@ -17,13 +17,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
 }: ThemeProviderProps) => {
   const [isMounted, setIsMounted] = useState(false);
-  const [theme, setTheme] = useState<string>(() => {
-    if (typeof window !== "undefined") {
-      const storedTheme = localStorage.getItem("theme") || "light";
-      return storedTheme;
-    }
-    return "light";
-  });
+  const [theme, setTheme] = useState<string>("light");
 
   const changeTheme = (nextTheme: string) => {
     setTheme(nextTheme);
