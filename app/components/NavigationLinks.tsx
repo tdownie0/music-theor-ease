@@ -1,30 +1,30 @@
 import React from 'react'; 
 import Link from "next/link";
-import { LinkType, LinkName } from "../utils/enums";
+import { siteLinks } from "../utils/enums";
 
 interface NavigationLinksProps {
-  linkType?: LinkType;
+  linkType?: siteLinks;
 }
 
 const NavigationLinks: React.FC<NavigationLinksProps> = ({ linkType }) => {
-  let linkNames: LinkName[] = [];
+  let linkNames: siteLinks[] = [];
 
   switch (linkType) {
-    case LinkType.Circles:
-      linkNames = [LinkName.Home, LinkName.Modes, LinkName.Quiz];
+    case siteLinks.Circles:
+      linkNames = [siteLinks.Home, siteLinks.Modes, siteLinks.Quiz];
       break;
-    case LinkType.Modes:
-      linkNames = [LinkName.Home, LinkName.Circles, LinkName.Quiz];
+    case siteLinks.Modes:
+      linkNames = [siteLinks.Home, siteLinks.Circles, siteLinks.Quiz];
       break;
-    case LinkType.Quiz:
-      linkNames = [LinkName.Home, LinkName.Circles, LinkName.Modes];
+    case siteLinks.Quiz:
+      linkNames = [siteLinks.Home, siteLinks.Circles, siteLinks.Modes];
       break;
     default:
-      linkNames = [LinkName.Circles, LinkName.Modes, LinkName.Quiz];
+      linkNames = [siteLinks.Circles, siteLinks.Modes, siteLinks.Quiz];
   }
 
-  const renderLink = (linkName: LinkName, index: number): JSX.Element => {
-    const isHomePage = linkName === LinkName.Home;
+  const renderLink = (linkName: siteLinks, index: number): JSX.Element => {
+    const isHomePage = linkName === siteLinks.Home;
     const linkPath = isHomePage ? "/" : `/${linkName.toLowerCase()}`;
     const hoverColors = ["hover:text-primary", "hover:text-secondary", "hover:text-accent"];
     const hoverColor = hoverColors[index];

@@ -1,10 +1,4 @@
-export enum LinkType {
-  Circles = "circles",
-  Modes = "modes",
-  Quiz = "quiz",
-}
-
-export enum LinkName {
+export enum siteLinks {
   Home = "Home",
   Circles = "Circles",
   Modes = "Modes",

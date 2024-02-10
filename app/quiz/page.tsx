@@ -1,11 +1,11 @@
 import React from 'react'; 
 import NavigationLinks from "../components/NavigationLinks";
-import { LinkType } from '../utils/enums';
+import { siteLinks } from '../utils/enums';
 
 const Quiz: React.FC = () => {
   return (
     <div className="primary min-h-screen mt-16 ml-4">
-      <NavigationLinks linkType={LinkType.Quiz}/>
+      <NavigationLinks linkType={siteLinks.Quiz}/>
     </div>
   );
 };
