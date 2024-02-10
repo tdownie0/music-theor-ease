@@ -50,10 +50,15 @@ function createRandomCircle(
   return new Circle(x, y, radius, color, velocity, ctx);
 }
 
-const DreamBackground: React.FC<{
+interface DreamBackgroundProps {
   showCanvas: boolean;
   canvasElement: HTMLCanvasElement | null;
-}> = ({ showCanvas, canvasElement }) => {
+}
+
+const DreamBackground: React.FC<DreamBackgroundProps> = ({
+  showCanvas,
+  canvasElement,
+}) => {
   useEffect(() => {
     let animationFrameId: number | null = null;
     const ctx = canvasElement?.getContext("2d");
