@@ -2,8 +2,9 @@ import React from "react";
 import { modesList } from "../utils/musicLogic";
 
 const ModesTable: React.FC = () => {
-  const modeNameColumnWidth = '25%';
-  const intervalColumnWidth = `${75 / 7}%`;
+  const modeNameColumnWidth: string = '25%';
+  const amountOfIntervals: number = 7;
+  const intervalColumnWidth: string = `${75 / amountOfIntervals}%`;
 
   return (
     <div className="overflow-x-auto rounded-lg shadow-lg bg-base-300 p-4 w-full">
@@ -12,7 +13,7 @@ const ModesTable: React.FC = () => {
         <thead>
           <tr className="bg-primary text-primary-content text-center">
             <th className="border border-primary-content px-4 py-2">Mode</th>
-            {[...Array(7)].map(function addColumnNumber(_, index) {
+            {[...Array(amountOfIntervals)].map(function addColumnNumber(_, index) {
               return (
                 <th
                   key={index}
