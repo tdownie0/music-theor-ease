@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Note, getCircleOfFifthsNotes } from "../utils/musicLogic";
+import { Note, getCircleOfFifthsNotes } from "../../utils/musicLogic";
 
 interface CircleOfNotesProps {
   circleType?: string;

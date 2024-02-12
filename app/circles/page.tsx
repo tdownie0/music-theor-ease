@@ -1,5 +1,5 @@
 import React from 'react'; 
-import CircleOfNotes from "../components/CircleOfNotes";
+import CircleOfNotes from "../components/CircleOfNotes/CircleOfNotes";
 import NavigationLinks from '../components/NavigationLinks';
 import { siteLinks } from '../utils/enums';
 
