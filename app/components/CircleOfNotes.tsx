@@ -25,10 +25,9 @@ const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
 
       if (circleType === "fourths") {
         const reversedData: Note[] = data.slice().reverse();
-        setNotes(reversedData);
-      } else {
-        setNotes(data);
-      }
+        return setNotes(reversedData);
+      } 
+      setNotes(data);
     };
 
     // Fetch data asynchronously and update state
