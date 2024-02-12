@@ -5,11 +5,9 @@ import "@testing-library/jest-dom";
 import Circles from "./page";
 
 test("renders Circles page", () => {
-  if (typeof document !== "undefined") {
-    render(<Circles />);
+  render(<Circles />);
 
-    expect(screen.getByText("Circles")).toBeInTheDocument();
-    expect(screen.getByText("Circle of Fifths")).toBeInTheDocument();
-    expect(screen.getByText("Circle of Fourths")).toBeInTheDocument();
-  }
+  expect(screen.getByText("Circles")).toBeInTheDocument();
+  expect(screen.getByText("Circle of Fifths")).toBeInTheDocument();
+  expect(screen.getByText("Circle of Fourths")).toBeInTheDocument();
 });

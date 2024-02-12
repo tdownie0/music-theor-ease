@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 
 import Quiz from "./page";
 
-test("renders Modes page", async () => {
+test("renders Modes page", () => {
   render(<Quiz />);
 
   expect(screen.getByText("Home")).toBeInTheDocument();

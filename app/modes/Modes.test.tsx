@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 
 import Modes from "./page";
 
-test("renders Modes page", async () => {
+test("renders Modes page", () => {
   render(<Modes />);
 
   expect(screen.getByText("Modes")).toBeInTheDocument();
