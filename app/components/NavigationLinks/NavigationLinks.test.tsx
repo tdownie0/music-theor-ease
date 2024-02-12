@@ -23,7 +23,7 @@ describe("NavigationLinks component", () => {
     });
   });
 
-  test("renders links with correct paths and hover colors", () => {
+  test("renders links with correct hover colors", () => {
     render(<NavigationLinks />);
 
     const links = screen.getAllByRole("link");
