@@ -1,5 +1,5 @@
 import React from "react";
-import { modesList } from "../utils/musicLogic";
+import { modesList } from "../../utils/musicLogic";
 
 const ModesTable: React.FC = () => {
   const modeNameColumnWidth: string = '25%';

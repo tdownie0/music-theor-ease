@@ -1,6 +1,6 @@
 import React from 'react'; 
 import CircleOfNotes from "../components/CircleOfNotes/CircleOfNotes";
-import NavigationLinks from '../components/NavigationLinks';
+import NavigationLinks from '../components/NavigationLinks/NavigationLinks';
 import { siteLinks } from '../utils/enums';
 
 const Circles: React.FC = () => {

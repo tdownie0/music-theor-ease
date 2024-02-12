@@ -5,7 +5,7 @@ import "@testing-library/jest-dom";
 import CircleOfNotes from "./CircleOfNotes";
 
 describe("CircleOfNotes component", () => {
-  test('renders correctly with circleType', async () => {
+  test('renders correctly with default', async () => {
     const { container } = render(<CircleOfNotes />);
     const svg = container.querySelector("svg");
 

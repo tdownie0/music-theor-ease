@@ -1,6 +1,6 @@
 import React from 'react'; 
-import ModesTable from "../components/ModesTable";
-import NavigationLinks from "../components/NavigationLinks";
+import ModesTable from "../components/ModesTable/ModesTable";
+import NavigationLinks from "../components/NavigationLinks/NavigationLinks";
 import { siteLinks } from '../utils/enums';
 
 const Modes: React.FC = () => {
