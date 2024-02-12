@@ -2,6 +2,9 @@ import React from "react";
 import { modesList } from "../utils/musicLogic";
 
 const ModesTable: React.FC = () => {
+  const modeNameColumnWidth = '25%';
+  const intervalColumnWidth = `${75 / 7}%`;
+
   return (
     <div className="overflow-x-auto rounded-lg shadow-lg bg-base-300 p-4 w-full">
       <h4 className="text-2xl pb-4">Primary Modes</h4>
@@ -27,6 +30,7 @@ const ModesTable: React.FC = () => {
               <td
                 key={modeName}
                 className="border border-primary-content px-4 py-2"
+                style={{ width: modeNameColumnWidth }}
               >
                 {modeName}
               </td>
@@ -34,6 +38,7 @@ const ModesTable: React.FC = () => {
                 <td
                   key={noteIndex}
                   className="border border-primary-content px-4 py-2"
+                  style={{ width: intervalColumnWidth }}
                 >
                   {note}
                 </td>
