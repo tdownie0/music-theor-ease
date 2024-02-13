@@ -1,6 +1,7 @@
 "use client";
 import React, { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
+import { themeName } from "@/app/utils/enums";
 
 interface ThemeButtonsProps {
   toggleCanvas: () => void;
@@ -10,12 +11,12 @@ const ThemeButtons: React.FC<ThemeButtonsProps> = ({ toggleCanvas }) => {
   const { changeTheme } = useContext(ThemeContext);
 
   const themes = [
-    { name: "Light", className: "btn" },
-    { name: "Dark", className: "btn bg-gray-900 text-white" },
-    { name: "Winter", className: "btn btn-primary" },
-    { name: "Valentine", className: "btn btn-secondary" },
-    { name: "Retro", className: "btn btn-accent" },
-    { name: "Aqua", className: "btn btn-neutral" },
+    { name: themeName.Light, className: "btn" },
+    { name: themeName.Dark, className: "btn bg-gray-900 text-white" },
+    { name: themeName.Winter, className: "btn btn-primary" },
+    { name: themeName.Valentine, className: "btn btn-secondary" },
+    { name: themeName.Retro, className: "btn btn-accent" },
+    { name: themeName.Aqua, className: "btn btn-neutral" },
   ];
 
   const handleButtonClick = function themeButtonClicked(theme: string) {

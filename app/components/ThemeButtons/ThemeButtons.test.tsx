@@ -3,26 +3,14 @@ import { render, fireEvent } from "@testing-library/react";
 
 import ThemeButtons from "./ThemeButtons";
 import { ThemeContext } from "../../context/ThemeContext";
+import { themeName } from "@/app/utils/enums";
 
 describe("ThemeButtons component", () => {
   test("renders buttons with correct themes", () => {
-    // Mock the changeTheme function
-    const changeTheme = jest.fn();
-
-    // Render the ThemeButtons component with a mocked ThemeContext
-    const { getByText } = render(
-      <ThemeContext.Provider value={{ changeTheme }}>
-        <ThemeButtons toggleCanvas={() => {}} />
-      </ThemeContext.Provider>
+    const { getByText } = render(<ThemeButtons toggleCanvas={() => {}} />);
+    Object.values(themeName).forEach((name) =>
+      expect(getByText(name)).toBeDefined()
     );
-
-    // Verify that each button is rendered with the correct theme name
-    expect(getByText("Light")).toBeDefined();
-    expect(getByText("Dark")).toBeDefined();
-    expect(getByText("Winter")).toBeDefined();
-    expect(getByText("Valentine")).toBeDefined();
-    expect(getByText("Retro")).toBeDefined();
-    expect(getByText("Aqua")).toBeDefined();
   });
 
   test("calls changeTheme with correct theme when button is clicked", () => {
@@ -36,10 +24,8 @@ describe("ThemeButtons component", () => {
       </ThemeContext.Provider>
     );
 
-    // Click a button
-    fireEvent.click(getByText("Dark"));
+    fireEvent.click(getByText(themeName.Dark));
 
-    // Verify that changeTheme was called with the correct theme
     expect(changeTheme).toHaveBeenCalledWith("dark");
   });
 });
