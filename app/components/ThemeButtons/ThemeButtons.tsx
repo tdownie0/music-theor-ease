@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext } from "react";
-import { ThemeContext } from "../context/ThemeContext";
+import { ThemeContext } from "../../context/ThemeContext";
 
 interface ThemeButtonsProps {
   toggleCanvas: () => void;
