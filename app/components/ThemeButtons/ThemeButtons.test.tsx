@@ -1,5 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
 import ThemeButtons from "./ThemeButtons";
 import { ThemeContext } from "../../context/ThemeContext";
@@ -9,7 +10,7 @@ describe("ThemeButtons component", () => {
   test("renders buttons with correct themes", () => {
     const { getByText } = render(<ThemeButtons toggleCanvas={() => {}} />);
     Object.values(themeName).forEach((name) =>
-      expect(getByText(name)).toBeDefined()
+      expect(getByText(name)).toBeInTheDocument()
     );
   });
 
