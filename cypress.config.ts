@@ -1,14 +1,16 @@
-import { defineConfig } from "cypress";
-import { addMatchImageSnapshotPlugin } from 'cypress-plugin-snapshots/plugin';
+import { defineConfig } from 'cypress'
+import { configureVisualRegression } from 'cypress-visual-regression/dist/plugin'
 
 export default defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
-      // Register the task event listener
-      on('task', addMatchImageSnapshotPlugin);
+    env: {
+      visualRegressionType: 'regression'
     },
+    screenshotsFolder: './cypress/snapshots/actual',
+    setupNodeEvents(on, config) {
+      configureVisualRegression(on)
+    }
   },
-  video: true,
 
   component: {
     devServer: {

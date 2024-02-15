@@ -16,18 +16,15 @@ describe("DreamBackground component", () => {
     cy.get('[data-testid="dream-background"]').should("be.visible");
   });
 
-  it("should animate the circles", () => {
-    cy.screenshot("before-animation");
+  it("animates circles over time", () => {
+    cy.compareSnapshot("start");
 
-    cy.wait(2000); 
+    cy.wait(500);
 
-    cy.screenshot("after-animation");
+    cy.compareSnapshot("mid");
 
-    // Compare screenshots
-    cy.get("canvas").toMatchImageSnapshot({
-      imageConfig: {
-        threshold: 0.001,
-      },
-    });
+    cy.wait(500);
+
+    cy.compareSnapshot("end");
   });
 });

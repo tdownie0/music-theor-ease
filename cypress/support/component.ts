@@ -21,7 +21,6 @@ import './commands'
 
 import { mount } from 'cypress/react18'
 // ** Adding and removing this gets test to run for now ** 
-import 'cypress-plugin-snapshots/commands';
 
 // Augment the Cypress namespace to include type definitions for
 // your custom command.
