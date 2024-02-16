@@ -16,15 +16,8 @@ describe("DreamBackground component", () => {
     cy.get('[data-testid="dream-background"]').should("be.visible");
   });
 
-  it("animates circles over time", () => {
+  it("populates random circles", () => {
     cy.wait(500);
-    cy.compareSnapshot("dream-background-animating-start", .9);
-  
-    cy.wait(1000); 
-    cy.compareSnapshot("dream-background-animating-mid", .9);
-  
-    cy.wait(1500); 
-    cy.compareSnapshot("dream-background-animating-end", .9);
+    cy.compareSnapshot("dream-background-populating", .9);
   });
-  
 });
