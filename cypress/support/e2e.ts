@@ -18,6 +18,3 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
-
-import { addCompareSnapshotCommand } from 'cypress-visual-regression/dist/command'
-addCompareSnapshotCommand()
