@@ -17,13 +17,13 @@ describe("DreamBackground component", () => {
   });
 
   it("animates circles over time", () => {
-    cy.wait(500); // Initial state snapshot
+    cy.wait(500);
     cy.compareSnapshot("dream-background-animating-start", .9);
   
-    cy.wait(1000); // Mid-animation snapshot
+    cy.wait(1000); 
     cy.compareSnapshot("dream-background-animating-mid", .9);
   
-    cy.wait(1500); // End state snapshot
+    cy.wait(1500); 
     cy.compareSnapshot("dream-background-animating-end", .9);
   });
   
