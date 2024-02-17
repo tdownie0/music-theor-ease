@@ -17,11 +17,11 @@ const NavigationLinks: React.FC<NavigationLinksProps> = ({ linkType }) => {
   const linksToRender = linkType ? linkNames[linkType] : linkNames[siteLinks.Home];
 
   const renderLink = (linkName: siteLinks, index: number): JSX.Element => {
-    const isHomePage = linkName === siteLinks.Home;
-    const linkPath = isHomePage ? "/" : `/${linkName.toLowerCase()}`;
-    const hoverColors = ["hover:text-primary", "hover:text-secondary", "hover:text-accent"];
-    const hoverColor = hoverColors[index];
-    const linkClassName = `link ${hoverColor}`;
+    const isHomePage: boolean = linkName === siteLinks.Home;
+    const linkPath: string = isHomePage ? "/" : `/${linkName.toLowerCase()}`;
+    const hoverColors: string[] = ["hover:text-primary", "hover:text-secondary", "hover:text-accent"];
+    const hoverColor: string = hoverColors[index];
+    const linkClassName: string = `link ${hoverColor}`;
 
     return (
       <li className="mr-4" key={linkName}>

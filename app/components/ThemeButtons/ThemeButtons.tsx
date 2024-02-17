@@ -7,10 +7,15 @@ interface ThemeButtonsProps {
   toggleCanvas: () => void;
 }
 
+interface Theme {
+  name: themeName;
+  className: string;
+}
+
 const ThemeButtons: React.FC<ThemeButtonsProps> = ({ toggleCanvas }) => {
   const { changeTheme } = useContext(ThemeContext);
 
-  const themes = [
+  const themes: Theme[] = [
     { name: themeName.Light, className: "btn" },
     { name: themeName.Dark, className: "btn bg-gray-900 text-white" },
     { name: themeName.Winter, className: "btn btn-primary" },

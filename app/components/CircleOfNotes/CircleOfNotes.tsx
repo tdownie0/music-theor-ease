@@ -22,12 +22,7 @@ const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
     const fetchData = async () => {
       const data: Note[] = await getCircleOfFifthsNotes();
       angleIncrement = 360 / data.length;
-
-      if (circleType === "fourths") {
-        const reversedData: Note[] = data.slice().reverse();
-        return setNotes(reversedData);
-      } 
-      setNotes(data);
+      setNotes(circleType === "fourths" ? data.slice().reverse() : data);
     };
 
     // Fetch data asynchronously and update state
@@ -51,9 +46,9 @@ const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
 
       {/* Text labels for each key on the outer rim */}
       {notes.map((note, index) => {
-        const angle = (index - 3) * angleIncrement * degreesToRadians;
-        const x = circleCoordinateX + radiusOffset * Math.cos(angle);
-        const y = circleCoordinateY + radiusOffset * Math.sin(angle);
+        const angle: number = (index - 3) * angleIncrement * degreesToRadians;
+        const x: number = circleCoordinateX + radiusOffset * Math.cos(angle);
+        const y: number = circleCoordinateY + radiusOffset * Math.sin(angle);
 
         return (
           <text
