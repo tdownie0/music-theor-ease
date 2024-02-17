@@ -2,7 +2,10 @@ import { defineConfig } from "cypress";
 import { configureVisualRegression } from "cypress-visual-regression/dist/plugin";
 
 export default defineConfig({
-  e2e: {},
+  e2e: {
+    setupNodeEvents(on, config) {},
+    baseUrl: "http://localhost:3000",
+  },
 
   component: {
     env: {
