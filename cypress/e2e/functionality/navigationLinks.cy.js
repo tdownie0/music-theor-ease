@@ -6,9 +6,7 @@ context("Navigation Links", () => {
   });
 
   it("checks the navigation links work", () => {
-    cy.get(".link").then((links) => {
-      expect(links, "3 items").to.have.length(3);
-    });
+    cy.get(".link").should("have.length", 3);
 
     cy.get(".link").eq(0).click();
     cy.url().should("include", "/circles");
