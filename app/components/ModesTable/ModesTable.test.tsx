@@ -1,17 +1,17 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import ModesTable from "./ModesTable";
 
 describe("ModesTable component", () => {
   test('renders correctly', () => {
-    const { getByText } = render(<ModesTable />);
+    render(<ModesTable />);
     
-    expect(getByText('Primary Modes')).toBeInTheDocument();
+    expect(screen.getByText('Primary Modes')).toBeInTheDocument();
 
-    expect(getByText('Mode')).toBeInTheDocument();
+    expect(screen.getByText('Mode')).toBeInTheDocument();
     
-    expect(getByText('Ionian')).toBeInTheDocument(); 
+    expect(screen.getByText('Ionian')).toBeInTheDocument(); 
   });
 });

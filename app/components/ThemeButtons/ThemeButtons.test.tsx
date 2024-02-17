@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import ThemeButtons from "./ThemeButtons";
@@ -8,9 +8,9 @@ import { themeName } from "@/app/utils/enums";
 
 describe("ThemeButtons component", () => {
   test("renders buttons with correct themes", () => {
-    const { getByText } = render(<ThemeButtons toggleCanvas={() => {}} />);
+    render(<ThemeButtons toggleCanvas={() => {}} />);
     Object.values(themeName).forEach((name) =>
-      expect(getByText(name)).toBeInTheDocument()
+      expect(screen.getByText(name)).toBeInTheDocument()
     );
   });
 
@@ -19,13 +19,13 @@ describe("ThemeButtons component", () => {
     const changeTheme = jest.fn();
 
     // Render the ThemeButtons component with a mocked ThemeContext
-    const { getByText } = render(
+    render(
       <ThemeContext.Provider value={{ changeTheme }}>
         <ThemeButtons toggleCanvas={() => {}} />
       </ThemeContext.Provider>
     );
 
-    fireEvent.click(getByText(themeName.Dark));
+    fireEvent.click(screen.getByText(themeName.Dark));
 
     expect(changeTheme).toHaveBeenCalledWith("dark");
   });

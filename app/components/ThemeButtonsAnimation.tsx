@@ -44,7 +44,7 @@ const ThemeButtonsAnimation: React.FC = () => {
         canvasElement.removeEventListener("animationend", handleAnimationEnd);
       };
     }
-  }, [canvasVisible]);
+  }, [canvasVisible, canvasElement]);
 
   return (
     <>
