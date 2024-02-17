@@ -53,6 +53,7 @@ const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
         return (
           <text
             key={index}
+            role="text"
             x={x}
             y={y}
             textAnchor="middle"

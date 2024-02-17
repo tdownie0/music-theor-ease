@@ -1,37 +1,30 @@
 import React from "react";
-import { render, waitFor } from "@testing-library/react";
-import "@testing-library/jest-dom";
+import { render, waitFor, screen } from "@testing-library/react";
 
 import CircleOfNotes from "./CircleOfNotes";
 
 describe("CircleOfNotes component", () => {
-  test('renders correctly with default', async () => {
-    const { container } = render(<CircleOfNotes />);
-    const svg = container.querySelector("svg");
-
+  test("renders correctly with default", async () => {
+    render(<CircleOfNotes />);
+    let textElements: HTMLElement[] = [];
     await waitFor(() => {
-      const textElements = svg?.querySelectorAll("text");
-      expect(textElements?.length).toBe(12);
-
-      if (textElements) {
-        const firstTextValue = textElements[0]?.textContent;
-        expect(firstTextValue).toBe("C");
-      }
+      textElements = screen.getAllByRole("text");
     });
+
+    expect(textElements).toHaveLength(12);
+    const firstTextValue = textElements[0].textContent;
+    expect(firstTextValue).toBe("C");
   });
 
-  test('renders correctly with circleType="fourths"', async () => {
-    const { container } = render(<CircleOfNotes circleType="fourths" />);
-    const svg = container.querySelector("svg");
-
+  test("renders correctly with circleType='fourths'", async () => {
+    render(<CircleOfNotes circleType="fourths" />);
+    let textElements: HTMLElement[] = [];
     await waitFor(() => {
-      const textElements = svg?.querySelectorAll("text");
-      expect(textElements?.length).toBe(12);
-
-      if (textElements) {
-        const firstTextValue = textElements[0]?.textContent;
-        expect(firstTextValue).toBe("F");
-      }
+      textElements = screen.getAllByRole("text");
     });
+
+    expect(textElements).toHaveLength(12);
+    const firstTextValue = textElements[0].textContent;
+    expect(firstTextValue).toBe("F");
   });
 });
