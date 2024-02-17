@@ -4,7 +4,7 @@ import { createContext, useEffect, useState, ReactNode } from "react";
 
 interface ThemeContextType {
   theme?: string;
-  changeTheme?: (nextTheme?: string) => void;
+  changeTheme?: (nextTheme: string) => void;
 }
 
 export const ThemeContext = createContext<ThemeContextType>({});

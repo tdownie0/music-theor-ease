@@ -1,7 +1,7 @@
 "use client";
 import React, { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
-import { themeName } from "@/app/utils/enums";
+import { themeName } from "../../utils/enums";
 
 interface ThemeButtonsProps {
   toggleCanvas: () => void;
@@ -25,15 +25,19 @@ const ThemeButtons: React.FC<ThemeButtonsProps> = ({ toggleCanvas }) => {
   ];
 
   const handleButtonClick = function themeButtonClicked(theme: string) {
-    toggleCanvas();
-    changeTheme(theme);
+    if (changeTheme) {
+      toggleCanvas();
+      changeTheme(theme);
+    } else {
+      console.error("ThemeContext not available");
+    }
   };
 
   return (
     <div>
       <ul className="flex justify-between pt-5 items-center">
         <div className="flex gap-5 ml-auto z-10">
-        {themes.map((theme, index) => (
+          {themes.map((theme, index) => (
             <button
               key={index}
               className={theme.className}

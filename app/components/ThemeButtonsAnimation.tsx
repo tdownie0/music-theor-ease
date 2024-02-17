@@ -4,7 +4,7 @@ import DreamBackground from "./DreamBackground/DreamBackground";
 import ThemeButtons from "./ThemeButtons/ThemeButtons";
 import styles from "./ThemeButtonsAnimation.module.css";
 
-const ThemeButtonsAnimation: React.FC = ({ children }) => {
+const ThemeButtonsAnimation: React.FC = () => {
   const [canvasElement, setCanvasElement] = useState<HTMLCanvasElement | null>(
     null
   );
@@ -53,7 +53,6 @@ const ThemeButtonsAnimation: React.FC = ({ children }) => {
         canvasElement={canvasElement}
       />
       <ThemeButtons toggleCanvas={toggleCanvas} />
-      {children}
     </>
   );
 };
