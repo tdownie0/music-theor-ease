@@ -60,65 +60,67 @@ const DreamBackground: React.FC<DreamBackgroundProps> = ({
   canvasElement,
 }) => {
   useEffect(() => {
-    let animationFrameId: number | null = null;
-    const ctx = canvasElement?.getContext("2d");
-    if (!ctx) return;
+    if (canvasElement) {
+      let animationFrameId: number | null = null;
+      const ctx = canvasElement?.getContext("2d");
+      if (!ctx) return;
 
-    let width = (canvasElement.width = window.innerWidth);
-    let height = (canvasElement.height = window.innerHeight);
+      let width = (canvasElement.width = window.innerWidth);
+      let height = (canvasElement.height = window.innerHeight);
 
-    const circles: Circle[] = Array.from(
-      { length: 200 },
-      function circleFactory() {
-        return createRandomCircle(width, height, ctx);
+      const circles: Circle[] = Array.from(
+        { length: 200 },
+        function circleFactory() {
+          return createRandomCircle(width, height, ctx);
+        }
+      );
+
+      const animate = function run(): void {
+        ctx.clearRect(0, 0, width, height);
+        circles.forEach((circle) => {
+          circle.draw();
+          circle.update(width, height);
+        });
+        animationFrameId = requestAnimationFrame(animate);
+      };
+
+      const startAnimation = function start(): void {
+        animationFrameId = requestAnimationFrame(animate);
+      };
+
+      const stopAnimation = function stop(): void {
+        cancelAnimationFrame(animationFrameId!);
+      };
+
+      if (showCanvas) {
+        startAnimation();
+      } else {
+        stopAnimation();
       }
-    );
 
-    const animate = function run(): void {
-      ctx.clearRect(0, 0, width, height);
-      circles.forEach((circle) => {
-        circle.draw();
-        circle.update(width, height);
-      });
-      animationFrameId = requestAnimationFrame(animate);
-    };
+      const handleResize = function listenForResize(): void {
+        // Update the canvas dimensions
+        canvasElement.width = window.innerWidth;
+        canvasElement.height = window.innerHeight;
 
-    const startAnimation = function start(): void {
-      animationFrameId = requestAnimationFrame(animate);
-    };
+        // Recalculate circle positions and sizes based on new canvas dimensions
+        width = canvasElement.width;
+        height = canvasElement.height;
+        circles.forEach((circle) => {
+          circle.x *= canvasElement.width / width;
+          circle.y *= canvasElement.height / height;
+          circle.radius *=
+            (canvasElement.width / width + canvasElement.height / height) / 2;
+        });
+      };
 
-    const stopAnimation = function stop(): void {
-      cancelAnimationFrame(animationFrameId!);
-    };
+      window.addEventListener("resize", handleResize);
 
-    if (showCanvas) {
-      startAnimation();
-    } else {
-      stopAnimation();
+      return () => {
+        window.removeEventListener("resize", handleResize);
+        stopAnimation();
+      };
     }
-
-    const handleResize = function listenForResize(): void {
-      // Update the canvas dimensions
-      canvasElement.width = window.innerWidth;
-      canvasElement.height = window.innerHeight;
-
-      // Recalculate circle positions and sizes based on new canvas dimensions
-      width = canvasElement.width;
-      height = canvasElement.height;
-      circles.forEach((circle) => {
-        circle.x *= canvasElement.width / width;
-        circle.y *= canvasElement.height / height;
-        circle.radius *=
-          (canvasElement.width / width + canvasElement.height / height) / 2;
-      });
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      stopAnimation();
-    };
   }, [showCanvas, canvasElement]);
 
   return null; // No need to render anything, canvas is managed by useEffect
