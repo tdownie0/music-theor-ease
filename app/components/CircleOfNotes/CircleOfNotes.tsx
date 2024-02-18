@@ -22,7 +22,9 @@ const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
     const fetchData = async () => {
       const data: Note[] = await getCircleOfFifthsNotes();
       angleIncrement = 360 / data.length;
-      setNotes(circleType === "fourths" ? data.slice().reverse() : data);
+      setNotes(function adjustForCircleType(): Note[] {
+        return circleType === "fourths" ? data.slice().reverse() : data;
+      });
     };
 
     // Fetch data asynchronously and update state
