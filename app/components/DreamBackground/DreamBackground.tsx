@@ -12,12 +12,20 @@ const DreamBackground: React.FC<DreamBackgroundProps> = ({
   canvasElement,
 }) => {
   useEffect(() => {
-    if (canvasElement) {
-      const ctx = canvasElement.getContext("2d");
-      if (!ctx) return;
+    if (!canvasElement) return;
+    const ctx = canvasElement.getContext("2d");
 
-      const animateCanvas: AnimateCanvas = new AnimateCanvas(ctx);
+    if (!ctx) return;
+    let animateCanvas: AnimateCanvas | null = null;
 
+    // Simple error handling demo
+    try {
+      animateCanvas = new AnimateCanvas(ctx);
+    } catch (error) {
+      console.error("Error creating AnimateCanvas:", error);
+    }
+
+    if (animateCanvas) {
       if (showCanvas) {
         animateCanvas.start();
       } else {

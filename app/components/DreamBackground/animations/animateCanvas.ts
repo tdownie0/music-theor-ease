@@ -14,7 +14,11 @@ class AnimateCanvas {
     less: 100,
   };
 
-  constructor(private ctx: CanvasRenderingContext2D) {}
+  constructor(private ctx: CanvasRenderingContext2D) {
+    if (!ctx) {
+      throw new Error('CanvasRenderingContext2D is required')
+    }
+  }
 
   private animate(): void {
     const width: number = this.ctx.canvas.width;

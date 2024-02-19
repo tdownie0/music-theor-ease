@@ -18,18 +18,17 @@ let angleIncrement: number = 0;
 const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
   const [notes, setNotes] = useState<Note[]>([]);
 
-  async function getCircleNotes() {
-    const data: Note[] = await getCircleOfFifthsNotes();
-    angleIncrement = 360 / data.length;
-    setNotes(function adjustForCircleType(): Note[] {
-      return circleType === "fourths" ? data.slice().reverse() : data;
-    });
-  }
-
   useEffect(() => {
+    async function getCircleNotes() {
+      const data: Note[] = await getCircleOfFifthsNotes();
+      angleIncrement = 360 / data.length;
+      setNotes(function adjustForCircleType(): Note[] {
+        return circleType === "fourths" ? data.slice().reverse() : data;
+      });
+    }
     // Fetch data asynchronously and update state
     getCircleNotes();
-  }, []);
+  }, [circleType]);
 
   return (
     <svg
