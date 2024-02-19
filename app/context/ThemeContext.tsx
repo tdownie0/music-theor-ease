@@ -1,4 +1,3 @@
-// ThemeContext.tsx
 "use client";
 import { createContext, useEffect, useState, ReactNode } from "react";
 
@@ -35,7 +34,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
    * the initial render
    */
   useEffect(() => {
-    setTimeout(loadTheme, 0);
+    setTimeout(loadTheme, 100);
   }, []);
   // #endregion -- Load Theme
 
