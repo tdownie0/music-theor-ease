@@ -1,13 +1,13 @@
 "use client";
 import React, { useEffect } from "react";
 
-const colorRange: number = 255;
-const radiusMinimum = 5;
-const radiusMultiplier = 20;
-const velocityMinimum = 1;
-const velocityMultiplier = 2;
-
 class Circle {
+  private static readonly colorRange: number = 255;
+  private static readonly radiusMinimum: number = 5;
+  private static readonly radiusMultiplier: number = 20;
+  private static readonly velocityMinimum: number = 1;
+  private static readonly velocityMultiplier: number = 2;
+
   constructor(
     private x: number,
     private y: number,
@@ -36,21 +36,22 @@ class Circle {
   }
 
   static createRandom(width: number, height: number): Circle {
-    const x = Math.random() * width;
-    const y = Math.random() * height;
-    const radius = Math.random() * radiusMultiplier + radiusMinimum;
-    const color = `rgb(${Math.random() * colorRange}, ${
-      Math.random() * colorRange
-    }, ${Math.random() * colorRange})`;
-    const velocity = Math.random() * velocityMultiplier + velocityMinimum;
+    const x: number = Math.random() * width;
+    const y: number = Math.random() * height;
+    const radius: number =
+      Math.random() * this.radiusMultiplier + this.radiusMinimum;
+    const color: string = `rgb(${Math.random() * this.colorRange}, ${
+      Math.random() * this.colorRange
+    }, ${Math.random() * this.colorRange})`;
+    const velocity: number =
+      Math.random() * this.velocityMultiplier + this.velocityMinimum;
     return new Circle(x, y, radius, color, velocity, width, height);
   }
 
   resize(width: number, height: number): void {
     this.x *= width / this.width;
     this.y *= height / this.height;
-    const minDimension = Math.min(width, height);
-    this.radius *= minDimension / Math.min(this.width, this.height);
+    this.radius *= Math.min(width, height) / Math.min(this.width, this.height);
     this.width = width;
     this.height = height;
   }
