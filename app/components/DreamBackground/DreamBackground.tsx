@@ -26,12 +26,8 @@ const DreamBackground: React.FC<DreamBackgroundProps> = ({
     }
 
     if (animateCanvas) {
-      if (showCanvas) {
-        animateCanvas.start();
-      } else {
-        animateCanvas.stop();
-      }
-
+      showCanvas ? animateCanvas.start() : animateCanvas.stop()
+      
       return () => {
         animateCanvas.stop();
       };
