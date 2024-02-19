@@ -105,9 +105,6 @@ class AnimateCanvas {
   }
 }
 
-// The rest of your code remains unchanged
-
-
 interface DreamBackgroundProps {
   showCanvas: boolean;
   canvasElement: HTMLCanvasElement | null;
