@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import AnimateCanvas from "@/app/utils/animations/animateCanvas";
+import AnimateCanvas from "./animations/animateCanvas";
 
 interface DreamBackgroundProps {
   showCanvas: boolean;
