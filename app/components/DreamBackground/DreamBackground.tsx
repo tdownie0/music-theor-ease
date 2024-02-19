@@ -64,8 +64,8 @@ class AnimateCanvas {
   constructor(private ctx: CanvasRenderingContext2D) {}
 
   private animate(): void {
-    const width = this.ctx.canvas.width;
-    const height = this.ctx.canvas.height;
+    const width: number = this.ctx.canvas.width;
+    const height: number = this.ctx.canvas.height;
 
     this.ctx.clearRect(0, 0, width, height);
     this.circles.forEach((circle) => {
@@ -76,9 +76,9 @@ class AnimateCanvas {
   }
 
   start(): void {
-    const width = (this.ctx.canvas.width = window.innerWidth);
-    const height = (this.ctx.canvas.height = window.innerHeight);
-    const amountOfCircles = width > 800 ? 150 : 100;
+    const width: number = (this.ctx.canvas.width = window.innerWidth);
+    const height: number = (this.ctx.canvas.height = window.innerHeight);
+    const amountOfCircles: number = width > 800 ? 150 : 100;
 
     this.circles = Array.from({ length: amountOfCircles }, () =>
       Circle.createRandom(width, height)
@@ -93,11 +93,8 @@ class AnimateCanvas {
   }
 
   private handleResize(): void {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-
-    this.ctx.canvas.width = width;
-    this.ctx.canvas.height = height;
+    const width: number = (this.ctx.canvas.width = window.innerWidth);
+    const height: number = (this.ctx.canvas.height = window.innerHeight);
 
     this.circles.forEach((circle) => {
       circle.resize(width, height);
@@ -119,7 +116,7 @@ const DreamBackground: React.FC<DreamBackgroundProps> = ({
       const ctx = canvasElement.getContext("2d");
       if (!ctx) return;
 
-      const animateCanvas = new AnimateCanvas(ctx);
+      const animateCanvas: AnimateCanvas = new AnimateCanvas(ctx);
 
       if (showCanvas) {
         animateCanvas.start();
