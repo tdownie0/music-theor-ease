@@ -24,11 +24,11 @@ const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
     setNotes(function adjustForCircleType(): Note[] {
       return circleType === "fourths" ? data.slice().reverse() : data;
     });
-  };
+  }
 
   useEffect(() => {
     // Fetch data asynchronously and update state
-    getCircleNotes()
+    getCircleNotes();
   }, []);
 
   return (

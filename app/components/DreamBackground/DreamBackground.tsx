@@ -38,7 +38,6 @@ class Circle {
   static createRandom(width: number, height: number): Circle {
     const x = Math.random() * width;
     const y = Math.random() * height;
-    const minDimension = Math.min(width, height);
     const radius = Math.random() * radiusMultiplier + radiusMinimum;
     const color = `rgb(${Math.random() * colorRange}, ${
       Math.random() * colorRange
