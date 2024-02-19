@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import DreamBackground from "./DreamBackground/DreamBackground";
-import ThemeButtons from "./ThemeButtons/ThemeButtons";
+import DreamBackground from "../DreamBackground/DreamBackground";
+import ThemeButtons from "../ThemeButtons/ThemeButtons";
 import styles from "./ThemeButtonsAnimation.module.css";
 
 const ThemeButtonsAnimation: React.FC = () => {
