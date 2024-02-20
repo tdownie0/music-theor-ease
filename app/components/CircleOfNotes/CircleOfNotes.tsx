@@ -19,7 +19,7 @@ const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
   const [notes, setNotes] = useState<Note[]>([]);
 
   useEffect(() => {
-    async function getCircleNotes() {
+    async function getCircleNotes(): Promise<void> {
       const data: Note[] = await getCircleOfFifthsNotes();
       angleIncrement = 360 / data.length;
       setNotes(function adjustForCircleType(): Note[] {
