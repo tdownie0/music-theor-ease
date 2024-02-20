@@ -30,7 +30,7 @@ const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
     getCircleNotes();
   }, [circleType]);
 
-  function addCircleText(note: string, index: number) {
+  function addCircleText(note: string, index: number): React.JSX.Element {
     const angle: number = (index - 3) * angleIncrement * degreesToRadians;
     const x: number = circleCoordinateX + radiusOffset * Math.cos(angle);
     const y: number = circleCoordinateY + radiusOffset * Math.sin(angle);

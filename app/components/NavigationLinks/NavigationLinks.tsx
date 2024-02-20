@@ -24,7 +24,7 @@ const NavigationLinks: React.FC<NavigationLinksProps> = ({ linkType }) => {
     ? linkNames[linkType]
     : linkNames[siteLinks.Home];
 
-  const renderLink = (linkName: siteLinks, index: number): JSX.Element => {
+  const renderLink = (linkName: siteLinks, index: number): React.JSX.Element => {
     const isHomePage: boolean = linkName === siteLinks.Home;
     const linkPath: string = isHomePage ? "/" : `/${linkName.toLowerCase()}`;
     const linkClassName: string = `link ${hoverColors[index]}`;
