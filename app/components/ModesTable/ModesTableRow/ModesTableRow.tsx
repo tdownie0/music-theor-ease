@@ -1,9 +1,9 @@
 import React from "react";
 
 interface ModesTableRowProps {
-  modeName?: string; // Optional modeName prop for header row
-  modeArray?: string[]; // Optional modeArray prop for data rows
-  isHeaderRow?: boolean; // Boolean prop to indicate if the row is a header row
+  modeName?: string;
+  modeArray?: string[];
+  isHeaderRow?: boolean;
 }
 
 const modeNameColumnWidth: string = "25%";
@@ -17,7 +17,6 @@ const ModesTableRow: React.FC<ModesTableRowProps> = ({
   isHeaderRow,
 }) => {
   if (isHeaderRow) {
-    // Render header row
     return (
       <tr className="bg-primary text-primary-content text-center">
         <th
