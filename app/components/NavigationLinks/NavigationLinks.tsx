@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React from "react";
 import Link from "next/link";
 import { siteLinks } from "../../utils/enums";
 
@@ -13,15 +13,21 @@ const linkNames: Record<siteLinks, siteLinks[]> = {
   [siteLinks.Quiz]: [siteLinks.Home, siteLinks.Circles, siteLinks.Modes],
 };
 
+const hoverColors: string[] = [
+  "hover:text-primary",
+  "hover:text-secondary",
+  "hover:text-accent",
+];
+
 const NavigationLinks: React.FC<NavigationLinksProps> = ({ linkType }) => {
-  const linksToRender = linkType ? linkNames[linkType] : linkNames[siteLinks.Home];
+  const linksToRender = linkType
+    ? linkNames[linkType]
+    : linkNames[siteLinks.Home];
 
   const renderLink = (linkName: siteLinks, index: number): JSX.Element => {
     const isHomePage: boolean = linkName === siteLinks.Home;
     const linkPath: string = isHomePage ? "/" : `/${linkName.toLowerCase()}`;
-    const hoverColors: string[] = ["hover:text-primary", "hover:text-secondary", "hover:text-accent"];
-    const hoverColor: string = hoverColors[index];
-    const linkClassName: string = `link ${hoverColor}`;
+    const linkClassName: string = `link ${hoverColors[index]}`;
 
     return (
       <li className="mr-4" key={linkName}>
