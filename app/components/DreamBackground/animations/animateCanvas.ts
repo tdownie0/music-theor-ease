@@ -8,8 +8,8 @@ interface amountToRender {
 class AnimateCanvas {
   private animationFrameId: number | null = null;
   private circles: Circle[] = [];
-  private lessCirclesSize: number = 800;
-  private circleAmount: amountToRender = {
+  private lessRendersWidth: number = 800;
+  private renderTotal: amountToRender = {
     normal: 150,
     less: 100,
   };
@@ -33,9 +33,9 @@ class AnimateCanvas {
   }
 
   private renderAmount(width: number): number {
-    return width > this.lessCirclesSize
-      ? this.circleAmount.normal
-      : this.circleAmount.less;
+    return width > this.lessRendersWidth
+      ? this.renderTotal.normal
+      : this.renderTotal.less;
   }
 
   start(): void {
