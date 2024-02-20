@@ -6,12 +6,12 @@ interface NavigationLinksProps {
   linkType?: siteLinks;
 }
 
-const linkNames: Record<siteLinks, siteLinks[]> = {
-  [siteLinks.Home]: [siteLinks.Circles, siteLinks.Modes, siteLinks.Quiz],
-  [siteLinks.Circles]: [siteLinks.Home, siteLinks.Modes, siteLinks.Quiz],
-  [siteLinks.Modes]: [siteLinks.Home, siteLinks.Circles, siteLinks.Quiz],
-  [siteLinks.Quiz]: [siteLinks.Home, siteLinks.Circles, siteLinks.Modes],
-};
+const siteLinksArray = [siteLinks.Home, siteLinks.Circles, siteLinks.Modes, siteLinks.Quiz];
+const linkNames: Record<siteLinks, siteLinks[]> = {} as Record<siteLinks, siteLinks[]>;
+
+siteLinksArray.forEach(function populateLinkName(link): void {
+  linkNames[link] = siteLinksArray.filter(otherLink => otherLink !== link);
+})
 
 const hoverColors: string[] = [
   "hover:text-primary",
