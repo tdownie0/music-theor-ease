@@ -30,6 +30,25 @@ const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
     getCircleNotes();
   }, [circleType]);
 
+  function addCircleText(note: string, index: number) {
+    const angle: number = (index - 3) * angleIncrement * degreesToRadians;
+    const x: number = circleCoordinateX + radiusOffset * Math.cos(angle);
+    const y: number = circleCoordinateY + radiusOffset * Math.sin(angle);
+
+    return (
+      <text
+        key={index}
+        role="text"
+        x={x}
+        y={y}
+        textAnchor="middle"
+        alignmentBaseline="middle"
+      >
+        {note}
+      </text>
+    );
+  }
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -45,25 +64,7 @@ const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
         strokeWidth="2"
       />
 
-      {/* Text labels for each key on the outer rim */}
-      {notes.map((note, index) => {
-        const angle: number = (index - 3) * angleIncrement * degreesToRadians;
-        const x: number = circleCoordinateX + radiusOffset * Math.cos(angle);
-        const y: number = circleCoordinateY + radiusOffset * Math.sin(angle);
-
-        return (
-          <text
-            key={index}
-            role="text"
-            x={x}
-            y={y}
-            textAnchor="middle"
-            alignmentBaseline="middle"
-          >
-            {note}
-          </text>
-        );
-      })}
+      {notes.map((note, index) => addCircleText(note, index))}
     </svg>
   );
 };
