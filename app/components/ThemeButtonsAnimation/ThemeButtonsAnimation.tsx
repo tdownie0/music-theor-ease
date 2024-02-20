@@ -10,10 +10,9 @@ const ThemeButtonsAnimation: React.FC = () => {
   );
   const [canvasVisible, setCanvasVisible] = useState(false);
 
-  const toggleCanvas = function createCircleCanvas() {
+  const toggleCanvas = function displayCanvas(): void {
     if (!canvasElement) {
-      const canvas = setCanvas();
-      document.body.appendChild(canvas);
+      createCanvas();
     }
 
     if (!canvasVisible) {
@@ -21,7 +20,7 @@ const ThemeButtonsAnimation: React.FC = () => {
     }
   };
 
-  const setCanvas = function setCanvasConfig(): HTMLCanvasElement {
+  const createCanvas = function canvasSetup(): void {
     const canvas = document.createElement("canvas");
     canvas.style.position = "fixed";
     canvas.style.top = "0";
@@ -30,7 +29,7 @@ const ThemeButtonsAnimation: React.FC = () => {
     canvas.style.height = "100%";
     canvas.style.opacity = "0";
     setCanvasElement(canvas);
-    return canvas;
+    document.body.appendChild(canvas);
   };
 
   useEffect(() => {
