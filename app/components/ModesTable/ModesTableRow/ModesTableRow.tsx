@@ -9,6 +9,7 @@ interface ModesTableRowProps {
 const modeNameColumnWidth: string = "25%";
 const amountOfIntervals: number = 7;
 const intervalColumnWidth: string = `${75 / amountOfIntervals}%`;
+const cellStyles = "border border-primary-content px-4 py-2";
 
 const ModesTableRow: React.FC<ModesTableRowProps> = ({
   modeName,
@@ -20,7 +21,8 @@ const ModesTableRow: React.FC<ModesTableRowProps> = ({
     return (
       <tr className="bg-primary text-primary-content text-center">
         <th
-          className="border border-primary-content px-4 py-2"
+          key="Mode"
+          className={cellStyles}
           style={{ width: modeNameColumnWidth }}
         >
           Mode
@@ -28,7 +30,7 @@ const ModesTableRow: React.FC<ModesTableRowProps> = ({
         {[...Array(amountOfIntervals)].map((_, index) => (
           <th
             key={index}
-            className="border border-primary-content px-4 py-2"
+            className={cellStyles}
             style={{ width: intervalColumnWidth }}
           >
             {index + 1}
@@ -41,7 +43,8 @@ const ModesTableRow: React.FC<ModesTableRowProps> = ({
   return (
     <tr className="text-center">
       <td
-        className="border border-primary-content px-4 py-2"
+        key={modeName}
+        className={cellStyles}
         style={{ width: modeNameColumnWidth }}
       >
         {modeName}
@@ -49,7 +52,7 @@ const ModesTableRow: React.FC<ModesTableRowProps> = ({
       {modeArray?.map((note, noteIndex) => (
         <td
           key={noteIndex}
-          className="border border-primary-content px-4 py-2"
+          className={cellStyles}
           style={{ width: intervalColumnWidth }}
         >
           {note}
