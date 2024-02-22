@@ -1,14 +1,14 @@
 "use client";
 import { createContext, useEffect, useState, ReactNode } from "react";
 
-interface ThemeContextType {
+type ThemeContextType = {
   theme?: string;
   changeTheme?: (nextTheme: string) => void;
 }
 
 export const ThemeContext = createContext<ThemeContextType>({});
 
-interface ThemeProviderProps {
+type ThemeProviderProps = {
   children: ReactNode;
 }
 

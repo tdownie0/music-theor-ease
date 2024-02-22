@@ -3,11 +3,11 @@ import React, { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import { themeName } from "../../utils/enums";
 
-interface ThemeButtonsProps {
+type ThemeButtonsProps = {
   toggleCanvas: () => void;
 }
 
-interface Theme {
+type Theme = {
   name: themeName;
   className: string;
 }

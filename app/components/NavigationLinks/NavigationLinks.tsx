@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { siteLinks } from "../../utils/enums";
 
-interface NavigationLinksProps {
+type NavigationLinksProps = {
   linkType?: siteLinks;
 }
 

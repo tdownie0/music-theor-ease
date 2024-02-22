@@ -1,32 +1,34 @@
-export enum Note {
+enum Note {
   C = "C",
-  Cs = "C#",
-  Db = "Db",
   D = "D",
-  Ds = "D#",
-  Eb = "Eb",
   E = "E",
   F = "F",
-  Fs = "F#",
-  Gb = "Gb",
   G = "G",
-  Gs = "G#",
-  Ab = "Ab",
   A = "A",
-  As = "A#",
-  Bb = "Bb",
   B = "B",
 }
 
-export enum SharpNote {
-  Cs = Note.Cs,
-  Ds = Note.Ds,
-  Fs = Note.Fs,
-  Gs = Note.Gs,
-  As = Note.As,
+enum SharpNote {
+  Cs = "C#",
+  Ds = "D#",
+  Fs = "F#",
+  Gs = "G#",
+  As = "A#",
 }
 
-export const notesWithSharpsArray: (Note | SharpNote)[] = [
+enum FlatNote {
+  Db = "Db",
+  Eb = "Eb",
+  Gb = "Gb",
+  Ab = "Ab",
+  Bb = "Bb",
+}
+
+export type allNotes = Note | SharpNote | FlatNote;
+type notesAndSharps = Exclude<allNotes, FlatNote>
+type notesAndFlats = Exclude<allNotes, SharpNote>
+
+const notesWithSharpsArray: (notesAndSharps)[] = [
   Note.C,
   SharpNote.Cs,
   Note.D,
@@ -41,15 +43,7 @@ export const notesWithSharpsArray: (Note | SharpNote)[] = [
   Note.B,
 ];
 
-export enum FlatNote {
-  Db = Note.Db,
-  Eb = Note.Eb,
-  Gb = Note.Gb,
-  Ab = Note.Ab,
-  Bb = Note.Bb,
-}
-
-export const notesWithFlatsArray: (Note | FlatNote)[] = [
+const notesWithFlatsArray: (notesAndFlats)[] = [
   Note.C,
   FlatNote.Db,
   Note.D,
@@ -64,23 +58,23 @@ export const notesWithFlatsArray: (Note | FlatNote)[] = [
   Note.B,
 ];
 
-let circleOfFifthsArray: Note[] = [
+let circleOfFifthsArray: allNotes[] = [
   Note.C,
   Note.G,
   Note.D,
   Note.A,
   Note.E,
   Note.B,
-  Note.Fs,
-  Note.Db,
-  Note.Ab,
-  Note.Eb,
-  Note.Bb,
+  SharpNote.Fs,
+  FlatNote.Db,
+  FlatNote.Ab,
+  FlatNote.Eb,
+  FlatNote.Bb,
   Note.F,
 ];
 
 export const getCircleOfFifthsNotes = async function fetchFifths(): Promise<
-  Note[]
+  allNotes[]
 > {
   // Simulate an asynchronous operation, e.g., fetching data from an API
   return new Promise((resolve, reject) => {
@@ -88,7 +82,7 @@ export const getCircleOfFifthsNotes = async function fetchFifths(): Promise<
     setTimeout(function fetchNotes() {
       try {
         // Replace this with your actual data fetching logic
-        const fetchedData: Note[] = circleOfFifthsArray; // Replace with your actual data
+        const fetchedData: allNotes[] = circleOfFifthsArray; 
 
         // Update circleOfFifthsArray with fetched data
         circleOfFifthsArray = fetchedData;
@@ -101,16 +95,16 @@ export const getCircleOfFifthsNotes = async function fetchFifths(): Promise<
   });
 };
 
-const circleOfFifths: Record<Note, Note> = {} as Record<Note, Note>;
+const circleOfFifths: Record<allNotes, allNotes> = {} as Record<allNotes, allNotes>;
 const lengthOfCircleOfFifthsArray: number = circleOfFifthsArray.length;
 
 circleOfFifthsArray.forEach(function fillCircleOfFifthsObject(
-  currentNote: Note,
+  currentNote: allNotes,
   index: number,
-  currentArray: Note[]
+  currentArray: allNotes[]
 ): void {
   const fifthIndex: number = (index + 1) % lengthOfCircleOfFifthsArray;
-  const fifthNote: Note = currentArray[fifthIndex];
+  const fifthNote: allNotes = currentArray[fifthIndex];
   circleOfFifths[currentNote] = fifthNote;
 });
 
@@ -129,9 +123,7 @@ enum CircleOfFifthsEnum {
   F = Note.C,
 }
 
-type NotesAndFlats = Note | FlatNote;
-
-const circleOfFourthsArray: NotesAndFlats[] = [
+const circleOfFourthsArray: notesAndFlats[] = [
   Note.C,
   Note.F,
   FlatNote.Bb,
@@ -146,19 +138,19 @@ const circleOfFourthsArray: NotesAndFlats[] = [
   Note.G,
 ];
 
-const circleOfFourths: Record<NotesAndFlats, NotesAndFlats> = {} as Record<
-  NotesAndFlats,
-  NotesAndFlats
+const circleOfFourths: Record<notesAndFlats, notesAndFlats> = {} as Record<
+  notesAndFlats,
+  notesAndFlats
 >;
 const lengthOfCircleOfFourthsArray: number = circleOfFourthsArray.length;
 
 circleOfFourthsArray.forEach(function fillCircleOfFourthsObject(
-  currentNote: NotesAndFlats,
+  currentNote: notesAndFlats,
   index: number,
-  currentArray: NotesAndFlats[]
+  currentArray: notesAndFlats[]
 ): void {
   const fourthIndex: number = (index + 1) % lengthOfCircleOfFourthsArray;
-  const fourthNote: NotesAndFlats = currentArray[fourthIndex];
+  const fourthNote: notesAndFlats = currentArray[fourthIndex];
   circleOfFourths[currentNote] = fourthNote;
 });
 
