@@ -2,10 +2,10 @@
 import React, { useEffect } from "react";
 import AnimateCanvas from "./animations/animateCanvas";
 
-interface DreamBackgroundProps {
+type DreamBackgroundProps = {
   showCanvas: boolean;
   canvasElement: HTMLCanvasElement | null;
-}
+};
 
 const DreamBackground: React.FC<DreamBackgroundProps> = ({
   showCanvas,
@@ -26,8 +26,8 @@ const DreamBackground: React.FC<DreamBackgroundProps> = ({
     }
 
     if (animateCanvas) {
-      showCanvas ? animateCanvas.start() : animateCanvas.stop()
-      
+      showCanvas ? animateCanvas.start() : animateCanvas.stop();
+
       return () => {
         animateCanvas.stop();
       };

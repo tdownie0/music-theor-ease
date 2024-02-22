@@ -25,10 +25,10 @@ enum FlatNote {
 }
 
 export type allNotes = Note | SharpNote | FlatNote;
-type notesAndSharps = Exclude<allNotes, FlatNote>
-type notesAndFlats = Exclude<allNotes, SharpNote>
+type notesAndSharps = Exclude<allNotes, FlatNote>;
+type notesAndFlats = Exclude<allNotes, SharpNote>;
 
-const notesWithSharpsArray: (notesAndSharps)[] = [
+const notesWithSharpsArray: notesAndSharps[] = [
   Note.C,
   SharpNote.Cs,
   Note.D,
@@ -43,7 +43,7 @@ const notesWithSharpsArray: (notesAndSharps)[] = [
   Note.B,
 ];
 
-const notesWithFlatsArray: (notesAndFlats)[] = [
+const notesWithFlatsArray: notesAndFlats[] = [
   Note.C,
   FlatNote.Db,
   Note.D,
@@ -82,7 +82,7 @@ export const getCircleOfFifthsNotes = async function fetchFifths(): Promise<
     setTimeout(function fetchNotes() {
       try {
         // Replace this with your actual data fetching logic
-        const fetchedData: allNotes[] = circleOfFifthsArray; 
+        const fetchedData: allNotes[] = circleOfFifthsArray;
 
         // Update circleOfFifthsArray with fetched data
         circleOfFifthsArray = fetchedData;
@@ -95,7 +95,10 @@ export const getCircleOfFifthsNotes = async function fetchFifths(): Promise<
   });
 };
 
-const circleOfFifths: Record<allNotes, allNotes> = {} as Record<allNotes, allNotes>;
+const circleOfFifths: Record<allNotes, allNotes> = {} as Record<
+  allNotes,
+  allNotes
+>;
 const lengthOfCircleOfFifthsArray: number = circleOfFifthsArray.length;
 
 circleOfFifthsArray.forEach(function fillCircleOfFifthsObject(

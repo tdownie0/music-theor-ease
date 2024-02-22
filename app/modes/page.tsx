@@ -1,12 +1,12 @@
-import React from 'react'; 
+import React from "react";
 import ModesTable from "../components/ModesTable/ModesTable";
 import NavigationLinks from "../components/NavigationLinks/NavigationLinks";
-import { siteLinks } from '../utils/enums';
+import { siteLinks } from "../utils/enums";
 
 const Modes: React.FC = () => {
   return (
     <div className="primary min-h-screen mt-16 ml-4">
-      <NavigationLinks linkType={siteLinks.Modes}/>
+      <NavigationLinks linkType={siteLinks.Modes} />
       <h1 className="text-4xl font-semibold mt-8 mb-8">Modes</h1>
       <div className="hero flex flex-col">
         <div className="hero-content flex-col">

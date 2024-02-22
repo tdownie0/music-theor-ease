@@ -5,12 +5,12 @@ import { themeName } from "../../utils/enums";
 
 type ThemeButtonsProps = {
   toggleCanvas: () => void;
-}
+};
 
 type Theme = {
   name: themeName;
   className: string;
-}
+};
 
 const ThemeButtons: React.FC<ThemeButtonsProps> = ({ toggleCanvas }) => {
   const { changeTheme } = useContext(ThemeContext);

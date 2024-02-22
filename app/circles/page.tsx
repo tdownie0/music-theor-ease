@@ -1,7 +1,7 @@
-import React from 'react'; 
+import React from "react";
 import CircleOfNotes from "../components/CircleOfNotes/CircleOfNotes";
-import NavigationLinks from '../components/NavigationLinks/NavigationLinks';
-import { siteLinks } from '../utils/enums';
+import NavigationLinks from "../components/NavigationLinks/NavigationLinks";
+import { siteLinks } from "../utils/enums";
 
 const Circles: React.FC = () => {
   return (

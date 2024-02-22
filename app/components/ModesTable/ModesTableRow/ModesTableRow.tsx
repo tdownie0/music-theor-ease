@@ -4,7 +4,7 @@ type ModesTableRowProps = {
   modeName?: string;
   modeArray?: string[];
   isHeaderRow?: boolean;
-}
+};
 
 const modeNameColumnWidth: string = "25%";
 const amountOfIntervals: number = 7;

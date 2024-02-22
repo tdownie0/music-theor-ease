@@ -4,7 +4,7 @@ import { allNotes, getCircleOfFifthsNotes } from "../../utils/musicLogic";
 
 type CircleOfNotesProps = {
   circleType?: string;
-}
+};
 
 const circleCoordinateX: number = 150;
 const circleCoordinateY: number = 150;
