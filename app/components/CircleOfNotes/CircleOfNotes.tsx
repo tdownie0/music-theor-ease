@@ -6,10 +6,10 @@ type CircleOfNotesProps = {
   circleType?: string;
 };
 
-const circleCoordinateX: number = 150;
-const circleCoordinateY: number = 150;
 const containerWidth: number = 300;
 const containerHeight: number = 300;
+const circleCoordinateX: number = 150;
+const circleCoordinateY: number = 150;
 const circleRadius: number = 100;
 const radiusOffset: number = circleRadius + 20;
 const degreesToRadians: number = Math.PI / 180;
