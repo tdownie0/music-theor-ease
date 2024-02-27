@@ -8,8 +8,8 @@ type CircleOfNotesProps = {
 
 const circleCoordinateX: number = 150;
 const circleCoordinateY: number = 150;
-const circleWidth: number = 300;
-const circleHeight: number = 300;
+const containerWidth: number = 300;
+const containerHeight: number = 300;
 const circleRadius: number = 100;
 const radiusOffset: number = circleRadius + 20;
 const degreesToRadians: number = Math.PI / 180;
@@ -56,8 +56,8 @@ const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={circleWidth}
-      height={circleHeight}
+      width={containerWidth}
+      height={containerHeight}
     >
       <circle
         cx={circleCoordinateX}
