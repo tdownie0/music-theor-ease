@@ -10,7 +10,7 @@ const siteLinksArray = [
   siteLinks.Home,
   siteLinks.Circles,
   siteLinks.Modes,
-  siteLinks.Quiz,
+  siteLinks.Quizzes,
 ];
 
 const linkNames: Record<siteLinks, siteLinks[]> = {} as Record<
