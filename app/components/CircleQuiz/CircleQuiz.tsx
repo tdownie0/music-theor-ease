@@ -18,7 +18,19 @@ const CircleQuiz = () => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-        <QuizTile isDragging={false} note={notes[0]} />
+      <div className="flex flex-col gap-4">
+        <div className="flex w-full justify-center gap-1">
+          {notes.slice(0, Math.ceil(notes.length / 2)).map((note, index) => (
+            <QuizTile key={index} isDragging={false} note={note} />
+          ))}
+        </div>
+        {/* Second row of QuizTiles */}
+        <div className="flex w-full justify-center gap-1">
+          {notes.slice(Math.ceil(notes.length / 2)).map((note, index) => (
+            <QuizTile key={index} isDragging={false} note={note} />
+          ))}
+        </div>
+      </div>
     </DndProvider>
   );
 };

@@ -14,14 +14,15 @@ const QuizTile: React.FC<QuizTileProp> = ({ isDragging, note }) => {
       item: { note },
       collect: (monitor) => ({
         opacity: monitor.isDragging() ? 0.5 : 1,
+        isDragging: monitor.isDragging()
       }),
     }),
     [note] // Specify note as a dependency
   );
 
   return (
-    <div ref={dragRef} style={{ opacity }}>
-      <div className="rounded-lg shadow-lg bg-base-300 p-4 w-full">
+    <div ref={dragRef} style={{ opacity, cursor: isDragging ? "grabbing" : "grab" }}>
+      <div className="flex justify-center rounded-lg shadow-lg bg-base-300 p-4 w-14">
         {note}
       </div>
     </div>
