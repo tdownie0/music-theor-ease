@@ -37,7 +37,7 @@ const QuizTile: React.FC<QuizTileProps> = ({ note, index, moveTile }) => {
   });
 
   return (
-    <div ref={(node) => drag(drop(node))} style={{ opacity: isDragging ? 0.5 : 1 }}>
+    <div ref={(node) => drag(drop(node))} >
       <div className="flex justify-center rounded-lg shadow-lg bg-base-300 p-4 w-14">
         {note}
       </div>

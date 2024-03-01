@@ -33,13 +33,22 @@ const CircleQuiz = () => {
       <div className="flex flex-col gap-4">
         <div className="flex w-full justify-center gap-1">
           {notes.slice(0, Math.ceil(notes.length / 2)).map((note, index) => (
-            <QuizTile key={index} index={index} note={note} moveTile={moveTile} />
+            <QuizTile
+              key={index}
+              index={index}
+              note={note}
+              moveTile={moveTile}
+            />
           ))}
         </div>
-        {/* Second row of QuizTiles */}
         <div className="flex w-full justify-center gap-1">
           {notes.slice(Math.ceil(notes.length / 2)).map((note, index) => (
-            <QuizTile key={index} index={index} note={note} moveTile={moveTile} />
+            <QuizTile
+              key={index}
+              index={index + Math.ceil(notes.length / 2)}
+              note={note}
+              moveTile={moveTile}
+            />
           ))}
         </div>
       </div>
