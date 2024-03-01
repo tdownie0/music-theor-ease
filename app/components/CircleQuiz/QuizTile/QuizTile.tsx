@@ -1,27 +1,43 @@
-import { allNotes } from "@/app/utils/musicLogic";
 import React from "react";
-import { useDrag } from "react-dnd";
+import { useDrag, useDrop } from "react-dnd";
+import { allNotes } from "../../../utils/musicLogic";
 
-type QuizTileProp = {
-  isDragging: boolean;
-  note: allNotes; // Change the type to string
+type QuizTileProps = {
+  note: allNotes;
+  index: number;
+  moveTile: (dragIndex: number, hoverIndex: number) => void;
 };
 
-const QuizTile: React.FC<QuizTileProp> = ({ isDragging, note }) => {
-  const [{ opacity }, dragRef] = useDrag(
-    () => ({
-      type: "NoteTile",
-      item: { note },
-      collect: (monitor) => ({
-        opacity: monitor.isDragging() ? 0.5 : 1,
-        isDragging: monitor.isDragging()
-      }),
+const QuizTile: React.FC<QuizTileProps> = ({ note, index, moveTile }) => {
+  const [{ isDragging }, drag] = useDrag({
+    type: "QuizTile",
+    item: { note, index },
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
     }),
-    [note] // Specify note as a dependency
-  );
+  });
+
+  const [, drop] = useDrop({
+    accept: "QuizTile",
+    hover(item: { index: number }, monitor) {
+      if (!item) {
+        return;
+      }
+
+      const dragIndex = item.index;
+      const hoverIndex = index;
+
+      if (dragIndex === hoverIndex) {
+        return;
+      }
+
+      moveTile(dragIndex, hoverIndex);
+      item.index = hoverIndex;
+    },
+  });
 
   return (
-    <div ref={dragRef} style={{ opacity, cursor: isDragging ? "grabbing" : "grab" }}>
+    <div ref={(node) => drag(drop(node))} style={{ opacity: isDragging ? 0.5 : 1 }}>
       <div className="flex justify-center rounded-lg shadow-lg bg-base-300 p-4 w-14">
         {note}
       </div>
