@@ -55,23 +55,24 @@ const CircleQuiz = () => {
   };
 
   return (
-    <DndProvider backend={HTML5Backend}>
-      <div className="flex flex-col w-full rounded-lg shadow-lg bg-base-300 gap-4 p-8">
-        <div className="flex justify-end items-center">
-          <div className="w-full">
-            <p className="text-xl font-bold">Circle of Fifths:</p>
-            <p className="text-xl font-medium">
-              Arrange these tiles into the circle of fifths
-            </p>
-          </div>
-          <button
-            className="btn-secondary btn-circle btn w-1/5"
-            onClick={resetNotes}
-          >
-            Shuffle
-          </button>
+    <div className="flex flex-col w-full rounded-lg shadow-lg bg-base-300 gap-4 p-8">
+      <div className="flex justify-end items-center">
+        <div className="w-full">
+          <p className="text-xl font-bold">Circle of Fifths:</p>
+          <p className="text-xl font-medium">
+            Arrange these tiles into the circle of fifths
+          </p>
         </div>
-        <div className="flex flex-col w-full bg-secondary rounded-lg justify-center gap-4 p-8">
+        <button
+          className="btn-secondary btn-circle btn w-1/5"
+          onClick={resetNotes}
+        >
+          Shuffle
+        </button>
+      </div>
+
+      <div className="flex flex-col w-full bg-secondary rounded-lg justify-center gap-4 p-8">
+        <DndProvider backend={HTML5Backend}>
           <div className="flex bg-primary rounded-lg gap-4 p-2">
             {notes.slice(0, Math.ceil(notes.length / 2)).map((note, index) => (
               <div key={note} className="bg-accent rounded-md p-2">
@@ -100,18 +101,18 @@ const CircleQuiz = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="flex w-full justify-end">
-          <button
-            className="btn-primary btn-square btn w-1/5"
-            onClick={checkOrder}
-          >
-            Check
-          </button>
-        </div>
+        </DndProvider>
       </div>
-    </DndProvider>
+
+      <div className="flex w-full justify-end">
+        <button
+          className="btn-primary btn-square btn w-1/5"
+          onClick={checkOrder}
+        >
+          Check
+        </button>
+      </div>
+    </div>
   );
 };
 
