@@ -56,7 +56,8 @@ const QuizTile: React.FC<QuizTileProps> = ({
     <div ref={(node) => drag(drop(node))}>
       <div
         ref={tileRef}
-        className={`flex justify-center btn-primary btn text-primary-content w-14 hover:cursor-grab active:cursor-grabbing ${
+        className={`flex justify-center btn-primary btn text-primary-content w-14 
+                    hover:cursor-grab active:cursor-grabbing ${
           isDragging ? "animate-bounce" : ""
         }`}
         style={{ borderRadius: "8px" }}
