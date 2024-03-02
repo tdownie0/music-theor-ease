@@ -35,8 +35,8 @@ const QuizTile: React.FC<QuizTileProps> = ({
   const [, drop] = useDrop({
     accept: "QuizTile",
     hover(item: { index: number }) {
-      const dragIndex = item.index;
-      const hoverIndex = index;
+      const dragIndex: number = item.index;
+      const hoverIndex: number = index;
 
       if (dragIndex === hoverIndex) {
         return;
@@ -56,10 +56,10 @@ const QuizTile: React.FC<QuizTileProps> = ({
     <div ref={(node) => drag(drop(node))}>
       <div
         ref={tileRef}
-        className={`flex justify-center btn-primary btn text-primary-content w-14 
+        className={`flex btn-primary btn text-primary-content justify-center w-14
                     hover:cursor-grab active:cursor-grabbing ${
-          isDragging ? "animate-bounce" : ""
-        }`}
+                      isDragging ? "animate-bounce" : ""
+                    }`}
         style={{ borderRadius: "8px" }}
       >
         {note}
