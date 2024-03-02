@@ -1,7 +1,8 @@
 import React from "react";
 import NavigationLinks from "../components/NavigationLinks/NavigationLinks";
 import { siteLinks } from "../utils/enums";
-import CircleQuiz from "../components/CircleQuiz/CircleQuiz";
+import CircleOfFifthsQuiz from "../components/CircleQuiz/CircleOfFifths/CircleOfFifthsQuiz";
+import CircleOfFourthsQuiz from "../components/CircleQuiz/CircleOfFourths/CircleOfFourths";
 
 const Quizzes: React.FC = () => {
   return (
@@ -12,7 +13,10 @@ const Quizzes: React.FC = () => {
         <div className="hero-content flex-col">
           <h2 className="text-5xl mb-8">Circles</h2>
           <div>
-            <CircleQuiz />
+            <CircleOfFifthsQuiz />
+          </div>
+          <div>
+            <CircleOfFourthsQuiz />
           </div>
         </div>
       </div>
