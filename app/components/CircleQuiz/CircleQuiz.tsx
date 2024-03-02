@@ -67,9 +67,9 @@ const CircleQuiz = () => {
         <div className="flex flex-col w-full bg-secondary rounded-lg justify-center gap-4 p-8">
           <div className="flex bg-primary rounded-lg gap-4 p-2">
             {notes.slice(0, Math.ceil(notes.length / 2)).map((note, index) => (
-              <div className="bg-accent rounded-md p-2">
+              <div key={note} className="bg-accent rounded-md p-2">
                 <QuizTile
-                  key={index}
+                  key={note}
                   index={index}
                   note={note}
                   moveTile={moveTile}
@@ -80,7 +80,7 @@ const CircleQuiz = () => {
           </div>
           <div className="flex bg-primary rounded-lg gap-4 p-2">
             {notes.slice(Math.ceil(notes.length / 2)).map((note, index) => (
-              <div className="bg-accent rounded-md p-2">
+              <div key={index} className="bg-accent rounded-md p-2">
                 <QuizTile
                   key={index}
                   index={index + Math.ceil(notes.length / 2)}
