@@ -43,8 +43,14 @@ const CircleQuiz = () => {
     }
   };
 
-  const resetNotes = async () => {
+  const resetNotes = () => {
     setNotes(originalNotes.slice().sort(() => shuffleNotes()));
+    setTimeout(() => {
+      const elements = document.querySelectorAll(".animate-bounce");
+      elements.forEach((element) => {
+        element.classList.remove("animate-bounce");
+      }, 100);
+    });
   };
 
   return (
