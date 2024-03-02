@@ -32,8 +32,8 @@ const CircleQuiz = () => {
     setDraggedTileIndex(hoverIndex);
   };
 
-  const checkOrder = () => {
-    const isOrdered = notes.every(
+  const checkOrder = (): void => {
+    const isOrdered: boolean = notes.every(
       (note, index) => note === originalNotes[index]
     );
     if (isOrdered) {
@@ -45,8 +45,9 @@ const CircleQuiz = () => {
 
   const resetNotes = () => {
     setNotes(originalNotes.slice().sort(() => shuffleNotes()));
-    setTimeout(() => {
-      const elements = document.querySelectorAll(".animate-bounce");
+    setTimeout(function removeLeftoverAnimations(): void {
+      const elements: NodeListOf<Element> =
+        document.querySelectorAll(".animate-bounce");
       elements.forEach((element) => {
         element.classList.remove("animate-bounce");
       }, 100);
