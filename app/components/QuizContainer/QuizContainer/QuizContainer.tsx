@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { allNotes } from "../../../utils/musicLogic";
 import TilePlacement from "../TilePlacement/TilePlacement";
 
@@ -17,16 +17,21 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
   header,
   description,
 }) => {
-  function shuffleArray(): number {
-    return Math.random() - 0.5;
-  }
+  const [isResetting, setIsResetting] = useState(false);
+
+  const shuffleArray = useCallback(
+    function shuffle(): allNotes[] | string[] {
+      return originalArray.slice().sort(() => Math.random() - 0.5);
+    },
+    [originalArray]
+  );
 
   useEffect(() => {
     function shuffleInitialLoad() {
-      setCurrentArray(originalArray.slice().sort(() => shuffleArray()));
+      setCurrentArray(shuffleArray());
     }
     shuffleInitialLoad();
-  }, [setCurrentArray, originalArray]);
+  }, [setCurrentArray, shuffleArray]);
 
   const checkOrder = (): void => {
     const isOrdered: boolean = currentArray.every(
@@ -39,16 +44,19 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     }
   };
 
-  const resetNotes = (): void => {
-    setCurrentArray(originalArray.slice().sort(() => shuffleArray()));
-    setTimeout(function removeLeftoverAnimations(): void {
-      const elements: NodeListOf<Element> =
-        document.querySelectorAll(".animate-bounce");
-      elements.forEach((element) => {
-        element.classList.remove("animate-bounce");
+  const resetNotes = useCallback(() => {
+    setIsResetting(true);
+    setCurrentArray(shuffleArray());
+  }, [setCurrentArray, shuffleArray]);
+
+  useEffect(() => {
+    if (isResetting) {
+      const timeoutId = setTimeout(() => {
+        setIsResetting(false);
       }, 100);
-    });
-  };
+      return () => clearTimeout(timeoutId);
+    }
+  }, [isResetting]);
 
   return (
     <div className="flex flex-col w-full bg-base-300 text-base-content rounded-lg justify-center gap-4 p-8">
@@ -65,7 +73,11 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
         </button>
       </div>
 
-      <TilePlacement items={currentArray} setItems={setCurrentArray} />
+      <TilePlacement
+        items={currentArray}
+        setItems={setCurrentArray}
+        isResetting={isResetting}
+      />
 
       <div className="flex w-full justify-end">
         <button

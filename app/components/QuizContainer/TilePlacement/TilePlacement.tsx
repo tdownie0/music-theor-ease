@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { allNotes } from "../../../utils/musicLogic";
@@ -7,11 +7,22 @@ import QuizTile from "../QuizTile/QuizTile";
 const TilePlacement = ({
   items,
   setItems,
+  isResetting,
 }: {
   items: allNotes[] | string[];
   setItems: React.Dispatch<React.SetStateAction<allNotes[] | string[]>>;
+  isResetting: boolean;
 }) => {
   const [draggedTileIndex, setDraggedTileIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (isResetting) {
+      const elements = document.querySelectorAll(".animate-bounce");
+      elements.forEach((element) => {
+        element.classList.remove("animate-bounce");
+      });
+    }
+  }, [isResetting]);
 
   const moveTile = (dragIndex: number, hoverIndex: number) => {
     const draggedTile: allNotes | string = items[dragIndex];
