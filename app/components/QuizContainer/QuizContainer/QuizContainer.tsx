@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { allNotes, getCircleOfFifthsNotes } from "../../../utils/musicLogic";
+import React, { useEffect } from "react";
+import { allNotes } from "../../../utils/musicLogic";
 import TilePlacement from "../TilePlacement/TilePlacement";
 
 interface QuizContainerProps {
@@ -26,7 +26,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
       setCurrentArray(originalArray.slice().sort(() => shuffleArray()));
     }
     shuffleInitialLoad();
-  }, [originalArray]);
+  }, [setCurrentArray, originalArray]);
 
   const checkOrder = (): void => {
     const isOrdered: boolean = currentArray.every(
