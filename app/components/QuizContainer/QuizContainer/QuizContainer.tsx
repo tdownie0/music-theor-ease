@@ -51,14 +51,14 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
   };
 
   return (
-    <div className="flex flex-col w-full bg-secondary text-secondary-content rounded-lg justify-center gap-4 p-8">
+    <div className="flex flex-col w-full bg-base-300 text-base-content rounded-lg justify-center gap-4 p-8">
       <div className="flex justify-end items-center">
         <div className="w-full">
           <p className="text-xl font-bold">{header}</p>
           <p className="text-lg font-medium">{description}</p>
         </div>
         <button
-          className="btn-circle btn-neutral btn w-1/5"
+          className="btn-circle btn-secondary btn w-1/5"
           onClick={resetNotes}
         >
           Shuffle
