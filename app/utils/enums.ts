@@ -13,3 +13,10 @@ export enum themeName {
   Retro = "Retro",
   Aqua = "Aqua",
 }
+
+export enum windowSize {
+  sm = 640,
+  md = 768,
+  lg = 1024,
+  xl = 1280,
+}

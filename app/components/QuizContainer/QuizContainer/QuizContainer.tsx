@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { allNotes } from "@/app/utils/musicLogic";
+import { windowSize } from "@/app/utils/enums";
 import TilePlacement from "./TilePlacement/TilePlacement";
 
 interface QuizContainerProps {
@@ -19,37 +20,6 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
 }) => {
   const [isResetting, setIsResetting] = useState(false);
   const [numberOfRows, setNumberOfRows] = useState(getNumberOfRows());
-
-  function getNumberOfRows() {
-    const breakpoints = {
-      sm: 4, // Small screens
-      md: 3, // Medium screens
-      lg: 2, // Large screens
-      xl: 2, // Extra large screens
-    };
-
-    const windowWidth = window.innerWidth;
-    if (windowWidth < 768) {
-      return breakpoints.sm;
-    } else if (windowWidth >= 768 && windowWidth < 1024) {
-      return breakpoints.md;
-    } else if (windowWidth >= 1024 && windowWidth < 1280) {
-      return breakpoints.lg;
-    }
-    return breakpoints.xl;
-  }
-
-  useEffect(() => {
-    function handleResize() {
-      setNumberOfRows(getNumberOfRows());
-    }
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const shuffleArray = useCallback(
     function shuffle(): allNotes[] | string[] {
@@ -90,15 +60,44 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     }
   }, [isResetting]);
 
+  function getNumberOfRows() {
+    enum rowCount {
+      sm = 4,
+      lg = 3,
+      xl = 2,
+    }
+
+    const windowWidth: number = window.innerWidth;
+    if (windowWidth < windowSize.sm) {
+      return rowCount.sm;
+    }
+    if (windowWidth >= windowSize.sm && windowWidth < windowSize.lg) {
+      return rowCount.lg;
+    }
+    return rowCount.xl;
+  }
+
+  useEffect(() => {
+    function handleResize() {
+      setNumberOfRows(getNumberOfRows());
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className="flex flex-col w-full bg-base-300 text-base-content rounded-lg justify-center gap-4 p-8 animate-fadeIn">
       <div className="flex justify-end items-center">
         <div className="w-full">
           <p className="text-xl font-bold">{header}</p>
-          <p className="text-lg font-medium">{description}</p>
+          <p className="text-lg font-medium w-4/5 lg:w-5/6">{description}</p>
         </div>
         <button
-          className="btn-circle btn-secondary btn w-1/5"
+          className="btn-circle btn-secondary btn w-24"
           onClick={resetNotes}
         >
           Shuffle
@@ -114,7 +113,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
 
       <div className="flex w-full justify-end">
         <button
-          className="btn-primary btn-square btn w-1/5"
+          className="btn-primary btn-square btn w-24"
           onClick={checkOrder}
         >
           Check
