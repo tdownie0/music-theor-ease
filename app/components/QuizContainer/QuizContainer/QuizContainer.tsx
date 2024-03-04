@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { allNotes } from "../../../utils/musicLogic";
-import TilePlacement from "../TilePlacement/TilePlacement";
+import { allNotes } from "@/app/utils/musicLogic";;
+import TilePlacement from "./TilePlacement/TilePlacement";
 
 interface QuizContainerProps {
   currentArray: allNotes[] | string[];
@@ -8,6 +8,7 @@ interface QuizContainerProps {
   originalArray: allNotes[] | string[];
   header: string;
   description: string;
+  numberOfRows: number;
 }
 
 const QuizContainer: React.FC<QuizContainerProps> = ({
@@ -16,6 +17,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
   originalArray,
   header,
   description,
+  numberOfRows
 }) => {
   const [isResetting, setIsResetting] = useState(false);
 
@@ -33,7 +35,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     shuffleInitialLoad();
   }, [setCurrentArray, shuffleArray]);
 
-  const checkOrder = (): void => {
+  const checkOrder = useCallback(() => {
     const isOrdered: boolean = currentArray.every(
       (note, index) => note === originalArray[index]
     );
@@ -42,7 +44,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     } else {
       alert("Tiles are not in order.");
     }
-  };
+  }, [currentArray, originalArray]);
 
   const resetNotes = useCallback(() => {
     setIsResetting(true);
@@ -59,7 +61,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
   }, [isResetting]);
 
   return (
-    <div className="flex flex-col w-full bg-base-300 text-base-content rounded-lg justify-center gap-4 p-8">
+    <div className="flex flex-col w-full bg-base-300 text-base-content rounded-lg justify-center gap-4 p-8 animate-fadeIn">
       <div className="flex justify-end items-center">
         <div className="w-full">
           <p className="text-xl font-bold">{header}</p>
@@ -76,6 +78,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
       <TilePlacement
         items={currentArray}
         setItems={setCurrentArray}
+        numberOfRows={numberOfRows}
         isResetting={isResetting}
       />
 
