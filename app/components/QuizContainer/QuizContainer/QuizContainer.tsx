@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { allNotes } from "@/app/utils/musicLogic";;
+import { allNotes } from "@/app/utils/musicLogic";
 import TilePlacement from "./TilePlacement/TilePlacement";
 
 interface QuizContainerProps {
@@ -8,7 +8,6 @@ interface QuizContainerProps {
   originalArray: allNotes[] | string[];
   header: string;
   description: string;
-  numberOfRows: number;
 }
 
 const QuizContainer: React.FC<QuizContainerProps> = ({
@@ -17,9 +16,40 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
   originalArray,
   header,
   description,
-  numberOfRows
 }) => {
   const [isResetting, setIsResetting] = useState(false);
+  const [numberOfRows, setNumberOfRows] = useState(getNumberOfRows());
+
+  function getNumberOfRows() {
+    const breakpoints = {
+      sm: 4, // Small screens
+      md: 3, // Medium screens
+      lg: 2, // Large screens
+      xl: 2, // Extra large screens
+    };
+
+    const windowWidth = window.innerWidth;
+    if (windowWidth < 768) {
+      return breakpoints.sm;
+    } else if (windowWidth >= 768 && windowWidth < 1024) {
+      return breakpoints.md;
+    } else if (windowWidth >= 1024 && windowWidth < 1280) {
+      return breakpoints.lg;
+    }
+    return breakpoints.xl;
+  }
+
+  useEffect(() => {
+    function handleResize() {
+      setNumberOfRows(getNumberOfRows());
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const shuffleArray = useCallback(
     function shuffle(): allNotes[] | string[] {

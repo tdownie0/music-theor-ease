@@ -23,7 +23,6 @@ const CircleOfFourthsQuiz = () => {
       originalArray={originalNotes}
       header="Circle of Fourths"
       description="Arrange these tiles into the circle of fourths"
-      numberOfRows={3}
     />
   );
 };
