@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { allNotes, getCircleOfFifthsNotes } from "../../../utils/musicLogic";
-import QuizContainer from "../../QuizContainer/QuizContainer/QuizContainer";
+import QuizContainer from "../../QuizContainer/QuizContainer";
 
 const CircleOfFifthsQuiz = () => {
   const [notes, setNotes] = useState<allNotes[] | string[]>([]);
@@ -22,7 +22,7 @@ const CircleOfFifthsQuiz = () => {
       setCurrentArray={setNotes}
       originalArray={originalNotes}
       header="Circle of Fifths"
-      description="Arrange these tiles into the circle of fifths"
+      description="Arrange these tiles into the circle of fifths starting from C"
     />
   );
 };
