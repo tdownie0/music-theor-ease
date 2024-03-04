@@ -28,10 +28,10 @@ const TilePlacement = ({
 
   const moveTile = (dragIndex: number, hoverIndex: number) => {
     const draggedTile: allNotes | string = items[dragIndex];
-    const updatedNotes: allNotes[] | string[] = [...items];
-    updatedNotes.splice(dragIndex, 1);
-    updatedNotes.splice(hoverIndex, 0, draggedTile);
-    setItems(updatedNotes);
+    const updatedItems: allNotes[] | string[] = [...items];
+    updatedItems.splice(dragIndex, 1);
+    updatedItems.splice(hoverIndex, 0, draggedTile);
+    setItems(updatedItems);
     setDraggedTileIndex(hoverIndex);
   };
 
