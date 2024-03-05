@@ -20,6 +20,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
 }) => {
   const [isResetting, setIsResetting] = useState(false);
   const [numberOfRows, setNumberOfRows] = useState(getNumberOfRows());
+  const [resizeReset, setResizeReset] = useState(false);
 
   const shuffleArray = useCallback(
     function shuffle(): allNotes[] | string[] {
@@ -79,6 +80,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
 
   useEffect(() => {
     function handleResize() {
+      setResizeReset(true);
       setNumberOfRows(getNumberOfRows());
     }
 
@@ -109,6 +111,8 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
         setItems={setCurrentArray}
         numberOfRows={numberOfRows}
         isResetting={isResetting}
+        resizeReset={resizeReset}
+        setResizeReset={setResizeReset}
       />
 
       <div className="flex w-full justify-end">

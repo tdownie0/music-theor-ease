@@ -9,22 +9,47 @@ const TilePlacement = ({
   setItems,
   numberOfRows,
   isResetting,
+  resizeReset,
+  setResizeReset,
 }: {
   items: allNotes[] | string[];
   setItems: React.Dispatch<React.SetStateAction<allNotes[] | string[]>>;
   numberOfRows: number;
   isResetting: boolean;
+  resizeReset: boolean;
+  setResizeReset: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const [draggedTileIndex, setDraggedTileIndex] = useState<number | null>(null);
 
   useEffect(() => {
     if (isResetting) {
-      const elements = document.querySelectorAll(".animate-bounce");
+      const elements: NodeListOf<Element> =
+        document.querySelectorAll(".animate-bounce");
       elements.forEach((element) => {
         element.classList.remove("animate-bounce");
       });
     }
   }, [isResetting]);
+
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout | undefined;
+
+    if (resizeReset) {
+      clearTimeout(timeoutId);
+
+      const elements: NodeListOf<Element> =
+        document.querySelectorAll(".animate-bounce");
+      elements.forEach((element) => {
+        element.classList.remove("animate-bounce");
+      });
+
+      timeoutId = setTimeout(() => {
+        setResizeReset(false);
+      }, 1000); 
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [resizeReset, setResizeReset]);
 
   const moveTile = (dragIndex: number, hoverIndex: number) => {
     const draggedTile: allNotes | string = items[dragIndex];
@@ -36,7 +61,7 @@ const TilePlacement = ({
   };
 
   function generateRowsGrid(): React.JSX.Element {
-    const itemsPerRow = Math.ceil(items.length / numberOfRows);
+    const itemsPerRow: number = Math.ceil(items.length / numberOfRows);
     return (
       <div className="flex flex-col gap-2 items-center">
         {Array.from({ length: numberOfRows }).map((_, rowIndex) => (
@@ -62,9 +87,7 @@ const TilePlacement = ({
     );
   }
 
-  return (
-    <DndProvider backend={HTML5Backend}>{generateRowsGrid()}</DndProvider>
-  );
+  return <DndProvider backend={HTML5Backend}>{generateRowsGrid()}</DndProvider>;
 };
 
 export default TilePlacement;
