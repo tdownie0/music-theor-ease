@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { useDrag, useDrop } from "react-dnd";
 import { allNotes } from "@/app/utils/musicLogic";
 
@@ -16,7 +16,7 @@ const QuizTile: React.FC<QuizTileProps> = ({
   isDragging,
 }) => {
   const tileRef = useRef<HTMLDivElement>(null);
-  const [, drag] = useDrag({
+  const [, drag, preview] = useDrag({
     type: "QuizTile",
     item: { item, index },
     collect: (monitor) => ({
@@ -31,6 +31,12 @@ const QuizTile: React.FC<QuizTileProps> = ({
       }
     },
   });
+
+  useEffect(() => {
+    if (tileRef.current) {
+      preview(tileRef.current);
+    }
+  }, [preview, tileRef]);
 
   const [, drop] = useDrop({
     accept: "QuizTile",
