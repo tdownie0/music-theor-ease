@@ -79,15 +79,26 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
   }
 
   useEffect(() => {
+    let resizeTimeout: NodeJS.Timeout;
+    let resizeInProgress = false;
+
     function handleResize() {
-      setResizeReset(true);
-      setNumberOfRows(getNumberOfRows());
+      if (!resizeInProgress) {
+        resizeInProgress = true;
+        setResizeReset(true);
+        setNumberOfRows(getNumberOfRows());
+
+        resizeTimeout = setTimeout(() => {
+          resizeInProgress = false;
+        }, 400); 
+      }
     }
 
     window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      clearTimeout(resizeTimeout);
     };
   }, []);
 
