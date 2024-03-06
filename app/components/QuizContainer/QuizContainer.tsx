@@ -103,7 +103,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
   }, []);
 
   return (
-    <div className="flex flex-col w-full bg-base-300 text-base-content rounded-lg justify-center gap-4 p-8 animate-fadeIn">
+    <div className="flex flex-col w-full bg-base-300 text-base-content rounded-lg justify-center gap-4 p-8">
       <div className="flex justify-end items-center">
         <div className="w-full">
           <p className="text-xl font-bold">{header}</p>
