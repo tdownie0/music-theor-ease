@@ -23,6 +23,7 @@ const CircleOfFifthsQuiz = () => {
       originalArray={originalNotes}
       header="Circle of Fifths"
       description="Arrange these tiles into the circle of fifths starting from C"
+      circleQuiz
     />
   );
 };

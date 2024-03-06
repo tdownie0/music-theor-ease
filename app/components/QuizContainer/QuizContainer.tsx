@@ -3,12 +3,13 @@ import { allNotes } from "@/app/utils/musicLogic";
 import { windowSize } from "@/app/utils/enums";
 import TilePlacement from "./TilePlacement/TilePlacement";
 
-interface QuizContainerProps {
+type QuizContainerProps = {
   currentArray: allNotes[] | string[];
   setCurrentArray: React.Dispatch<React.SetStateAction<allNotes[] | string[]>>;
   originalArray: allNotes[] | string[];
   header: string;
   description: string;
+  circleQuiz?: boolean;
 }
 
 const QuizContainer: React.FC<QuizContainerProps> = ({
@@ -17,6 +18,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
   originalArray,
   header,
   description,
+  circleQuiz,
 }) => {
   const [isResetting, setIsResetting] = useState(false);
   const [numberOfRows, setNumberOfRows] = useState(getNumberOfRows());
@@ -90,7 +92,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
 
         resizeTimeout = setTimeout(() => {
           resizeInProgress = false;
-        }, 400); 
+        }, 400);
       }
     }
 
@@ -124,6 +126,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
         isResetting={isResetting}
         resizeReset={resizeReset}
         setResizeReset={setResizeReset}
+        circleQuiz={circleQuiz}
       />
 
       <div className="flex w-full justify-end">

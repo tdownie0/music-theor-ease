@@ -4,20 +4,24 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { allNotes } from "@/app/utils/musicLogic";
 import QuizTile from "./QuizTile/QuizTile";
 
-const TilePlacement = ({
-  items,
-  setItems,
-  numberOfRows,
-  isResetting,
-  resizeReset,
-  setResizeReset,
-}: {
+type TilePlacementProps = {
   items: allNotes[] | string[];
   setItems: React.Dispatch<React.SetStateAction<allNotes[] | string[]>>;
   numberOfRows: number;
   isResetting: boolean;
   resizeReset: boolean;
   setResizeReset: React.Dispatch<React.SetStateAction<boolean>>;
+  circleQuiz?: boolean;
+};
+
+const TilePlacement: React.FC<TilePlacementProps> = ({
+  items,
+  setItems,
+  numberOfRows,
+  isResetting,
+  resizeReset,
+  setResizeReset,
+  circleQuiz,
 }) => {
   const [draggedTileIndex, setDraggedTileIndex] = useState<number | null>(null);
 
@@ -45,7 +49,7 @@ const TilePlacement = ({
 
       timeoutId = setTimeout(() => {
         setResizeReset(false);
-      }, 1000); 
+      }, 1000);
     }
 
     return () => clearTimeout(timeoutId);
@@ -63,27 +67,37 @@ const TilePlacement = ({
   function generateRowsGrid(): React.JSX.Element {
     const itemsPerRow: number = Math.ceil(items.length / numberOfRows);
     return (
-      <div className="flex flex-col gap-2 items-center">
-        {Array.from({ length: numberOfRows }).map((_, rowIndex) => (
-          <div key={rowIndex} className="flex bg-primary rounded-lg gap-4 p-2">
-            {items
-              .slice(rowIndex * itemsPerRow, (rowIndex + 1) * itemsPerRow)
-              .map((item, itemIndex) => (
-                <div key={itemIndex} className="bg-accent rounded-md p-2">
-                  <QuizTile
-                    key={item}
-                    index={rowIndex * itemsPerRow + itemIndex}
-                    item={item}
-                    moveTile={moveTile}
-                    isDragging={
-                      draggedTileIndex === rowIndex * itemsPerRow + itemIndex
-                    }
-                  />
-                </div>
-              ))}
+      <>
+        {circleQuiz ? (
+          <div className="flex flex-col gap-2 items-center">
+            {Array.from({ length: numberOfRows }).map((_, rowIndex) => (
+              <div
+                key={rowIndex}
+                className="flex bg-primary rounded-lg gap-4 p-2"
+              >
+                {items
+                  .slice(rowIndex * itemsPerRow, (rowIndex + 1) * itemsPerRow)
+                  .map((item, itemIndex) => (
+                    <div key={itemIndex} className="bg-accent rounded-md p-2">
+                      <QuizTile
+                        key={item}
+                        index={rowIndex * itemsPerRow + itemIndex}
+                        item={item}
+                        moveTile={moveTile}
+                        isDragging={
+                          draggedTileIndex ===
+                          rowIndex * itemsPerRow + itemIndex
+                        }
+                      />
+                    </div>
+                  ))}
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        ) : (
+          <div>test</div>
+        )}
+      </>
     );
   }
 
