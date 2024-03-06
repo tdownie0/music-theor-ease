@@ -35,7 +35,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
    */
   useEffect(() => {
     setTimeout(loadTheme, 300);
-  }, [isMounted]);
+  }, []);
   // #endregion -- Load Theme
 
   if (!isMounted) {
