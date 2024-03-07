@@ -12,6 +12,8 @@ type TilePlacementProps = {
   resizeReset: boolean;
   setResizeReset: React.Dispatch<React.SetStateAction<boolean>>;
   circleQuiz?: boolean;
+  selectionArray?: string[];
+  setSelectionArray?: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
 const TilePlacement: React.FC<TilePlacementProps> = ({
@@ -22,6 +24,8 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
   resizeReset,
   setResizeReset,
   circleQuiz,
+  selectionArray,
+  setSelectionArray,
 }) => {
   const [draggedTileIndex, setDraggedTileIndex] = useState<number | null>(null);
 
@@ -64,8 +68,24 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
     setDraggedTileIndex(hoverIndex);
   };
 
+  const moveTileInSelectionArray = (dragIndex: number, hoverIndex: number) => {
+    if (selectionArray && setSelectionArray) {
+      const draggedTile: string = selectionArray[dragIndex];
+      const updatedSelectionArray: string[] = [...selectionArray];
+      updatedSelectionArray.splice(dragIndex, 1);
+      updatedSelectionArray.splice(hoverIndex, 0, draggedTile);
+      setSelectionArray(updatedSelectionArray);
+      setDraggedTileIndex(hoverIndex);
+    }
+  };
+
   function generateRowsGrid(): React.JSX.Element {
     const itemsPerRow: number = Math.ceil(items.length / numberOfRows);
+    let selectionsPerRow: number = 0;
+    if (selectionArray) {
+      selectionsPerRow = Math.ceil((selectionArray.length - 1) / numberOfRows);
+    }
+
     return (
       <>
         {circleQuiz ? (
@@ -95,7 +115,56 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
             ))}
           </div>
         ) : (
-          <div>test</div>
+          <div className="flex flex-col gap-2 items-center">
+            {Array.from({ length: numberOfRows }).map((_, rowIndex) => (
+              <div
+                key={rowIndex}
+                className="flex bg-primary rounded-lg gap-4 p-2"
+              >
+                {selectionArray ? (
+                  selectionArray
+                    .slice(
+                      rowIndex * selectionsPerRow,
+                      (rowIndex + 1) * selectionsPerRow
+                    )
+                    .map((item, itemIndex) => {
+                      return (
+                        <div
+                          key={itemIndex}
+                          className="bg-accent rounded-md p-2"
+                        >
+                          <QuizTile
+                            key={item}
+                            index={rowIndex * selectionsPerRow + itemIndex}
+                            item={item}
+                            moveTile={moveTileInSelectionArray}
+                            isDragging={
+                              draggedTileIndex ===
+                              rowIndex * selectionsPerRow + itemIndex
+                            }
+                          />
+                        </div>
+                      );
+                    })
+                ) : (
+                  <div></div>
+                )}
+              </div>
+            ))}
+            {selectionArray ? (
+              <div key={"extraTile"} className="bg-accent rounded-md p-2">
+                <QuizTile
+                  key={selectionArray[selectionArray.length - 1]}
+                  index={13}
+                  item={selectionArray[selectionArray.length - 1]}
+                  moveTile={moveTileInSelectionArray}
+                  isDragging={draggedTileIndex === 13}
+                />
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </div>
         )}
       </>
     );

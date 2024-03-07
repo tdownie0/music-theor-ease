@@ -3,6 +3,7 @@ import NavigationLinks from "../components/NavigationLinks/NavigationLinks";
 import { siteLinks } from "../utils/enums";
 import CircleOfFifthsQuiz from "../components/CircleQuiz/CircleOfFifths/CircleOfFifthsQuiz";
 import CircleOfFourthsQuiz from "../components/CircleQuiz/CircleOfFourths/CircleOfFourths";
+import ModesQuiz from "../components/ModesQuiz/ModesQuiz";
 
 const Quizzes: React.FC = () => {
   return (
@@ -17,6 +18,9 @@ const Quizzes: React.FC = () => {
           </div>
           <div>
             <CircleOfFourthsQuiz />
+          </div>
+          <div>
+            <ModesQuiz />
           </div>
         </div>
       </div>
