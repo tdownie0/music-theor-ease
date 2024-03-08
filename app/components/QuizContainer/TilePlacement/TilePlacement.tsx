@@ -124,35 +124,33 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
                 key={rowIndex}
                 className="flex bg-neutral rounded-lg gap-4 p-2"
               >
-                {selectionArray ? (
-                  selectionArray
-                    .slice(
-                      rowIndex * selectionsPerRow,
-                      (rowIndex + 1) * selectionsPerRow
-                    )
-                    .map((item, itemIndex) => {
-                      return (
-                        <div
-                          key={itemIndex}
-                          className="bg-accent rounded-md p-2"
-                        >
-                          <QuizTile
-                            key={item}
-                            index={rowIndex * selectionsPerRow + itemIndex}
-                            item={item}
-                            moveTile={moveTile}
-                            isDragging={
-                              draggedTileIndex ===
-                              rowIndex * selectionsPerRow + itemIndex
-                            }
-                            selection
-                          />
-                        </div>
-                      );
-                    })
-                ) : (
-                  <div></div>
-                )}
+                {selectionArray
+                  ? selectionArray
+                      .slice(
+                        rowIndex * selectionsPerRow,
+                        (rowIndex + 1) * selectionsPerRow
+                      )
+                      .map((item, itemIndex) => {
+                        return (
+                          <div
+                            key={itemIndex}
+                            className="bg-accent rounded-md p-2"
+                          >
+                            <QuizTile
+                              key={item}
+                              index={rowIndex * selectionsPerRow + itemIndex}
+                              item={item}
+                              moveTile={moveTile}
+                              isDragging={
+                                draggedTileIndex ===
+                                rowIndex * selectionsPerRow + itemIndex
+                              }
+                              selection
+                            />
+                          </div>
+                        );
+                      })
+                  : null}
               </div>
             ))}
             {selectionArray ? (
@@ -171,9 +169,7 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
                   />
                 </div>
               </div>
-            ) : (
-              <div></div>
-            )}
+            ) : null}
           </div>
         )}
       </>
