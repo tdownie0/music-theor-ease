@@ -82,8 +82,10 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
   function generateRowsGrid(): React.JSX.Element {
     const itemsPerRow: number = Math.ceil(items.length / numberOfRows);
     let selectionsPerRow: number = 0;
+    let lastSelections: string = "";
     if (selectionArray) {
       selectionsPerRow = Math.ceil((selectionArray.length - 1) / numberOfRows);
+      lastSelections = selectionArray[selectionArray.length - 1];
     }
 
     return (
@@ -119,7 +121,7 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
             {Array.from({ length: numberOfRows }).map((_, rowIndex) => (
               <div
                 key={rowIndex}
-                className="flex bg-primary rounded-lg gap-4 p-2"
+                className="flex bg-neutral rounded-lg gap-4 p-2"
               >
                 {selectionArray ? (
                   selectionArray
@@ -152,14 +154,19 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
               </div>
             ))}
             {selectionArray ? (
-              <div key={"extraTile"} className="bg-accent rounded-md p-2">
-                <QuizTile
-                  key={selectionArray[selectionArray.length - 1]}
-                  index={13}
-                  item={selectionArray[selectionArray.length - 1]}
-                  moveTile={moveTileInSelectionArray}
-                  isDragging={draggedTileIndex === 13}
-                />
+              <div
+                key={numberOfRows - 1}
+                className="flex bg-neutral rounded-lg gap-4 p-2"
+              >
+                <div key={"extraTile"} className="bg-accent rounded-md p-2">
+                  <QuizTile
+                    key={lastSelections}
+                    index={selectionArray.length - 1}
+                    item={lastSelections}
+                    moveTile={moveTileInSelectionArray}
+                    isDragging={draggedTileIndex === 12}
+                  />
+                </div>
               </div>
             ) : (
               <div></div>
