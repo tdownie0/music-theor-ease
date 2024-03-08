@@ -59,24 +59,25 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
     return () => clearTimeout(timeoutId);
   }, [resizeReset, setResizeReset]);
 
-  const moveTile = (dragIndex: number, hoverIndex: number) => {
-    const draggedTile: allNotes | string = items[dragIndex];
-    const updatedItems: allNotes[] | string[] = [...items];
+  const moveTile = (
+    dragIndex: number,
+    hoverIndex: number,
+    selectionTile?: boolean
+  ) => {
+    let currentArray: allNotes[] | string[] | undefined = items;
+    let setCurrentArray:
+      | React.Dispatch<React.SetStateAction<allNotes[] | string[]>>
+      | undefined = setItems;
+    if (selectionTile) {
+      currentArray = selectionArray;
+      setCurrentArray = setSelectionArray;
+    }
+    const draggedTile = currentArray![dragIndex];
+    const updatedItems = [...currentArray!];
     updatedItems.splice(dragIndex, 1);
     updatedItems.splice(hoverIndex, 0, draggedTile);
-    setItems(updatedItems);
+    setCurrentArray!(updatedItems);
     setDraggedTileIndex(hoverIndex);
-  };
-
-  const moveTileInSelectionArray = (dragIndex: number, hoverIndex: number) => {
-    if (selectionArray && setSelectionArray) {
-      const draggedTile: string = selectionArray[dragIndex];
-      const updatedSelectionArray: string[] = [...selectionArray];
-      updatedSelectionArray.splice(dragIndex, 1);
-      updatedSelectionArray.splice(hoverIndex, 0, draggedTile);
-      setSelectionArray(updatedSelectionArray);
-      setDraggedTileIndex(hoverIndex);
-    }
   };
 
   function generateRowsGrid(): React.JSX.Element {
@@ -139,11 +140,12 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
                             key={item}
                             index={rowIndex * selectionsPerRow + itemIndex}
                             item={item}
-                            moveTile={moveTileInSelectionArray}
+                            moveTile={moveTile}
                             isDragging={
                               draggedTileIndex ===
                               rowIndex * selectionsPerRow + itemIndex
                             }
+                            selection
                           />
                         </div>
                       );
@@ -163,8 +165,9 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
                     key={lastSelections}
                     index={selectionArray.length - 1}
                     item={lastSelections}
-                    moveTile={moveTileInSelectionArray}
+                    moveTile={moveTile}
                     isDragging={draggedTileIndex === 12}
+                    selection
                   />
                 </div>
               </div>
