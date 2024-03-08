@@ -1,7 +1,7 @@
 import React from "react";
 import QuizTile from "./QuizTile/QuizTile";
 
-interface Props {
+type ModeQuizLayoutProps = {
   numberOfRows: number;
   selectionsPerRow: number;
   selectionArray?: string[] | undefined;
@@ -14,7 +14,7 @@ interface Props {
   lastSelections: string;
 }
 
-const ModesQuizLayout: React.FC<Props> = ({
+const ModesQuizLayout: React.FC<ModeQuizLayoutProps> = ({
   numberOfRows,
   selectionsPerRow,
   selectionArray,

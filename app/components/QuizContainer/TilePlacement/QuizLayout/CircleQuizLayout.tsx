@@ -2,7 +2,7 @@ import React from "react";
 import QuizTile from "./QuizTile/QuizTile";
 import { allNotes } from "@/app/utils/musicLogic";
 
-interface Props {
+type CircleQuizLayoutProps = {
   numberOfRows: number;
   itemsPerRow: number;
   items: allNotes[] | string[];
@@ -14,7 +14,7 @@ interface Props {
   draggedTileIndex: number | null;
 }
 
-const CircleQuizLayout: React.FC<Props> = ({
+const CircleQuizLayout: React.FC<CircleQuizLayoutProps> = ({
   numberOfRows,
   itemsPerRow,
   items,
