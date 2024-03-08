@@ -4,7 +4,7 @@ import QuizTile from "./QuizTile/QuizTile";
 interface Props {
   numberOfRows: number;
   selectionsPerRow: number;
-  selectionArray: string[] | undefined;
+  selectionArray?: string[] | undefined;
   moveTile: (
     dragIndex: number,
     hoverIndex: number,
@@ -23,11 +23,15 @@ const ModesQuizLayout: React.FC<Props> = ({
   lastSelections,
 }) => {
   return (
-    <div className="flex flex-col gap-2 items-center">
-      {Array.from({ length: numberOfRows }).map((_, rowIndex) => (
-        <div key={rowIndex} className="flex bg-neutral rounded-lg gap-4 p-2">
-          {selectionArray
-            ? selectionArray
+    <>
+      {selectionArray ? (
+        <div className="flex flex-col gap-2 items-center">
+          {Array.from({ length: numberOfRows }).map((_, rowIndex) => (
+            <div
+              key={rowIndex}
+              className="flex bg-neutral rounded-lg gap-4 p-2"
+            >
+              {selectionArray
                 .slice(
                   rowIndex * selectionsPerRow,
                   (rowIndex + 1) * selectionsPerRow
@@ -46,28 +50,27 @@ const ModesQuizLayout: React.FC<Props> = ({
                       selection
                     />
                   </div>
-                ))
-            : null}
-        </div>
-      ))}
-      {selectionArray ? (
-        <div
-          key={numberOfRows - 1}
-          className="flex bg-neutral rounded-lg gap-4 p-2"
-        >
-          <div key={"extraTile"} className="bg-accent rounded-md p-2">
-            <QuizTile
-              key={lastSelections}
-              index={selectionArray.length - 1}
-              item={lastSelections}
-              moveTile={moveTile}
-              isDragging={draggedTileIndex === 12}
-              selection
-            />
+                ))}
+            </div>
+          ))}
+          <div
+            key={numberOfRows - 1}
+            className="flex bg-neutral rounded-lg gap-4 p-2"
+          >
+            <div key={"extraTile"} className="bg-accent rounded-md p-2">
+              <QuizTile
+                key={lastSelections}
+                index={selectionArray.length - 1}
+                item={lastSelections}
+                moveTile={moveTile}
+                isDragging={draggedTileIndex === 12}
+                selection
+              />
+            </div>
           </div>
         </div>
       ) : null}
-    </div>
+    </>
   );
 };
 
