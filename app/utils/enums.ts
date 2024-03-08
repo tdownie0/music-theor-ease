@@ -1,4 +1,4 @@
-export enum siteLinks {
+export enum siteLink {
   Home = "Home",
   Circles = "Circles",
   Modes = "Modes",

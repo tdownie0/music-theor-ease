@@ -14,6 +14,12 @@ type QuizContainerProps = {
   setSelectionArray?: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
+enum rowCount {
+  sm = 4,
+  lg = 3,
+  xl = 2,
+}
+
 const QuizContainer: React.FC<QuizContainerProps> = ({
   currentArray,
   setCurrentArray,
@@ -68,12 +74,6 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
   }, [isResetting]);
 
   function getNumberOfRows() {
-    enum rowCount {
-      sm = 4,
-      lg = 3,
-      xl = 2,
-    }
-
     const windowWidth: number = window.innerWidth;
     if (windowWidth < windowSize.sm) {
       return rowCount.sm;

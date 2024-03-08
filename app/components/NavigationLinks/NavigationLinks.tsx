@@ -1,21 +1,21 @@
 import React from "react";
 import Link from "next/link";
-import { siteLinks } from "../../utils/enums";
+import { siteLink } from "../../utils/enums";
 
 type NavigationLinksProps = {
-  linkType?: siteLinks;
+  linkType?: siteLink;
 };
 
 const siteLinksArray = [
-  siteLinks.Home,
-  siteLinks.Circles,
-  siteLinks.Modes,
-  siteLinks.Quizzes,
+  siteLink.Home,
+  siteLink.Circles,
+  siteLink.Modes,
+  siteLink.Quizzes,
 ];
 
-const linkNames: Record<siteLinks, siteLinks[]> = {} as Record<
-  siteLinks,
-  siteLinks[]
+const linkNames: Record<siteLink, siteLink[]> = {} as Record<
+  siteLink,
+  siteLink[]
 >;
 
 siteLinksArray.forEach(function populateLinkName(link): void {
@@ -31,13 +31,13 @@ const hoverColors: string[] = [
 const NavigationLinks: React.FC<NavigationLinksProps> = ({ linkType }) => {
   const linksToRender = linkType
     ? linkNames[linkType]
-    : linkNames[siteLinks.Home];
+    : linkNames[siteLink.Home];
 
   const renderLink = (
-    linkName: siteLinks,
+    linkName: siteLink,
     index: number
   ): React.JSX.Element => {
-    const isHomePage: boolean = linkName === siteLinks.Home;
+    const isHomePage: boolean = linkName === siteLink.Home;
     const linkPath: string = isHomePage ? "/" : `/${linkName.toLowerCase()}`;
     const linkClassName: string = `link ${hoverColors[index]}`;
 

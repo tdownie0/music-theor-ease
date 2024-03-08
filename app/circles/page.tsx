@@ -1,12 +1,12 @@
 import React from "react";
 import CircleOfNotes from "../components/CircleOfNotes/CircleOfNotes";
 import NavigationLinks from "../components/NavigationLinks/NavigationLinks";
-import { siteLinks } from "../utils/enums";
+import { siteLink } from "../utils/enums";
 
 const Circles: React.FC = () => {
   return (
     <div className="primary min-h-screen mt-16 ml-4">
-      <NavigationLinks linkType={siteLinks.Circles} />
+      <NavigationLinks linkType={siteLink.Circles} />
       <h1 className="text-4xl font-semibold mt-8 mb-8">Circles</h1>
       <div className="hero flex flex-col">
         <div className="hero-content flex-col">
