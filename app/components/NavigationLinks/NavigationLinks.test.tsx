@@ -3,14 +3,14 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import NavigationLinks from "./NavigationLinks";
-import { siteLinks } from "../../utils/enums";
+import { siteLink } from "../../utils/enums";
 
 describe("NavigationLinks component", () => {
-  Object.values(siteLinks).forEach((link: siteLinks) => {
+  Object.values(siteLink).forEach((link: siteLink) => {
     it(`renders links correctly with linkType=${link}`, () => {
       render(<NavigationLinks linkType={link} />);
 
-      Object.values(siteLinks).forEach((otherLink) => {
+      Object.values(siteLink).forEach((otherLink) => {
         if (otherLink !== link) {
           expect(screen.getByText(otherLink)).toBeInTheDocument();
         }
