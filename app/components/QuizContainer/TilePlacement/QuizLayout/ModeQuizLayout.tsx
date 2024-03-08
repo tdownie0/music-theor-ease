@@ -63,7 +63,7 @@ const ModesQuizLayout: React.FC<Props> = ({
                 index={selectionArray.length - 1}
                 item={lastSelections}
                 moveTile={moveTile}
-                isDragging={draggedTileIndex === 12}
+                isDragging={draggedTileIndex === selectionArray.length - 1}
                 selection
               />
             </div>
