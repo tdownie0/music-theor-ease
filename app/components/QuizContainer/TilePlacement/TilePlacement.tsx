@@ -13,8 +13,7 @@ type TilePlacementProps = {
   resizeReset: boolean;
   setResizeReset: React.Dispatch<React.SetStateAction<boolean>>;
   circleQuiz?: boolean;
-  selectionArray?: string[];
-  setSelectionArray?: React.Dispatch<React.SetStateAction<string[]>>;
+  selection?: boolean;
 };
 
 const TilePlacement: React.FC<TilePlacementProps> = ({
@@ -25,8 +24,7 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
   resizeReset,
   setResizeReset,
   circleQuiz,
-  selectionArray,
-  setSelectionArray,
+  selection,
 }) => {
   const [draggedTileIndex, setDraggedTileIndex] = useState<number | null>(null);
 
@@ -60,24 +58,12 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
     return () => clearTimeout(timeoutId);
   }, [resizeReset, setResizeReset]);
 
-  const moveTile = (
-    dragIndex: number,
-    hoverIndex: number,
-    selectionTile?: boolean
-  ) => {
-    let currentArray: allNotes[] | string[] | undefined = items;
-    let setCurrentArray:
-      | React.Dispatch<React.SetStateAction<allNotes[] | string[]>>
-      | undefined = setItems;
-    if (selectionTile) {
-      currentArray = selectionArray;
-      setCurrentArray = setSelectionArray;
-    }
-    const draggedTile = currentArray![dragIndex];
-    const updatedItems = [...currentArray!];
+  const moveTile = (dragIndex: number, hoverIndex: number) => {
+    const draggedTile = items![dragIndex];
+    const updatedItems = [...items!];
     updatedItems.splice(dragIndex, 1);
     updatedItems.splice(hoverIndex, 0, draggedTile);
-    setCurrentArray!(updatedItems);
+    setItems!(updatedItems);
     setDraggedTileIndex(hoverIndex);
   };
 
@@ -85,9 +71,9 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
     const itemsPerRow: number = Math.ceil(items.length / numberOfRows);
     let selectionsPerRow: number = 0;
     let lastSelections: string = "";
-    if (selectionArray) {
-      selectionsPerRow = Math.ceil((selectionArray.length - 1) / numberOfRows);
-      lastSelections = selectionArray[selectionArray.length - 1];
+    if (selection) {
+      selectionsPerRow = Math.ceil((items.length - 1) / numberOfRows);
+      lastSelections = items[items.length - 1];
     }
 
     return (
@@ -103,8 +89,8 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
         ) : (
           <ModesQuizLayout
             numberOfRows={numberOfRows}
-            selectionsPerRow={selectionsPerRow}
-            selectionArray={selectionArray}
+            itemsPerRow={selectionsPerRow}
+            items={items}
             moveTile={moveTile}
             draggedTileIndex={draggedTileIndex}
             lastSelections={lastSelections}

@@ -3,51 +3,42 @@ import QuizTile from "./QuizTile/QuizTile";
 
 type ModeQuizLayoutProps = {
   numberOfRows: number;
-  selectionsPerRow: number;
-  selectionArray?: string[] | undefined;
-  moveTile: (
-    dragIndex: number,
-    hoverIndex: number,
-    selection?: boolean
-  ) => void;
+  itemsPerRow: number;
+  items: string[] | undefined;
+  moveTile: (dragIndex: number, hoverIndex: number) => void;
   draggedTileIndex: number | null;
   lastSelections: string;
-}
+};
 
 const ModesQuizLayout: React.FC<ModeQuizLayoutProps> = ({
   numberOfRows,
-  selectionsPerRow,
-  selectionArray,
+  itemsPerRow,
+  items,
   moveTile,
   draggedTileIndex,
   lastSelections,
 }) => {
   return (
     <>
-      {selectionArray ? (
+      {items ? (
         <div className="flex flex-col gap-2 items-center">
           {Array.from({ length: numberOfRows }).map((_, rowIndex) => (
             <div
               key={rowIndex}
               className="flex bg-neutral rounded-lg gap-4 p-2"
             >
-              {selectionArray
-                .slice(
-                  rowIndex * selectionsPerRow,
-                  (rowIndex + 1) * selectionsPerRow
-                )
+              {items
+                .slice(rowIndex * itemsPerRow, (rowIndex + 1) * itemsPerRow)
                 .map((item, itemIndex) => (
                   <div key={itemIndex} className="bg-accent rounded-md p-2">
                     <QuizTile
                       key={item}
-                      index={rowIndex * selectionsPerRow + itemIndex}
+                      index={rowIndex * itemsPerRow + itemIndex}
                       item={item}
                       moveTile={moveTile}
                       isDragging={
-                        draggedTileIndex ===
-                        rowIndex * selectionsPerRow + itemIndex
+                        draggedTileIndex === rowIndex * itemsPerRow + itemIndex
                       }
-                      selection
                     />
                   </div>
                 ))}
@@ -60,11 +51,10 @@ const ModesQuizLayout: React.FC<ModeQuizLayoutProps> = ({
             <div key={"extraTile"} className="bg-accent rounded-md p-2">
               <QuizTile
                 key={lastSelections}
-                index={selectionArray.length - 1}
+                index={items.length - 1}
                 item={lastSelections}
                 moveTile={moveTile}
-                isDragging={draggedTileIndex === selectionArray.length - 1}
-                selection
+                isDragging={draggedTileIndex === items.length - 1}
               />
             </div>
           </div>

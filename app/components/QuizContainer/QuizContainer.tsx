@@ -10,8 +10,7 @@ type QuizContainerProps = {
   header: string;
   description: string;
   circleQuiz?: boolean;
-  selectionArray?: string[];
-  setSelectionArray?: React.Dispatch<React.SetStateAction<string[]>>;
+  selection?: boolean;
 };
 
 enum rowCount {
@@ -27,8 +26,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
   header,
   description,
   circleQuiz,
-  selectionArray,
-  setSelectionArray,
+  selection,
 }) => {
   const [isResetting, setIsResetting] = useState(false);
   const [numberOfRows, setNumberOfRows] = useState(getNumberOfRows());
@@ -131,8 +129,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
         resizeReset={resizeReset}
         setResizeReset={setResizeReset}
         circleQuiz={circleQuiz}
-        selectionArray={selectionArray}
-        setSelectionArray={setSelectionArray}
+        selection={selection}
       />
 
       <div className="flex w-full justify-end">

@@ -22,19 +22,21 @@ const intervalTiles: string[] = [
 const ModesQuiz = () => {
   const [interval, setInterval] = useState<string[]>([]);
   const [originalInterval, setOriginalInterval] = useState<string[]>([]);
-  const [intervalSelection, setIntervalSelection] = useState<string[]>([
-    ...intervalTiles,
-  ]);
+  const [intervalSelection, setIntervalSelection] = useState<string[]>([]);
+
+  useEffect(() => {
+    setIntervalSelection(intervalTiles);
+    setOriginalInterval(intervalTiles);
+  }, []);
 
   return (
     <QuizContainer
-      currentArray={interval}
-      setCurrentArray={setInterval}
+      currentArray={intervalSelection}
+      setCurrentArray={setIntervalSelection}
       originalArray={originalInterval}
       header="Modes"
       description="Select a mode and then fill in the slots for the correct intervals"
-      selectionArray={intervalSelection}
-      setSelectionArray={setIntervalSelection}
+      selection
     />
   );
 };

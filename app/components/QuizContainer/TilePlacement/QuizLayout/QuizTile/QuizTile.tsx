@@ -5,13 +5,8 @@ import { allNotes } from "@/app/utils/musicLogic";
 type QuizTileProps = {
   item: allNotes | string;
   index: number;
-  moveTile: (
-    dragIndex: number,
-    hoverIndex: number,
-    selection?: boolean
-  ) => void;
+  moveTile: (dragIndex: number, hoverIndex: number) => void;
   isDragging: boolean;
-  selection?: boolean;
 };
 
 const QuizTile: React.FC<QuizTileProps> = ({
@@ -19,7 +14,6 @@ const QuizTile: React.FC<QuizTileProps> = ({
   index,
   moveTile,
   isDragging,
-  selection,
 }) => {
   const tileRef = useRef<HTMLDivElement>(null);
   const [, drag, preview] = useDrag({
@@ -54,9 +48,6 @@ const QuizTile: React.FC<QuizTileProps> = ({
         return;
       }
 
-      if (selection) {
-        moveTile(dragIndex, hoverIndex, selection);
-      }
       moveTile(dragIndex, hoverIndex);
       item.index = hoverIndex;
     },
