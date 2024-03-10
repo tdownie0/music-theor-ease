@@ -14,6 +14,11 @@ const rowCount: Record<number, number> = {
   3: 2,
   4: 3,
 };
+const itemCount: Record<number, number> = {
+  4: 3,
+  3: 4,
+  2: 4,
+};
 
 const ModesQuizLayout: React.FC<ModeQuizLayoutProps> = ({
   numberOfRows,
@@ -21,11 +26,7 @@ const ModesQuizLayout: React.FC<ModeQuizLayoutProps> = ({
   moveTile,
   draggedTileIndex,
 }) => {
-  let itemsPerRow: number = Math.floor(items!.length / numberOfRows);
-  if (itemsPerRow > 4) {
-    itemsPerRow = 4;
-  }
-
+  let itemsPerRow: number = itemCount[numberOfRows];
   const lessSlots: number = itemsPerRow - 1;
 
   return (
