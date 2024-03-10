@@ -4,7 +4,6 @@ import { allNotes } from "@/app/utils/musicLogic";
 
 type CircleQuizLayoutProps = {
   numberOfRows: number;
-  itemsPerRow: number;
   items: allNotes[] | string[];
   moveTile: (
     dragIndex: number,
@@ -16,11 +15,12 @@ type CircleQuizLayoutProps = {
 
 const CircleQuizLayout: React.FC<CircleQuizLayoutProps> = ({
   numberOfRows,
-  itemsPerRow,
   items,
   moveTile,
   draggedTileIndex,
 }) => {
+  let itemsPerRow = Math.ceil((items!.length) / numberOfRows);
+
   return (
     <div className="flex flex-col gap-2 items-center">
       {Array.from({ length: numberOfRows }).map((_, rowIndex) => (

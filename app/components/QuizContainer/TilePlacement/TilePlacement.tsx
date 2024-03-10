@@ -13,7 +13,6 @@ type TilePlacementProps = {
   resizeReset: boolean;
   setResizeReset: React.Dispatch<React.SetStateAction<boolean>>;
   circleQuiz?: boolean;
-  selection?: boolean;
 };
 
 const TilePlacement: React.FC<TilePlacementProps> = ({
@@ -24,7 +23,6 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
   resizeReset,
   setResizeReset,
   circleQuiz,
-  selection,
 }) => {
   const [draggedTileIndex, setDraggedTileIndex] = useState<number | null>(null);
 
@@ -68,20 +66,11 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
   };
 
   function generateRowsGrid(): React.JSX.Element {
-    const itemsPerRow: number = Math.ceil(items.length / numberOfRows);
-    let selectionsPerRow: number = 0;
-    let lastSelections: string = "";
-    if (selection) {
-      selectionsPerRow = Math.ceil((items.length - 1) / numberOfRows);
-      lastSelections = items[items.length - 1];
-    }
-
     return (
       <>
         {circleQuiz ? (
           <CircleQuizLayout
             numberOfRows={numberOfRows}
-            itemsPerRow={itemsPerRow}
             items={items}
             moveTile={moveTile}
             draggedTileIndex={draggedTileIndex}
@@ -89,11 +78,9 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
         ) : (
           <ModesQuizLayout
             numberOfRows={numberOfRows}
-            itemsPerRow={selectionsPerRow}
             items={items}
             moveTile={moveTile}
             draggedTileIndex={draggedTileIndex}
-            lastSelections={lastSelections}
           />
         )}
       </>

@@ -32,21 +32,31 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
   const [numberOfRows, setNumberOfRows] = useState(getNumberOfRows());
   const [resizeReset, setResizeReset] = useState(false);
 
-  const shuffleArray = useCallback(
+  const shuffleArray: () => allNotes[] | string[] = useCallback(
     function shuffle(): allNotes[] | string[] {
       return originalArray.slice().sort(() => Math.random() - 0.5);
     },
     [originalArray]
   );
 
-  useEffect(() => {
-    function shuffleInitialLoad() {
-      setCurrentArray(selection === true ? originalArray : shuffleArray());
-    }
-    shuffleInitialLoad();
-  }, [setCurrentArray, shuffleArray]);
+  const orderButtonAction: () => allNotes[] | string[] = useCallback(
+    function tileOrder(): allNotes[] | string[] {
+      if (selection === true) {
+        return originalArray;
+      }
+      return shuffleArray();
+    },
+    [selection, originalArray, shuffleArray]
+  );
 
-  const checkOrder = useCallback(() => {
+  useEffect(() => {
+    function orderInitialLoad() {
+      setCurrentArray(orderButtonAction);
+    }
+    orderInitialLoad();
+  }, [setCurrentArray, orderButtonAction]);
+
+  const checkOrder: () => void = useCallback(() => {
     const isOrdered: boolean = currentArray.every(
       (note, index) => note === originalArray[index]
     );
@@ -57,10 +67,10 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     }
   }, [currentArray, originalArray]);
 
-  const resetNotes = useCallback(() => {
+  const resetNotes: () => void = useCallback(() => {
     setIsResetting(true);
-    setCurrentArray(selection === true ? originalArray : shuffleArray());
-  }, [setCurrentArray, shuffleArray]);
+    setCurrentArray(orderButtonAction);
+  }, [setCurrentArray, orderButtonAction]);
 
   useEffect(() => {
     if (isResetting) {
@@ -71,7 +81,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     }
   }, [isResetting]);
 
-  function getNumberOfRows() {
+  function getNumberOfRows(): number {
     const windowWidth: number = window.innerWidth;
     if (windowWidth < windowSize.sm) {
       return rowCount.sm;
@@ -86,7 +96,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     let resizeTimeout: NodeJS.Timeout;
     let resizeInProgress = false;
 
-    function handleResize() {
+    function handleResize(): void {
       if (!resizeInProgress) {
         resizeInProgress = true;
         setResizeReset(true);
@@ -129,7 +139,6 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
         resizeReset={resizeReset}
         setResizeReset={setResizeReset}
         circleQuiz={circleQuiz}
-        selection={selection}
       />
 
       <div className="flex w-full justify-end">
