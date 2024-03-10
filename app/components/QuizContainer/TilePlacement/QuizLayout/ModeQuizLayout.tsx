@@ -21,7 +21,7 @@ const ModesQuizLayout: React.FC<ModeQuizLayoutProps> = ({
   moveTile,
   draggedTileIndex,
 }) => {
-  let itemsPerRow = Math.ceil((items!.length - 1) / numberOfRows);
+  let itemsPerRow: number = Math.floor(items!.length / numberOfRows);
   if (itemsPerRow > 4) {
     itemsPerRow = 4;
   }
