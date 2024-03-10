@@ -39,9 +39,11 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     [originalArray]
   );
 
+  const leaveSorted = selection === true ? originalArray : shuffleArray();
+
   useEffect(() => {
     function shuffleInitialLoad() {
-      setCurrentArray(shuffleArray());
+      setCurrentArray(leaveSorted);
     }
     shuffleInitialLoad();
   }, [setCurrentArray, shuffleArray]);
@@ -59,7 +61,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
 
   const resetNotes = useCallback(() => {
     setIsResetting(true);
-    setCurrentArray(shuffleArray());
+    setCurrentArray(leaveSorted);
   }, [setCurrentArray, shuffleArray]);
 
   useEffect(() => {
@@ -117,7 +119,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
           className="btn-circle btn-secondary btn w-24"
           onClick={resetNotes}
         >
-          Shuffle
+          {selection ? "Reset" : "Shuffle"}
         </button>
       </div>
 
