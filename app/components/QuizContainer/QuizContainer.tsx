@@ -39,11 +39,9 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     [originalArray]
   );
 
-  const leaveSorted = selection === true ? originalArray : shuffleArray();
-
   useEffect(() => {
     function shuffleInitialLoad() {
-      setCurrentArray(leaveSorted);
+      setCurrentArray(selection === true ? originalArray : shuffleArray());
     }
     shuffleInitialLoad();
   }, [setCurrentArray, shuffleArray]);
@@ -61,7 +59,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
 
   const resetNotes = useCallback(() => {
     setIsResetting(true);
-    setCurrentArray(leaveSorted);
+    setCurrentArray(selection === true ? originalArray : shuffleArray());
   }, [setCurrentArray, shuffleArray]);
 
   useEffect(() => {

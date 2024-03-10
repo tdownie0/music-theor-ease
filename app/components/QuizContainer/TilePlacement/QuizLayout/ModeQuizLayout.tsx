@@ -24,7 +24,7 @@ const ModesQuizLayout: React.FC<ModeQuizLayoutProps> = ({
       {items ? (
         <div className="flex flex-col items-center rounded-xl bg-base-200 p-4">
           <h3 className="text-xl font-semibold">Intervals</h3>
-          <div className="w-fit bg-accent rounded-lg p-4 my-4">
+          <div className="w-fit rounded-lg p-4 my-4">
             <div className="flex flex-col gap-2 items-center">
               {Array.from({ length: 2 }).map((_, rowIndex) => (
                 <div
@@ -53,7 +53,7 @@ const ModesQuizLayout: React.FC<ModeQuizLayoutProps> = ({
             </div>
           </div>
           <h3 className="text-xl font-semibold">Extra Intervals</h3>
-          <div className="w-fit bg-base-100 rounded-lg p-4 my-4">
+          <div className="w-fit rounded-lg p-4 my-4">
             {Array.from({ length: 2 }).map((_, rowIndex) => (
               <div
                 key={rowIndex}
