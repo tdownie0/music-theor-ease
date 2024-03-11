@@ -62,51 +62,51 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     orderInitialLoad();
   }, [setCurrentArray, orderButtonAction]);
 
-  const checkOrder: () => void = useCallback(() => {
-    if (circleQuiz) {
-      circleInOrder();
-      return;
-    }
-    ModeIntervalInOrder();
-  }, [
-    circleQuiz,
-    currentArray,
-    originalArray,
-    modeSelection,
-    currentSelectionAnswer,
-  ]);
-
-  function ModeIntervalInOrder(): void {
-    if (currentSelectionAnswer) {
-      if (currentSelectionAnswer.length > 0) {
-        const intervalOrdered: boolean = currentArray
-          .slice(0, 7)
-          .every(
-            (interval, index) => interval === currentSelectionAnswer[index]
-          );
-        if (intervalOrdered) {
-          alert("Tiles are in order!");
-          return;
-        }
-        alert("Tiles are not in order.");
+  const checkCircle: () => void = useCallback(
+    function circleInOrder(): void {
+      const isOrdered: boolean = currentArray.every(
+        (note, index) => note === originalArray[index]
+      );
+      if (isOrdered) {
+        alert("Tiles are in order!");
         return;
       }
-    }
-    alert("You must select a mode to compare intervals to.");
-    return;
-  }
+      alert("Tiles are not in order.");
+      return;
+    },
+    [currentArray, originalArray]
+  );
 
-  function circleInOrder(): void {
-    const isOrdered: boolean = currentArray.every(
-      (note, index) => note === originalArray[index]
-    );
-    if (isOrdered) {
-      alert("Tiles are in order!");
+  const checkModes: () => void = useCallback(
+    function ModeIntervalInOrder(): void {
+      if (currentSelectionAnswer) {
+        if (currentSelectionAnswer.length > 0) {
+          const intervalOrdered: boolean = currentArray
+            .slice(0, 7)
+            .every(
+              (interval, index) => interval === currentSelectionAnswer[index]
+            );
+          if (intervalOrdered) {
+            alert("Tiles are in order!");
+            return;
+          }
+          alert("Tiles are not in order.");
+          return;
+        }
+      }
+      alert("You must select a mode to compare intervals to.");
+      return;
+    },
+    [currentSelectionAnswer, currentArray]
+  );
+
+  const checkOrder: () => void = useCallback(() => {
+    if (circleQuiz) {
+      checkCircle();
       return;
     }
-    alert("Tiles are not in order.");
-    return;
-  }
+    checkModes();
+  }, [circleQuiz, checkCircle, checkModes]);
 
   const resetNotes: () => void = useCallback(() => {
     setIsResetting(true);
@@ -184,7 +184,11 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
             </option>
             {modeSelectionList &&
               modeSelectionList.map((mode) => (
-                <option key={mode} className="text-secondary-content" value={mode}>
+                <option
+                  key={mode}
+                  className="text-secondary-content"
+                  value={mode}
+                >
                   {mode}
                 </option>
               ))}
