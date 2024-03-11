@@ -10,7 +10,10 @@ type QuizContainerProps = {
   header: string;
   description: string;
   circleQuiz?: boolean;
-  selection?: boolean;
+  modeSelection?: string;
+  setModeSelection?: React.Dispatch<React.SetStateAction<string>>;
+  modeSelectionList?: string[];
+  currentSelectionAnswer?: string[];
 };
 
 enum rowCount {
@@ -26,7 +29,10 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
   header,
   description,
   circleQuiz,
-  selection,
+  modeSelection,
+  setModeSelection,
+  modeSelectionList,
+  currentSelectionAnswer,
 }) => {
   const [isResetting, setIsResetting] = useState(false);
   const [numberOfRows, setNumberOfRows] = useState(getNumberOfRows());
@@ -41,12 +47,12 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
 
   const orderButtonAction: () => allNotes[] | string[] = useCallback(
     function tileOrder(): allNotes[] | string[] {
-      if (selection === true) {
-        return originalArray;
+      if (circleQuiz === true) {
+        return shuffleArray();
       }
-      return shuffleArray();
+      return originalArray;
     },
-    [selection, originalArray, shuffleArray]
+    [circleQuiz, originalArray, shuffleArray]
   );
 
   useEffect(() => {
@@ -57,15 +63,50 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
   }, [setCurrentArray, orderButtonAction]);
 
   const checkOrder: () => void = useCallback(() => {
+    if (circleQuiz) {
+      circleInOrder();
+      return;
+    }
+    ModeIntervalInOrder();
+  }, [
+    circleQuiz,
+    currentArray,
+    originalArray,
+    modeSelection,
+    currentSelectionAnswer,
+  ]);
+
+  function ModeIntervalInOrder(): void {
+    if (currentSelectionAnswer) {
+      if (currentSelectionAnswer.length > 0) {
+        const intervalOrdered: boolean = currentArray
+          .slice(0, 7)
+          .every(
+            (interval, index) => interval === currentSelectionAnswer[index]
+          );
+        if (intervalOrdered) {
+          alert("Tiles are in order!");
+          return;
+        }
+        alert("Tiles are not in order.");
+        return;
+      }
+    }
+    alert("You must select a mode to compare intervals to.");
+    return;
+  }
+
+  function circleInOrder(): void {
     const isOrdered: boolean = currentArray.every(
       (note, index) => note === originalArray[index]
     );
     if (isOrdered) {
       alert("Tiles are in order!");
-    } else {
-      alert("Tiles are not in order.");
+      return;
     }
-  }, [currentArray, originalArray]);
+    alert("Tiles are not in order.");
+    return;
+  }
 
   const resetNotes: () => void = useCallback(() => {
     setIsResetting(true);
@@ -91,6 +132,14 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     }
     return rowCount.xl;
   }
+
+  const handleModeSelectionChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    if (setModeSelection) {
+      setModeSelection(event.target.value);
+    }
+  };
 
   useEffect(() => {
     let resizeTimeout: NodeJS.Timeout;
@@ -123,11 +172,30 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
           <p className="text-xl font-bold">{header}</p>
           <p className="text-lg font-medium w-4/5 lg:w-5/6">{description}</p>
         </div>
+
+        {modeSelectionList && (
+          <select
+            className="dropdown menu bg-secondary text-secondary-content w-32 rounded-lg mx-4 py-3"
+            value={modeSelection}
+            onChange={handleModeSelectionChange}
+          >
+            <option className="text-secondary-content" value="select">
+              Select Mode
+            </option>
+            {modeSelectionList &&
+              modeSelectionList.map((mode) => (
+                <option key={mode} className="text-secondary-content" value={mode}>
+                  {mode}
+                </option>
+              ))}
+          </select>
+        )}
+
         <button
           className="btn-circle btn-secondary btn w-24"
           onClick={resetNotes}
         >
-          {selection ? "Reset" : "Shuffle"}
+          {circleQuiz ? "Shuffle" : "Reset"}
         </button>
       </div>
 
