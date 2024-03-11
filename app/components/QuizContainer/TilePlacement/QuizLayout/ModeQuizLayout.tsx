@@ -86,7 +86,7 @@ const ModesQuizLayout: React.FC<ModeQuizLayoutProps> = ({
                         <QuizTile
                           key={item}
                           index={
-                            rowIndex * lessSlots + itemIndex + intervalSlots
+                            rowIndex * lessSlots + (itemIndex + intervalSlots)
                           }
                           item={item}
                           moveTile={moveTile}
