@@ -66,24 +66,15 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
   };
 
   function generateRowsGrid(): React.JSX.Element {
+    const LayoutComponent = circleQuiz ? CircleQuizLayout : ModesQuizLayout;
+
     return (
-      <>
-        {circleQuiz ? (
-          <CircleQuizLayout
-            numberOfRows={numberOfRows}
-            items={items}
-            moveTile={moveTile}
-            draggedTileIndex={draggedTileIndex}
-          />
-        ) : (
-          <ModesQuizLayout
-            numberOfRows={numberOfRows}
-            items={items}
-            moveTile={moveTile}
-            draggedTileIndex={draggedTileIndex}
-          />
-        )}
-      </>
+      <LayoutComponent
+        numberOfRows={numberOfRows}
+        items={items}
+        moveTile={moveTile}
+        draggedTileIndex={draggedTileIndex}
+      />
     );
   }
 

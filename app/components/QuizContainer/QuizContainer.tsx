@@ -45,8 +45,8 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     [originalArray]
   );
 
-  const orderButtonAction: () => allNotes[] | string[] = useCallback(
-    function tileOrder(): allNotes[] | string[] {
+  const tileOrder: () => allNotes[] | string[] = useCallback(
+    function arrangeTiles(): allNotes[] | string[] {
       if (circleQuiz === true) {
         return shuffleArray();
       }
@@ -57,10 +57,10 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
 
   useEffect(() => {
     function orderInitialLoad() {
-      setCurrentArray(orderButtonAction);
+      setCurrentArray(tileOrder);
     }
     orderInitialLoad();
-  }, [setCurrentArray, orderButtonAction]);
+  }, [setCurrentArray, tileOrder]);
 
   const checkCircle: () => void = useCallback(
     function circleInOrder(): void {
@@ -108,10 +108,10 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     checkModes();
   }, [circleQuiz, checkCircle, checkModes]);
 
-  const resetNotes: () => void = useCallback(() => {
+  const order: () => void = useCallback(() => {
     setIsResetting(true);
-    setCurrentArray(orderButtonAction);
-  }, [setCurrentArray, orderButtonAction]);
+    setCurrentArray(tileOrder);
+  }, [setCurrentArray, tileOrder]);
 
   useEffect(() => {
     if (isResetting) {
@@ -197,7 +197,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
 
         <button
           className="btn-circle btn-secondary btn w-24"
-          onClick={resetNotes}
+          onClick={order}
         >
           {circleQuiz ? "Shuffle" : "Reset"}
         </button>
