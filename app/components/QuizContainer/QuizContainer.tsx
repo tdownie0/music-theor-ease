@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { allNotes } from "@/app/utils/musicLogic";
 import { windowSize } from "@/app/utils/enums";
 import TilePlacement from "./TilePlacement/TilePlacement";
+import QuizModal from "./QuizModal/QuizModal";
 
 type QuizContainerProps = {
   currentArray: allNotes[] | string[];
@@ -34,9 +35,11 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
   modeSelectionList,
   currentSelectionAnswer,
 }) => {
-  const [isResetting, setIsResetting] = useState(false);
-  const [numberOfRows, setNumberOfRows] = useState(getNumberOfRows());
-  const [resizeReset, setResizeReset] = useState(false);
+  const [isResetting, setIsResetting] = useState<boolean>(false);
+  const [numberOfRows, setNumberOfRows] = useState<number>(getNumberOfRows());
+  const [resizeReset, setResizeReset] = useState<boolean>(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [modalContent, setModalContent] = useState<Record<string, string>>({});
 
   const shuffleArray: () => allNotes[] | string[] = useCallback(
     function shuffle(): allNotes[] | string[] {
@@ -62,19 +65,52 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     orderInitialLoad();
   }, [setCurrentArray, tileOrder]);
 
+  const inputCorrect: () => void = useCallback(
+    function correctOrder(): void {
+      setShowModal(true);
+      setModalContent({
+        title: "Success",
+        message: "The tiles are in order!",
+      });
+    },
+    [setShowModal, setModalContent]
+  );
+
+  const inputIncorrect: () => void = useCallback(
+    function incorrectOrder(): void {
+      setShowModal(true);
+      setModalContent({
+        title: "Try Again",
+        message: "The tiles are not in order.",
+      });
+    },
+    [setShowModal, setModalContent]
+  );
+
+  const noSelection: () => void = useCallback(
+    function needSelection(): void {
+      setShowModal(true);
+      setModalContent({
+        title: "Please Select",
+        message: "You must select a mode to compare intervals to.",
+      });
+    },
+    [setShowModal, setModalContent]
+  );
+
   const checkCircle: () => void = useCallback(
     function circleInOrder(): void {
       const isOrdered: boolean = currentArray.every(
         (note, index) => note === originalArray[index]
       );
       if (isOrdered) {
-        alert("Tiles are in order!");
+        inputCorrect();
         return;
       }
-      alert("Tiles are not in order.");
+      inputIncorrect();
       return;
     },
-    [currentArray, originalArray]
+    [currentArray, originalArray, inputCorrect, inputIncorrect]
   );
 
   const checkModes: () => void = useCallback(
@@ -87,17 +123,23 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
               (interval, index) => interval === currentSelectionAnswer[index]
             );
           if (intervalOrdered) {
-            alert("Tiles are in order!");
+            inputCorrect();
             return;
           }
-          alert("Tiles are not in order.");
+          inputIncorrect();
           return;
         }
       }
-      alert("You must select a mode to compare intervals to.");
+      noSelection();
       return;
     },
-    [currentSelectionAnswer, currentArray]
+    [
+      currentSelectionAnswer,
+      currentArray,
+      inputCorrect,
+      inputIncorrect,
+      noSelection,
+    ]
   );
 
   const checkOrder: () => void = useCallback(() => {
@@ -195,10 +237,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
           </select>
         )}
 
-        <button
-          className="btn-circle btn-secondary btn w-24"
-          onClick={order}
-        >
+        <button className="btn-circle btn-secondary btn w-24" onClick={order}>
           {circleQuiz ? "Shuffle" : "Reset"}
         </button>
       </div>
@@ -221,6 +260,14 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
           Check
         </button>
       </div>
+      {showModal && (
+        <QuizModal
+          title={modalContent.title}
+          message={modalContent.message}
+          showModal={showModal}
+          setShowModal={setShowModal}
+        />
+      )}
     </div>
   );
 };

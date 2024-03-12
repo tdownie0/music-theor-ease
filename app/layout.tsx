@@ -25,6 +25,7 @@ export default function RootLayout({
             <div className="mx-auto max-w-5xl px-4 pb-4 text-2xl">
               <ThemeButtonsAnimation />
               <div className="relative z-10">{children}</div>
+              <div id="modal-root"></div>
             </div>
           </ClientThemeWrapper>
         </ThemeProvider>
