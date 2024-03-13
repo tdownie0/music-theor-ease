@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import ReactDOM from "react-dom";
+import QuizModalContent from "./QuizModalContent/QuizModalContent";
 
 type QuizModalProps = {
   title: string;
@@ -40,17 +41,11 @@ const QuizModal: React.FC<QuizModalProps> = ({
     <ModalContainer>
       {overlay}
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center z-20">
-          <div className="modal-box bg-base-100">
-            <h3 className="font-bold text-base-content text-lg">{title}</h3>
-            <p className="py-4 text-base-content">{message}</p>
-            <div className="modal-action">
-              <button onClick={closeModal} className="btn btn-primary">
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
+        <QuizModalContent
+          title={title}
+          message={message}
+          closeModal={closeModal}
+        />
       )}
     </ModalContainer>
   );
