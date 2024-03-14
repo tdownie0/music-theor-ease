@@ -9,7 +9,7 @@ import ModesQuiz from "../components/ModesQuiz/ModesQuiz";
 const Quizzes: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
+  useEffect(function loaded(): () => void {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 300);
@@ -17,7 +17,10 @@ const Quizzes: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const fadeStyles = {
+  const fadeStyles: {
+    opacity: number;
+    transition: string;
+  } = {
     opacity: isLoading ? 0 : 1,
     transition: "opacity .7s ease-in-out",
   };

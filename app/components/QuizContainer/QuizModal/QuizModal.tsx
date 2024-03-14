@@ -20,9 +20,6 @@ const ModalContainer: React.FC<ModalProps> = ({
   showModal,
   onClose,
 }) => {
-  const modalBoxRef: React.RefObject<HTMLDivElement> =
-    useRef<HTMLDivElement>(null);
-
   const handleClickOutside: (event: MouseEvent) => void = useCallback(
     function clickOutsideModal(event: MouseEvent): void {
       if (
@@ -62,17 +59,18 @@ const ModalContainer: React.FC<ModalProps> = ({
     [showModal, handleClickOutside, handleKeyDown]
   );
 
-  const [hideModal, setHideModal] = useState(true);
+  const modalBoxRef: React.RefObject<HTMLDivElement> =
+    useRef<HTMLDivElement>(null);
+  const [hideModal, setHideModal] = useState<boolean>(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setHideModal(false);
-    }, 300);
-
-    return () => clearTimeout(timer);
+  useEffect(function show(): void {
+    setHideModal(false);
   }, []);
 
-  const fadeStyles = {
+  const fadeStyles: {
+    opacity: number;
+    transition: string;
+  } = {
     opacity: hideModal ? 0 : 1,
     transition: "opacity .3s ease-in-out",
   };
