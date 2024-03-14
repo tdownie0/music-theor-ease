@@ -11,11 +11,19 @@ const QuizModalContent: React.FC<QuizModalContentProps> = ({
   message,
   closeModal,
 }: QuizModalContentProps) => {
+  const closeIcon: string = "\u00D7";
+
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-20">
+    <div className="fixed flex w-3/4 items-center justify-center z-20">
       <div className="modal-box bg-base-100">
-        <h3 className="font-bold text-base-content text-lg">{title}</h3>
+        <div className="flex items-center text-base-content">
+          <h3 className="flex w-full font-bold text-lg">{title}</h3>
+
+          <button onClick={closeModal}>{closeIcon}</button>
+        </div>
+
         <p className="py-4 text-base-content">{message}</p>
+
         <div className="modal-action">
           <button onClick={closeModal} className="btn btn-primary">
             Close
