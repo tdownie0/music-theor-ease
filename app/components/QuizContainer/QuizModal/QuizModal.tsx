@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import QuizModalContent from "./QuizModalContent/QuizModalContent";
 
@@ -62,12 +62,30 @@ const ModalContainer: React.FC<ModalProps> = ({
     [showModal, handleClickOutside, handleKeyDown]
   );
 
+  const [hideModal, setHideModal] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setHideModal(false);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const fadeStyles = {
+    opacity: hideModal ? 0 : 1,
+    transition: "opacity .3s ease-in-out",
+  };
+
   return ReactDOM.createPortal(
-    <div className="fixed inset-0 flex items-center justify-center z-10">
+    <div
+      style={fadeStyles}
+      className="fixed inset-0 flex items-center justify-center z-10"
+    >
       {showModal && (
         <div
           className="fixed inset-0 bg-black opacity-50 z-10"
-          onClick={onClose} // Close modal when clicking on overlay
+          onClick={onClose}
         ></div>
       )}
       <div className="flex items-center justify-center z-10" ref={modalBoxRef}>
