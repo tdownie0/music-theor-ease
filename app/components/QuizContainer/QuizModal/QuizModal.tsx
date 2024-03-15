@@ -10,7 +10,7 @@ const ModalContainer = ({ children, showModal, onClose }) => {
         modalBoxRef.current &&
         !modalBoxRef.current
           .querySelector(".modal-box")
-          ?.contains(event.target as Node)
+          ?.contains(event.target)
       ) {
         onClose();
       }

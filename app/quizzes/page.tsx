@@ -6,7 +6,7 @@ import CircleOfFifthsQuiz from "../components/CircleQuiz/CircleOfFifths/CircleOf
 import CircleOfFourthsQuiz from "../components/CircleQuiz/CircleOfFourths/CircleOfFourths";
 import ModesQuiz from "../components/ModesQuiz/ModesQuiz";
 
-const Quizzes: React.FC = () => {
+const Quizzes = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(function loaded() {
