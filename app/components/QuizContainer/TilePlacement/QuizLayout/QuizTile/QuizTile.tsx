@@ -28,8 +28,8 @@ const QuizTile = ({ item, index, moveTile, isDragging }) => {
   const [, drop] = useDrop({
     accept: "QuizTile",
     hover(item) {
-      const dragIndex: number = item.index;
-      const hoverIndex: number = index;
+      const dragIndex = item.index;
+      const hoverIndex = index;
 
       if (dragIndex === hoverIndex) {
         return;
