@@ -4,13 +4,11 @@ import DreamBackground from "../DreamBackground/DreamBackground";
 import ThemeButtons from "../ThemeButtons/ThemeButtons";
 import styles from "./ThemeButtonsAnimation.module.css";
 
-const ThemeButtonsAnimation: React.FC = () => {
-  const [canvasElement, setCanvasElement] = useState<HTMLCanvasElement | null>(
-    null
-  );
+const ThemeButtonsAnimation = () => {
+  const [canvasElement, setCanvasElement] = useState(null);
   const [canvasVisible, setCanvasVisible] = useState(false);
 
-  const toggleCanvas = function displayCanvas(): void {
+  const toggleCanvas = function displayCanvas() {
     if (!canvasElement) {
       createCanvas();
     }
@@ -20,7 +18,7 @@ const ThemeButtonsAnimation: React.FC = () => {
     }
   };
 
-  const createCanvas = function canvasSetup(): void {
+  const createCanvas = function canvasSetup() {
     const canvas = document.createElement("canvas");
     canvas.style.position = "fixed";
     canvas.style.top = "0";

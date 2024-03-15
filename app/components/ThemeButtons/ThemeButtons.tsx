@@ -3,19 +3,10 @@ import React, { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import { themeName } from "../../utils/enums";
 
-type ThemeButtonsProps = {
-  toggleCanvas: () => void;
-};
-
-type Theme = {
-  name: themeName;
-  className: string;
-};
-
-const ThemeButtons: React.FC<ThemeButtonsProps> = ({ toggleCanvas }) => {
+const ThemeButtons = ({ toggleCanvas }) => {
   const { changeTheme } = useContext(ThemeContext);
 
-  const themes: Theme[] = [
+  const themes = [
     { name: themeName.Light, className: "btn" },
     { name: themeName.Dark, className: "btn bg-gray-900 text-white" },
     { name: themeName.Winter, className: "btn btn-primary" },
@@ -24,7 +15,7 @@ const ThemeButtons: React.FC<ThemeButtonsProps> = ({ toggleCanvas }) => {
     { name: themeName.Aqua, className: "btn btn-neutral" },
   ];
 
-  const handleButtonClick = function themeButtonClicked(theme: string) {
+  const handleButtonClick = function themeButtonClicked(theme) {
     if (changeTheme) {
       toggleCanvas();
       changeTheme(theme);

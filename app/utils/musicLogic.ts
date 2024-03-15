@@ -24,11 +24,7 @@ enum FlatNote {
   Bb = "Bb",
 }
 
-export type allNotes = Note | SharpNote | FlatNote;
-type notesAndSharps = Exclude<allNotes, FlatNote>;
-type notesAndFlats = Exclude<allNotes, SharpNote>;
-
-const notesWithSharpsArray: notesAndSharps[] = [
+const notesWithSharpsArray = [
   Note.C,
   SharpNote.Cs,
   Note.D,
@@ -43,7 +39,7 @@ const notesWithSharpsArray: notesAndSharps[] = [
   Note.B,
 ];
 
-const notesWithFlatsArray: notesAndFlats[] = [
+const notesWithFlatsArray = [
   Note.C,
   FlatNote.Db,
   Note.D,
@@ -58,7 +54,7 @@ const notesWithFlatsArray: notesAndFlats[] = [
   Note.B,
 ];
 
-let circleOfFifthsArray: allNotes[] = [
+let circleOfFifthsArray = [
   Note.C,
   Note.G,
   Note.D,
@@ -80,7 +76,7 @@ export const getCircleOfFifthsNotes = async function fetchFifths() {
     setTimeout(function fetchNotes() {
       try {
         // Replace this with your actual data fetching logic
-        const fetchedData: allNotes[] = circleOfFifthsArray;
+        const fetchedData = circleOfFifthsArray;
 
         // Update circleOfFifthsArray with fetched data
         circleOfFifthsArray = fetchedData;
@@ -93,19 +89,16 @@ export const getCircleOfFifthsNotes = async function fetchFifths() {
   });
 };
 
-const circleOfFifths: Record<allNotes, allNotes> = {} as Record<
-  allNotes,
-  allNotes
->;
-const lengthOfCircleOfFifthsArray: number = circleOfFifthsArray.length;
+const circleOfFifths = {};
+const lengthOfCircleOfFifthsArray = circleOfFifthsArray.length;
 
 circleOfFifthsArray.forEach(function fillCircleOfFifthsObject(
-  currentNote: allNotes,
-  index: number,
-  currentArray: allNotes[]
-): void {
-  const fifthIndex: number = (index + 1) % lengthOfCircleOfFifthsArray;
-  const fifthNote: allNotes = currentArray[fifthIndex];
+  currentNote,
+  index,
+  currentArray
+) {
+  const fifthIndex = (index + 1) % lengthOfCircleOfFifthsArray;
+  const fifthNote = currentArray[fifthIndex];
   circleOfFifths[currentNote] = fifthNote;
 });
 
@@ -124,7 +117,7 @@ enum CircleOfFifthsEnum {
   F = Note.C,
 }
 
-const circleOfFourthsArray: notesAndFlats[] = [
+const circleOfFourthsArray = [
   Note.C,
   Note.F,
   FlatNote.Bb,
@@ -139,19 +132,16 @@ const circleOfFourthsArray: notesAndFlats[] = [
   Note.G,
 ];
 
-const circleOfFourths: Record<notesAndFlats, notesAndFlats> = {} as Record<
-  notesAndFlats,
-  notesAndFlats
->;
-const lengthOfCircleOfFourthsArray: number = circleOfFourthsArray.length;
+const circleOfFourths = {};
+const lengthOfCircleOfFourthsArray = circleOfFourthsArray.length;
 
 circleOfFourthsArray.forEach(function fillCircleOfFourthsObject(
-  currentNote: notesAndFlats,
-  index: number,
-  currentArray: notesAndFlats[]
-): void {
-  const fourthIndex: number = (index + 1) % lengthOfCircleOfFourthsArray;
-  const fourthNote: notesAndFlats = currentArray[fourthIndex];
+  currentNote,
+  index,
+  currentArray
+) {
+  const fourthIndex = (index + 1) % lengthOfCircleOfFourthsArray;
+  const fourthNote = currentArray[fourthIndex];
   circleOfFourths[currentNote] = fourthNote;
 });
 
@@ -170,15 +160,15 @@ enum CircleOfFourthsEnum {
   G = Note.C,
 }
 
-const IonianArray: string[] = ["1", "2", "3", "4", "5", "6", "7"];
-const DorianArray: string[] = ["1", "2", "b3", "4", "5", "6", "b7"];
-const PhrygianArray: string[] = ["1", "b2", "b3", "4", "5", "b6", "b7"];
-const LydianArray: string[] = ["1", "2", "3", "#4", "5", "6", "7"];
-const MixolydianArray: string[] = ["1", "2", "3", "4", "5", "6", "b7"];
-const AeolianArray: string[] = ["1", "2", "b3", "4", "5", "b6", "b7"];
-const LocrianArray: string[] = ["1", "b2", "b3", "4", "b5", "b6", "b7"];
+const IonianArray = ["1", "2", "3", "4", "5", "6", "7"];
+const DorianArray = ["1", "2", "b3", "4", "5", "6", "b7"];
+const PhrygianArray = ["1", "b2", "b3", "4", "5", "b6", "b7"];
+const LydianArray = ["1", "2", "3", "#4", "5", "6", "7"];
+const MixolydianArray = ["1", "2", "3", "4", "5", "6", "b7"];
+const AeolianArray = ["1", "2", "b3", "4", "5", "b6", "b7"];
+const LocrianArray = ["1", "b2", "b3", "4", "b5", "b6", "b7"];
 
-export const modesList: Record<string, string[]> = {
+export const modesList = {
   Ionian: IonianArray,
   Dorian: DorianArray,
   Phygrian: PhrygianArray,

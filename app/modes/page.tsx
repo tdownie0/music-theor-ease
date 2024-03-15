@@ -3,7 +3,7 @@ import ModesTable from "../components/ModesTable/ModesTable";
 import NavigationLinks from "../components/NavigationLinks/NavigationLinks";
 import { siteLink } from "../utils/enums";
 
-const Modes: React.FC = () => {
+const Modes = () => {
   return (
     <div className="primary min-h-screen mt-16 ml-4">
       <NavigationLinks linkType={siteLink.Modes} />

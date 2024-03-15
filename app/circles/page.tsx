@@ -3,7 +3,7 @@ import CircleOfNotes from "../components/CircleOfNotes/CircleOfNotes";
 import NavigationLinks from "../components/NavigationLinks/NavigationLinks";
 import { siteLink } from "../utils/enums";
 
-const Circles: React.FC = () => {
+const Circles = () => {
   return (
     <div className="primary min-h-screen mt-16 ml-4">
       <NavigationLinks linkType={siteLink.Circles} />
