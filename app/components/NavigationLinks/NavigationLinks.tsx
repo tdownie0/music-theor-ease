@@ -11,7 +11,7 @@ const siteLinksArray = [
 
 const linkNames = {};
 
-siteLinksArray.forEach(function populateLinkName(link) {
+siteLinksArray.forEach((link) => {
   linkNames[link] = siteLinksArray.filter((otherLink) => otherLink !== link);
 });
 

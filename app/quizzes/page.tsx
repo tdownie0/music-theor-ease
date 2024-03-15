@@ -9,7 +9,7 @@ import ModesQuiz from "../components/ModesQuiz/ModesQuiz";
 const Quizzes = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(function loaded() {
+  useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 300);

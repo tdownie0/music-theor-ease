@@ -27,106 +27,82 @@ const QuizContainer = ({
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState({});
 
-  const shuffleArray = useCallback(
-    function shuffle() {
-      return originalArray.slice().sort(() => Math.random() - 0.5);
-    },
-    [originalArray]
-  );
+  const shuffleArray = useCallback(() => {
+    return originalArray.slice().sort(() => Math.random() - 0.5);
+  }, [originalArray]);
 
-  const tileOrder = useCallback(
-    function arrangeTiles() {
-      if (circleQuiz === true) {
-        return shuffleArray();
-      }
-      return originalArray;
-    },
-    [circleQuiz, originalArray, shuffleArray]
-  );
+  const tileOrder = useCallback(() => {
+    if (circleQuiz === true) {
+      return shuffleArray();
+    }
+    return originalArray;
+  }, [circleQuiz, originalArray, shuffleArray]);
 
   useEffect(() => {
-    function orderInitialLoad() {
-      setCurrentArray(tileOrder);
-    }
-    orderInitialLoad();
+    setCurrentArray(tileOrder);
   }, [setCurrentArray, tileOrder]);
 
-  const inputCorrect = useCallback(
-    function correctOrder() {
-      setShowModal(true);
-      setModalContent({
-        title: "Success",
-        message: "The tiles are in order!",
-      });
-    },
-    [setShowModal, setModalContent]
-  );
+  const inputCorrect = useCallback(() => {
+    setShowModal(true);
+    setModalContent({
+      title: "Success",
+      message: "The tiles are in order!",
+    });
+  }, [setShowModal, setModalContent]);
 
-  const inputIncorrect = useCallback(
-    function incorrectOrder() {
-      setShowModal(true);
-      setModalContent({
-        title: "Try Again",
-        message: "The tiles are not in order.",
-      });
-    },
-    [setShowModal, setModalContent]
-  );
+  const inputIncorrect = useCallback(() => {
+    setShowModal(true);
+    setModalContent({
+      title: "Try Again",
+      message: "The tiles are not in order.",
+    });
+  }, [setShowModal, setModalContent]);
 
-  const noSelection = useCallback(
-    function needSelection() {
-      setShowModal(true);
-      setModalContent({
-        title: "Please Select",
-        message: "You must select a mode to compare intervals to.",
-      });
-    },
-    [setShowModal, setModalContent]
-  );
+  const noSelection = useCallback(() => {
+    setShowModal(true);
+    setModalContent({
+      title: "Please Select",
+      message: "You must select a mode to compare intervals to.",
+    });
+  }, [setShowModal, setModalContent]);
 
-  const checkCircle = useCallback(
-    function circleInOrder() {
-      const isOrdered = currentArray.every(
-        (note, index) => note === originalArray[index]
-      );
-      if (isOrdered) {
-        inputCorrect();
-        return;
-      }
-      inputIncorrect();
+  const checkCircle = useCallback(() => {
+    const isOrdered = currentArray.every(
+      (note, index) => note === originalArray[index]
+    );
+    if (isOrdered) {
+      inputCorrect();
       return;
-    },
-    [currentArray, originalArray, inputCorrect, inputIncorrect]
-  );
+    }
+    inputIncorrect();
+    return;
+  }, [currentArray, originalArray, inputCorrect, inputIncorrect]);
 
-  const checkModes = useCallback(
-    function ModeIntervalInOrder() {
-      if (currentSelectionAnswer) {
-        if (currentSelectionAnswer.length > 0) {
-          const intervalOrdered = currentArray
-            .slice(0, 7)
-            .every(
-              (interval, index) => interval === currentSelectionAnswer[index]
-            );
-          if (intervalOrdered) {
-            inputCorrect();
-            return;
-          }
-          inputIncorrect();
+  const checkModes = useCallback(() => {
+    if (currentSelectionAnswer) {
+      if (currentSelectionAnswer.length > 0) {
+        const intervalOrdered = currentArray
+          .slice(0, 7)
+          .every(
+            (interval, index) => interval === currentSelectionAnswer[index]
+          );
+        if (intervalOrdered) {
+          inputCorrect();
           return;
         }
+        inputIncorrect();
+        return;
       }
-      noSelection();
-      return;
-    },
-    [
-      currentSelectionAnswer,
-      currentArray,
-      inputCorrect,
-      inputIncorrect,
-      noSelection,
-    ]
-  );
+    }
+    noSelection();
+    return;
+  }, [
+    currentSelectionAnswer,
+    currentArray,
+    inputCorrect,
+    inputIncorrect,
+    noSelection,
+  ]);
 
   const checkOrder = useCallback(() => {
     if (circleQuiz) {

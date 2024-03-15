@@ -69,11 +69,11 @@ let circleOfFifthsArray = [
   Note.F,
 ];
 
-export const getCircleOfFifthsNotes = async function fetchFifths() {
+export const getCircleOfFifthsNotes = async () => {
   // Simulate an asynchronous operation, e.g., fetching data from an API
   return new Promise((resolve, reject) => {
     // Simulate delay
-    setTimeout(function fetchNotes() {
+    setTimeout(() => {
       try {
         // Replace this with your actual data fetching logic
         const fetchedData = circleOfFifthsArray;
@@ -92,11 +92,7 @@ export const getCircleOfFifthsNotes = async function fetchFifths() {
 const circleOfFifths = {};
 const lengthOfCircleOfFifthsArray = circleOfFifthsArray.length;
 
-circleOfFifthsArray.forEach(function fillCircleOfFifthsObject(
-  currentNote,
-  index,
-  currentArray
-) {
+circleOfFifthsArray.forEach((currentNote, index, currentArray) => {
   const fifthIndex = (index + 1) % lengthOfCircleOfFifthsArray;
   const fifthNote = currentArray[fifthIndex];
   circleOfFifths[currentNote] = fifthNote;
@@ -135,11 +131,7 @@ const circleOfFourthsArray = [
 const circleOfFourths = {};
 const lengthOfCircleOfFourthsArray = circleOfFourthsArray.length;
 
-circleOfFourthsArray.forEach(function fillCircleOfFourthsObject(
-  currentNote,
-  index,
-  currentArray
-) {
+circleOfFourthsArray.forEach((currentNote, index, currentArray) => {
   const fourthIndex = (index + 1) % lengthOfCircleOfFourthsArray;
   const fourthNote = currentArray[fourthIndex];
   circleOfFourths[currentNote] = fourthNote;

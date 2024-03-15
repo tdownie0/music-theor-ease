@@ -4,13 +4,11 @@ import QuizModalContent from "./QuizModalContent/QuizModalContent";
 
 const ModalContainer = ({ children, showModal, onClose }) => {
   const handleClickOutside = useCallback(
-    function clickOutsideModal(event) {
+    (event) => {
       if (
         showModal &&
         modalBoxRef.current &&
-        !modalBoxRef.current
-          .querySelector(".modal-box")
-          ?.contains(event.target)
+        !modalBoxRef.current.querySelector(".modal-box")?.contains(event.target)
       ) {
         onClose();
       }
@@ -19,7 +17,7 @@ const ModalContainer = ({ children, showModal, onClose }) => {
   );
 
   const handleKeyDown = useCallback(
-    function escapePressed(e) {
+    (e) => {
       if (e.key === "Escape") {
         onClose();
       }
@@ -27,25 +25,22 @@ const ModalContainer = ({ children, showModal, onClose }) => {
     [onClose]
   );
 
-  useEffect(
-    function handleModalExits() {
-      if (showModal) {
-        document.addEventListener("keydown", handleKeyDown);
-        window.addEventListener("mousedown", handleClickOutside);
+  useEffect(() => {
+    if (showModal) {
+      document.addEventListener("keydown", handleKeyDown);
+      window.addEventListener("mousedown", handleClickOutside);
 
-        return () => {
-          window.removeEventListener("mousedown", handleClickOutside);
-          document.removeEventListener("keydown", handleKeyDown);
-        };
-      }
-    },
-    [showModal, handleClickOutside, handleKeyDown]
-  );
+      return () => {
+        window.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener("keydown", handleKeyDown);
+      };
+    }
+  }, [showModal, handleClickOutside, handleKeyDown]);
 
   const modalBoxRef = useRef(null);
   const [hideModal, setHideModal] = useState(true);
 
-  useEffect(function show() {
+  useEffect(() => {
     setHideModal(false);
   }, []);
 
@@ -74,12 +69,9 @@ const ModalContainer = ({ children, showModal, onClose }) => {
 };
 
 const QuizModal = ({ title, message, showModal, setShowModal }) => {
-  const closeModal = useCallback(
-    function close() {
-      setShowModal(false);
-    },
-    [setShowModal]
-  );
+  const closeModal = useCallback(() => {
+    setShowModal(false);
+  }, [setShowModal]);
 
   return (
     <ModalContainer showModal={showModal} onClose={closeModal}>

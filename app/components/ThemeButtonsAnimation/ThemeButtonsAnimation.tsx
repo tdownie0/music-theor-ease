@@ -8,7 +8,7 @@ const ThemeButtonsAnimation = () => {
   const [canvasElement, setCanvasElement] = useState(null);
   const [canvasVisible, setCanvasVisible] = useState(false);
 
-  const toggleCanvas = function displayCanvas() {
+  const toggleCanvas = () => {
     if (!canvasElement) {
       createCanvas();
     }
@@ -18,7 +18,7 @@ const ThemeButtonsAnimation = () => {
     }
   };
 
-  const createCanvas = function canvasSetup() {
+  const createCanvas = () => {
     const canvas = document.createElement("canvas");
     canvas.style.position = "fixed";
     canvas.style.top = "0";

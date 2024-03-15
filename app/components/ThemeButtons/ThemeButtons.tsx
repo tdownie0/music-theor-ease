@@ -15,7 +15,7 @@ const ThemeButtons = ({ toggleCanvas }) => {
     { name: themeName.Aqua, className: "btn btn-neutral" },
   ];
 
-  const handleButtonClick = function themeButtonClicked(theme) {
+  const handleButtonClick = (theme) => {
     if (changeTheme) {
       toggleCanvas();
       changeTheme(theme);
