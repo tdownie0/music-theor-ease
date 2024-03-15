@@ -1,21 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { allNotes } from "@/app/utils/musicLogic";
 import { windowSize } from "@/app/utils/enums";
 import TilePlacement from "./TilePlacement/TilePlacement";
 import QuizModal from "./QuizModal/QuizModal";
-
-type QuizContainerProps = {
-  currentArray: allNotes[] | string[];
-  setCurrentArray: React.Dispatch<React.SetStateAction<allNotes[] | string[]>>;
-  originalArray: allNotes[] | string[];
-  header: string;
-  description: string;
-  circleQuiz?: boolean;
-  modeSelection?: string;
-  setModeSelection?: React.Dispatch<React.SetStateAction<string>>;
-  modeSelectionList?: string[];
-  currentSelectionAnswer?: string[];
-};
 
 enum rowCount {
   sm = 4,
@@ -23,7 +9,7 @@ enum rowCount {
   xl = 2,
 }
 
-const QuizContainer: React.FC<QuizContainerProps> = ({
+const QuizContainer = ({
   currentArray,
   setCurrentArray,
   originalArray,
@@ -35,21 +21,21 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
   modeSelectionList,
   currentSelectionAnswer,
 }) => {
-  const [isResetting, setIsResetting] = useState<boolean>(false);
-  const [numberOfRows, setNumberOfRows] = useState<number>(getNumberOfRows());
-  const [resizeReset, setResizeReset] = useState<boolean>(false);
-  const [showModal, setShowModal] = useState<boolean>(false);
-  const [modalContent, setModalContent] = useState<Record<string, string>>({});
+  const [isResetting, setIsResetting] = useState(false);
+  const [numberOfRows, setNumberOfRows] = useState(getNumberOfRows());
+  const [resizeReset, setResizeReset] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState({});
 
-  const shuffleArray: () => allNotes[] | string[] = useCallback(
-    function shuffle(): allNotes[] | string[] {
+  const shuffleArray = useCallback(
+    function shuffle() {
       return originalArray.slice().sort(() => Math.random() - 0.5);
     },
     [originalArray]
   );
 
-  const tileOrder: () => allNotes[] | string[] = useCallback(
-    function arrangeTiles(): allNotes[] | string[] {
+  const tileOrder = useCallback(
+    function arrangeTiles() {
       if (circleQuiz === true) {
         return shuffleArray();
       }
@@ -65,8 +51,8 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     orderInitialLoad();
   }, [setCurrentArray, tileOrder]);
 
-  const inputCorrect: () => void = useCallback(
-    function correctOrder(): void {
+  const inputCorrect = useCallback(
+    function correctOrder() {
       setShowModal(true);
       setModalContent({
         title: "Success",
@@ -76,8 +62,8 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     [setShowModal, setModalContent]
   );
 
-  const inputIncorrect: () => void = useCallback(
-    function incorrectOrder(): void {
+  const inputIncorrect = useCallback(
+    function incorrectOrder() {
       setShowModal(true);
       setModalContent({
         title: "Try Again",
@@ -87,8 +73,8 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     [setShowModal, setModalContent]
   );
 
-  const noSelection: () => void = useCallback(
-    function needSelection(): void {
+  const noSelection = useCallback(
+    function needSelection() {
       setShowModal(true);
       setModalContent({
         title: "Please Select",
@@ -98,8 +84,8 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     [setShowModal, setModalContent]
   );
 
-  const checkCircle: () => void = useCallback(
-    function circleInOrder(): void {
+  const checkCircle = useCallback(
+    function circleInOrder() {
       const isOrdered: boolean = currentArray.every(
         (note, index) => note === originalArray[index]
       );
@@ -113,11 +99,11 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     [currentArray, originalArray, inputCorrect, inputIncorrect]
   );
 
-  const checkModes: () => void = useCallback(
+  const checkModes = useCallback(
     function ModeIntervalInOrder(): void {
       if (currentSelectionAnswer) {
         if (currentSelectionAnswer.length > 0) {
-          const intervalOrdered: boolean = currentArray
+          const intervalOrdered = currentArray
             .slice(0, 7)
             .every(
               (interval, index) => interval === currentSelectionAnswer[index]
@@ -142,7 +128,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     ]
   );
 
-  const checkOrder: () => void = useCallback(() => {
+  const checkOrder = useCallback(() => {
     if (circleQuiz) {
       checkCircle();
       return;
@@ -150,7 +136,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     checkModes();
   }, [circleQuiz, checkCircle, checkModes]);
 
-  const order: () => void = useCallback(() => {
+  const order = useCallback(() => {
     setIsResetting(true);
     setCurrentArray(tileOrder);
   }, [setCurrentArray, tileOrder]);
@@ -164,7 +150,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     }
   }, [isResetting]);
 
-  function getNumberOfRows(): number {
+  function getNumberOfRows() {
     const windowWidth: number = window.innerWidth;
     if (windowWidth < windowSize.sm) {
       return rowCount.sm;
@@ -175,19 +161,17 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     return rowCount.xl;
   }
 
-  const handleModeSelectionChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
+  const handleModeSelectionChange = (event) => {
     if (setModeSelection) {
       setModeSelection(event.target.value);
     }
   };
 
   useEffect(() => {
-    let resizeTimeout: NodeJS.Timeout;
+    let resizeTimeout;
     let resizeInProgress = false;
 
-    function handleResize(): void {
+    function handleResize() {
       if (!resizeInProgress) {
         resizeInProgress = true;
         setResizeReset(true);

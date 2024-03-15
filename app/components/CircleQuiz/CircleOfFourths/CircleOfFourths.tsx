@@ -1,15 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { allNotes, getCircleOfFifthsNotes } from "../../../utils/musicLogic";
+import { getCircleOfFifthsNotes } from "../../../utils/musicLogic";
 import QuizContainer from "../../QuizContainer/QuizContainer";
 
 const CircleOfFourthsQuiz = () => {
-  const [notes, setNotes] = useState<allNotes[] | string[]>([]);
-  const [originalNotes, setOriginalNotes] = useState<allNotes[] | string[]>([]);
+  const [notes, setNotes] = useState([]);
+  const [originalNotes, setOriginalNotes] = useState([]);
 
   useEffect(() => {
-    async function getCircleNotes(): Promise<void> {
-      const data: allNotes[] = await getCircleOfFifthsNotes();
+    async function getCircleNotes() {
+      const data = await getCircleOfFifthsNotes();
       setNotes([...data].reverse());
       setOriginalNotes([...data].reverse());
     }

@@ -1,17 +1,7 @@
 import React from "react";
 
-type QuizModalContentProps = {
-  title: string;
-  message: string;
-  closeModal: () => void;
-};
-
-const QuizModalContent: React.FC<QuizModalContentProps> = ({
-  title,
-  message,
-  closeModal,
-}: QuizModalContentProps) => {
-  const closeIcon: string = "\u00D7";
+const QuizModalContent = ({ title, message, closeModal }) => {
+  const closeIcon = "\u00D7";
 
   return (
     <div className="fixed flex w-3/4 items-center justify-center z-20">

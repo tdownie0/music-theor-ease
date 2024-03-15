@@ -1,21 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import { useDrag, useDrop } from "react-dnd";
-import { allNotes } from "@/app/utils/musicLogic";
 
-type QuizTileProps = {
-  item: allNotes | string;
-  index: number;
-  moveTile: (dragIndex: number, hoverIndex: number) => void;
-  isDragging: boolean;
-};
-
-const QuizTile: React.FC<QuizTileProps> = ({
-  item,
-  index,
-  moveTile,
-  isDragging,
-}) => {
-  const tileRef = useRef<HTMLDivElement>(null);
+const QuizTile = ({ item, index, moveTile, isDragging }) => {
+  const tileRef = useRef(null);
   const [, drag, preview] = useDrag({
     type: "QuizTile",
     item: { item, index },
@@ -40,7 +27,7 @@ const QuizTile: React.FC<QuizTileProps> = ({
 
   const [, drop] = useDrop({
     accept: "QuizTile",
-    hover(item: { index: number }) {
+    hover(item) {
       const dragIndex: number = item.index;
       const hoverIndex: number = index;
 

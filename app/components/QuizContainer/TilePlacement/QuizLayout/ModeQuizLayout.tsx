@@ -1,33 +1,26 @@
 import React from "react";
 import QuizTile from "./QuizTile/QuizTile";
 
-type ModeQuizLayoutProps = {
-  numberOfRows: number;
-  items: string[] | undefined;
-  moveTile: (dragIndex: number, hoverIndex: number) => void;
-  draggedTileIndex: number | null;
-};
-
-const intervalSlots: number = 7;
-const rowCount: Record<number, number> = {
+const intervalSlots = 7;
+const rowCount = {
   2: 2,
   3: 2,
   4: 3,
 };
-const itemCount: Record<number, number> = {
+const itemCount = {
   4: 3,
   3: 4,
   2: 4,
 };
 
-const ModesQuizLayout: React.FC<ModeQuizLayoutProps> = ({
+const ModesQuizLayout = ({
   numberOfRows,
   items,
   moveTile,
   draggedTileIndex,
 }) => {
-  let itemsPerRow: number = itemCount[numberOfRows];
-  const lessSlots: number = itemsPerRow - 1;
+  let itemsPerRow = itemCount[numberOfRows];
+  const lessSlots = itemsPerRow - 1;
 
   return (
     <>

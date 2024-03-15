@@ -2,26 +2,9 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import QuizModalContent from "./QuizModalContent/QuizModalContent";
 
-type QuizModalProps = {
-  title: string;
-  message: string;
-  showModal: boolean;
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-type ModalProps = {
-  children: React.ReactNode;
-  showModal: boolean;
-  onClose: () => void;
-};
-
-const ModalContainer: React.FC<ModalProps> = ({
-  children,
-  showModal,
-  onClose,
-}) => {
-  const handleClickOutside: (event: MouseEvent) => void = useCallback(
-    function clickOutsideModal(event: MouseEvent): void {
+const ModalContainer = ({ children, showModal, onClose }) => {
+  const handleClickOutside = useCallback(
+    function clickOutsideModal(event) {
       if (
         showModal &&
         modalBoxRef.current &&
@@ -35,8 +18,8 @@ const ModalContainer: React.FC<ModalProps> = ({
     [showModal, onClose]
   );
 
-  const handleKeyDown: (e: KeyboardEvent) => void = useCallback(
-    function escapePressed(e: KeyboardEvent): void {
+  const handleKeyDown = useCallback(
+    function escapePressed(e) {
       if (e.key === "Escape") {
         onClose();
       }
@@ -45,7 +28,7 @@ const ModalContainer: React.FC<ModalProps> = ({
   );
 
   useEffect(
-    function handleModalExits(): (() => void) | undefined {
+    function handleModalExits() {
       if (showModal) {
         document.addEventListener("keydown", handleKeyDown);
         window.addEventListener("mousedown", handleClickOutside);
@@ -59,18 +42,14 @@ const ModalContainer: React.FC<ModalProps> = ({
     [showModal, handleClickOutside, handleKeyDown]
   );
 
-  const modalBoxRef: React.RefObject<HTMLDivElement> =
-    useRef<HTMLDivElement>(null);
-  const [hideModal, setHideModal] = useState<boolean>(true);
+  const modalBoxRef = useRef(null);
+  const [hideModal, setHideModal] = useState(true);
 
-  useEffect(function show(): void {
+  useEffect(function show() {
     setHideModal(false);
   }, []);
 
-  const fadeStyles: {
-    opacity: number;
-    transition: string;
-  } = {
+  const fadeStyles = {
     opacity: hideModal ? 0 : 1,
     transition: "opacity .3s ease-in-out",
   };
@@ -94,14 +73,9 @@ const ModalContainer: React.FC<ModalProps> = ({
   );
 };
 
-const QuizModal: React.FC<QuizModalProps> = ({
-  title,
-  message,
-  showModal,
-  setShowModal,
-}) => {
-  const closeModal: () => void = useCallback(
-    function close(): void {
+const QuizModal = ({ title, message, showModal, setShowModal }) => {
+  const closeModal = useCallback(
+    function close() {
       setShowModal(false);
     },
     [setShowModal]

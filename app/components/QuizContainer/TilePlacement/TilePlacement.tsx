@@ -1,21 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { allNotes } from "@/app/utils/musicLogic";
 import CircleQuizLayout from "./QuizLayout/CircleQuizLayout";
 import ModesQuizLayout from "./QuizLayout/ModeQuizLayout";
 
-type TilePlacementProps = {
-  items: allNotes[] | string[];
-  setItems: React.Dispatch<React.SetStateAction<allNotes[] | string[]>>;
-  numberOfRows: number;
-  isResetting: boolean;
-  resizeReset: boolean;
-  setResizeReset: React.Dispatch<React.SetStateAction<boolean>>;
-  circleQuiz?: boolean;
-};
-
-const TilePlacement: React.FC<TilePlacementProps> = ({
+const TilePlacement = ({
   items,
   setItems,
   numberOfRows,
@@ -24,12 +13,11 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
   setResizeReset,
   circleQuiz,
 }) => {
-  const [draggedTileIndex, setDraggedTileIndex] = useState<number | null>(null);
+  const [draggedTileIndex, setDraggedTileIndex] = useState(null);
 
   useEffect(() => {
     if (isResetting) {
-      const elements: NodeListOf<Element> =
-        document.querySelectorAll(".animate-bounce");
+      const elements = document.querySelectorAll(".animate-bounce");
       elements.forEach((element) => {
         element.classList.remove("animate-bounce");
       });
@@ -37,13 +25,12 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
   }, [isResetting]);
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout | undefined;
+    let timeoutId;
 
     if (resizeReset) {
       clearTimeout(timeoutId);
 
-      const elements: NodeListOf<Element> =
-        document.querySelectorAll(".animate-bounce");
+      const elements = document.querySelectorAll(".animate-bounce");
       elements.forEach((element) => {
         element.classList.remove("animate-bounce");
       });
@@ -56,7 +43,7 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
     return () => clearTimeout(timeoutId);
   }, [resizeReset, setResizeReset]);
 
-  const moveTile = (dragIndex: number, hoverIndex: number) => {
+  const moveTile = (dragIndex, hoverIndex) => {
     const draggedTile = items![dragIndex];
     const updatedItems = [...items!];
     updatedItems.splice(dragIndex, 1);
@@ -65,7 +52,7 @@ const TilePlacement: React.FC<TilePlacementProps> = ({
     setDraggedTileIndex(hoverIndex);
   };
 
-  function generateRowsGrid(): React.JSX.Element {
+  function generateRowsGrid() {
     const LayoutComponent = circleQuiz ? CircleQuizLayout : ModesQuizLayout;
 
     return (
