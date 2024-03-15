@@ -1,28 +1,23 @@
 import Circle from "./shapes/Circle";
 
-interface amountToRender {
-  normal: number;
-  less: number;
-}
-
 class AnimateCanvas {
-  private animationFrameId: number | null = null;
-  private circles: Circle[] = [];
-  private lessRendersWidth: number = 800;
-  private renderTotal: amountToRender = {
+  private animationFrameId = null;
+  private circles = [];
+  private lessRendersWidth = 800;
+  private renderTotal = {
     normal: 150,
     less: 100,
   };
 
-  constructor(private ctx: CanvasRenderingContext2D) {
+  constructor(private ctx) {
     if (!ctx) {
-      throw new Error('CanvasRenderingContext2D is required')
+      throw new Error("CanvasRenderingContext2D is required");
     }
   }
 
-  private animate(): void {
-    const width: number = this.ctx.canvas.width;
-    const height: number = this.ctx.canvas.height;
+  private animate() {
+    const width = this.ctx.canvas.width;
+    const height = this.ctx.canvas.height;
 
     this.ctx.clearRect(0, 0, width, height);
     this.circles.forEach((circle) => {
@@ -32,16 +27,16 @@ class AnimateCanvas {
     this.animationFrameId = requestAnimationFrame(() => this.animate());
   }
 
-  private renderAmount(width: number): number {
+  private renderAmount(width) {
     return width > this.lessRendersWidth
       ? this.renderTotal.normal
       : this.renderTotal.less;
   }
 
-  start(): void {
-    const width: number = (this.ctx.canvas.width = window.innerWidth);
-    const height: number = (this.ctx.canvas.height = window.innerHeight);
-    const amountOfCircles: number = this.renderAmount(width);
+  start() {
+    const width = (this.ctx.canvas.width = window.innerWidth);
+    const height = (this.ctx.canvas.height = window.innerHeight);
+    const amountOfCircles = this.renderAmount(width);
 
     this.circles = Array.from({ length: amountOfCircles }, () =>
       Circle.createRandom(width, height)
@@ -50,14 +45,14 @@ class AnimateCanvas {
     this.animate();
   }
 
-  stop(): void {
+  stop() {
     window.removeEventListener("resize", () => this.handleResize());
     cancelAnimationFrame(this.animationFrameId!);
   }
 
-  private handleResize(): void {
-    const width: number = (this.ctx.canvas.width = window.innerWidth);
-    const height: number = (this.ctx.canvas.height = window.innerHeight);
+  private handleResize() {
+    const width = (this.ctx.canvas.width = window.innerWidth);
+    const height = (this.ctx.canvas.height = window.innerHeight);
 
     this.circles.forEach((circle) => {
       circle.resize(width, height);

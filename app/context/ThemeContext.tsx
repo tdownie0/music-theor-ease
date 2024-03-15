@@ -1,24 +1,13 @@
 "use client";
 import { createContext, useEffect, useState, ReactNode } from "react";
 
-type ThemeContextType = {
-  theme?: string;
-  changeTheme?: (nextTheme: string) => void;
-};
+export const ThemeContext = createContext({});
 
-export const ThemeContext = createContext<ThemeContextType>({});
-
-type ThemeProviderProps = {
-  children: ReactNode;
-};
-
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({
-  children,
-}: ThemeProviderProps) => {
+export const ThemeProvider = ({ children }) => {
   const [isMounted, setIsMounted] = useState(false);
-  const [theme, setTheme] = useState<string>("light");
+  const [theme, setTheme] = useState("light");
 
-  const changeTheme = (nextTheme: string) => {
+  const changeTheme = (nextTheme) => {
     setTheme(nextTheme);
     localStorage.setItem("theme", nextTheme);
   };

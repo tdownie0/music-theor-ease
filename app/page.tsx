@@ -1,7 +1,7 @@
 import React from "react";
 import NavigationLinks from "./components/NavigationLinks/NavigationLinks";
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <div className="primary min-h-screen mt-16 ml-4">
       <NavigationLinks />

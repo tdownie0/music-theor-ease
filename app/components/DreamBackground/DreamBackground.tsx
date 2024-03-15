@@ -2,12 +2,7 @@
 import React, { useEffect } from "react";
 import AnimateCanvas from "./animations/animateCanvas";
 
-type DreamBackgroundProps = {
-  showCanvas: boolean;
-  canvasElement: HTMLCanvasElement | null;
-};
-
-const DreamBackground: React.FC<DreamBackgroundProps> = ({
+const DreamBackground = ({
   showCanvas,
   canvasElement,
 }) => {
@@ -16,7 +11,7 @@ const DreamBackground: React.FC<DreamBackgroundProps> = ({
     const ctx = canvasElement.getContext("2d");
 
     if (!ctx) return;
-    let animateCanvas: AnimateCanvas | null = null;
+    let animateCanvas = null;
 
     // Simple error handling demo
     try {
