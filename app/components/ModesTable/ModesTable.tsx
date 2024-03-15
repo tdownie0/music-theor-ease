@@ -2,7 +2,7 @@ import React from "react";
 import ModesTableRow from "./ModesTableRow/ModesTableRow";
 import { modesList } from "../../utils/musicLogic";
 
-const ModesTable: React.FC = () => {
+const ModesTable = () => {
   return (
     <div className="overflow-x-auto rounded-lg shadow-lg bg-base-300 p-4 w-full">
       <h4 className="text-2xl pb-4">Primary Modes</h4>

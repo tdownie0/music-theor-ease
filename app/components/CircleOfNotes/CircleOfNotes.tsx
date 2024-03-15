@@ -1,29 +1,25 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { allNotes, getCircleOfFifthsNotes } from "../../utils/musicLogic";
+import { getCircleOfFifthsNotes } from "../../utils/musicLogic";
 
-type CircleOfNotesProps = {
-  circleType?: string;
-};
+const containerWidth = 300;
+const containerHeight = 300;
+const circleCoordinateX = 150;
+const circleCoordinateY = 150;
+const circleRadius = 100;
+const radiusOffset = circleRadius + 20;
+const degreesToRadians = Math.PI / 180;
+let angleIncrement = 0;
 
-const containerWidth: number = 300;
-const containerHeight: number = 300;
-const circleCoordinateX: number = 150;
-const circleCoordinateY: number = 150;
-const circleRadius: number = 100;
-const radiusOffset: number = circleRadius + 20;
-const degreesToRadians: number = Math.PI / 180;
-let angleIncrement: number = 0;
-
-const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
-  const [notes, setNotes] = useState<allNotes[]>([]);
+const CircleOfNotes = ({ circleType }) => {
+  const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    async function getCircleNotes(): Promise<void> {
+    async function getCircleNotes() {
       try {
-        const data: allNotes[] = await getCircleOfFifthsNotes();
+        const data = await getCircleOfFifthsNotes();
         angleIncrement = 360 / data.length;
-        setNotes(function adjustForCircleType(): allNotes[] {
+        setNotes(function adjustForCircleType() {
           return circleType === "fourths" ? data.slice().reverse() : data;
         });
       } catch (error) {
@@ -34,10 +30,10 @@ const CircleOfNotes: React.FC<CircleOfNotesProps> = ({ circleType }) => {
     getCircleNotes();
   }, [circleType]);
 
-  function addCircleText(note: string, index: number): React.JSX.Element {
-    const angle: number = (index - 3) * angleIncrement * degreesToRadians;
-    const x: number = circleCoordinateX + radiusOffset * Math.cos(angle);
-    const y: number = circleCoordinateY + radiusOffset * Math.sin(angle);
+  function addCircleText(note, index) {
+    const angle = (index - 3) * angleIncrement * degreesToRadians;
+    const x = circleCoordinateX + radiusOffset * Math.cos(angle);
+    const y = circleCoordinateY + radiusOffset * Math.sin(angle);
 
     return (
       <text

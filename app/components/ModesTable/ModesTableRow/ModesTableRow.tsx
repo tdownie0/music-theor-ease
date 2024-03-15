@@ -1,17 +1,11 @@
 import React from "react";
 
-type ModesTableRowProps = {
-  modeName?: string;
-  modeArray?: string[];
-  isHeaderRow?: boolean;
-};
-
-const modeNameColumnWidth: string = "25%";
-const amountOfIntervals: number = 7;
-const intervalColumnWidth: string = `${75 / amountOfIntervals}%`;
+const modeNameColumnWidth = "25%";
+const amountOfIntervals = 7;
+const intervalColumnWidth = `${75 / amountOfIntervals}%`;
 const cellStyles = "border border-primary-content px-4 py-2";
 
-const ModesTableRow: React.FC<ModesTableRowProps> = ({
+const ModesTableRow = ({
   modeName,
   modeArray,
   isHeaderRow,

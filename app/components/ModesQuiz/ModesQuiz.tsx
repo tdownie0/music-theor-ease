@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { modesList } from "../../utils/musicLogic";
 import QuizContainer from "../QuizContainer/QuizContainer";
 
-const intervalTiles: string[] = [
+const intervalTiles = [
   "1",
   "2",
   "3",
@@ -20,13 +20,11 @@ const intervalTiles: string[] = [
 ];
 
 const ModesQuiz = () => {
-  const [originalInterval, setOriginalInterval] = useState<string[]>([]);
-  const [intervalSelection, setIntervalSelection] = useState<string[]>([]);
-  const [modeSelection, setModeSelection] = useState<string>("");
-  const [modeSelectionList, setModeSelectionList] = useState<string[]>([]);
-  const [currentSelectionAnswer, setCurrentSelectionAnswer] = useState<
-    string[]
-  >([]);
+  const [originalInterval, setOriginalInterval] = useState([]);
+  const [intervalSelection, setIntervalSelection] = useState([]);
+  const [modeSelection, setModeSelection] = useState("");
+  const [modeSelectionList, setModeSelectionList] = useState([]);
+  const [currentSelectionAnswer, setCurrentSelectionAnswer] = useState([]);
 
   useEffect(() => {
     setIntervalSelection(intervalTiles);

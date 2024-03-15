@@ -2,10 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { siteLink } from "../../utils/enums";
 
-type NavigationLinksProps = {
-  linkType?: siteLink;
-};
-
 const siteLinksArray = [
   siteLink.Home,
   siteLink.Circles,
@@ -13,30 +9,27 @@ const siteLinksArray = [
   siteLink.Quizzes,
 ];
 
-const linkNames: Record<siteLink, siteLink[]> = {} as Record<
-  siteLink,
-  siteLink[]
->;
+const linkNames = {};
 
-siteLinksArray.forEach(function populateLinkName(link): void {
+siteLinksArray.forEach(function populateLinkName(link) {
   linkNames[link] = siteLinksArray.filter((otherLink) => otherLink !== link);
 });
 
-const hoverColors: string[] = [
+const hoverColors = [
   "hover:text-primary",
   "hover:text-secondary",
   "hover:text-accent",
 ];
 
-const NavigationLinks: React.FC<NavigationLinksProps> = ({ linkType }) => {
+const NavigationLinks = ({ linkType }) => {
   const linksToRender = linkType
     ? linkNames[linkType]
     : linkNames[siteLink.Home];
 
-  const renderLink = (linkName: siteLink, index: number): React.JSX.Element => {
-    const isHomePage: boolean = linkName === siteLink.Home;
-    const linkPath: string = isHomePage ? "/" : `/${linkName.toLowerCase()}`;
-    const linkClassName: string = `link ${hoverColors[index]}`;
+  const renderLink = (linkName, index) => {
+    const isHomePage = linkName === siteLink.Home;
+    const linkPath = isHomePage ? "/" : `/${linkName.toLowerCase()}`;
+    const linkClassName = `link ${hoverColors[index]}`;
 
     return (
       <li className="mr-4" key={linkName}>
