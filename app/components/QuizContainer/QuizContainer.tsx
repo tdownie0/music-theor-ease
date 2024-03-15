@@ -86,7 +86,7 @@ const QuizContainer = ({
 
   const checkCircle = useCallback(
     function circleInOrder() {
-      const isOrdered: boolean = currentArray.every(
+      const isOrdered = currentArray.every(
         (note, index) => note === originalArray[index]
       );
       if (isOrdered) {
@@ -100,7 +100,7 @@ const QuizContainer = ({
   );
 
   const checkModes = useCallback(
-    function ModeIntervalInOrder(): void {
+    function ModeIntervalInOrder() {
       if (currentSelectionAnswer) {
         if (currentSelectionAnswer.length > 0) {
           const intervalOrdered = currentArray
@@ -151,7 +151,7 @@ const QuizContainer = ({
   }, [isResetting]);
 
   function getNumberOfRows() {
-    const windowWidth: number = window.innerWidth;
+    const windowWidth = window.innerWidth;
     if (windowWidth < windowSize.sm) {
       return rowCount.sm;
     }
