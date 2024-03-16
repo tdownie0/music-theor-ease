@@ -1,12 +1,34 @@
 import React from "react";
 import ModesTable from "../components/ModesTable/ModesTable";
-import NavigationLinks from "../components/NavigationLinks/NavigationLinks";
 import { siteLink } from "../utils/enums";
+import Link from "next/link";
 
 const Modes = () => {
   return (
     <div className="primary min-h-screen mt-16 ml-4">
-      <NavigationLinks linkType={siteLink.Modes} />
+      <ul className="flex">
+        <li className="mr-4" key={siteLink.Home}>
+          <Link href={"/"} className="link hover:text-primary">
+            {siteLink.Home}
+          </Link>
+        </li>
+        <li className="mr-4" key={siteLink.Circles}>
+          <Link
+            href={`/${siteLink.Circles.toLowerCase()}`}
+            className="link hover:text-secondary"
+          >
+            {siteLink.Circles}
+          </Link>
+        </li>
+        <li className="mr-4" key={siteLink.Quizzes}>
+          <Link
+            href={`/${siteLink.Quizzes.toLowerCase()}`}
+            className="link hover:text-accent"
+          >
+            {siteLink.Quizzes}
+          </Link>
+        </li>
+      </ul>
       <h1 className="text-4xl font-semibold mt-8 mb-8">Modes</h1>
       <div className="hero flex flex-col">
         <div className="hero-content flex-col">

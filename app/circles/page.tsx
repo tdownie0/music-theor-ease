@@ -1,12 +1,28 @@
 import React from "react";
 import CircleOfNotes from "../components/CircleOfNotes/CircleOfNotes";
-import NavigationLinks from "../components/NavigationLinks/NavigationLinks";
 import { siteLink } from "../utils/enums";
+import Link from "next/link";
 
 const Circles = () => {
   return (
     <div className="primary min-h-screen mt-16 ml-4">
-      <NavigationLinks linkType={siteLink.Circles} />
+      <ul className="flex">
+        <li className="mr-4" key={siteLink.Home}>
+          <Link href={"/"} className="link hover:text-primary">
+            {siteLink.Home}
+          </Link>
+        </li>
+        <li className="mr-4" key={siteLink.Modes}>
+          <Link href={"/modes"} className="link hover:text-secondary">
+            {siteLink.Modes}
+          </Link>
+        </li>
+        <li className="mr-4" key={siteLink.Quizzes}>
+          <Link href={"/quizzes"} className="link hover:text-accent">
+            {siteLink.Quizzes}
+          </Link>
+        </li>
+      </ul>
       <h1 className="text-4xl font-semibold mt-8 mb-8">Circles</h1>
       <div className="hero flex flex-col">
         <div className="hero-content flex-col">
