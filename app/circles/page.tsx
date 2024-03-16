@@ -13,12 +13,18 @@ const Circles = () => {
           </Link>
         </li>
         <li className="mr-4" key={siteLink.Modes}>
-          <Link href={"/modes"} className="link hover:text-secondary">
+          <Link
+            href={`/${siteLink.Modes.toLowerCase()}`}
+            className="link hover:text-secondary"
+          >
             {siteLink.Modes}
           </Link>
         </li>
         <li className="mr-4" key={siteLink.Quizzes}>
-          <Link href={"/quizzes"} className="link hover:text-accent">
+          <Link
+            href={`/${siteLink.Quizzes.toLowerCase()}`}
+            className="link hover:text-accent"
+          >
             {siteLink.Quizzes}
           </Link>
         </li>
