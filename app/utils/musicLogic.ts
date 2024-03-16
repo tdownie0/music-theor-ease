@@ -136,7 +136,7 @@ const circleOfFourthsArray = [
 
 const circleOfFourths = {
   [Note.F]: FlatNote.Bb,
-  [FlatNote.Bb]: Note.F,
+  [FlatNote.Bb]: FlatNote.Eb,
   [FlatNote.Eb]: FlatNote.Ab,
   [FlatNote.Ab]: FlatNote.Db,
   [FlatNote.Db]: SharpNote.Fs,
