@@ -34,6 +34,13 @@ const ThemeButtons = ({ toggleCanvas }) => {
             {themeName.Dark}
           </button>
           <button
+            key={themeName.Winter}
+            className="btn btn-primary"
+            onClick={() => handleButtonClick(themeName.Winter.toLowerCase())}
+          >
+            {themeName.Winter}
+          </button>
+          <button
             key={themeName.Valentine}
             className="btn btn-secondary"
             onClick={() => handleButtonClick(themeName.Valentine.toLowerCase())}
@@ -46,13 +53,6 @@ const ThemeButtons = ({ toggleCanvas }) => {
             onClick={() => handleButtonClick(themeName.Retro.toLowerCase())}
           >
             {themeName.Retro}
-          </button>
-          <button
-            key={themeName.Winter}
-            className="btn btn-primary"
-            onClick={() => handleButtonClick(themeName.Winter.toLowerCase())}
-          >
-            {themeName.Winter}
           </button>
           <button
             key={themeName.Aqua}
