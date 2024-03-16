@@ -53,15 +53,24 @@ const TilePlacement = ({
   };
 
   function generateRowsGrid() {
-    const LayoutComponent = circleQuiz ? CircleQuizLayout : ModesQuizLayout;
-
     return (
-      <LayoutComponent
-        numberOfRows={numberOfRows}
-        items={items}
-        moveTile={moveTile}
-        draggedTileIndex={draggedTileIndex}
-      />
+      <div>
+        {circleQuiz ? (
+          <CircleQuizLayout
+            numberOfRows={numberOfRows}
+            items={items}
+            moveTile={moveTile}
+            draggedTileIndex={draggedTileIndex}
+          />
+        ) : (
+          <ModesQuizLayout
+            numberOfRows={numberOfRows}
+            items={items}
+            moveTile={moveTile}
+            draggedTileIndex={draggedTileIndex}
+          />
+        )}
+      </div>
     );
   }
 
