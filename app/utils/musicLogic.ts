@@ -89,14 +89,20 @@ export const getCircleOfFifthsNotes = async () => {
   });
 };
 
-const circleOfFifths = {};
-const lengthOfCircleOfFifthsArray = circleOfFifthsArray.length;
-
-circleOfFifthsArray.forEach((currentNote, index, currentArray) => {
-  const fifthIndex = (index + 1) % lengthOfCircleOfFifthsArray;
-  const fifthNote = currentArray[fifthIndex];
-  circleOfFifths[currentNote] = fifthNote;
-});
+const circleOfFifths = {
+  [Note.C]: Note.G,
+  [Note.G]: Note.D,
+  [Note.D]: Note.A,
+  [Note.A]: Note.E,
+  [Note.E]: Note.B,
+  [Note.B]: SharpNote.Fs,
+  [SharpNote.Fs]: FlatNote.Db,
+  [FlatNote.Db]: FlatNote.Ab,
+  [FlatNote.Ab]: FlatNote.Eb,
+  [FlatNote.Eb]: FlatNote.Bb,
+  [FlatNote.Bb]: Note.F,
+  [Note.F]: Note.C,
+};
 
 enum CircleOfFifthsEnum {
   C = Note.G,
@@ -128,14 +134,20 @@ const circleOfFourthsArray = [
   Note.G,
 ];
 
-const circleOfFourths = {};
-const lengthOfCircleOfFourthsArray = circleOfFourthsArray.length;
-
-circleOfFourthsArray.forEach((currentNote, index, currentArray) => {
-  const fourthIndex = (index + 1) % lengthOfCircleOfFourthsArray;
-  const fourthNote = currentArray[fourthIndex];
-  circleOfFourths[currentNote] = fourthNote;
-});
+const circleOfFourths = {
+  [Note.F]: FlatNote.Bb,
+  [FlatNote.Bb]: Note.F,
+  [FlatNote.Eb]: FlatNote.Ab,
+  [FlatNote.Ab]: FlatNote.Db,
+  [FlatNote.Db]: SharpNote.Fs,
+  [SharpNote.Fs]: Note.B,
+  [Note.B]: Note.E,
+  [Note.E]: Note.A,
+  [Note.A]: Note.D,
+  [Note.D]: Note.G,
+  [Note.G]: Note.C,
+  [Note.C]: Note.F,
+};
 
 enum CircleOfFourthsEnum {
   C = Note.F,
