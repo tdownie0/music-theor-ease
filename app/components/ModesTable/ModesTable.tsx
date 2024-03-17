@@ -34,17 +34,17 @@ const ModesTable = () => {
         </thead>
         <tbody>
           {Object.entries(modesList).map(([modeName, modeArray]) => (
-            <tr className="text-center">
+            <tr className="text-center" key={modeName}>
               <td
-                key={modeName}
+                key={`${modeName}-name`}
                 className={cellStyles}
                 style={{ width: modeNameColumnWidth }}
               >
                 {modeName}
               </td>
-              {modeArray?.map(([note, noteIndex]) => (
+              {modeArray?.map((note, noteIndex) => (
                 <td
-                  key={noteIndex}
+                  key={`${modeName}-${noteIndex}`}
                   className={cellStyles}
                   style={{ width: intervalColumnWidth }}
                 >
