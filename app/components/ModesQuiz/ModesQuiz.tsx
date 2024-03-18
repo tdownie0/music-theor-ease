@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { modesList } from "../../utils/musicLogic";
 import QuizContainer from "../QuizContainer/QuizContainer";
 
 const intervalTiles = [
@@ -18,6 +17,24 @@ const intervalTiles = [
   "b7",
   "#4",
 ];
+
+const IonianArray = ["1", "2", "3", "4", "5", "6", "7"];
+const DorianArray = ["1", "2", "b3", "4", "5", "6", "b7"];
+const PhrygianArray = ["1", "b2", "b3", "4", "5", "b6", "b7"];
+const LydianArray = ["1", "2", "3", "#4", "5", "6", "7"];
+const MixolydianArray = ["1", "2", "3", "4", "5", "6", "b7"];
+const AeolianArray = ["1", "2", "b3", "4", "5", "b6", "b7"];
+const LocrianArray = ["1", "b2", "b3", "4", "b5", "b6", "b7"];
+
+const modesList = {
+  Ionian: IonianArray,
+  Dorian: DorianArray,
+  Phygrian: PhrygianArray,
+  Lydian: LydianArray,
+  Mixolydian: MixolydianArray,
+  Aeolian: AeolianArray,
+  Locrian: LocrianArray,
+};
 
 const ModesQuiz = () => {
   const [originalInterval, setOriginalInterval] = useState([]);

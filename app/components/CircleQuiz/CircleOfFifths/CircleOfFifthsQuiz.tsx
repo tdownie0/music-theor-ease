@@ -1,19 +1,26 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { getCircleOfFifthsNotes } from "../../../utils/musicLogic";
 import QuizContainer from "../../QuizContainer/QuizContainer";
 
 const CircleOfFifthsQuiz = () => {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState([
+    "C",
+    "G",
+    "D",
+    "A",
+    "E",
+    "B",
+    "F#",
+    "Db",
+    "Ab",
+    "Eb",
+    "Bb",
+    "F",
+  ]);
   const [originalNotes, setOriginalNotes] = useState([]);
 
   useEffect(() => {
-    async function getCircleNotes() {
-      const data = await getCircleOfFifthsNotes();
-      setNotes(data);
-      setOriginalNotes(data);
-    }
-    getCircleNotes();
+    setOriginalNotes(notes);
   }, []);
 
   return (

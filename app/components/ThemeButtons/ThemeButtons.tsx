@@ -1,7 +1,15 @@
 "use client";
 import React, { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
-import { themeName } from "../../utils/enums";
+
+enum themeName {
+  Light = "Light",
+  Dark = "Dark",
+  Winter = "Winter",
+  Valentine = "Valentine",
+  Retro = "Retro",
+  Aqua = "Aqua",
+}
 
 const ThemeButtons = ({ toggleCanvas }) => {
   const { changeTheme } = useContext(ThemeContext);

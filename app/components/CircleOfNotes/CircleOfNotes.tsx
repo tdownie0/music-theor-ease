@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { getCircleOfFifthsNotes } from "../../utils/musicLogic";
 
 const containerWidth = 300;
 const containerHeight = 300;
@@ -12,21 +11,30 @@ const degreesToRadians = Math.PI / 180;
 let angleIncrement = 0;
 
 const CircleOfNotes = ({ circleType }) => {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState([
+    "C",
+    "G",
+    "D",
+    "A",
+    "E",
+    "B",
+    "F#",
+    "Db",
+    "Ab",
+    "Eb",
+    "Bb",
+    "F",
+  ]);
 
   useEffect(() => {
-    async function getCircleNotes() {
-      try {
-        const data = await getCircleOfFifthsNotes();
-        angleIncrement = 360 / data.length;
-        setNotes(function adjustForCircleType() {
-          return circleType === "fourths" ? data.slice().reverse() : data;
-        });
-      } catch (error) {
-        console.error("Error fetching circle of fifths notes:", error);
-      }
+    function getCircleNotes() {
+      angleIncrement = 360 / notes.length;
+      setNotes(() => {
+        return circleType === "fourths"
+          ? notes.slice().reverse()
+          : notes.slice();
+      });
     }
-    // Fetch data asynchronously and update state
     getCircleNotes();
   }, [circleType]);
 

@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useEffect, useState, ReactNode } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const ThemeContext = createContext({});
 

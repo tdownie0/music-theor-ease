@@ -1,7 +1,13 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { windowSize } from "@/app/utils/enums";
 import TilePlacement from "./TilePlacement/TilePlacement";
 import QuizModal from "./QuizModal/QuizModal";
+
+enum windowSize {
+  sm = 640,
+  md = 768,
+  lg = 1024,
+  xl = 1280,
+}
 
 enum rowCount {
   sm = 4,
