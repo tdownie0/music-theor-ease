@@ -19,7 +19,7 @@ const CircleOfNotes = ({ circleType }) => {
       try {
         const data = await getCircleOfFifthsNotes();
         angleIncrement = 360 / data.length;
-        setNotes(function adjustForCircleType() {
+        setNotes(() => {
           return circleType === "fourths" ? data.slice().reverse() : data;
         });
       } catch (error) {
