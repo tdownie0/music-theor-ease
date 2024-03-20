@@ -40,6 +40,7 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
   const [resizeReset, setResizeReset] = useState<boolean>(false);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [modalContent, setModalContent] = useState<Record<string, string>>({});
+  const [smallDisplay, setSmallDisplay] = useState<boolean>(false);
 
   const shuffleArray: () => allNotes[] | string[] = useCallback(
     function shuffle(): allNotes[] | string[] {
@@ -191,7 +192,9 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
       if (!resizeInProgress) {
         resizeInProgress = true;
         setResizeReset(true);
-        setNumberOfRows(getNumberOfRows());
+        let currentRowNumber: number = getNumberOfRows();
+        setNumberOfRows(currentRowNumber);
+        setSmallDisplay(currentRowNumber === rowCount.sm);
 
         resizeTimeout = setTimeout(() => {
           resizeInProgress = false;
@@ -207,6 +210,50 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     };
   }, []);
 
+  function OrderingButton({
+    onClick,
+    circleQuiz,
+  }: {
+    onClick: () => void;
+    circleQuiz: boolean;
+  }): React.JSX.Element {
+    return (
+      <button className="btn-circle btn-secondary btn w-24" onClick={onClick}>
+        {circleQuiz ? "Shuffle" : "Reset"}
+      </button>
+    );
+  }
+
+  function ModesSelect({
+    modeSelectionList,
+    modeSelection,
+    handleModeSelectionChange,
+  }: {
+    modeSelectionList: string[];
+    modeSelection: string;
+    handleModeSelectionChange: (
+      event: React.ChangeEvent<HTMLSelectElement>
+    ) => void;
+  }): React.JSX.Element {
+    return (
+      <select
+        className="dropdown menu bg-secondary text-secondary-content w-32 rounded-lg mx-4 py-3"
+        value={modeSelection}
+        onChange={handleModeSelectionChange}
+      >
+        <option className="text-secondary-content" value="select">
+          Select Mode
+        </option>
+        {modeSelectionList &&
+          modeSelectionList.map((mode) => (
+            <option key={mode} className="text-secondary-content" value={mode}>
+              {mode}
+            </option>
+          ))}
+      </select>
+    );
+  }
+
   return (
     <div className="flex flex-col w-full bg-base-300 text-base-content rounded-lg justify-center gap-4 p-8">
       <div className="flex justify-end items-center">
@@ -215,31 +262,29 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
           <p className="text-lg font-medium w-4/5 lg:w-5/6">{description}</p>
         </div>
 
-        {modeSelectionList && (
-          <select
-            className="dropdown menu bg-secondary text-secondary-content w-32 rounded-lg mx-4 py-3"
-            value={modeSelection}
-            onChange={handleModeSelectionChange}
-          >
-            <option className="text-secondary-content" value="select">
-              Select Mode
-            </option>
-            {modeSelectionList &&
-              modeSelectionList.map((mode) => (
-                <option
-                  key={mode}
-                  className="text-secondary-content"
-                  value={mode}
-                >
-                  {mode}
-                </option>
-              ))}
-          </select>
+        {smallDisplay ? (
+          <div className="flex flex-col items-center gap-4">
+            <OrderingButton onClick={order} circleQuiz={circleQuiz!} />
+            {modeSelectionList && (
+              <ModesSelect
+                modeSelectionList={modeSelectionList}
+                modeSelection={modeSelection!}
+                handleModeSelectionChange={handleModeSelectionChange}
+              />
+            )}
+          </div>
+        ) : (
+          <div className="flex">
+            {modeSelectionList && (
+              <ModesSelect
+                modeSelectionList={modeSelectionList}
+                modeSelection={modeSelection!}
+                handleModeSelectionChange={handleModeSelectionChange}
+              />
+            )}
+            <OrderingButton onClick={order} circleQuiz={circleQuiz!} />
+          </div>
         )}
-
-        <button className="btn-circle btn-secondary btn w-24" onClick={order}>
-          {circleQuiz ? "Shuffle" : "Reset"}
-        </button>
       </div>
 
       <TilePlacement
