@@ -19,7 +19,7 @@ const QuizModalContent: React.FC<QuizModalContentProps> = ({
         <div className="flex items-center text-base-content">
           <h3 className="flex w-full font-bold text-lg">{title}</h3>
 
-          <button onClick={closeModal}>{closeIcon}</button>
+          <button className="hover:text-slate-400" onClick={closeModal}>{closeIcon}</button>
         </div>
 
         <p className="py-4 text-base-content">{message}</p>
