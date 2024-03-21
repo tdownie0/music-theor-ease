@@ -210,20 +210,6 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
     };
   }, []);
 
-  function OrderingButton({
-    onClick,
-    circleQuiz,
-  }: {
-    onClick: () => void;
-    circleQuiz: boolean;
-  }): React.JSX.Element {
-    return (
-      <button className="btn-circle btn-secondary btn w-24" onClick={onClick}>
-        {circleQuiz ? "Shuffle" : "Reset"}
-      </button>
-    );
-  }
-
   function ModesSelect({
     modeSelectionList,
     modeSelection,
@@ -264,7 +250,12 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
 
         {smallDisplay ? (
           <div className="flex flex-col items-center gap-4">
-            <OrderingButton onClick={order} circleQuiz={circleQuiz!} />
+            <button
+              className="btn-circle btn-secondary btn w-24"
+              onClick={order}
+            >
+              {circleQuiz ? "Shuffle" : "Reset"}
+            </button>
             {modeSelectionList && (
               <ModesSelect
                 modeSelectionList={modeSelectionList}
@@ -282,7 +273,12 @@ const QuizContainer: React.FC<QuizContainerProps> = ({
                 handleModeSelectionChange={handleModeSelectionChange}
               />
             )}
-            <OrderingButton onClick={order} circleQuiz={circleQuiz!} />
+            <button
+              className="btn-circle btn-secondary btn w-24"
+              onClick={order}
+            >
+              {circleQuiz ? "Shuffle" : "Reset"}
+            </button>
           </div>
         )}
       </div>
