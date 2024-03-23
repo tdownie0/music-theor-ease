@@ -1,6 +1,12 @@
 import React from "react";
-import { siteLink } from "./utils/enums";
 import Link from "next/link";
+
+enum siteLink {
+  Home = "Home",
+  Circles = "Circles",
+  Modes = "Modes",
+  Quizzes = "Quizzes",
+}
 
 const Home = () => {
   return (
