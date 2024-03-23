@@ -1,7 +1,13 @@
 import React from "react";
 import CircleOfNotes from "../components/CircleOfNotes/CircleOfNotes";
-import { siteLink } from "../utils/enums";
 import Link from "next/link";
+
+enum siteLink {
+  Home = "Home",
+  Circles = "Circles",
+  Modes = "Modes",
+  Quizzes = "Quizzes",
+}
 
 const Circles = () => {
   return (

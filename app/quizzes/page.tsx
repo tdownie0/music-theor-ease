@@ -1,10 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { siteLink } from "../utils/enums";
 import CircleOfFifthsQuiz from "../components/CircleQuiz/CircleOfFifths/CircleOfFifthsQuiz";
 import CircleOfFourthsQuiz from "../components/CircleQuiz/CircleOfFourths/CircleOfFourths";
 import ModesQuiz from "../components/ModesQuiz/ModesQuiz";
 import Link from "next/link";
+
+enum siteLink {
+  Home = "Home",
+  Circles = "Circles",
+  Modes = "Modes",
+  Quizzes = "Quizzes",
+}
 
 const Quizzes = () => {
   const [isLoading, setIsLoading] = useState(true);
