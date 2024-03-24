@@ -1,0 +1,208 @@
+# How To Become A Programmer For Anybody
+
+## Chapter 1: Why Code?
+
+Code is a medium of expression that can be understood by machines, and more importantly, people. 
+Programming is the implementation of this code with all of the theory, subjects, and concepts 
+related to our current understanding of computers. These definitions may not be absolute, but I
+believe they show a clear separation of responsibilities for each. This means that code is a
+language, just as much as any other out there. The nice thing is that the computer can tell you if 
+it understood or did not understand you (most of the time), and often extremely fast.
+
+I want this to be a playful learning experience for anyone that should happen to have the chance to
+read this book, and those who choose to read it in depth. In my opinion, learning to program and 
+read code is a great mental exercise for anybody, and one that can be rewarding when you least 
+expect it. This writing will be based around a personal project I created specfically with the 
+intent to explain the core concepts that stretch across all of programming. Javascript was a 
+convenient langague for this as it allows for multiple paradigms to be explored. It is my hope that 
+this experience leaves you with an understanding of any code you will happen to lay eyes on, 
+irreverant of the languange at hand.
+
+Now I do not want anyone to feel like I'm handing out empty promises, or going to overwhelm them with 
+copious and even rote drills that have been passed from one generation to the next. The most relatable 
+thing I can compare it to (perhaps coincidentally, and somewhat keeping in theme with the site you will 
+learn about in intimate detail) is music. This approach will be akin to teaching you an instrument, 
+but really giving you a strong focus on all the things that truly make music work. With this, you would 
+be able to communicate with anyone who played an instrument about music. Learning other instruments 
+would also be more related to learning techniques in playing, instead of learning all of the 
+fundamentals you already know. 
+
+Really, my hope is to make you more like a composer. A composer surely can play multiple instruments, 
+but focuses mainly on leading the musicians. They most likely do not have the same technical ability 
+or talent to operate some of the instruments as their musicians do. At the same time, they designed 
+what every individual memeber should be doing at every moment in the song. So they have a deep 
+appreciation for how things should work, and how to make them work together instead of against each 
+other. 
+
+Everyone starts somwhere. The fun of this approach is that it will let you focus on the bigger picture 
+instead of the memorizing things that you will be provided (which you may have otherwise mistakenly 
+spent countless hours studying). I wish you the best of luck. With this I hope to give you the 
+foundation I was always looking for in the decade of experience I have from being self taught, 
+studying content from the best schools, and going back to school to find the gaps. 
+
+Let's get started!
+
+## The Basics
+
+```c
+const int example = 0;
+```
+
+Fancy right? There is probably more to this than one would realize at first glance, and honestly after 
+seeing it all the time you just skim by. What does this do? It sets a variable to the number 0, called
+example. You are probably familiar with the “=” sign, and it works in similar ways as it does in math. 
+A single “=” assigns a provided name a value. What are the extra things (const, int and the ; character)? 
+Here, "const" tells the program that the variable will not change, so it is constant. The "int" part is 
+telling the computer to store the data it is being sent as a type of value the computer recognizes (in 
+this case, "int" stands for integer). Lastly, the ; is important. It is very similar to the way a period 
+works in English. When the computer sees this, it knows that it was a complete piece of knowledge, and can 
+be ready for anything else. 
+
+The code snippet you see above would be from the C langague. It is one of the older lanaguages in 
+programming, and really inspired all modern langagues there after. It was a portable language at a time 
+when other languages were more bound to the exact make and model of the machine they ran on. This means 
+they used to give different results on other machines, or crash while running. Factors such as this led to 
+the fact that you will see similarities in structure when declaring variables (such as the example above). 
+C is also nice because it tells you more of the story of what the computer is actually doing when you save 
+information, but you will start to see this in the following examples. Here is how you would do it in 
+TypeScript and Javascript.
+
+```ts
+// Here is how you would define the same variable in TypeScript.
+const example: number = 0;
+```
+
+```js
+// This would be Javascript
+const example = 0; 
+
+// Using ";" is optional
+const example = 0
+```
+
+Here are some examples in Typescript and Javascript. You will notice they also have "//" before some of 
+the lines. Those designate a comment is being placed, and are not seen by the computer when the code 
+compiles and runs. So they are strictly for the humans using the code. The characters indicating them may 
+change from langague to langague, but you will often see some kind of indentation and character along with 
+a sentence about the code below or in the area. There are many factors to consider when using comments 
+effectively in a code base, but this shows an effective use. 
+
+You will see both of these langagues are very similar to the C implementation, but some things changed. 
+Javascript came decades after C, and Typescript came mucher later after Javascript was first created. 
+Typescript actually specifically makes Javascript more like C. It may be telling that an older philosophy 
+snuck it's way back into a more modern langague. These comparisons will tell you a little about the 
+history of programming, and how philosophies have adapted. 
+
+I'll start with the Typescript version, as the others are the same, just less cognitive load. So you see 
+the first word is still "const". It actually does the same thing as staying constant too. Next, originally 
+"int" came after to declare the data type, but here "example" (the name of the variable) is used. You
+can see the data type declaration was actually moved to the ": number" part. Also, our 
+word is not "number" instead of "int". Just as "int" represented a type of number in C, this "number" 
+respresents a number as well. In this case "number" is actually less strict, representing many kinds of 
+numbers. In C, "int" specifically references a number that is allowed an exact amount of bytes in the computers memory. The amount depends on the type of cpu (whether 32-bit or 64-bit). It is specified by the language that it is not below 2 bytes (16-bits).
+
+Do not feel like you have to memorize this! This information is easily looked up, and once you understand 
+the strategies behind them, you realize the theme is more important than being able to memorize them. 
+Really, the only reason this matters is that this illustrates how C and other languages may use data types. If types are used, the programmer can specify how much memory they want to assign to data based on it's type. Here, if a programmer wanted a smaller or larger amount of memory for the number, they would 
+use another keyword. 
+
+## Bytes and Bits: 
+
+Bytes and Bits are commonly used terms, and good to have a basic understanding of. Here is a byte:
+
+0000 0000
+
+The space if not needed, but it makes it easier to read. Each position of a 0 represents a bit and is a 
+power of 2. So the right most is 2^0, and the leftmost is 2^7. This leads to the range 1 through 64. 
+Powers of 2 explain why you always see things related to computers like hard drives with amounts like 
+1TB, 512GB, 256MB, 128KB, 64B. In all of those amounts the B is Bytes, the prefix is from the metric 
+system (Shout out to the metric system). Here are the basics:
+
+| Binary | Number  
+| :--- | --:
+0000 | 0
+0001 | 1
+0010 | 2
+0011 | 3
+0100 | 4
+0101 | 5
+...
+
+They really are nothing more than switches for on and off states. You can see that their values and 
+positions offer ways to generate as many numbers as we want, we can always add more zeros. As a reminder
+the values start at the right. Bytes and bits also can get represented in hexadecimal, which is base
+16 instead of base 2. To do this programmers decided to use another range instead of just 0 or 1, which has two values, and used 16. This is done by using the number 0 through 9, and then switching to letters, typically written uppercase, A through F. Here are some examples:
+
+| Hexadecimal | Number  
+| :--- | ---:
+0000 | 0
+0001 | 1
+0002 | 2
+0003 | 3
+000A | 10
+000B | 11
+0010 | 16
+...
+
+Again, please do not feel overwhelmed by this. The bigger picture is I want you to see that the sets of 
+0's in both cases are just being replaced with 1's or 1's as well as other numbers and letters. Both 
+systems work the exact same way. The hexadecimal is nice because you can write much bigger numbers using
+less space on the screen. Computers do not think in hexadecimal, they always see the bits as only 0's 
+and 1's. This is just a shorthand for humans. 
+
+Now that all of that is laid out, you should be able to see that if I want the computer to remember an
+astronomically sized number, it's going to need an unbelievable amount of 0's and 1's to represent the 
+value exactly. This is commonly pointed out in early computer science classes with decimal values. It 
+is not at first obvious this is the case though. You may be familiar with a number like 0.5, which 
+also could be written as a fraction, 1/2. The problem is 1/3. Technically, the 0.3 has an infinite amount
+of 3's that come after. The computer cannot do infinite. So a minimum possible value must be decided. 
+This may be something like 0 with 16 decimal places after it. Decimal values are often referred to as
+floats in multiple languages, and have to be fairly large memory wise to be precise. This explains 
+why you may run into questions from some why something like:
+
+0.1 + 0.1 = .20000000000000000000004
+
+Comes out as an answer when adding float values. There is some level of impercision due to computers 
+operating in truly only binary. Programmers are clever and use tricks like using integers instead of 
+floats, but use 100 to represent 1, and manipulate the values later safely. 
+
+To be honest, this is quite a bit to remember, but exposes that even numbers have different types which
+arise from the amount of memory we want to use with our data. Back to:
+
+```ts
+const example: number = 0;
+```
+
+
+In the TypeScript case, number actually takes on each of these cases, so you do no have to worry as much 
+about the details. This has been a common theme in many languages. You see ultimately the expression 
+ends with "= 0;" which is the same as C. Now remember the other two examples:
+
+```js
+const example = 0; 
+
+// Using ";" is optional
+const example = 0
+```
+
+These are both Javascript. Neither of them have the data type ("number"), and one left out the semi-colon
+(";"). You see here that langagues after became looser after C. There were really a couple of reasons
+for this. First, computers started getting much more memory, so things were not as tight memory wise. 
+Before memory was often a huge concern with making a program work in a reasonable amount of time. Computers
+became much faster, and this started to matter less. Next, it allowed for quicker development and less
+of a learning curve. Being able to not worry about implementation details like telling the computer how
+much memory it is allowed to have is a huge win for beginners. There is a great deal of pain that comes
+from not dealing with memory properly, even things that may seem simple, like allowing negative values.
+
+There is much to appreciate about the people that went through the pain and effort to make all of this 
+work. Learning the specifics of these is something that can be learned overtime as you are making 
+programs as well. Technology is becoming more and more helpful at identifying and predicting what things
+should be set to for us, and is learning how to present us with the information needed for the decisions
+every day. 
+
+Lastly, the semi-colon does not need to be included in the last example. In C and other languages leaving the 
+semi-colon off at the end would cause an error in the program. The programs origianlly used the semi-colon to 
+designate a stopping point of a line to scan for information. As technology got better, there became ways to 
+predict and implement areas that would need this automatically, without the code needing it. Things like this 
+can really imporve everybodies quality of life. It may be nice to have a semi-colon for clarity, but it
+is always painful having a program crash due to one missing.
