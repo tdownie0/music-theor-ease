@@ -1,0 +1,343 @@
+## Chapter 3: Functions
+
+Now we will get into elaborating on functions. Functions are almost the life
+and blood of programming. Without functions, things we have today may very well
+be impossible to get working today, or would take far more work than is
+necessary. I think the most relatable comparison to a function is a cooking
+recipe. A recipe tells you the exact steps and ingredients you need in order to
+get the result you are looking for. In essence that is all it is. There just
+tends to be many considerations we can factor in depending on what we are
+trying to accomplish.
+
+With functions, really the main focus should be giving it a responsibility
+for a task. The more focused the task is the easier it becomes to remember
+which task is responsible for which action. A quick example game that had
+three different slots, each corresponding to a certain amount of points. You
+could write the program in such a way that you always have all of the
+amounts for each slot wrapped up in the main logic. The other way you could
+do it is make a function for each slot, and then have the program call the
+function corresponding with that slot. These could be calls to functions
+called scoreSlotOne(), scoreSlotTwo(), and scoreSlotThree(). Now, anything
+you have setup for each specific slot can be completely independent of the
+others. If you scored in whichever one had the highest score you could make
+lights go off as well, or have a sound effect play. You could do this without
+having to constantly do checks of which task is actually being handled at the moment,
+possibly giving you less tracking variables.
+
+I wanted to give an abstract overview of what will be going on overall, but we will start
+laying out some real functions and using them. Different paradigms use functions in different ways,
+so we will touch on the layouts you can achieve by making certain structural decisions. We will go
+ahead and start with the first couple.
+
+```ts
+// ---- Function Declaration Area ----
+function sayHello(): void {
+  return console.log("Hello");
+}
+
+function sayHelloWorld(): void {
+  sayHello();
+  return console.log("World");
+}
+
+function giveFour(): number {
+  return 4;
+}
+// ---- End of Function Declaration Area ----
+
+// Code that is actually executed at run time
+sayHello(); // Prints "Hello" to the console
+sayHelloWorld(); // Prints "Hello" and "World" on separate lines to the console
+let myNumber: number = giveFour(); // 4
+```
+
+Here we have sayHello() and sayHelloWolrd(). You see both of their return types are void, which means
+they do not pass back a physical value, instead printing to the console. The last function giveFour()
+does return a value, and in this case it would assign 4 to myNumber. I threw somewhat of a curve
+ball at you right from the start, and you may have noticed in sayHelloWorld(). The most interesting
+part about this function, is that it actually calls another function, and then runs itself.
+
+I put the comments with "Function Declaration Area" around the functions to help illustrate that
+the section that is contained works differently than the code below it, marked as executing at
+run time. Specifically, what executed refers to is what code was called and had operations run
+over the course of the program's run time. The run time is the amount of time it takes for the program
+to effectively run all the tasks written in code.
+
+With all of that said, the code at the bottom is the code ran at run time, and the functions are
+actually stored in memory. When the program runs and it sees a function call like sayHello(), it
+looks up if it has a reference to such a function, and if it does, it will run that code associated
+with that function. This also means that nothing executes when the program first reads
+the functions into its memory. This helps enormously. You can really put as much code as you want
+in the functions, and then call them on a single line. This makes understanding a large code base
+manageable. The function calls could be anything, startRobot(), generateDungeonBoss(),
+findAllSchrodingersCats(), and simulateLivingOrganism() are examples. There is no telling how
+large or small any of these functions could be, but I feel I can tell you something about their
+purpose just from their names.
+
+If you consistently use names that are as descriptive as possible, your code can almost read like a story.
+Giving yourself as many advantages as you can for reading code again in the future will pay yourself back
+many times over for actively maintained code. One of the realities with coding, and really with writing in
+general, is that we will read far more than we could ever possibly write. This even includes our own code.
+In general, glancing over and reading something quickly is something we do almost mindlessly. Writing
+generally takes much more time due to physical limitations, and the process of juggling ideas.
+
+## Passing Parameters
+
+Functions can accomplish quite a bit. One great thing they can do is accept arguments. Arguments
+are actual values passed into a function. A function can define a parameter that it expects as
+input when the function is called, this is the argument provided.
+
+```ts
+function addNumbers(a: number, b: number): number {
+  return a + b;
+}
+
+console.log(addNumbers(2, 3));
+```
+
+Here is an example. You see in the function definition it actually has "a" and "b" between its
+parenthesis. This indicates that they are parameters necessary to run the function, as the
+function's output depends on them. In most cases, "a" and "b" as names is terrible as they
+are not descriptive, but we can almost get away with it here thanks to TypeScript specifying
+that they are numbers. Short names like this or "x, y, z" and such could be common if it were
+involved in a program or library that uses many mathematical equations. It may be common notation
+in those circumstances as well, so these could be good use cases. Most times though, you want to
+use descriptive names. In this case using "number1" or "first" may seem redundant or not help much.
+In general, I would try to avoid names with numbers like "number1", due to the numbers possibly
+being confused as numbers. In some cases the 1 may resemble the letter "l" very closely.
+
+So with the 2 and the 3 passed into add numbers the function will look like this when it runs:
+
+```ts
+function addNumbers(2, 3): number {
+    return 2 + 3
+}
+```
+
+At least in memory that is what it will resemble while it is running. So just like in algebra, we
+replace the placeholder values with the values we currently need to use. In programming this can
+be many different types, including all of the primitive types, and even functions. When functions
+are passed to functions as parameters, they are referred to as callbacks. You could think of it
+as leaving a phone number for a function to call and use when it is time. It really is that
+straight forward, and allows for some great flexibility. You could think of doing something like
+passing a set of plans:
+
+```js
+function plansForExpensiveRobot() {
+  // ... Logic for making robot
+}
+
+function plansForCostEfficientRobot() {
+  // ... Logic for making robot
+}
+
+function createRobot(robotInformation, plansForRobot) {
+  // ... Creation Logic
+  plansForRobot();
+  // Ends with return logic
+}
+
+// Main Program
+robotInformation = {
+  // Properties gathered about the robot
+};
+
+// Call to make expensive robot
+const expensiveRobot = createRobot(robotInformation, plansForExpensiveRobot);
+
+// Call to make cost efficient robot
+const costEfficientRobot = createRobot(
+  robotInformation,
+  plansForCostEfficientRobot
+);
+```
+
+If you can follow that logic, that really is a huge leap. We get to reuse our createRobot() function
+with as many different kinds of plans we could come up with, so long as the plans all follow the
+same sets of basic rules, and interact with createRobot() almost the same way. That last part is
+hard to phrase because this leads you into conditions where you would like additional things, but
+also need to allow for the original things to work the way they were, or gain something from a new
+addition. This feels okay at times to stretch out the responsibilty of a function to accomodate more use
+cases, but it starts getting tricky when the functions have to share a large amount of unrelated logic to
+all the other use cases in order to keep working. A sign of this can be having large parameters for
+functions, usually three or more. You can pass objects as parameters which kind of stretches the amount
+rule, but it would be something like "robotInformation" in the code above, so conceptually we would
+see it as one related entity. The trouble comes from trying to track too many moving parts that can
+seem independent of each other.
+
+Overall, the main goal of all of this is to abstract information from the main flow of our program
+so that we can visualize it from a higher level. There could easily be thousands of functions in a
+code base, and having it broken up into units helps to isolate things from each other. This makes
+things easier to reason with, as well as track down when things start to go wrong. It is not much
+help if something goes wrong and you have to search the entire program every time that you need
+to fix something.
+
+## Classes
+
+Classes are another mental construct we use to organize logic. Using classes is related to a design
+pattern called object oriented programming. Above when we demonstrated the callback, this was leaning
+more towards functional programming design wise. Classes could be passed functions as well, and
+these are just simplified examples, but classes have another layer to differentiate their functions.
+
+```ts
+// Create Cat Class
+class Cat {
+  constructor(
+    public name: string,
+    protected age: number,
+    private breed: string
+  ) {}
+
+  private getBreed() {
+    this.breed;
+  }
+
+  secretInfo() {
+    return this.getBreed();
+  }
+}
+
+// Create Kitten Class
+class Kitten extends Cat {
+  getAge() {
+    return `${this.age} months`;
+  }
+}
+
+const testCat = new Cat("Purradox", 7, "Calico");
+console.log(testCat.name); // 'Purradox'
+console.log(testCat.age); // Error
+console.log(testCat.breed); // Error
+
+const testKitten = new Kitten("Whiskers", 3, "Tabby");
+console.log(testKitten.getAge()); // '3 months'
+console.log(testKitten.getBreed()); // Error
+
+console.log(testCat.getBreed()); // 'Error'
+console.log(testCat.secretInfo()); // 'Calico'
+```
+
+This really is a loaded example, but I think it shows a majority of features that come with using
+classes. With classes, their variables are referred to as "properties", and their functions are
+called "methods". This aligns more with the train of throught around classes. From a general stand
+point, classes resemble the layout of common taxonomies from biology (vertebrate, invertebrate,
+mammal, and such). Classes can inherit from other classes, and this is often referred to a "parent" and
+"child" relationship. The parent is structured to allow for the child to exist based off its own
+properties. In our case, the Kitten class has a name, age, and breed property as well, their setup is just
+borrowed from the parent.
+
+You may have also noticed the new keywords "public", "protected", and "private". These properties
+come with the philosophy of classes as well. At the top of the declaration we have class Cat{}. This
+names the class we wish to create. Inside of it is the first method that is optional, which is
+constructor. The constructor declares the parameters the class needs in order to create itself, as
+well as the logic to be run on upon its creation.
+
+We see each parameter has a key word associated with it which actually dictates that variable's access
+modifier. First is "public", which indicates that the property can be accessed wherever an instace of the
+class exists, or in any of its child classes. We see this with "testCat.name". Using the new key word
+and then specifying which class you would like to create is referred to as creating an instance of that
+class. This is its own individual copy of the class.
+
+> **Note**
+> There is another keyword "static" which allows for a variable to exist across all of the classes that
+> are associated with it. This is useful for things such as having a counter (something that tracks a
+> number amount) which adds one to itself everytime a new instance of the class is created. This allows
+> every existing instance the ability to share and access the value at any point in the program. Other
+> properties that are not defined as "static" will be unique to the class instance being created. In our
+> Cat example, the name, age, and breed properties are completely independent from any other instance,
+> having their own values directly tied to only them.
+
+You see the other two properties actually return errors to us. This is due to both "protected" and
+"private" having an increased set of conditions in order to be accessed. With "protected", the property
+can only be directly accessed from within the class itself, or in a child class. Here we see in the Kitten
+class that it extends the Cat class. This means that Kitten inherits its definition and behavior from Cat.
+It is free to add additional things it would like specifically at its creation, but it will follow the
+parent's base template by default with Typescript. Other languages may require you to call a method to call
+the parent's constructor, which must be done if it requires arguments. You also have access to "public"
+and "protected" methods from within child classes. In the Kitten class we see a method getAge() that
+accesses "this.age" from the Cat class, which is "protected". Since it is this access modifier,
+we can access the property directly in this case. If this were "private", this would not be the case,
+and we would get an error denying us access. We see the the instance of Kitten ("testKitten"), calls
+the getAge() successfully. The method allows access to the property. We could not access it
+otherwise from this instance. You will notice that getAge() does not have a access modifier
+key word next to it. Due to this, the program will default to using "public".
+
+Finally we get to "private". As I assume you may expect, "private" is the first two levels of access
+restriction, and adds another layer. Private properties can only be accessed from within the class
+they originated in. We see in the call above, "testKitten.getBreed()", which yields an error. This
+is due to the function being marked private. This prevents instances from calling the method, as well
+as child classes themselves. The next line below calls the same method, but this time on the original
+class it was defined on, "testCat.getBreed()". It also receives an error due to not being able to call
+the method on an instance. Last we see the call to "testCat.secretInfo()", which is successful. This
+is due to the method defaulting to "public" in the Cat class. Since we can access public methods
+on a class, and a method within a class can access any information contained within that class,
+the method is allowed to access the information. The private property belongs directly to the
+Cat class, so a method on that same class can access anything that is private for that class.
+
+## The Functional Way
+
+Making it to this point, you have coverd some serious ground. Typically the concept of loops would
+have been brought up and explained at this point, but I felt functions and classes deserved the
+special attention first. Usually classes are covered much later when giving a programming overview.
+To me, classes can almost be seen as objects with methods. Really at the heart of functional
+programming languages like JavaScript, they went with this idea of giving objects properties
+whose values are actually functions. With the functions, you do not have to give a name after function(),
+so they would technically be called anonymous functions. You can see in the example below
+that the keys for the functions almost serve as their names (though different) despite this. Quite
+a bit of the behavior of classes can be mimiced this way as well. The functional part is that
+you could call a function to help setup the object, and return the object as the result.
+
+```js
+function createPerson(name) {
+  let _name = name; // Private variable
+
+  return {
+    getName: function () {
+      // Public method
+      return _name;
+    },
+    setName: function (newName) {
+      // Public method
+      _name = newName;
+    },
+    scopedVariable: function () {
+      // Local variable within the scopedVariable method's scope
+      let within = 0; 
+    },
+  };
+}
+
+const person = createPerson("John");
+console.log(person.getName()); // Accessing private variable
+person.setName("Alice"); // Modifying private variable
+console.log(person.getName()); // Accessing modified private variable
+
+person.scopedVariable();
+console.log(person.within); 
+// This would result in an error because 'within' is not defined in the object returned by createPerson
+```
+
+Here is a simple demonstration of a function that acts like a class. The idea of inheritance gets very
+tricky to implement early on with this design architecture. From my personal view point,
+functional programming feels more adaptable for smaller tasks. Object oriented programming is nice
+for laying out systems that you know will have similarities to pass between your data as with
+a parent and child setup.
+
+I think the example illustrates something interesting. You can see createPerson() had a private variable
+named name. Yes the underscore is new syntax, but it shows Javascript can modify access in some ways as
+well. Where the \_name variable is being used is important though. We see the setName key of the object has
+a function that has a parameter of newName. In it are the contenets "\_name = newName;", which takes
+the argument provided for newName, and assigns it to \_name. Even though \_name declared outside
+of the object, the object can assign a value directly to it due to the object being in the function's
+scope. This means that the variables a function can use are determined by where they can be placed within 
+the function. In our case, you can see the third function in the object held in the scopedVariable key.
+Currently, the placement of the variable within makes it inaccessible to the function above, so
+it cannot not assign or mutate the variable with another value. It would have to provide us a function
+within that function in order to access it from above. Otherwise, we could pass it as an argument 
+as we did with newName, and keep track of it in the original function that supplied the object. 
+
+The logic contained in a function like this are commonly referred to as closures. Closures can be seen
+as the current functions that have their values being interacted with, but are currently no longer
+executing. Here the _name variable can still be manipulated even though the function is not currently
+executing. This can be seen as the state of the closure, changing whenever the value of _name should
+change. 
