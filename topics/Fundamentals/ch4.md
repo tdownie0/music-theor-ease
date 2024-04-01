@@ -227,8 +227,8 @@ console.log(true && false); // false
 // Or
 console.log(true || false); // true
 
-console.log(true && false && (true || false)); // false
-console.log((true && false) || true || false); // true
+console.log((true && false) && (true || false)); // false
+console.log((true && false) || (true || false)); // true
 ```
 
 Above are demonstrations of how this chaining occurs. Any condition with an equivalence operator
