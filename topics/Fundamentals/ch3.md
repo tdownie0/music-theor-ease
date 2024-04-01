@@ -146,7 +146,10 @@ robotInformation = {
 const expensiveRobot = createRobot(robotInformation, plansForExpensiveRobot);
 
 // Call to make cost efficient robot
-const costEfficientRobot = createRobot(robotInformation, plansForCostEfficientRobot);
+const costEfficientRobot = createRobot(
+  robotInformation,
+  plansForCostEfficientRobot
+);
 ```
 
 If you can follow that logic, that really is a huge leap. We get to reuse our createRobot() function
@@ -154,7 +157,7 @@ with as many different kinds of plans we could come up with, so long as the plan
 same sets of basic rules, and interact with createRobot() almost the same way. That last part is
 hard to phrase because this leads you into conditions where you would like additional things, but
 also need to allow for the original things to work the way they were, or gain something from a new
-addition. This feels okay at times to stretch out the responsibilty of a function to accomodate more use
+addition. This feels okay at times to stretch out the responsibility of a function to accommodate more use
 cases, but it starts getting tricky when the functions have to share a large amount of unrelated logic to
 all the other use cases in order to keep working. A sign of this can be having large parameters for
 functions, usually three or more. You can pass objects as parameters which kind of stretches the amount
@@ -216,7 +219,7 @@ console.log(testCat.secretInfo()); // 'Calico'
 
 This really is a loaded example, but I think it shows a majority of features that come with using
 classes. With classes, their variables are referred to as "properties", and their functions are
-called "methods". This aligns more with the train of throught around classes. From a general stand
+called "methods". This aligns more with the train of thought around classes. From a general stand
 point, classes resemble the layout of common taxonomies from biology (vertebrate, invertebrate,
 mammal, and such). Classes can inherit from other classes, and this is often referred to a "parent" and
 "child" relationship. The parent is structured to allow for the child to exist based off its own
@@ -227,10 +230,10 @@ You may have also noticed the new keywords "public", "protected", and "private".
 come with the philosophy of classes as well. At the top of the declaration we have class Cat{}. This
 names the class we wish to create. Inside of it is the first method that is optional, which is
 constructor. The constructor declares the parameters the class needs in order to create itself, as
-well as the logic to be run on upon its creation.
+well as the logic to be run upon its creation.
 
 We see each parameter has a key word associated with it which actually dictates that variable's access
-modifier. First is "public", which indicates that the property can be accessed wherever an instace of the
+modifier. First is "public", which indicates that the property can be accessed wherever an instance of the
 class exists, or in any of its child classes. We see this with "testCat.name". Using the new key word
 and then specifying which class you would like to create is referred to as creating an instance of that
 class. This is its own individual copy of the class.
@@ -273,7 +276,7 @@ Cat class, so a method on that same class can access anything that is private fo
 
 ## The Functional Way
 
-Making it to this point, you have coverd some serious ground. Typically the concept of loops would
+Making it to this point, you have covered some serious ground. Typically the concept of loops would
 have been brought up and explained at this point, but I felt functions and classes deserved the
 special attention first. Usually classes are covered much later when giving a programming overview.
 To me, classes can almost be seen as objects with methods. Really at the heart of functional
@@ -281,8 +284,8 @@ programming languages like JavaScript, they went with this idea of giving object
 whose values are actually functions. With the functions, you do not have to give a name after function(),
 so they would technically be called anonymous functions. You can see in the example below
 that the keys for the functions almost serve as their names (though different) despite this. Quite
-a bit of the behavior of classes can be mimiced this way as well. The functional part is that
-you could call a function to help setup the object, and return the object as the result.
+a bit of the behavior of classes can be mimicked this way as well. The functional part is that
+you could call a function to help set up the object, and return the object as the result.
 
 ```js
 function createPerson(name) {
@@ -299,7 +302,7 @@ function createPerson(name) {
     },
     scopedVariable: function () {
       // Local variable within the scopedVariable method's scope
-      let within = 0; 
+      let within = 0;
     },
   };
 }
@@ -310,7 +313,7 @@ person.setName("Alice"); // Modifying private variable
 console.log(person.getName()); // Accessing modified private variable
 
 person.scopedVariable();
-console.log(person.within); 
+console.log(person.within);
 // This would result in an error because 'within' is not defined in the object returned by createPerson
 ```
 
@@ -323,110 +326,110 @@ a parent and child setup.
 I think the example illustrates something interesting. You can see createPerson() had a private variable
 named name. Yes the underscore is new syntax, but it shows Javascript can modify access in some ways as
 well. Where the \_name variable is being used is important though. We see the setName key of the object has
-a function that has a parameter of newName. In it are the contenets "\_name = newName;", which takes
+a function that has a parameter of newName. In it are the contents "\_name = newName;", which takes
 the argument provided for newName, and assigns it to \_name. Even though \_name declared outside
 of the object, the object can assign a value directly to it due to the object being in the function's
-scope. This means that the variables a function can use are determined by where they can be placed within 
+scope. This means that the variables a function can use are determined by where they can be placed within
 the function. In our case, you can see the third function in the object held in the scopedVariable key.
 Currently, the placement of the variable within makes it inaccessible to the function above, so
 it cannot not assign or mutate the variable with another value. It would have to provide us a function
-within that function in order to access it from above. Otherwise, we could pass it as an argument 
-as we did with newName, and keep track of it in the original function that supplied the object. 
+within that function in order to access it from above. Otherwise, we could pass it as an argument
+as we did with newName, and keep track of it in the original function that supplied the object.
 
 The logic contained in a function like this is commonly referred to as a closure. Closures can be seen
 as the current functions that have their values being interacted with, but are currently no longer
-executing. Here, the _name variable can still be manipulated even though the function is not currently
-executing. This can be seen as the state of the closure, changing whenever the value of _name should
+executing. Here, the \_name variable can still be manipulated even though the function is not currently
+executing. This can be seen as the state of the closure, changing whenever the value of \_name should
 change. I want to specify that a function may still be running why another piece of logic manipulates
-its values, but it may be in a suspended state or going through iterations of logic. 
+its values, but it may be in a suspended state or going through iterations of logic.
 
 ## Benefits of Both
 
 This was a pretty high level overview of some abstract concepts like object oriented programming,
-and functional programming. You are free to use which ever style suits your needs. Being able to 
+and functional programming. You are free to use whichever style suits your needs. Being able to
 expose you to the core structure of both seems like it will really pay off in the future. Becoming
-a master in either discipline is something to truly admire. You do not have to be a master to use 
+a master in either discipline is something to truly admire. You do not have to be a master to use
 either of them though. Having the understanding of how to approach problems with this somewhat
-subtle design decision will help you look at problems differently. Knowing how to approach 
-something from multiple perspectives really helps with anticipating future needs, finding 
-limitations, and really being able to justify the purpose and intent of the code. 
+subtle design decision will help you look at problems differently. Knowing how to approach
+something from multiple perspectives really helps with anticipating future needs, finding
+limitations, and really being able to justify the purpose and intent of the code.
 
-This last point could be emphasized with a strategy from security, and that is the principle of least 
+This last point could be emphasized with a strategy from security, and that is the principle of least
 responsibility. According to this philosophy, you should not give anything in your system access
-to something that it does not have a need for, or should not be able to access. With classses,
-it is recommended to make everything private by default, and only move down to protected and 
-public when necessary. 
+to something that it does not have a need for, or should not be able to access. With classes,
+it is recommended to make everything private by default, and only move down to protected and
+public when necessary.
 
-Following this practice may not seem to make a big difference in this case. Coming up with a 
+Following this practice may not seem to make a big difference in this case. Coming up with a
 scenario that has tens or even hundreds of classes, you could begin seeing how limiting how
 much certain classes can talk to each other may be beneficial. This could be as simple as having
-a similarly named or samed name variable, but knowing it is specific to the class you are looking at. 
+a similarly named or same name variable, but knowing it is specific to the class you are looking at.
 We can go over some high level overall general recommendations for both methodologies, but
 really just start to see how ideas are constructed in programming. A common pattern is that we
-try to decompose logic (or chunck logic) into individual silos. This helps us reason with 
-what actions are actually occurring, and what we need to be aware of. 
+try to decompose logic (or chunk logic) into individual silos. This helps us reason with
+what actions are actually occurring, and what we need to be aware of.
 
 ## Breaking Down the Bigger Tasks
 
-A fair example of this is gathering input from a user, such as their email. This code is 
+A fair example of this is gathering input from a user, such as their email. This code is
 broken into multiple separate processes that can sometimes pass off to each other like a baton
 for runners in a marathon. First there is the presentation, which is the front end, showing the
 field to enter the email. When it is submitted the middleware will kick in before the information
-is submitted to the backend (which is responsible for saving data and sending out calls to other 
-related parts of that system). This includes checking that the email looks like an email, called 
+is submitted to the backend (which is responsible for saving data and sending out calls to other
+related parts of that system). This includes checking that the email looks like an email, called
 validation, and checking wherever this field was accessed from, that the current user
-(or possibly guest) had permission to be on that page, and perform that action. That last part 
-is called authorization. 
+(or possibly guest) had permission to be on that page, and perform that action. That last part
+is called authorization.
 
-So we already have three steps, front end, validation, and authorization. Each of these steps can be 
-handled by their own functions. Validation is interesting because you can check different things on the 
-front end before going to the backend where the middleware lives, but also do more secure checks on the 
-actual backend. This leads to some of the logic being interwoven, but you will see there are many 
-strategies to split logic across files, or have nicely structured functions/methods, leading to 
+So we already have three steps, front end, validation, and authorization. Each of these steps can be
+handled by their own functions. Validation is interesting because you can check different things on the
+front end before going to the backend where the middleware lives, but also do more secure checks on the
+actual backend. This leads to some of the logic being interwoven, but you will see there are many
+strategies to split logic across files, or have nicely structured functions/methods, leading to
 understandable code.
 
-We may lightly touch on the backend a bit, using databases and caching to save data. The goal of 
-the backend is to be able to setup data for retrieval and updating, or firing off tasks behind the 
-scenes, such as sending welcome emails, writting logs for errors, or changing the state of an 
+We may lightly touch on the backend a bit, using databases and caching to save data. The goal of
+the backend is to be able to setup data for retrieval and updating, or firing off tasks behind the
+scenes, such as sending welcome emails, writing logs for errors, or changing the state of an
 overall program. There is quite a bit of automation that comes with programming, so you can have
-some intricate backend tasks accomplished on a time schedule you specify. The possibilities are 
+some intricate backend tasks accomplished on a time schedule you specify. The possibilities are
 really endless, but they could prune the databases if there was stale data detected, periodically
 check if there are unauthorized users in the system, or fire off a warning if a certain threshold
-is met in a specified time window. All of networking is considered as part of the backend as well.
+is met in a specified time window. All networking is considered as part of the backend as well.
 
 After mentioning all of that, I assume you can start imagine all of these individual tasks will
 take their own functions and setups to handle properly as well. Software developers often test
 all of these functions as well, making sure that their output is the desired result. The nice thing
 about having tests for your code is that it is easier to improve on it later without worrying that
-you may have broken some of its functionality. Tests can help you catch bugs any time you make 
-changes to your code base, and can serve as documentation for the code as well. It is sometimes 
-easier to figure out how to implement a complicated process from a test that had to recreate the 
-same setup for to accomplish the same goal. 
+you may have broken some of its functionality. Tests can help you catch bugs any time you make
+changes to your code base, and can serve as documentation for the code as well. It is sometimes
+easier to figure out how to implement a complicated process from a test that had to recreate the
+same setup to accomplish the same goal.
 
 The reason I bring up tests is that they actually influence a big part of your design decisions
 when implementing something in your code. Structuring your code into smaller units of logic helps
 you test specific elements of your logic, instead of having to wait for the final result to check
-something. Coming up with quality tests is a valuable skill, and takes some refinement to get a 
-decent grasp on. Recreating the proper state to test things can be a difficult task to tackle at 
-first, involving creating multiple entities to test something. 
+something. Coming up with quality tests is a valuable skill, and takes some refinement to get a
+decent grasp on. Recreating the proper state to test things can be a difficult task to tackle at
+first, involving creating multiple entities to test something.
 
-Let's say you were going to check a post feature on a website. Ideally you would be able to create a new 
-user in that test, give them the appropriate credentials to access the post functionality, whether that is 
-by roles or groups on a site, generate all the appropriate parts of a post (this may include a title, a 
-text body, and possibly an image), and see that it was all saved correctly. Nowadays there are 
-frameworks and tools that assist you in creating these test users and test features on your site. 
+Let's say you were going to check a post feature on a website. Ideally you would be able to create a new
+user in that test, give them the appropriate credentials to access the post functionality, whether that is
+by roles or groups on a site, generate all the appropriate parts of a post (this may include a title, a
+text body, and possibly an image), and see that it was all saved correctly. Nowadays there are
+frameworks and tools that assist you in creating these test users and test features on your site.
 You can also handle how these tests behave, whether the data they generate persists to be used for
-comparisons against tests done on other machines or at another time, or data only lasts for the 
+comparisons against tests done on other machines or at another time, or data only lasts for the
 lifetime of the test. Ideally your setup will have your tests saving to a test database instead of
-your actual database so that data is not created or destroyed unintentiionally. 
+your actual database so that data is not created or destroyed unintentionally.
 
 ## Wrapping Up
 
-You can see there is quite a bit to do for even seemingly straight forward tasks. The really
+You can see there is quite a bit to do for even seemingly straightforward tasks. The really
 nice thing about functions is that if you design your code in an intelligent manner, you
 can actually re-use quite a bit of your logic, so you do not have to repeat yourself in areas
 that are slightly different from each other. This encourages you to make functions and code that
-focus on specific subtasks, and allows for them to slightly adapt and create boundries. 
+focuses on specific subtasks, and allows for them to slightly adapt and create boundaries.
 With these intentions, your functions will naturally develop to consider what is allowed and
 what is not, giving them more use for rejecting input that should not go through. The more
 useful a function becomes, the more people will tend to use it. Always be careful not to give

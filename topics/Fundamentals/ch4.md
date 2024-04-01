@@ -16,7 +16,7 @@ that allows for the execution of a portion of code multiple times. Each time a s
 is operated on, it is said to have been iterated over. This process occurs as many times as
 the code specifies. To end a loop, usually a condition is met so that the loop knows that it is
 done executing its task. We will look at the first condition along with a loop, being the "if"
-condition. An "if" conditions would be something like stopping at three if I said count to three.
+condition. An "if" condition would be something like stopping at three if I said count to three.
 
 ```ts
 let counter: number = 0;
@@ -111,8 +111,8 @@ console.log("Blast Off!");
  */
 ```
 
-You can see in this example we actually count down, using 0 as the condition for when we will
-terminate our loop. The structure may feel very different since the paranthesis are actually
+You can see in this example we actually count down (countdown--), using 0 as the condition for when we will
+terminate our loop. The structure may feel very different since the parenthesis are actually
 accepting three conditions instead of one. First you define a variable to use in a for loop,
 then you define the condition to run until, and last you define something to happen at the end
 of each loop (usually manipulating the variable you created). Here would be the same result as a
@@ -236,5 +236,215 @@ could be used in place of either "true" or "false". These can take some getting 
 not familiar, but using parenthesis is very important with these. Like in mathematics, anything
 in parenthesis is evaluated as a unit by itself, before being exposed to outside information. The
 "&&" operator looks for the first instance of false and then returns false, otherwise it will return
-true. On the otherhand, the "||" operator will return the first instance of true, or otherwise
+true. On the other hand, the "||" operator will return the first instance of true, or otherwise
 will return false.
+
+These can get rather tricky to evaluate manually as more conditions come into play. They should
+be read from left to right, and broken up as best as you can. Now that we have already learned
+about functions, it is often useful to put a longer logical chaining inside of its own function,
+making it easier to read.
+
+```js
+function checkStatuses() {
+  // ... some code
+}
+
+function isDataClean() {
+  // .. more code
+}
+
+function isOldEnough(age, region) {
+  return (region === "NA" && age >= 18) || (region === "Other" && age >= 16);
+}
+
+function passToSubmit(age, region) {
+  return checkStatuses() && isDataClean() && isOldEnough(age, region);
+}
+
+let userAge = 18;
+let userRegion = "NA";
+
+if (passToSubmit(userAge, userRegion)) {
+  console.log("Success!");
+} else {
+  console.log("Something went wrong.");
+}
+```
+
+In this structure you see that we can decompose our logic into separate functions, and then pass it
+in a single area packaged together. This helps you define each piece of logic through the function
+names, and break down complicated expressions into simpler ones. You may have also noticed that I
+used the key words "if" and "else", which check conditions. These influence the execution flow of a
+program, which we will be getting into next.
+
+## Execution Flow
+
+There are a few key words languages that dictate which line of code will be executed, and they
+all include evaluating against conditions. Below is a table of those keywords.
+
+| Execution Flow |
+| :------------- |
+| if             |
+| else if        |
+| else           |
+| switch         |
+
+We saw the usage of "if" and "else" in the above example. The way it works may be the way that you
+already suspect. When the "if" has its conditions met in the parenthesis next to it, that section
+of the code (the area within the {} after the ()) will be entered and executed. Otherwise, the else
+portion of the code will be entered and executed. With those two out of the way, now enters the
+"else if" condition. This is an in between state between the "if" and the "else", allowing for
+more opportunities to catch specific if statements.
+
+```ts
+if (color === "red") {
+  console.log("stop");
+} else if (color === "blue") {
+  console.log("speed");
+} else if (color === "brown") {
+  console.log("dodge");
+} else if (color === "purple") {
+  console.log("power up");
+} else {
+  console.log("Sorry, please select a color.");
+}
+```
+
+In the example you see that we can extend the amount of conditions we would like to check against
+to whatever amount we need. It has become more mainstream to use early returns if you are within
+a function while using "if" checks. This would look like this instead:
+
+```js
+function checkColor(color) {
+  if (color === "red") {
+    return console.log("stop");
+  }
+  if (color === "blue") {
+    return console.log("speed");
+  }
+  if (color === "brown") {
+    return console.log("dodge");
+  }
+  if (color === "purple") {
+    return console.log("power up");
+  }
+  console.log("Sorry, please select a color.");
+}
+```
+
+This approach may be useful when you have multiple "else if" portions of your code. They are equivalent,
+but the "else if" seems to take more to process mentally than the return. With the "else if" you
+could have other "if" conditions inside, which would make tracking the other conditions dependent
+on the "else if" more difficult. Returns are nice in the sense that we know the function is done,
+and we do not have to look any further logic when looking into a specific condition. Another approach
+would be the "switch" statement.
+
+```js
+let color = "orange";
+
+switch (color) {
+  case "red":
+    console.log("stop");
+    break;
+  case "blue":
+    console.log("speed");
+    break;
+  case "brown":
+    console.log("dodge");
+    break;
+  case "purple":
+    console.log("power up");
+    break;
+  default:
+    console.log("Sorry, please select a color.");
+}
+```
+
+After seeing this I'm sure you can see a similarity in the structure. It does introduce another
+key word in languages, "break", which exits the current scope that the program is running in. We
+will go over scope in more detail later. For now, know that the scope relates to the memory that
+is able to be accessed within a section of code (enclosed in {}). This "break" key word can also
+be used to leave a loop prematurely, without meeting its base condition.
+
+Now that you have seen all of these, I will sure you another interesting use of an object
+for situations similar to this.
+
+```js
+let colorAnswers = {
+  red: "stop",
+  blue: "speed",
+  brown: "dodge",
+  purple: "power up",
+};
+
+let color = "purple";
+
+if (colorAnswers[color]) {
+  console.log(colorAnswers[color]);
+} else {
+  console.log("Sorry, please select a color.");
+}
+```
+
+Positioning the logic this way, you see that the object could also retrieve different states
+if needed. The input could be check if it exists in the "if" condition, then have a default
+message in the else. This is a good option to keep in mind when weighing out your options. In
+the past this method may have been seen as wasteful, as it cost much more memory to build an object
+than to check against execution flow conditions. Currently with how code is compiled and optimized,
+some of these factors do not have to be as much of a concern. That and computers will typically have
+more memory than needed on modern systems.
+
+The "Ternary Operator" is another style of condition check that has been around for
+quite some time, so you will see it often. Here is an example:
+
+```ts
+const lightColor: string = "green";
+
+// Ternary Operator
+// Will print 'Proceed'. The first console.log is the "if" and the other the "else"
+lightColor === "green" ? console.log("Proceed") : console.log("No Entry");
+```
+
+As mentioned in the comment above, "Proceed" will be printed here. At the beginning of the ternary
+operator is the condition to check, 'name === "green"'. If it is true, the code directly after
+the question mark is executed. If not, the code after the colon (":"), is executed. This offers
+a convenient shorthand at times, but be careful not let the code become unreadable. It is
+often harder to write code where programmers put ternary operators in ternary operators.
+
+```ts
+const lightColor: string = "green";
+const doorPosition: number = 2;
+
+// 'Yes'
+lightColor === "green"
+  ? doorPosition === 1
+    ? console.log("No")
+    : console.log("Yes")
+  : console.log("No Entry");
+```
+
+Here, the code formatter placed this in a structure that is more readable, leaving the indentation
+to indicate to us the current level the comparison is at. I believe you may still agree with me
+that this code is much harder to reason with with the one nested condition. Using indentation
+to group sections of code together has been something that has gradually worked its way into best
+practice. Older languages were not affected by indentation levels as much, using semicolons to
+designate the end of lines. While this is easy for the computer, you could end up declaring several
+things on a single line, taking much more time to read for a human. Languages like Python actually
+made indentation a necessary part of its language, making code that is directly next to other code
+and at the same indentation level considered to be in the same code block (Typically between {},
+but it does not have to be, as with Python).
+
+## Conclusion
+
+Being introduced to loops and conditions has now completed your formation of the basic
+underpinnings of programming. With this information, we will now be able to look at smaller
+programs and make sense of what is going on. Having several conditions through a piece of code
+can make analyzing it take much longer, and possibly increase the difficulty of the code. If
+there ever seem to be too many conditions flying around, decomposing logic into functions is
+always a helpful approach. Also looking at what information is truly necessary to determine something
+is a good exercise to go through.
+
+The next chapter will look at more interesting ways we can use looping behaviors. Javascript and
+some other languages have functions to use on arrays and objects in order to run a task on each
+individual value, or perform something over the entirety of the data. Now that we know how loops
+and conditions work, these functions will make much more sense.
