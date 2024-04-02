@@ -224,7 +224,8 @@ point, classes resemble the layout of common taxonomies from biology (vertebrate
 mammal, and such). Classes can inherit from other classes, and this is often referred to a "parent" and
 "child" relationship. The parent is structured to allow for the child to exist based off its own
 properties. In our case, the Kitten class has a name, age, and breed property as well, their setup is just
-borrowed from the parent.
+borrowed from the parent. It can also be observed that we do not need the function keyword to declare
+functions (methods) inside of class.
 
 You may have also noticed the new keywords "public", "protected", and "private". These properties
 come with the philosophy of classes as well. At the top of the declaration we have class Cat{}. This

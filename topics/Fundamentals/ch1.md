@@ -262,8 +262,8 @@ normal sentence. If you stick with this stuff long enough it reveals more about 
 Also! Do not be intimidated by math! The subject itself is quite deep and has varying degrees of
 complexity, but fundamentals really drive everything. You do not have to memorize anything to great
 degrees, just get used to walking through how to get to the end result and slowly building strategies
-along the way. If I want to call Luigi, what would we need to know? We need a number associated with
-Luigi. If we had that number, we can use it to get in touch with Luigi’s phone. When we use that number,
+along the way. For example, if I want to call Luigi, what would we need to know? We need a number associated 
+with Luigi. If we had that number, we can use it to get in touch with Luigi’s phone. When we use that number,
 it will be compared to which phone belongs to that number, and then the call will be sent to that phone.
 There also could be much more stored with this number, such as address, first name, last name, email, zip
 code. This information would ideally only be visible to the company providing the service for the phone

@@ -312,7 +312,8 @@ if (color === "red") {
 
 In the example you see that we can extend the amount of conditions we would like to check against
 to whatever amount we need. It has become more mainstream to use early returns if you are within
-a function while using "if" checks. This would look like this instead:
+a function while using "if" checks. Using this strategy is referred to as guard clauses. Here 
+would be an implementation:
 
 ```js
 function checkColor(color) {
