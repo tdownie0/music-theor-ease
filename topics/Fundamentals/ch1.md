@@ -28,7 +28,7 @@ would also be more related to learning techniques in playing, instead of learnin
 fundamentals you already know.
 
 Really, my hope is to make you more like a composer. A composer surely can play multiple instruments,
-but focuses mainly on leading the musicians. They most likely do not have the same technical ability
+but focuses mainly on writing the music. They most likely do not have the same technical ability
 or talent to operate some of the instruments as their musicians do. At the same time, they designed
 what every individual member should be doing at every moment in the song. So they have a deep
 appreciation for how things should work, and how to make them work together instead of against each
