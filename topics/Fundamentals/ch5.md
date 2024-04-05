@@ -367,3 +367,40 @@ will not have to update code that gets outdated due to changes in a child class 
 not concern other classes. It almost seems self defeating to split up your code and get this modularity,
 but then be bound to updating implementation details of several classes for one change in a child class.
 
+## More than forEach
+
+Luckily for us there are more functional methods to choose from than just forEach().
+
+```js
+// Example with creating a new object
+const teams = {
+  tigers: { name: "Tigers", players: 25, score: 900 },
+  bears: { name: "Bears", players: 24, score: 500 },
+  lions: { name: "Lions", players: 30, score: 700 },
+};
+
+const selectionItems = Object.values(teams).map((team) => {
+  return { optionName: team.name, score: team.score };
+});
+console.log(selectionItems);
+// [
+//   {optionName: "Tigers", score: 900},
+//   {optionName: "Bears", score: 500},
+//   {optionName: "Lions", score: 700},
+// ]
+
+// Example involving math
+const numbers = [1, 2, 3, 4, 5];
+const double = numbers.map((number) => number * 2);
+console.log(double); // [2, 4, 6, 8, 10]
+console.log(numbers); // [1, 2, 3, 4, 5]
+```
+
+Here is an example of the .map() method. It takes anything looped over and returns an array for assignment
+to the desired variable. In this case it took all the values in the teams object, and populated an
+array with a new object for each value. Looking at the second example involving math, you can see
+that the "double" variable has every value in the "numbers" array multiplied by 2. We see that the
+original "numbers" array remains unchanged. This is due to .map() sending the data to wherever it is
+intended to be assigned upon performing the operation. The function does not directly manipulate
+the values contained in "numbers". The values are not manipulated in a .forEach() method either,
+they actually do not return for assignment like .map() either.
