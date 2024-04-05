@@ -304,6 +304,10 @@ function createPerson(name) {
     scopedVariable: function () {
       // Local variable within the scopedVariable method's scope
       let within = 0;
+      return "Inside scopedVariable";
+    },
+    tryToAccessScopedVariable: function () {
+      return within;
     },
   };
 }
@@ -313,9 +317,8 @@ console.log(person.getName()); // Accessing private variable
 person.setName("Alice"); // Modifying private variable
 console.log(person.getName()); // Accessing modified private variable
 
-person.scopedVariable();
-console.log(person.within);
-// This would result in an error because 'within' is not defined in the object returned by createPerson
+console.log(person.scopedVariable()); // Inside scopedVariable
+console.log(person.tryToAccessScopedVariable()); // Uncaught ReferenceError: within is not defined
 ```
 
 Here is a simple demonstration of a function that acts like a class. The idea of inheritance gets very
@@ -324,17 +327,24 @@ functional programming feels more adaptable for smaller tasks. Object oriented p
 for laying out systems that you know will have similarities to pass between your data as with
 a parent and child setup.
 
-I think the example illustrates something interesting. You can see createPerson() had a private variable
-named name. Yes the underscore is new syntax, but it shows Javascript can modify access in some ways as
-well. Where the \_name variable is being used is important though. We see the setName key of the object has
+I think this example illustrates something interesting. You can see createPerson() has a private variable
+named \_name. The underscore is a convention, indicating to other developers that it is intended to be
+private. The location of the variable is important though. We see the setName key of the object has
 a function that has a parameter of newName. In it are the contents "\_name = newName;", which takes
 the argument provided for newName, and assigns it to \_name. Even though \_name declared outside
 of the object, the object can assign a value directly to it due to the object being in the function's
-scope. This means that the variables a function can use are determined by where they can be placed within
+scope. This makes the variable not truly private, but if these functions did not exist \_name would be
+reasonably named for convention. This also demonstrates that functional programming may have less
+influence on accessibility restrictions according to its paradigm. If these methods existed on a
+similarly structured class, the variable would still be modifiable as well. The difference would be
+being able to truly put the access modifiers on the functions, like "protected" or "private". This
+would indeed make modifying the variable outside of the class or child relationships restricted.
+
+Another factor is the placement of the variable can determine where it can be used within
 the function. In our case, you can see the third function in the object held in the scopedVariable key.
-Currently, the placement of the variable within makes it inaccessible to the function above, so
-it cannot not assign or mutate the variable with another value. It would have to provide us a function
-within that function in order to access it from above. Otherwise, we could pass it as an argument
+Currently, the placement of the variable within makes it inaccessible to calling functions or other
+functions at the same scope level. This is due to it belonging to the scopedVariable scope. No where
+outside of this can assign or mutate the variable with another value. The function would have to provide us with a function within it in order to access the variable. Otherwise, we could pass it as an argument
 as we did with newName, and keep track of it in the original function that supplied the object.
 
 The logic contained in a function like this is commonly referred to as a closure. Closures can be seen

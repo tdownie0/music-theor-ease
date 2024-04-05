@@ -250,7 +250,7 @@ function checkStatuses() {
 }
 
 function isDataClean() {
-  // .. more code
+  // ... more code
 }
 
 function isOldEnough(age, region) {

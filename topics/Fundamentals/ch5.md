@@ -108,7 +108,7 @@ positions job category. The method .values() handles extracting the values of bo
 allows for a great deal of flexibility when setting up data. These objects within objects can be
 as large as they are needed to be, and giving the data implicit meaning is much quicker in these
 circumstances. More modern languages have ways to loop over objects with for loops, and this would
-be an alternative in Javascript
+be an alternative in Javascript:
 
 ```js
 const jobs = {
@@ -264,10 +264,106 @@ still be able to access your intended value through their respective methods, ge
 getJobLocation(). This allows us to abstract the actual implementation from the end user. Reasons
 for this could include simplifying the interface for the user (not forcing them to know part of the
 internal workings in order to user it), and security (users in most circumstances do not need to know
-the implementation details). The concept of having a function that provides you the output 
+the implementation details). The concept of having a function that provides you the output
 you desire, but you do not have any information about its internal workings, is referred to as a
 "Black Box". It is a box that you do not have the access or the means to see inside of, but are free
-to use. This is a key role of abstraction, and really an essential part in making code usable and 
-readable. We could use a function that performs a ridiculously complicated math equation, or 
+to use. This is a key role of abstraction, and really an essential part in making code usable and
+readable. We could use a function that performs a ridiculously complicated math equation, or
 generates a response from an AI, and we just need to know what functions to call and what arguments
 to pass.
+
+There is actually something that can be improved in the class example that was provided above,
+considering this abstraction topic we were just discussing. Currently, both classes Jobs and
+JobsCategory access a property of the Job class directly. Neither of these classes should have to
+rely on the internal implementation of the Job class, such as its properties keys. If this were to
+change, we would have to change its usage everywhere it was implemented. Instead we could do this:
+
+```js
+class Job {
+  constructor(pay, location) {
+    this.pay = pay;
+    this.location = location;
+  }
+
+  // Create getter
+  getPay() {
+    return this.pay;
+  }
+
+  // Create getter
+  getLocation() {
+    return this.location;
+  }
+}
+
+class JobCategory {
+  constructor() {
+    this.jobs = {};
+  }
+
+  addJob(jobTitle, pay, location) {
+    this.jobs[jobTitle] = new Job(pay, location);
+  }
+
+  getJobPay(jobTitle) {
+    if (this.jobs[jobTitle]) {
+      // Use getter instead of direct access
+      return this.jobs[jobTitle].getPay();
+    } else {
+      return null;
+    }
+  }
+
+  getJobLocation(jobTitle) {
+    if (this.jobs[jobTitle]) {
+      // Use getter instead of direct access
+      return this.jobs[jobTitle].getLocation();
+    } else {
+      return null;
+    }
+  }
+}
+
+class Jobs {
+  // --
+
+  // ---- Existing code above containing constructor and methods ----
+
+  // --
+
+  printAllJobPays() {
+    for (const categoryName in this.categories) {
+      const category = this.categories[categoryName];
+      for (const jobTitle in category.jobs) {
+        const job = category.jobs[jobTitle];
+        // Use getter instead of direct access
+        console.log(job.getPay());
+      }
+    }
+  }
+}
+
+const jobs = new Jobs();
+
+jobs.addCategory("tech");
+jobs.addCategory("health");
+jobs.addCategory("food");
+
+jobs.addJobToCategory("tech", "webDev", 10000, "Remote");
+jobs.addJobToCategory("health", "doctor", 30000, "On-Site");
+jobs.addJobToCategory("food", "chef", 20000, "On-Site");
+
+jobs.printAllJobPays();
+/* Prints out this:
+ * 10000
+ * 30000
+ * 20000
+ */
+```
+
+Design like this can lead to better encapsulation of data overall. It separates concerns, and has
+the classes focus on what is their intended purpose. This does lead to more verbose code, but you
+will not have to update code that gets outdated due to changes in a child class that really should
+not concern other classes. It almost seems self defeating to split up your code and get this modularity,
+but then be bound to updating implementation details of several classes for one change in a child class.
+
