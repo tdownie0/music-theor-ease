@@ -76,7 +76,7 @@ counter++. As stated in the comments above, this is actually a shorthand for the
 "counter = counter + 1", which takes the counter variable, adds one to it, and assigns that value to
 the counter value. Another shorthand is the "counter += 1". This also does the same exact operation
 as "counter = counter + 1". This behavior is exhibited in several programming languages. The same
-typically goes for subtraction, multiplication, and division. Examples will be provided later. Once
+typically goes for subtraction, multiplication, division, and modulo operations. Once
 the value is incremented by one, the value is then printed to the screen giving us "1".
 
 Like outlined in the comments above, once the program hits the end of the loop, it will go check
@@ -227,8 +227,8 @@ console.log(true && false); // false
 // Or
 console.log(true || false); // true
 
-console.log((true && false) && (true || false)); // false
-console.log((true && false) || (true || false)); // true
+console.log(true && false && (true || false)); // false
+console.log((true && false) || true || false); // true
 ```
 
 Above are demonstrations of how this chaining occurs. Any condition with an equivalence operator
@@ -312,7 +312,7 @@ if (color === "red") {
 
 In the example you see that we can extend the amount of conditions we would like to check against
 to whatever amount we need. It has become more mainstream to use early returns if you are within
-a function while using "if" checks. Using this strategy is referred to as guard clauses. Here 
+a function while using "if" checks. Using this strategy is referred to as guard clauses. Here
 would be an implementation:
 
 ```js

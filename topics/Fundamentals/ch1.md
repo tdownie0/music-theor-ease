@@ -75,7 +75,7 @@ const example: number = 0;
 const example = 0;
 
 // Using ";" is optional
-const example = 0
+const example = 0;
 ```
 
 Here are some examples in Typescript and Javascript. You will notice they also have "//" before some of
@@ -251,6 +251,68 @@ This could be the name of the current user, the current page being shown, or eve
 order on sites such as Uber, Amazon, or any other shopping platform. These values change frequently,
 but it is nice to have one spot where we can get all the information we need.
 
+## Mathematical Operations
+
+One of the early things I would like to get out of the way is to introduce you to common mathematical
+manipulation in programming.
+
+| Mathematical Operators |     Names      |
+| :--------------------: | :------------: |
+|           +            |    Addition    |
+|           -            |  Subtraction   |
+|           \*           | Multiplication |
+|           /            |    Division    |
+|           %            |     Modulo     |
+
+Next we will see some instances of these operators being implemented:
+
+```js
+const addition = 2 + 2;
+const subtraction = 3 - 2;
+const multiplication = 2 * 4;
+const division = 8 / 4;
+const modulo = 7 % 3;
+
+console.log(addition); // 4
+console.log(subtraction); // 1
+console.log(multiplication); // 8
+console.log(division); // 2
+console.log(modulo); // 1
+```
+
+All of these operators are common across most programming languages. Most likely you are familiar
+with addition and subtraction. Multiplication and division are also probably familiar, but I would like
+to go over their basic definitions. Multiplication is an arithmetic operation that combines groups of
+numbers to find their total or product. It involves repeatedly adding one number (the multiplicand) to
+itself a certain number of times (the multiplier). The result of multiplication is called the product.
+In our case, the two was added to itself four times in order to receive the product from the operation.
+Division is an arithmetic operation where a number (the dividend) is divided by another number (the
+divisor) to find out how many times the divisor can be subtracted from the dividend without resulting in a
+negative number. The result of division is called the quotient. So in this case eight is subtracted by
+four twice before it reaches zero.
+
+I wanted to make both of these definitions explicit, because that is exactly how the computer sees
+these operations as well. The fact with computers is, they can add and subtract numbers ridiculously
+fast. As of January 2022, the average cpu for a mid-range desktop can perform tens of billions of
+operations a second. It is a bit daunting to think someone could reason with remembering the last
+ten billion things they did, nevermind perform them in a second. There are even bitwise operators and
+assembly related strategies to make these operations quicker in a binary format. This is a bit
+more technical than I intend to get at the moment, and will not be all that common to see unless
+you are specifically working at a very low level in the architecture programming wise.
+
+The modulo operator, denoted by '%', calculates the remainder of a division operation. For example, when
+you divide one number by another, the modulo operator returns the remainder after the division. It can be
+visualized as counting up to the divisor and then starting over from zero if the dividend is reached,
+always subtracting one from the dividend until it fits within the divisor. So in our case,
+(7/3 = 2 + (1/3)). We see seven is not perfectly divided by three, so there is a remainder. The
+remainder is the only value the modulo is after, and it does not return a number like "1/3" because
+the divisor is implied by the operation. This leaves one as the result.
+
+This operation is useful for telling if numbers are odd or even, amongst other things. We will be
+diving more into types in the next chapter, but there are some number types that only hold whole
+numbers. This means that they will not interpret decimal values for you. Instead, the computer
+would evalute the operation like this (7/3 = 2). It will just throw away anything after the decimal place.
+
 ## What You Need To Know Prior
 
 Someone coming into this text should not feel there are any prerequisites they need to have in order to
@@ -262,7 +324,7 @@ normal sentence. If you stick with this stuff long enough it reveals more about 
 Also! Do not be intimidated by math! The subject itself is quite deep and has varying degrees of
 complexity, but fundamentals really drive everything. You do not have to memorize anything to great
 degrees, just get used to walking through how to get to the end result and slowly building strategies
-along the way. For example, if I want to call Luigi, what would we need to know? We need a number associated 
+along the way. For example, if I want to call Luigi, what would we need to know? We need a number associated
 with Luigi. If we had that number, we can use it to get in touch with Luigi’s phone. When we use that number,
 it will be compared to which phone belongs to that number, and then the call will be sent to that phone.
 There also could be much more stored with this number, such as address, first name, last name, email, zip

@@ -403,4 +403,81 @@ that the "double" variable has every value in the "numbers" array multiplied by 
 original "numbers" array remains unchanged. This is due to .map() sending the data to wherever it is
 intended to be assigned upon performing the operation. The function does not directly manipulate
 the values contained in "numbers". The values are not manipulated in a .forEach() method either,
-they actually do not return for assignment like .map() either.
+but they actually do not return for assignment like .map().
+
+```js
+// Filter
+const numbers = [1, 2, 3, 4, 5];
+const greaterThanThree = numbers.filter((number) => number > 3);
+console.log(greaterThanThree); // [4, 5]
+
+// Reduce
+const addAllNumbers = numbers.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+console.log(addAllNumbers); // 15
+
+// Start with 10 as base for accumulator
+const addAllNumbersStartingAtTen = numbers.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  10
+);
+console.log(addAllNumbersStartingAtTen); // 25
+
+// Find
+const people = [
+  { name: "Alice", age: 30 },
+  { name: "Bob", age: 25 },
+  { name: "Charlie", age: 35 },
+  { name: "David", age: 40 },
+];
+
+const personWithAge35 = people.find((person) => person.age >= 35);
+
+console.log(personWithAge35); // { name: 'Charlie', age: 35 }
+
+// Using multiple (.find() and .map())
+const teams = {
+  tigers: { name: "Tigers", players: 25, score: 900 },
+  bears: { name: "Bears", players: 24, score: 500 },
+  lions: { name: "Lions", players: 30, score: 700 },
+};
+
+const teamWithHighestScore = Object.values(teams).find((team, index, array) => {
+  return team.score === Math.max(...array.map((team) => team.score));
+});
+
+console.log(teamWithHighestScore); // { name: "Tigers", players: 25, score: 900 }
+```
+
+Here we see two other common functional methods, .filter() and .reduce(). With .filter(), each value
+is compared against the logic condition provided, and only returns the values that evaluate to true.
+In the case of reduce, it takes two values which be named anything but are referred to as the
+accumulator and the currentValue often. In this case we name the variables the same as well. In the
+function we see that both values are added together, and a 0 value is provided after the comma behind
+"currentValue". This initializes the accumulator to a base value. In our first example we see that
+the values are looped over and we receive 15 as a final value. We see in the following example
+that a value of 10 is passed as a base beforehand, and we receive a value of 25. In both cases the
+accumulator is returned.
+
+Next we are introduced to .find(). In the first example we see that a list ("array") of people
+objects are provided, and we look for someone who is greater or equal to 35. As a result, we
+find the object with the name 'Charlie' as a match. We see the difference from .filter() here is that
+the object containg the name 'David' also meets the criteria, but only the 'Charlie' object is returned.
+Unlike .filter(), .find() will only return the first result it finds.
+
+The second example with .find() is a bit more complicated. Here we use .find(), and in the comparison
+we access the Math object that comes with Javascript (built-in object), and access the max function, which
+returns the largest value from a its passed paramters. We also see that our .find() method passes more
+than one parameter (just like all the others covered can optionally). These include the value ("team"
+variable), the index ("index" variable), and the array ("array" variable) which is the array itself that .
+find() was called against. With the array, we are able to perform a rather recent addition to the JS
+ecosystem, the spread operator "...". This actually expands the array from object provided. So in this
+case Math.max() will actually look like this with the values, Math.max(900, 500, 700). Using the spread
+operator is also useful for spreading itself in new arrays or objects to copy values. These copies only
+return shallow versions of their actual values, copying nested objects and arrays by reference. The term
+"shallow" will be explained in more detail shortly. With a copy of the original array, we then iterate
+over the original again, but this time with .map() to supply Math.max() with an array to spread for
+the score values, so that then .find() can compare itself against the highest value found within the teams 
+object.
