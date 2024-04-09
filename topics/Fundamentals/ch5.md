@@ -1,4 +1,4 @@
-## Functional Methods
+## Chapter 5: Functional Methods
 
 Since we are using a language like Javascript, we actually get some nice utility from our
 functions that deal with arrays and objects. The way we can interact with them almost seems
@@ -479,5 +479,121 @@ operator is also useful for spreading itself in new arrays or objects to copy va
 return shallow versions of their actual values, copying nested objects and arrays by reference. The term
 "shallow" will be explained in more detail shortly. With a copy of the original array, we then iterate
 over the original again, but this time with .map() to supply Math.max() with an array to spread for
-the score values, so that then .find() can compare itself against the highest value found within the teams 
+the score values, so that then .find() can compare itself against the highest value found within the teams
 object.
+
+## Reference in memory and Shallow copies
+
+As alluded to before, we will now discuss how the spread operator ("...") provides us a shallow
+copy of an object or an array.
+
+```js
+const original = [1, 2, { a: 3 }];
+const shallowCopy = [...original];
+
+shallowCopy[2].a = 5;
+console.log(original[2].a); // 5, the value has mutated
+```
+
+Here, as the last comment points out, the value of the orignal array actually mutated, even though
+we performed an assignment on the shallowCopy that had used the spread operator inside a new
+array. This behavior is due to how arrays and objects work as we discussed in chapter two. In
+particular, it is due to them being passed by referrence. This means that the address of the
+value is shared, instead of copy of the value. This leads to any manipulation in shallow copies
+to mutate the original. So this would happen here as well, but notice the other two values are
+not affected.
+
+```js
+const original = [1, 2, [0, 1]];
+const shallowCopy = [...original];
+
+shallowCopy[2][0] = 5;
+console.log(original[2][0]); // 5, the value has mutated
+
+// Now we will see the other values are copies instead of referrences
+shallowCopy[0] = 10;
+shallowCopy[1] = 20;
+console.log(original[0]); // 1, Same
+console.log(original[1]); // 2, Same
+console.log(shallowCopy[0]); // 10, This updated correctly
+console.log(shallowCopy[1]); // 20, This updated correctly
+```
+
+This is a very useful peace of information to hold onto, and reflects that Javascript is following the
+rules with regards to how memory references are passed around. I had found that I was aware of this
+behavior from C, but had not truly appreciated that this was occurring with the spread operator as well.
+If you forget about something like this, it may not immediately obvious that you are mutating your
+original data. This most likely is not what you would be intending if you were unaware of this.
+These comparisons really illustrate this.
+
+```js
+const original = [1, 2];
+const copyOfOriginal = original;
+
+original[0] = 10; // We are changing a value inside of the array held in const original
+console.log(original === copyOfOriginal); // true
+console.log(copyOfOriginal); // [10, 2]
+
+original = 2; // Uncaught TypeError: Assignment to constant variable.
+```
+
+You may have been particularly keen and thought of this, but it seems this is a very common
+misconception. We see the assignment of const to the variable "original", which is the array
+[1, 2]. This variable does correctly behave as a const, as seen in the last line of the code
+snippet, not allowing itself to change its original value. We see that the array itself has its
+values manipulated though. Understanding the the value of the array is actually its memory
+address is the key in this puzzle. Since the original memory address is not changing, the value
+is indeed constant. Since we manipulate something in a memory address, all referrences reflect
+what is currently stored in this address.
+
+What we may have intended with all of this is to get an actual copy of what is stored at the memory
+address we refer to. This can be much more complicated than initially given credit. This is due to several
+things, including the nesting levels of the values themselves, and for objects, being able to store things
+such as functions for values.
+
+A common approach seen for deep copies would be this:
+
+```js
+const jsonString = { name: "John", age: 30 };
+const deepCopy = (obj) => {
+  return JSON.parse(JSON.stringify(obj)); // JSON string: '{"name": "John", "age": 30}'
+};
+
+const test = deepCopy(jsonString);
+console.log(deepCopy(jsonString)); // {name: 'John', age: 30}
+```
+
+This will work well for simple objects without functions or non-serializable values like "undefined", but
+it doesn't work for objects containing functions or circular references. Using the JSON object we
+first turn the object into a JSON format using .stringify(). Afterwards, we .parse() this result
+to turn the JSON string back into a Javascript object. More accurate functions can be looked up
+through a Google search, or asking an LLM (Large Language Model) like ChatGPT. These sources are
+useful for weighing your options in circumstances like this, and giving you popular solutions. You
+are also free to use libraries like lodash to handle this task. We will go into libraries in later
+chapters.
+
+## Parting Thoughts
+
+Great work getting to the end of this chapter. We went into rather dense material at the end. The
+flexibility we get with being able to pass functions to operate on arrays and objects gives us the
+ability to extract a good amount of information from such structures rather simply. We must remain
+aware that situations involving nesting could deal with shallow copies, which use memory
+references to pass arrays and objects instead of copying them. Feel free to look over parts of this
+chapter again in your free time. These structures and function concepts are really the building
+blocks of all data manipulation. This is especially true for Javascript with the functional methods.
+
+As always, it is up to you to decide if you would like to work with a more class oriented approach
+(OOP) or functional programming approach. Typically it is encouraged to use whichever paradigm is
+associated with the language. For Javascript, it is typically seen firstly as a functional programming
+language. It has the ability to use classes like Object Oriented Programming (OOP), but the innerworkings
+of the class implementation are actually done through Javascript prototypes. These protoypes are an
+internal property of objects used for inheritance, facilitating the functional programming philosophy.
+
+Staying with the a langauge's common design approaches typically makes it easier for others to assist
+in working on the code. Others may come to expect a certain structure of that language, making it
+easier to work on with a certain implementations approach from another due to the language naturally
+being centered around one or the other. In time, this also becomes useful in being able to distinguish
+one language from another more readily, recognizing the familiarity of structure. Usually, if you are
+working on a code base it is best to keep things as consistent as possible. Being adaptable will allow
+you to suit these needs, as well as give you a good context for weighing the pros and cons of each
+implementation strategy.

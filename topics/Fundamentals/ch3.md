@@ -115,12 +115,13 @@ function addNumbers(2, 3): number {
 ```
 
 At least in memory that is what it will resemble while it is running. So just like in algebra, we
-replace the placeholder values with the values we currently need to use. In programming this can
-be many different types, including all of the primitive types, and even functions. When functions
-are passed to functions as parameters, they are referred to as callbacks. You could think of it
-as leaving a phone number for a function to call and use when it is time. It really is that
-straight forward, and allows for some great flexibility. You could think of doing something like
-passing a set of plans:
+replace the placeholder values with the values we currently need to use. It should be noted that
+the order of the arguments passed to the function will determine which parameter they will represent
+inside of the function. In programming, these arguments can be many different types, including all of the
+primitive types, and even functions. When functions are passed to functions as parameters, they are
+referred to as callbacks. You could think of it as leaving a phone number for a function to call and use
+when it is time. It really is that straight forward, and allows for some great flexibility. You could
+think of doing something like passing a set of plans:
 
 ```js
 function plansForExpensiveRobot() {
