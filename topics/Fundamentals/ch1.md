@@ -1,4 +1,4 @@
-# How To Become A Programmer For Anybody
+# How To Become A Programmer For Anybody: Fundamentals
 
 ## Chapter 1: Why Code?
 

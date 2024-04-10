@@ -482,7 +482,7 @@ over the original again, but this time with .map() to supply Math.max() with an 
 the score values, so that then .find() can compare itself against the highest value found within the teams
 object.
 
-## Reference in memory and Shallow copies
+## Reference in Memory and Shallow Copies
 
 As alluded to before, we will now discuss how the spread operator ("...") provides us a shallow
 copy of an object or an array.

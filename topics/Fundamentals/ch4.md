@@ -438,6 +438,116 @@ made indentation a necessary part of its language, making code that is directly 
 and at the same indentation level considered to be in the same code block (Typically between {},
 but it does not have to be, as with Python).
 
+## Scope
+
+Scope has been brought up a couple of times as a concept in the previous chapter. This
+is a concept that is related to all programming languages, determining the data that a program
+can see and use.
+
+```js
+function scopeOne() {
+  const test = 1;
+  return test;
+}
+
+function scopeTwo() {
+  const test = 2;
+  return test;
+}
+
+// The "test" variable does not exist in this scope, so using console.log()
+// to return its value would return an error.
+
+console.log(scopeTwo()); // 2
+console.log(scopeOne()); // 1
+
+const test = 3;
+console.log(test); // 3
+```
+
+Here is a specific case. We see that the test variable is defined in three different locations, all
+as a const. The difference is that each has their own scope, so none of the variables are aware of
+each other, or can access the others. Their respective functions return their values, but that is as
+far as we can interact with them. We see the curly brackets ("{}") typically separate scopes, but
+the main body that runs the JS program could be thought of being wrapped in this as well, containing
+its scope's boundaries. We also see in his example that the order of the functions is switched from
+their creation, to prove that the time they were created is not influencing this, and the variable is
+not being reassigned.
+
+We have also seen that functions allow us to pass parameters, effectively passing values from one
+scope to the other. Usually higher up variables in a nesting structure are accessible by the lower
+nested variables so long as they have already been defined in the program's logical flow.
+
+```js
+const slime = { health: 27, attack: 10, defense: 5 };
+
+function passParameter(param) {
+  const attack = param.attack;
+  console.log(attack);
+}
+
+function noParameter() {
+  const defense = slime.defense;
+  console.log(defense);
+
+  const mainCannotReach = 0;
+}
+
+passParameter(slime); // 10
+noParameter(); // 5
+console.log(mainCannotReach); // Uncaught ReferenceError: mainCannotReach is not defined
+```
+
+As you can see, both functions are able to print the correct values through console.log() whether
+there was a parameter passed or not. At the end we also see that the main body of the program
+cannot access variables within functions that it contains. Javascript is actually a different
+from many other languages with regards to being able to define a variables scope type along with
+assigning it. Most programming languages behave much like "const" and "let" do, as used in most
+of our examples. They can referred to as block scoped (within the "{}"). Javascript has another
+scope type as well, "var".
+
+```js
+function exampleScopeDifference() {
+  if (true) {
+    var test1 = "var variable"; // test1 is declared with var within the block
+    const test2 = "const variable"; // test2 is declared with const within the block
+  }
+
+  // Attempting to access x outside of its block scope
+  console.log(test1); // Output: "var variable" (var has function scope)
+  test1 = 2; // "var" is reassignable
+  console.log(test1); // 2
+
+  // Attempting to access test2 outside of its block scope
+  console.log(test2); // ReferenceError: test2 is not defined (const is block-scoped)
+}
+
+exampleScopeDifference();
+
+// Attempting to access test1 outside of its function scope
+console.log(test1); // ReferenceError: test1 is not defined (var is function-scoped)
+```
+
+Here we see the uniqueness of "var". It is accessible from outside of code blocks related to
+conditional statements such as "if", as well as loops. When used inside of a funciton, "var" is
+accessible to that specific function. No nested functions will have access to this "var", nor will
+other functions have access to their's. If we were to try to console.log(test1) after the
+exampleScopeDifference(), it would also return a "ReferenceError: test1 is not defined". In this
+example we also see that "var" is reassignable just like "let".
+
+Other related behavior would be that if the "var" variable is declared at the top level of a
+program, which is referred to as a global variable, it is actually added to the global object
+that JS uses while executing. The other types "const" and "let" would also become global
+variables in this case, but they would not be added to the global object as with "var". This
+can lead to naming conflicts and namespace pollution with "var" usage.
+
+Scope is a common consideration across all programming languages. It stands out in JS with closures,
+states within functions that are were called in the run time of the program. These were touched on
+in chapter three, but remember tha the variables within the called functions have a so called
+lifetime over the course of the program. Everything is created from scratch initially as the computer
+starts reading a program, and then that memory is let go of when the program's run time is over. That
+is true in this circumstances as well.
+
 ## Conclusion
 
 Being introduced to loops and conditions has now completed your formation of the basic
