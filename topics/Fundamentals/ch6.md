@@ -19,7 +19,7 @@ to help yourself.
 
 Programming is a very broad topic, and almost all areas of study are affected by this. You could
 specialize in Data Science, Networking, Security, Web Development, Devops, Graphics, Games,
-Robotics, and Embeded Systems just to name a few. All of these topics each serve as an umbrella for
+Robotics, and Embedded Systems just to name a few. All of these topics each serve as an umbrella for
 vast amounts of subdomains in each domain respectively. If you have a solid grip on the fundamentals
 of programming and start recognizing these patterns, jumping to things like shell scripting can
 start to almost be familiar without experience in that specific circumstance.
@@ -30,7 +30,7 @@ start to almost be familiar without experience in that specific circumstance.
 > structure of the command is more apt to make sense to us though. Here the program is "git", and the
 > git command (function) would be "commit". Here the function "commit" is being told it will have
 > a message parameter being passed, which is the argument "Hi!". This is used instead of parenthesis,
-> and using argument postioning to indicate which parameter the argument represents.
+> and using argument positioning to indicate which parameter the argument represents.
 
 My hope here is not to select one of these disciplines for you, but to give you the tools to be
 effective at any. The basics are still the basics across all of them. Programming is similar to other
@@ -48,7 +48,7 @@ limited if you do not understand the process of automating your tasks in order t
 done on a daily basis.
 
 The theme of this message is really to see this as a constant learning experience. There will be many
-things that you learn that may not appear all that related at first, but you will envitably recognize
+things that you learn that may not appear all that related at first, but you will inevitably recognize
 a pattern somewhere due to these. Honestly, a surprising amount of coding can be improved by taking
 the time to write things in a thoughtful manner. Making sure readability is a primary concern will
 help everyone in the long run. If done properly, it could even serve as documentation on how things

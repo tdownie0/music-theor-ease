@@ -102,8 +102,8 @@ manipulate the object at hand. Common calls to "Object" to extract values would 
 items, and the entries function retrieves both at the same time. Once we use one of these methods,
 we may operate on them just like we would any other loop.
 
-In this example you could see that we only need to have prior knowledge of the pay key exisiting.
-We do not need to know the key of the object rerpresenting the job position, or the key of the
+In this example you could see that we only need to have prior knowledge of the pay key existing.
+We do not need to know the key of the object representing the job position, or the key of the
 positions job category. The method .values() handles extracting the values of both for us. This
 allows for a great deal of flexibility when setting up data. These objects within objects can be
 as large as they are needed to be, and giving the data implicit meaning is much quicker in these
@@ -389,21 +389,35 @@ console.log(selectionItems);
 //   {optionName: "Lions", score: 700},
 // ]
 
-// Example involving math
+// Example with multiplication
 const numbers = [1, 2, 3, 4, 5];
 const double = numbers.map((number) => number * 2);
 console.log(double); // [2, 4, 6, 8, 10]
 console.log(numbers); // [1, 2, 3, 4, 5]
 ```
 
-Here is an example of the .map() method. It takes anything looped over and returns an array for assignment
-to the desired variable. In this case it took all the values in the teams object, and populated an
-array with a new object for each value. Looking at the second example involving math, you can see
-that the "double" variable has every value in the "numbers" array multiplied by 2. We see that the
-original "numbers" array remains unchanged. This is due to .map() sending the data to wherever it is
-intended to be assigned upon performing the operation. The function does not directly manipulate
-the values contained in "numbers". The values are not manipulated in a .forEach() method either,
-but they actually do not return for assignment like .map().
+Here is an example of the .map() method. It takes anything that can be looped over and returns an array
+for assignment to the desired variable. In this case it took all the values in the teams object, and
+populated an array with a new object for each value. Looking at the second example involving
+multiplication, you can see that the "double" variable has every value in the "numbers" array multiplied
+by 2. We see that the original "numbers" array remains unchanged. This is due to .map() sending the data
+to wherever it is intended to be assigned upon performing the operation. The function does not directly
+manipulate the values contained in "numbers". The values are not manipulated in a .forEach() method either,
+but they actually are not returned for assignment like with .map(). To actually change the values
+the array would have to be assigned a value to the indexes it wished to assign.
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+numbers.forEach((number, index) => (numbers[index] = number * 2));
+console.log(numbers); // [2, 4, 6, 8, 10]
+```
+
+This demonstrates that either functional method could reassign the values by directly assigning the
+indexes of the array. Another interesting point in this example is that we passed a `number` variable
+for the value, and an `index` variable for the index. Many of these methods automatically keep track
+of the indexes for you, and we will see another example shortly. Something else you might have seen
+is that it looks like we mutated the value of an array that is declared a constant. This will be
+explained in detail when we get to shallow copies.
 
 ```js
 // Filter
@@ -453,34 +467,32 @@ console.log(teamWithHighestScore); // { name: "Tigers", players: 25, score: 900 
 
 Here we see two other common functional methods, .filter() and .reduce(). With .filter(), each value
 is compared against the logic condition provided, and only returns the values that evaluate to true.
-In the case of reduce, it takes two values which be named anything but are referred to as the
+In the case of reduce, it takes two values which can be named anything but are referred to as the
 accumulator and the currentValue often. In this case we name the variables the same as well. In the
 function we see that both values are added together, and a 0 value is provided after the comma behind
-"currentValue". This initializes the accumulator to a base value. In our first example we see that
+`currentValue`. This initializes the `accumulator` to a base value. In our first example we see that
 the values are looped over and we receive 15 as a final value. We see in the following example
 that a value of 10 is passed as a base beforehand, and we receive a value of 25. In both cases the
 accumulator is returned.
 
-Next we are introduced to .find(). In the first example we see that a list ("array") of people
+Next we are introduced to .find(). In the first example we see that a list `array` of people
 objects are provided, and we look for someone who is greater or equal to 35. As a result, we
 find the object with the name 'Charlie' as a match. We see the difference from .filter() here is that
-the object containg the name 'David' also meets the criteria, but only the 'Charlie' object is returned.
+the object containing the name 'David' also meets the criteria, but only the 'Charlie' object is returned.
 Unlike .filter(), .find() will only return the first result it finds.
 
 The second example with .find() is a bit more complicated. Here we use .find(), and in the comparison
 we access the Math object that comes with Javascript (built-in object), and access the max function, which
-returns the largest value from a its passed paramters. We also see that our .find() method passes more
-than one parameter (just like all the others covered can optionally). These include the value ("team"
-variable), the index ("index" variable), and the array ("array" variable) which is the array itself that .
-find() was called against. With the array, we are able to perform a rather recent addition to the JS
-ecosystem, the spread operator "...". This actually expands the array from object provided. So in this
-case Math.max() will actually look like this with the values, Math.max(900, 500, 700). Using the spread
-operator is also useful for spreading itself in new arrays or objects to copy values. These copies only
-return shallow versions of their actual values, copying nested objects and arrays by reference. The term
-"shallow" will be explained in more detail shortly. With a copy of the original array, we then iterate
-over the original again, but this time with .map() to supply Math.max() with an array to spread for
-the score values, so that then .find() can compare itself against the highest value found within the teams
-object.
+returns the largest value from its passed parameters. We also see that our .find() method passes more
+than one parameter (just like all the others covered can optionally). These include the value `team`, the
+index `index`, and the array `array` which is the array itself that .find() was called against. With the
+array, we are able to perform a rather recent addition to the JS ecosystem, the spread operator "...".
+This actually expands the array from the object provided. So in this case Math.max() will actually look like this with the values, Math.max(900, 500, 700). Using the spread operator is also useful for spreading
+itself in new arrays or objects to copy values. These copies only return shallow versions of their actual
+values, copying nested objects and arrays by reference. The term "shallow" will be explained in more
+detail shortly. With a copy of the original array, we then iterate over the original again, but this time
+with .map() to supply Math.max() with an array to spread for the score values, so that then .find() can
+compare itself against the highest value found within the teams object.
 
 ## Reference in Memory and Shallow Copies
 
@@ -495,11 +507,11 @@ shallowCopy[2].a = 5;
 console.log(original[2].a); // 5, the value has mutated
 ```
 
-Here, as the last comment points out, the value of the orignal array actually mutated, even though
+Here, as the last comment points out, the value of the original array actually mutated, even though
 we performed an assignment on the shallowCopy that had used the spread operator inside a new
 array. This behavior is due to how arrays and objects work as we discussed in chapter two. In
-particular, it is due to them being passed by referrence. This means that the address of the
-value is shared, instead of copy of the value. This leads to any manipulation in shallow copies
+particular, it is due to them being passed by reference. This means that the address of the
+value is shared, instead of a copy of the value. This leads to any manipulation in shallow copies
 to mutate the original. So this would happen here as well, but notice the other two values are
 not affected.
 
@@ -543,7 +555,7 @@ misconception. We see the assignment of const to the variable "original", which 
 snippet, not allowing itself to change its original value. We see that the array itself has its
 values manipulated though. Understanding the the value of the array is actually its memory
 address is the key in this puzzle. Since the original memory address is not changing, the value
-is indeed constant. Since we manipulate something in a memory address, all referrences reflect
+is indeed constant. Since we manipulate something in a memory address, all references reflect
 what is currently stored in this address.
 
 What we may have intended with all of this is to get an actual copy of what is stored at the memory
@@ -586,10 +598,10 @@ As always, it is up to you to decide if you would like to work with a more class
 (OOP) or functional programming approach. Typically it is encouraged to use whichever paradigm is
 associated with the language. For Javascript, it is typically seen firstly as a functional programming
 language. It has the ability to use classes like Object Oriented Programming (OOP), but the innerworkings
-of the class implementation are actually done through Javascript prototypes. These protoypes are an
+of the class implementation are actually done through Javascript prototypes. These prototypes are an
 internal property of objects used for inheritance, facilitating the functional programming philosophy.
 
-Staying with the a langauge's common design approaches typically makes it easier for others to assist
+Staying with the a language's common design approaches typically makes it easier for others to assist
 in working on the code. Others may come to expect a certain structure of that language, making it
 easier to work on with a certain implementations approach from another due to the language naturally
 being centered around one or the other. In time, this also becomes useful in being able to distinguish

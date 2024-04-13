@@ -2,15 +2,15 @@
 
 ## Chapter 1: The Run Down
 
-Welcome to the portion of this reading that will be disecting a modern website
+Welcome to the portion of this reading that will be dissecting a modern website
 built with JavaScript, implementing TypeScript in advanced versions. Through this,
 you will given a chance to see what makes some modern web functionality work
-behind the scenes, and see the consiterations that can be taken into account
+behind the scenes, and see the considerations that can be taken into account
 when building a system for such a purpose. We will use Next.js and React in
 this program as well. Next.js handles the server and routing of web pages, and
 React is a javascript library that handles the frontend presentation, animations, and interactions with the
 visual representation of the site. There are actually several frontend libraries like React
-in the programming community today. Many of them interact with HTML (Hyper Text Markup
+in the programming community today. Many of them interact with HTML (HyperText Markup
 Language, which is used to present things on a web page) to add logic. React was made by Facebook,
 and used very commonly.
 
@@ -18,14 +18,14 @@ We will have brief introductions into HTML and CSS (Cascading Style Sheets) so t
 to positioning things on the web page are not too distracting for us to understand the logic
 manipulating values on the page. After this introduction we will be installing vscode for our
 IDE (Integrated Development Environment), and we will go over extensions that will be helpful
-in the procss. Following this, we will go into git for a bit so that we can pull the source code,
+in the process. Following this, we will go into git for a bit so that we can pull the source code,
 navigate within branches, and learn its general use. Once we have reached this point, you will then
 have an understanding of the basics of web page presentation, have an appropriate learning setup,
 and have the entirety of the code on your own machine.
 
 With all of that in place, you will actually be able to run the code yourself and see a local
 version of the website we will be studying and learning from. Once you are at this point, you
-are free to explore every part of the site. I will also do my best to present each porition of
+are free to explore every part of the site. I will also do my best to present each portion of
 the site in a logical order that gradually builds in difficulty, but shares commonalities with
 things we will have already seen. To preface, the final product of this site is in
 TypeScript. It is not the most complicated TypeScript it could be, but having the type logic
@@ -42,7 +42,7 @@ you do not have to worry about breaking anything.
 ## Music Theor-ease
 
 Our example site is named Music Theor-ease. If you are familiar with music, some of the terminology
-may already be familiar to you, but there is not concern if this is not the case. Initially one of
+may already be familiar to you, but there is no concern if this is not the case. Initially one of
 my hopes to explain arrays was to use music scales and modes as examples, and you will see them
 as we look through the site. You will have a chance to navigate the site freely once it is downloaded,
 and explore all of its contents. With this site we will see examples of animations, UI/UX
