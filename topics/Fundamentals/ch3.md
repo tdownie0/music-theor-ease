@@ -17,7 +17,7 @@ could write the program in such a way that you always have all of the
 amounts for each slot wrapped up in the main logic. The other way you could
 do it is make a function for each slot, and then have the program call the
 function corresponding with that slot. These could be calls to functions
-called scoreSlotOne(), scoreSlotTwo(), and scoreSlotThree(). Now, anything
+called `scoreSlotOne()`, `scoreSlotTwo()`, and `scoreSlotThree()`. Now, anything
 you have setup for each specific slot can be completely independent of the
 others. If you scored in whichever one had the highest score you could make
 lights go off as well, or have a sound effect play. You could do this without
@@ -51,7 +51,7 @@ sayHelloWorld(); // Prints "Hello" and "World" on separate lines to the console
 let myNumber: number = giveFour(); // 4
 ```
 
-Here we have sayHello() and sayHelloWolrd(). You see both of their return types are void, which means
+Here we have `sayHello()` and `sayHelloWolrd()`. You see both of their return types are void, which means
 they do not pass back a physical value, instead printing to the console. The last function giveFour()
 does return a value, and in this case it would assign 4 to myNumber. I threw somewhat of a curve
 ball at you right from the start, and you may have noticed in sayHelloWorld(). The most interesting
@@ -69,8 +69,8 @@ looks up if it has a reference to such a function, and if it does, it will run t
 with that function. This also means that nothing executes when the program first reads
 the functions into its memory. This helps enormously. You can really put as much code as you want
 in the functions, and then call them on a single line. This makes understanding a large code base
-manageable. The function calls could be anything, startRobot(), generateDungeonBoss(),
-findAllSchrodingersCats(), and simulateLivingOrganism() are examples. There is no telling how
+manageable. The function calls could be anything, `startRobot()`, `generateDungeonBoss()`,
+`findAllSchrodingersCats()`, and `simulateLivingOrganism()` are examples. There is no telling how
 large or small any of these functions could be, but I feel I can tell you something about their
 purpose just from their names.
 
@@ -95,16 +95,16 @@ function addNumbers(a: number, b: number): number {
 console.log(addNumbers(2, 3));
 ```
 
-Here is an example. You see in the function definition it actually has "a" and "b" between its
+Here is an example. You see in the function definition it actually has `a` and `b` between its
 parenthesis. This indicates that they are parameters necessary to run the function, as the
-function's output depends on them. In most cases, "a" and "b" as names is terrible as they
+function's output depends on them. In most cases, `a` and `b` as names is terrible as they
 are not descriptive, but we can almost get away with it here thanks to TypeScript specifying
 that they are numbers. Short names like this or "x, y, z" and such could be common if it were
 involved in a program or library that uses many mathematical equations. It may be common notation
 in those circumstances as well, so these could be good use cases. Most times though, you want to
-use descriptive names. In this case using "number1" or "first" may seem redundant or not help much.
-In general, I would try to avoid names with numbers like "number1", due to the numbers possibly
-being confused as numbers. In some cases the 1 may resemble the letter "l" very closely.
+use descriptive names. In this case using `number1` or `first` may seem redundant or not help much.
+In general, I would try to avoid names with numbers like `number1`, due to the numbers possibly
+being confused as numbers. In some cases the `1` may resemble the letter "l" very closely.
 
 So with the 2 and the 3 passed into add numbers the function will look like this when it runs:
 
@@ -153,16 +153,16 @@ const costEfficientRobot = createRobot(
 );
 ```
 
-If you can follow that logic, that really is a huge leap. We get to reuse our createRobot() function
+If you can follow that logic, that really is a huge leap. We get to reuse our `createRobot()` function
 with as many different kinds of plans we could come up with, so long as the plans all follow the
-same sets of basic rules, and interact with createRobot() almost the same way. That last part is
+same sets of basic rules, and interact with `createRobot()` almost the same way. That last part is
 hard to phrase because this leads you into conditions where you would like additional things, but
 also need to allow for the original things to work the way they were, or gain something from a new
 addition. This feels okay at times to stretch out the responsibility of a function to accommodate more use
 cases, but it starts getting tricky when the functions have to share a large amount of unrelated logic to
 all the other use cases in order to keep working. A sign of this can be having large parameters for
 functions, usually three or more. You can pass objects as parameters which kind of stretches the amount
-rule, but it would be something like "robotInformation" in the code above, so conceptually we would
+rule, but it would be something like `robotInformation` in the code above, so conceptually we would
 see it as one related entity. The trouble comes from trying to track too many moving parts that can
 seem independent of each other.
 
@@ -224,54 +224,55 @@ called "methods". This aligns more with the train of thought around classes. Fro
 point, classes resemble the layout of common taxonomies from biology (vertebrate, invertebrate,
 mammal, and such). Classes can inherit from other classes, and this is often referred to a "parent" and
 "child" relationship. The parent is structured to allow for the child to exist based off its own
-properties. In our case, the Kitten class has a name, age, and breed property as well, their setup is just
+properties. In our case, the `Kitten` class has a name, age, and breed property as well, their setup is just
 borrowed from the parent. It can also be observed that we do not need the function keyword to declare
 functions (methods) inside of class.
 
-You may have also noticed the new keywords "public", "protected", and "private". These properties
-come with the philosophy of classes as well. At the top of the declaration we have class Cat{}. This
+You may have also noticed the new keywords `public`, `protected`, and `private`. These properties
+come with the philosophy of classes as well. At the top of the declaration we have `class Cat{}`. This
 names the class we wish to create. Inside of it is the first method that is optional, which is
-constructor. The constructor declares the parameters the class needs in order to create itself, as
-well as the logic to be run upon its creation.
+`constructor`. The constructor declares the parameters the class needs in order to create itself, as
+well as the logic to be run upon its creation. We see here that the `{}` for `constructor` is empty,
+so only the variables will be declared with no additional logic.
 
 We see each parameter has a key word associated with it which actually dictates that variable's access
-modifier. First is "public", which indicates that the property can be accessed wherever an instance of the
-class exists, or in any of its child classes. We see this with "testCat.name". Using the new keyword
+modifier. First is `public`, which indicates that the property can be accessed wherever an instance of the
+class exists, or in any of its child classes. We see this with `testCat.name`. Using the new keyword
 and then specifying which class you would like to create is referred to as creating an instance of that
 class. This is its own individual copy of the class.
 
 > **Note:**
-> There is another keyword "static" which allows for a variable to exist across all of the classes that
+> There is another keyword `static` which allows for a variable to exist across all of the classes that
 > are associated with it. This is useful for things such as having a counter (something that tracks a
 > number amount) which adds one to itself everytime a new instance of the class is created. This allows
 > every existing instance the ability to share and access the value at any point in the program. Other
-> properties that are not defined as "static" will be unique to the class instance being created. In our
+> properties that are not defined as `static` will be unique to the class instance being created. In our
 > Cat example, the name, age, and breed properties are completely independent from any other instance,
 > having their own values directly tied to only them.
 
-You see the other two properties actually return errors to us. This is due to both "protected" and
-"private" having an increased set of conditions in order to be accessed. With "protected", the property
+You see the other two properties actually return errors to us. This is due to both `protected` and
+`private` having an increased set of conditions in order to be accessed. With `protected`, the property
 can only be directly accessed from within the class itself, or in a child class. Here we see in the Kitten
-class that it extends the Cat class. This means that Kitten inherits its definition and behavior from Cat.
+class that it extends the `Cat` class. This means that Kitten inherits its definition and behavior from Cat.
 It is free to add additional things it would like specifically at its creation, but it will follow the
 parent's base template by default with Typescript. Other languages may require you to call a method to call
-the parent's constructor, which must be done if it requires arguments. You also have access to "public"
-and "protected" methods from within child classes. In the Kitten class we see a method getAge() that
-accesses "this.age" from the Cat class, which is "protected". Since it is this access modifier,
-we can access the property directly in this case. If this were "private", this would not be the case,
-and we would get an error denying us access. We see the the instance of Kitten ("testKitten"), calls
-the getAge() successfully. The method allows access to the property. We could not access it
-otherwise from this instance. You will notice that getAge() does not have a access modifier
-key word next to it. Due to this, the program will default to using "public".
+the parent's constructor, which must be done if it requires arguments. You also have access to `public`
+and `protected` methods from within child classes. In the `Kitten` class we see a method `getAge()` that
+accesses `this.age` from the `Cat` class, which is `protected`. Since it is this access modifier,
+we can access the property directly in this case. If this were `private`, this would not be the case,
+and we would get an error denying us access. We see the the instance of `Kitten` (`testKitten`), calls
+the `getAge()` successfully. The method allows access to the property. We could not access it
+otherwise from this instance. You will notice that `getAge()` does not have a access modifier
+key word next to it. Due to this, the program will default to using `public`.
 
-Finally we get to "private". As I assume you may expect, "private" is the first two levels of access
+Finally we get to `private`. As I assume you may expect, `private` is the first two levels of access
 restriction, and adds another layer. Private properties can only be accessed from within the class
-they originated in. We see in the call above, "testKitten.getBreed()", which yields an error. This
+they originated in. We see in the call above, `testKitten.getBreed()`, which yields an error. This
 is due to the function being marked private. This prevents instances from calling the method, as well
 as child classes themselves. The next line below calls the same method, but this time on the original
-class it was defined on, "testCat.getBreed()". It also receives an error due to not being able to call
-the method on an instance. Last we see the call to "testCat.secretInfo()", which is successful. This
-is due to the method defaulting to "public" in the Cat class. Since we can access public methods
+class it was defined on, `testCat.getBreed()`. It also receives an error due to not being able to call
+the method on an instance. Last we see the call to `testCat.secretInfo()`, which is successful. This
+is due to the method defaulting to `public` in the `Cat` class. Since we can access public methods
 on a class, and a method within a class can access any information contained within that class,
 the method is allowed to access the information. The private property belongs directly to the
 Cat class, so a method on that same class can access anything that is private for that class.
@@ -283,7 +284,7 @@ have been brought up and explained at this point, but I felt functions and class
 special attention first. Usually classes are covered much later when giving a programming overview.
 To me, classes can almost be seen as objects with methods. Really at the heart of functional
 programming languages like JavaScript, they went with this idea of giving objects properties
-whose values are actually functions. With the functions, you do not have to give a name after function(),
+whose values are actually functions. With the functions, you do not have to give a name after `function()`,
 so they would technically be called anonymous functions. You can see in the example below
 that the keys for the functions almost serve as their names (though different) despite this. Quite
 a bit of the behavior of classes can be mimicked this way as well. The functional part is that
@@ -328,30 +329,30 @@ functional programming feels more adaptable for smaller tasks. Object oriented p
 for laying out systems that you know will have similarities to pass between your data as with
 a parent and child setup.
 
-I think this example illustrates something interesting. You can see createPerson() has a private variable
-named \_name. The underscore is a convention, indicating to other developers that it is intended to be
+I think this example illustrates something interesting. You can see `createPerson()` has a private variable
+named `_name`. The underscore is a convention, indicating to other developers that it is intended to be
 private. The location of the variable is important though. We see the setName key of the object has
-a function that has a parameter of newName. In it are the contents "\_name = newName;", which takes
-the argument provided for newName, and assigns it to \_name. Even though \_name declared outside
+a function that has a parameter of `newName`. In it are the contents `\_name = newName;`, which takes
+the argument provided for newName, and assigns it to `_name`. Even though `_name` declared outside
 of the object, the object can assign a value directly to it due to the object being in the function's
-scope. This makes the variable not truly private, but if these functions did not exist \_name would be
+scope. This makes the variable not truly private, but if these functions did not exist `_name` would be
 reasonably named for convention. This also demonstrates that functional programming may have less
 influence on accessibility restrictions according to its paradigm. If these methods existed on a
 similarly structured class, the variable would still be modifiable as well. The difference would be
-being able to truly put the access modifiers on the functions, like "protected" or "private". This
+being able to truly put the access modifiers on the functions, like `protected` or `private`. This
 would indeed make modifying the variable outside of the class or child relationships restricted.
 
 Another factor is the placement of the variable can determine where it can be used within
-the function. In our case, you can see the third function in the object held in the scopedVariable key.
+the function. In our case, you can see the third function in the object held in the `scopedVariable` key.
 Currently, the placement of the variable within makes it inaccessible to calling functions or other
-functions at the same scope level. This is due to it belonging to the scopedVariable scope. No where
+functions at the same scope level. This is due to it belonging to the `scopedVariable` scope. No where
 outside of this can assign or mutate the variable with another value. The function would have to provide us with a function within it in order to access the variable. Otherwise, we could pass it as an argument
 as we did with newName, and keep track of it in the original function that supplied the object.
 
 The logic contained in a function like this is commonly referred to as a closure. Closures can be seen
 as the current functions that have their values being interacted with, but are currently no longer
-executing. Here, the \_name variable can still be manipulated even though the function is not currently
-executing. This can be seen as the state of the closure, changing whenever the value of \_name should
+executing. Here, the `_name` variable can still be manipulated even though the function is not currently
+executing. This can be seen as the state of the closure, changing whenever the value of `_name` should
 change. I want to specify that a function may still be running why another piece of logic manipulates
 its values, but it may be in a suspended state or going through iterations of logic.
 

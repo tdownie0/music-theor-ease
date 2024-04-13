@@ -503,7 +503,7 @@ there was a parameter passed or not. At the end we also see that the main body o
 cannot access variables within functions that it contains. Javascript is actually a different
 from many other languages with regards to being able to define a variables scope type along with
 assigning it. Most programming languages behave much like `const` and `let` do, as used in most
-of our examples. They can referred to as block scoped (within the "{ }"). Javascript has another
+of our examples. They can referred to as block scoped (within the `{}`). Javascript has another
 scope type as well, `var`.
 
 ```js
@@ -529,10 +529,10 @@ console.log(test1); // ReferenceError: test1 is not defined (var is function-sco
 ```
 
 Here we see the uniqueness of `var`. It is accessible from outside of code blocks related to
-conditional statements such as "if", as well as loops. When used inside of a funciton, `var` is
+conditional statements such as `if`, as well as loops. When used inside of a funciton, `var` is
 accessible to that specific function. No nested functions will have access to this `var`, nor will
 other functions have access to their's. If we were to try to `console.log(test1)` after the
-exampleScopeDifference(), it would also return `ReferenceError: test1 is not defined`. In this
+`exampleScopeDifference()`, it would also return `ReferenceError: test1 is not defined`. In this
 example we also see that `var` is reassignable just like `let`.
 
 Other related behavior would be that if the `var` variable is declared at the top level of a
