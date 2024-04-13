@@ -15,8 +15,8 @@ Since loops were mentioned first, let us start there. A loop is a specific const
 that allows for the execution of a portion of code multiple times. Each time a section of code
 is operated on, it is said to have been iterated over. This process occurs as many times as
 the code specifies. To end a loop, usually a condition is met so that the loop knows that it is
-done executing its task. We will look at the first condition along with a loop, being the "if"
-condition. An "if" condition would be something like stopping at three if I said count to three.
+done executing its task. We will look at the first condition along with a loop, being the `if`
+condition. An `if` condition would be something like stopping at three if I said count to three.
 
 ```ts
 let counter: number = 0;
@@ -58,26 +58,26 @@ while (counter < 3) {
 }
 ```
 
-> **Note**: You may have noticed the usage of the "/\*" along with the "//" for comments now. You
-> can see the slight difference is that when you use the star or asterisk ("\*"), you can use it
-> by itself multiple times. You then will close the entire comment portion with a closing "\*/".
+> **Note**: You may have noticed the usage of the `/*` along with the `//` for comments now. You
+> can see the slight difference is that when you use the star or asterisk (`*`), you can use it
+> by itself multiple times. You then will close the entire comment portion with a closing `*/`.
 
-This will be the first loop we examine. You see right at the beginning it has "while (counter < 3)",
-and this states the condition that it check until it is met, stopping its execution. I hope
-the "counter < 3" part is familiar, but incase it is not that is checking whether the current
+This will be the first loop we examine. You see right at the beginning it has `while (counter < 3)`,
+and this states the condition that it checks until it is met, stopping its execution. I hope
+the `counter < 3` part is familiar, but incase it is not that is checking whether the current
 value of counter is less than the number three. I'm sure many of you have see the equivalence
 operators such as this or greater than, and we will list all of them later in this section. They
 work the same in that subject as they do here, but are usually seen as returning a true or false
 condition as with the "boolean" type each time it is evaluated. This loop would also work if
 if it was initially set to true, and then set to false upon reaching the value of 3.
 
-Within the body of the loop, which is encapsulated by the {}, we first have the operation of
+Within the body of the loop, which is encapsulated by the `{}`, we first have the operation of
 counter++. As stated in the comments above, this is actually a shorthand for the operation of
-"counter = counter + 1", which takes the counter variable, adds one to it, and assigns that value to
-the counter value. Another shorthand is the "counter += 1". This also does the same exact operation
-as "counter = counter + 1". This behavior is exhibited in several programming languages. The same
+`counter = counter + 1`, which takes the counter variable, adds one to it, and assigns that value to
+the counter value. Another shorthand is the `counter += 1`. This also does the same exact operation
+as `counter = counter + 1`. This behavior is exhibited in several programming languages. The same
 typically goes for subtraction, multiplication, division, and modulo operations. Once
-the value is incremented by one, the value is then printed to the screen giving us "1".
+the value is incremented by one, the value is then printed to the screen giving us `1`.
 
 Like outlined in the comments above, once the program hits the end of the loop, it will go check
 the initial condition, and see if it is met. This repeats until the condition is met. You must
@@ -90,7 +90,7 @@ It is fairly common to see a loop compared against some kind of number threshold
 figure out how long it should execute. These tasks tend to involve doing the operation for the
 length of the object passed, until the end of the length of a string, or until a number is met.
 They could also just as easily search for something specific, and once it is found set a "flag"
-to turn value from "true" to "false" (or vise versa).
+to turn value from `true` to `false` (or vise versa).
 
 Another structure for the loop that is very common is the for loop:
 
@@ -111,8 +111,8 @@ console.log("Blast Off!");
  */
 ```
 
-You can see in this example we actually count down (countdown--), using 0 as the condition for when we will
-terminate our loop. The structure may feel very different since the parenthesis are actually
+You can see in this example we actually count down (`countdown--`), using 0 as the condition for when we
+will terminate our loop. The structure may feel very different since the parenthesis are actually
 accepting three conditions instead of one. First you define a variable to use in a for loop,
 then you define the condition to run until, and last you define something to happen at the end
 of each loop (usually manipulating the variable you created). Here would be the same result as a
@@ -131,14 +131,14 @@ console.log("Blast Off!");
 
 With it laid out like this, you can see that this approach is a bit more verbose. This takes six
 lines to write instead of four. Now, that's not a huge loss, but extra code lines like this can add
-up overtime. This could also be a style preference, but we will see later that "for" can actually
-behave in more ways than just this. I would say this is the classic structure of "for" loops, so
-you will see this across many languages. Other structures for the "for" loop will be dependent
+up overtime. This could also be a style preference, but we will see later that `for` can actually
+behave in more ways than just this. I would say this is the classic structure of `for` loops, so
+you will see this across many languages. Other structures for the `for` loop will be dependent
 on the language you have at hand.
 
 ## Comparisons and Equivalence Operators
 
-So hopefully this has cemented the purpose of loops "for" you. Being able to iterate over a chunk
+So hopefully this has cemented the purpose of loops `for` you. Being able to iterate over a chunk
 of logic is a very common need in programming. You have also seen that these structures are heavily
 reliant on equivalence operators, so let's lay out some of those.
 
@@ -154,12 +154,12 @@ reliant on equivalence operators, so let's lay out some of those.
 |          !=           |  Loose Not Equals (TS/JS)  |
 |          !==          | Strict Not Equals (TS/JS)  |
 
-I want to mention that the "==" and "===" are used in some languages, and specifcally for us,
-in TypeScript/Javascript. Originally, in C, "==" was the equivalence operator to check if one value
-was equal to another, since the assignment "=" is already in use. The introduction of the triple
+I want to mention that the `==` and `===` are used in some languages, and specifcally for us,
+in TypeScript/Javascript. Originally, in C, `==` was the equivalence operator to check if one value
+was equal to another, since the assignment `=` is already in use. The introduction of the triple
 equals is that some languages now allow you to compare other types to each other that may be related.
-An example would be the string "5" and the number 5. With the "==" you would get a "true" value when
-comparing the two. If you did this with the "===", instead you would receive "false", since they
+An example would be the string `"5"` and the number `5`. With the `==` you would get a `true` value when
+comparing the two. If you did this with the `===`, instead you would receive `false`, since they
 are not the same type. This is the difference between "loose" and "strict".
 
 For "loose" equivalence, the comparison is done through a process known as coercion. This process
@@ -206,7 +206,7 @@ console.log(4 != "4"); // false
 console.log(4 !== "4"); // true
 ```
 
-These are some examples of using the comparisons. I point out the slight difference provided by
+These are some examples of using the comparisons. I point out the slight difference provided by the
 "equals" case, which is if the same number is provided, true will be returned. In the case it is
 not specified, the same number will return false for the condition evaluation.
 
@@ -218,7 +218,7 @@ not specified, the same number will return false for the condition evaluation.
 |            \|\|            | Logical OR  |
 
 One additional thing to all these types is that there are two types that allow logical chaining.
-These would be "&&" (AND), as well as "||" (OR). You can see their use below:
+These would be `&&` (AND), as well as `||` (OR). You can see their use below:
 
 ```ts
 // And
@@ -232,12 +232,12 @@ console.log((true && false) || true || false); // true
 ```
 
 Above are demonstrations of how this chaining occurs. Any condition with an equivalence operator
-could be used in place of either "true" or "false". These can take some getting use to if you are
+could be used in place of either `true` or `false`. These can take some getting use to if you are
 not familiar, but using parenthesis is very important with these. Like in mathematics, anything
 in parenthesis is evaluated as a unit by itself, before being exposed to outside information. The
-"&&" operator looks for the first instance of false and then returns false, otherwise it will return
-true. On the other hand, the "||" operator will return the first instance of true, or otherwise
-will return false.
+`&&` operator looks for the first instance of false and then returns false, otherwise it will return
+true. On the other hand, the `||` operator will return the first instance of `true`, or otherwise
+will return `false`.
 
 These can get rather tricky to evaluate manually as more conditions come into play. They should
 be read from left to right, and broken up as best as you can. Now that we have already learned
@@ -274,7 +274,7 @@ if (passToSubmit(userAge, userRegion)) {
 In this structure you see that we can decompose our logic into separate functions, and then pass it
 in a single area packaged together. This helps you define each piece of logic through the function
 names, and break down complicated expressions into simpler ones. You may have also noticed that I
-used the key words "if" and "else", which check conditions. These influence the execution flow of a
+used the key words `if` and `else`, which check conditions. These influence the execution flow of a
 program, which we will be getting into next.
 
 ## Execution Flow
@@ -289,12 +289,12 @@ all include evaluating against conditions. Below is a table of those keywords.
 | else           |
 | switch         |
 
-We saw the usage of "if" and "else" in the above example. The way it works may be the way that you
-already suspect. When the "if" has its conditions met in the parenthesis next to it, that section
-of the code (the area within the {} after the ()) will be entered and executed. Otherwise, the else
+We saw the usage of `if` and `else` in the above example. The way it works may be the way that you
+already suspect. When the `if` has its conditions met in the parenthesis next to it, that section
+of the code (the area within the `{}` after the `()`) will be entered and executed. Otherwise, the `else`
 portion of the code will be entered and executed. With those two out of the way, now enters the
-"else if" condition. This is an in between state between the "if" and the "else", allowing for
-more opportunities to catch specific if statements.
+`else if` condition. This is an in between state between the `if` and the `else`, allowing for
+more opportunities to catch specific `if` statements.
 
 ```ts
 if (color === "red") {
@@ -312,7 +312,7 @@ if (color === "red") {
 
 In the example you see that we can extend the amount of conditions we would like to check against
 to whatever amount we need. It has become more mainstream to use early returns if you are within
-a function while using "if" checks. Using this strategy is referred to as guard clauses. Here
+a function while using `if` checks. Using this strategy is referred to as guard clauses. Here
 would be an implementation:
 
 ```js
@@ -333,15 +333,15 @@ function checkColor(color) {
 }
 ```
 
-This approach may be useful when you have multiple "else if" portions of your code. They are equivalent,
-but the "else if" seems to take more to process mentally than the return. With the "else if" you
-could have other "if" conditions inside, which would make tracking the other conditions dependent
-on the "else if" more difficult. Returns are nice in the sense that we know the function is done,
+This approach may be useful when you have multiple `else if` portions of your code. They are equivalent,
+but the `else if` seems to take more to process mentally than the return. With the `else if` you
+could have other `if` conditions inside, which would make tracking the other conditions dependent
+on the `else if` more difficult. Returns are nice in the sense that we know the function is done,
 and we do not have to look any further logic when looking into a specific condition. You will also
 note that the last statement in a function for Javascript has an implicit return. This means that
 the return will be assumed if it is the last line of the function. Some other lanugages exhibit
 this behavior as well, but it should be looked into before being assumed. Another approach
-would be the "switch" statement.
+would be the `switch` statement.
 
 ```js
 let color = "orange";
@@ -365,9 +365,9 @@ switch (color) {
 ```
 
 After seeing this I'm sure you can see a similarity in the structure. It does introduce another
-key word in languages, "break", which exits the current scope that the program is running in. We
+key word in languages, `break`, which exits the current scope that the program is running in. We
 will go over scope in more detail later. For now, know that the scope relates to the memory that
-is able to be accessed within a section of code (enclosed in {}). This "break" key word can also
+is able to be accessed within a section of code (enclosed in `{}`). This `break` key word can also
 be used to leave a loop prematurely, without meeting its base condition.
 
 Now that you have seen all of these, I will sure you another interesting use of an object
@@ -391,7 +391,7 @@ if (colorAnswers[color]) {
 ```
 
 Positioning the logic this way, you see that the object could also retrieve different states
-if needed. The input could be check if it exists in the "if" condition, then have a default
+if needed. The input could be check if it exists in the `if` condition, then have a default
 message in the else. This is a good option to keep in mind when weighing out your options. In
 the past this method may have been seen as wasteful, as it cost much more memory to build an object
 than to check against execution flow conditions. Currently with how code is compiled and optimized,
@@ -409,9 +409,9 @@ const lightColor: string = "green";
 lightColor === "green" ? console.log("Proceed") : console.log("No Entry");
 ```
 
-As mentioned in the comment above, "Proceed" will be printed here. At the beginning of the ternary
-operator is the condition to check, 'name === "green"'. If it is true, the code directly after
-the question mark is executed. If not, the code after the colon (":"), is executed. This offers
+As mentioned in the comment above, `"Proceed"` will be printed here. At the beginning of the ternary
+operator is the condition to check, `name === "green"`. If it is true, the code directly after
+the question mark is executed. If not, the code after the colon (`:`), is executed. This offers
 a convenient shorthand at times, but be careful not let the code become unreadable. It is
 often harder to write code where programmers put ternary operators in ternary operators.
 
@@ -435,7 +435,7 @@ practice. Older languages were not affected by indentation levels as much, using
 designate the end of lines. While this is easy for the computer, you could end up declaring several
 things on a single line, taking much more time to read for a human. Languages like Python actually
 made indentation a necessary part of its language, making code that is directly next to other code
-and at the same indentation level considered to be in the same code block (Typically between {},
+and at the same indentation level considered to be in the same code block (Typically between `{}`,
 but it does not have to be, as with Python).
 
 ## Scope
@@ -468,7 +468,7 @@ console.log(test); // 3
 Here is a specific case. We see that the test variable is defined in three different locations, all
 as a const. The difference is that each has their own scope, so none of the variables are aware of
 each other, or can access the others. Their respective functions return their values, but that is as
-far as we can interact with them. We see the curly brackets ("{}") typically separate scopes, but
+far as we can interact with them. We see the curly brackets (`{}`) typically separate scopes, but
 the main body that runs the JS program could be thought of being wrapped in this as well, containing
 its scope's boundaries. We also see in his example that the order of the functions is switched from
 their creation, to prove that the time they were created is not influencing this, and the variable is
@@ -498,13 +498,13 @@ noParameter(); // 5
 console.log(mainCannotReach); // Uncaught ReferenceError: mainCannotReach is not defined
 ```
 
-As you can see, both functions are able to print the correct values through console.log() whether
+As you can see, both functions are able to print the correct values through `console.log()` whether
 there was a parameter passed or not. At the end we also see that the main body of the program
 cannot access variables within functions that it contains. Javascript is actually a different
 from many other languages with regards to being able to define a variables scope type along with
-assigning it. Most programming languages behave much like "const" and "let" do, as used in most
-of our examples. They can referred to as block scoped (within the "{}"). Javascript has another
-scope type as well, "var".
+assigning it. Most programming languages behave much like `const` and `let` do, as used in most
+of our examples. They can referred to as block scoped (within the "{ }"). Javascript has another
+scope type as well, `var`.
 
 ```js
 function exampleScopeDifference() {
@@ -528,18 +528,18 @@ exampleScopeDifference();
 console.log(test1); // ReferenceError: test1 is not defined (var is function-scoped)
 ```
 
-Here we see the uniqueness of "var". It is accessible from outside of code blocks related to
-conditional statements such as "if", as well as loops. When used inside of a funciton, "var" is
-accessible to that specific function. No nested functions will have access to this "var", nor will
-other functions have access to their's. If we were to try to console.log(test1) after the
-exampleScopeDifference(), it would also return a "ReferenceError: test1 is not defined". In this
-example we also see that "var" is reassignable just like "let".
+Here we see the uniqueness of `var`. It is accessible from outside of code blocks related to
+conditional statements such as "if", as well as loops. When used inside of a funciton, `var` is
+accessible to that specific function. No nested functions will have access to this `var`, nor will
+other functions have access to their's. If we were to try to `console.log(test1)` after the
+exampleScopeDifference(), it would also return `ReferenceError: test1 is not defined`. In this
+example we also see that `var` is reassignable just like `let`.
 
-Other related behavior would be that if the "var" variable is declared at the top level of a
+Other related behavior would be that if the `var` variable is declared at the top level of a
 program, which is referred to as a global variable, it is actually added to the global object
-that JS uses while executing. The other types "const" and "let" would also become global
-variables in this case, but they would not be added to the global object as with "var". This
-can lead to naming conflicts and namespace pollution with "var" usage.
+that JS uses while executing. The other types `const` and `let` would also become global
+variables in this case, but they would not be added to the global object as with `var`. This
+can lead to naming conflicts and namespace pollution with `var` usage.
 
 Scope is a common consideration across all programming languages. It stands out in JS with closures,
 states within functions that are were called in the run time of the program. These were touched on

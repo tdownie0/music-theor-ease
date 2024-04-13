@@ -236,7 +236,7 @@ well as the logic to be run upon its creation.
 
 We see each parameter has a key word associated with it which actually dictates that variable's access
 modifier. First is "public", which indicates that the property can be accessed wherever an instance of the
-class exists, or in any of its child classes. We see this with "testCat.name". Using the new key word
+class exists, or in any of its child classes. We see this with "testCat.name". Using the new keyword
 and then specifying which class you would like to create is referred to as creating an instance of that
 class. This is its own individual copy of the class.
 
