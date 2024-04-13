@@ -128,8 +128,7 @@ system (Shout out to the metric system). Here are the basics:
 | 0011   |      3 |
 | 0100   |      4 |
 | 0101   |      5 |
-
-...
+| ...    |  cont. |
 
 They really are nothing more than switches for on and off states. You can see that their values and
 positions offer ways to generate as many numbers as we want, we can always add more zeros. As a reminder
@@ -148,8 +147,6 @@ typically written uppercase, A through F. Here are some examples:
 | 000B        |     11 |
 | 0010        |     16 |
 
-...
-
 Again, please do not feel overwhelmed by this. The bigger picture is I want you to see that the sets of
 0's in both cases are just being replaced with 1's or 1's as well as other numbers and letters. Both
 systems work the exact same way. The hexadecimal is nice because you can write much bigger numbers using
@@ -161,7 +158,7 @@ astronomically sized number, it's going to need an unbelievable amount of 0's an
 value exactly. This is commonly pointed out in early computer science classes with decimal values. It
 is not at first obvious this is the case though. You may be familiar with a number like 0.5, which
 also could be written as a fraction, 1/2. The problem is 1/3. Technically, the 0.3 has an infinite amount
-of 3's that come after. The computer cannot do infinite. So a minimum possible value must be decided.
+of 3's that come after. The computer cannot use infinite. So a minimum possible value must be decided.
 This may be something like 0 with 16 decimal places after it. Decimal values are often referred to as
 floats in multiple languages, and have to be fairly large memory wise to be precise. This explains
 why you may run into questions from some about why something like this is given as output:
@@ -212,14 +209,14 @@ became ways to predict and implement areas that would need this automatically, w
 it. Things like this can really improve everybody's quality of life. It may be nice to have a semicolon
 for clarity, but it is always painful having a program crash due to one missing.
 
-Maybe some of you reading this think the exoression above (also referred to as a variable assignment), is
+Maybe some of you reading this think the expression above (also referred to as a variable assignment), is
 not all that impressive. On some level, I agree with you. Assigning a variable with an equals sign is not
 a large concept by itself. At the same time, it opens the door to what we can store in a variable, and
 surprise, it's not just numbers. Now computers may always see things as numbers, but we have developed
 several data types that let us store all kinds of data, and in multiple formats.
 
 My emphasis in the beginning will be to focus on knowing what we store in a variable, what its shape
-should resemble, and how the variables can sometimes be reassigned. In our example
+should resemble, and how the variables can sometimes be reassigned. In our example:
 
 ```ts
 const example: number = 0;
@@ -311,7 +308,7 @@ the divisor is implied by the operation. This leaves one as the result.
 This operation is useful for telling if numbers are odd or even, amongst other things. We will be
 diving more into types in the next chapter, but there are some number types that only hold whole
 numbers. This means that they will not interpret decimal values for you. Instead, the computer
-would evalute the operation like this (7/3 = 2). It will just throw away anything after the decimal place.
+would evaluate the operation like this (7/3 = 2). It will just throw away anything after the decimal place.
 
 ## What You Need To Know Prior
 
