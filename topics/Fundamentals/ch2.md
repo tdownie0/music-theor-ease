@@ -90,7 +90,7 @@ There are obviously four. Why is it hard for it to tell? The real answer is that
 that array is actually pointing to an address in memory on your computer. The computer has to have a
 starting point and ending point for that information. Your computer does not see the starting "[" and
 the closing "]" as we do. It may have something similar to these brackets, but in between them is all of
-the data of the available to the program itself. So to break up the memory, it needs characters like the
+the data available to the program itself. So to break up the memory, it needs characters like the
 null operator ("\0") to, in the colloquial phrase, work under the hood.
 
 As a disclaimer, there are many things in place today to prevent a program you run from being allowed
@@ -224,19 +224,18 @@ You can do a lot with little.
 As you can see, just having this simple layout has given us a chance to represent somewhat complicated
 ideas almost effortlessly. Ones and zeros may be the easiest to start with (Usually depicting "On" and
 "Off" states). These two examples are dimensional arrays. Also as a side note, you can see that since I
-gave each of these arrays their own line it is much easier to read. Programmers often try to make code more
-appealing to the eye, and easier to sift through. It really helps with maintaining code in the long run.
-This would make the same information much harder:
+gave each of these arrays their own line so it is much easier to read. Programmers often try to make code
+more appealing to the eye, and easier to sift through. It really helps with maintaining code in the long
+run. This would make the same information much harder:
 
 ```ts
 // Do not layout data like this
 const maze: number[][] = [
   [0, 0, 0, 0, 0, 0, 0, 1],
-        [0, 0, 0, 0, 0, 0, 1, 1],
+     [0, 0, 0, 0, 0, 0, 1, 1],
     [0, 0, 0, 0, 0, 0, 1, 0],
-  [0, 0, 0, 0, 0, 0, 1, 0],[0, 0, 0, 0, 1, 1, 1, 0],
- [0, 0, 0, 0, 1, 0, 0, 0],
-                  [0, 0, 0, 0, 1, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 1, 0],[0, 0, 0, 0, 1, 1, 1, 0],    [0, 0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0],
 ];
 ```
 
@@ -281,8 +280,8 @@ console.log(person1["occupation"]); // 'Jedi'
 ```
 
 That is pretty cool. We no longer have to remember everything as number indexes. With this, we can now
-store information under keys that are strings. Really looking at the layout this provides, just
-feels like it allows us to make more intuitive sense of giving things properties. In TS/JS another
+store information under keys that are strings. Really looking at the layout this provides, it just
+feels like we have an intuitive sense of how to give things properties. In TS/JS another
 interesting way to get the same data would be like this:
 
 ```ts
@@ -367,12 +366,12 @@ have to worry about the specifics.
 > and then index the additional entries, keeping track somewhere else. A hashing algorithm with a
 > minimal collision space is often considered more secure.
 
-## Primative Types
+## Primitive Types
 
 Now that you have made it through what I consider to be the more difficult data types, let's go over
-the more straight forward ones. Here are the primative data types in TypeScript:
+the more straightforward ones. Here are the primitive data types in TypeScript:
 
-| Primative Types
+| Primitive Types
 :--
 number
 string
@@ -403,7 +402,7 @@ representing something as simple as "on" and "off" states like light switches.
 
 For the "second" variable, you can see it is directly assigned to null. This could be used to clear an
 object reference. So we could do this for our person1 object from before and change its value to null with
-the intention to free its memeory at some point. Languages do this through a process called garbage
+the intention to free its memory at some point. Languages do this through a process called garbage
 collection, and the decisions it makes can get quite involved and occur at certain times according to the
 language. In this case with TypeScript, it does not make much sense to only assign the value
 to null. It can never have another value at this point. You will see this commonly paired with another
@@ -421,7 +420,7 @@ do not currently point to a valid space in memory.
 
 Last we have undefined. If you look at the "third" variable, you see it actually is missing an
 assignment operator ("="). Programming languages allow us to define variables without giving them a
-value immeditaly. This is due to the nature of variables having the potential to be changed
+value immediately. This is due to the nature of variables having the potential to be changed
 frequently. If something in TS/JS is declared but does not have a value assigned to it, then it
 will return undefined if accessed to be read. You will also encounter undefined if you try to access
 an object key that does not exist on the current object. Undefined is a practical type. C actually
@@ -431,14 +430,14 @@ only be undefined. So it is commonly in a union with another type as well.
 
 And there you have it. These types are important to know about, but you most likely will be using
 number, string, and boolean the most. The last on the list is Symbol, but this type is not as
-common accross programming languages. The other types are all included with other languages. In
-general they ensure that a value will be a unique.
+common across programming languages. The other types are all included with other languages. In
+general they ensure that a value will be unique.
 
 ```ts
 const mySymbol: symbol = Symbol("key");
 ```
 
-Here, "mySymbol" could be used as a key in an object and it would be guarunteed to be unique.
+Here, "mySymbol" could be used as a key in an object and it would be guaranteed to be unique.
 Symbols can also be used in other capacities, but feel free to look into them another time.
 This type is not even remotely as common as the other types.
 
@@ -466,15 +465,16 @@ const myCar: Record<string, number | string> = {
   color: "Blue",
 };
 ```
+
 Functions are at the bottom of the list, and we will be covering those in quite some detail. There
 will be chapters dedicated to functions and different frameworks for conceptualizing how to use them
 together in order to build larger ideas. Ultimately, functions allow us to define units of logic to
-let us use in our programs. Structuring functions correctly can help you express complex ideas almost 
-effortlessly, and possibly reuse logic so you have less code. 
+let us use in our programs. Structuring functions correctly can help you express complex ideas almost
+effortlessly, and possibly reuse logic so you have less code.
 
 ## Special Types
 
-This will be the last group of types we will go over. 
+This will be the last group of types we will go over.
 
 | Special Types
 :--
@@ -482,13 +482,13 @@ any
 void
 never
 
-Let's go in order. Our first type "any" is actually pretty simple, it represents anything. This is the 
+Let's go in order. Our first type "any" is actually pretty simple, it represents anything. This is the
 loosest type in TypeScript. JavaScript does not use types by itself, instead having TypeScript add types
 to it. So "any" is there to help transfer over code to types, but not force a type a be declared at the
 moment. This is typically looked down upon to use often, especially if you know a type beforehand. It
 is find to use this while you are learning though. In my opinion, just having exposure to the idea of
-types is going to put you way further ahead in the long run. Typescript also predicts types for you 
-while you are using it, so it can actually help you learn types. 
+types is going to put you way further ahead in the long run. Typescript also predicts types for you
+while you are using it, so it can actually help you learn types.
 
 Next is "void". This type is actually in C as well. This type is related to functions, so we will see
 this again when we go into those. Mainly it involves the idea that nothing is generated to be given
@@ -500,12 +500,12 @@ provide an answer directly back are of type "void".
 Finally we have "never". This is an interesting type, but you likely will only see this in advanced
 use cases. It is not as general across languages like the other types. In practice it can be used
 to define behavior as never being able to occur, and this can be checked as a set of rules to check
-against when implemented correctly. 
+against when implemented correctly.
 
 ## Extra Types
 
 These are types that have to do more with how types relate to each other. So in other words,
-these are logical relation types. They do not have specific key words, but do have associated 
+these are logical relation types. They do not have specific keywords, but do have associated
 behavior.
 
 | Extra Types
@@ -516,26 +516,26 @@ Tuple
 
 ```ts
 // Union
-number | string
+number | string;
 
 // Intersection
-type1 & type2
+type1 & type2;
 
 // Tuple
 let myTuple: [number, string, boolean] = [1, "yes", true];
 ```
 
 We have actually already seen the Union type. This allows for a type to be one or the other. The
-Intersection type allows you to merge the two properties of types together. We will see later that 
+Intersection type allows you to merge the two properties of types together. We will see later that
 you can make your own types in Typescript in order to extend its capabilities. Here we had "type1 &
 type2", but we could have also had something "Robot & Employee". This would theoretically be a type
-representing something that had all the properties needed in order to belong to both types at the 
-same time. In these cases the "&" represents a logical AND, meaning both conditions must be met. 
-Last is the Tuple. This actually resembles something we already saw with the Record 
+representing something that had all the properties needed in order to belong to both types at the
+same time. In these cases the "&" represents a logical AND, meaning both conditions must be met.
+Last is the Tuple. This actually resembles something we already saw with the Record
 type with objects. Instead of just being a regular array of certain types, this array actually
-has a specific order in which the value types must be placed to satisfy the criteria. 
+has a specific order in which the value types must be placed to satisfy the criteria.
 
-Typescript is capable of much more with its types, but my aim is really just to familiarize you with 
+Typescript is capable of much more with its types, but my aim is really just to familiarize you with
 the general logic you will see across every language you work with. The good news is that I show you
 all of this just to expose you to the nature of these variables, but you will not have to use any of this
 unwillingly. Like stated before, JavaScript does not use types, and everything in this book can be
