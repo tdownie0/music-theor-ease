@@ -332,7 +332,7 @@ a parent and child setup.
 I think this example illustrates something interesting. You can see `createPerson()` has a private variable
 named `_name`. The underscore is a convention, indicating to other developers that it is intended to be
 private. The location of the variable is important though. We see the setName key of the object has
-a function that has a parameter of `newName`. In it are the contents `\_name = newName;`, which takes
+a function that has a parameter of `newName`. In it are the contents `_name = newName;`, which takes
 the argument provided for newName, and assigns it to `_name`. Even though `_name` declared outside
 of the object, the object can assign a value directly to it due to the object being in the function's
 scope. This makes the variable not truly private, but if these functions did not exist `_name` would be
