@@ -1,6 +1,6 @@
 # How To Become A Programmer For Anybody: Website
 
-## Chapter 1: The RunDown
+## Chapter 1: The Rundown
 
 Welcome to the portion of this reading that will be dissecting a modern website
 built with JavaScript, implementing TypeScript in advanced versions. Through this,
