@@ -52,9 +52,9 @@ let myNumber: number = giveFour(); // 4
 ```
 
 Here we have `sayHello()` and `sayHelloWolrd()`. You see both of their return types are void, which means
-they do not pass back a physical value, instead printing to the console. The last function giveFour()
+they do not pass back a physical value, instead printing to the console. The last function `giveFour()`
 does return a value, and in this case it would assign 4 to myNumber. I threw somewhat of a curve
-ball at you right from the start, and you may have noticed in sayHelloWorld(). The most interesting
+ball at you right from the start, and you may have noticed in `sayHelloWorld()`. The most interesting
 part about this function, is that it actually calls another function, and then runs itself.
 
 I put the comments with "Function Declaration Area" around the functions to help illustrate that
@@ -252,17 +252,17 @@ class. This is its own individual copy of the class.
 
 You see the other two properties actually return errors to us. This is due to both `protected` and
 `private` having an increased set of conditions in order to be accessed. With `protected`, the property
-can only be directly accessed from within the class itself, or in a child class. Here we see in the Kitten
-class that it extends the `Cat` class. This means that Kitten inherits its definition and behavior from Cat.
-It is free to add additional things it would like specifically at its creation, but it will follow the
-parent's base template by default with Typescript. Other languages may require you to call a method to call
-the parent's constructor, which must be done if it requires arguments. You also have access to `public`
-and `protected` methods from within child classes. In the `Kitten` class we see a method `getAge()` that
-accesses `this.age` from the `Cat` class, which is `protected`. Since it is this access modifier,
-we can access the property directly in this case. If this were `private`, this would not be the case,
-and we would get an error denying us access. We see the the instance of `Kitten` (`testKitten`), calls
-the `getAge()` successfully. The method allows access to the property. We could not access it
-otherwise from this instance. You will notice that `getAge()` does not have a access modifier
+can only be directly accessed from within the class itself, or in a child class. Here we see in the
+`Kitten` class that it extends the `Cat` class. This means that Kitten inherits its definition and
+behavior from `Cat`. It is free to add additional things it would like specifically at its creation, but
+it will follow the parent's base template by default with Typescript. Other languages may require you to
+call a method to call the parent's constructor, which must be done if it requires arguments. You also have
+access to `public` and `protected` methods from within child classes. In the `Kitten` class we see a
+method `getAge()` that accesses `this.age` from the `Cat` class, which is `protected`. Since it is this
+access modifier, we can access the property directly in this case. If this were `private`, this would not
+be the case, and we would get an error denying us access. We see the the instance of `Kitten`
+(`testKitten`), calls the `getAge()` successfully. The method allows access to the property. We could not
+access it otherwise from this instance. You will notice that `getAge()` does not have a access modifier
 key word next to it. Due to this, the program will default to using `public`.
 
 Finally we get to `private`. As I assume you may expect, `private` is the first two levels of access

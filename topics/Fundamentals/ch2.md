@@ -27,22 +27,22 @@ const name: string = "Boba";
 ```
 
 This data type is called a string. You can see the variable is a constant by the "const" keyword.
-The name of the variable "name". The type comes where ": string" is, just like with where ": number" was
-before. And last, it is given the value of "Boba" through the "=" assignment operator. So in this
-variable assignment, our "name" variable is equal to "Boba". The quotations here actually denote a
+The name of the variable `name`. The type comes where `: string` is, just like with where `: number` was
+before. And last, it is given the value of `Boba` through the `=` assignment operator. So in this
+variable assignment, our `name` variable is equal to `Boba`. The quotations here actually denote a
 a region where information will be provided. It is perhaps convenient that we already are accustom to
-the quotations being associated with words, but often a common annoyance is trying to use "" inside
-of another set of quotations. The first " denotes the start of the information provided, and the closing
-", marks the end. They are used in a similar way that we use parentheses in writing to contain a unit
-of information, but parentheses are used in many ways in programming, so do not use parenthesis (eg. ())
+the quotations being associated with words, but often a common annoyance is trying to use `""` inside
+of another set of quotations. This is handled by wrapping the quotations in single quotes (`''`) or
+vice versa if desired. The first `"` denotes the start of the information provided, and the closing
+`"`, marks the end. They are used in a similar way that we use parentheses in writing to contain a unit
+of information, but parentheses are used in many ways in programming, so do not use parenthesis (eg. `()`)
 instead here.
 
-So in the example, the information provided to the "" region are the letters "B", "o", "b", "a". The
-computer actually stores them individually as well. Anything you see with "", or '', or ` are 
-strings. The last ones (`, backticks which are on your tilde key), are actually special in Javascript/
-Typescript, but we will talk about that later. So when you see any of these, your brain should think of
+So in the example, the information provided to the `""` region are the letters "B", "o", "b", "a". The
+computer actually stores them individually as well. Anything you see with `""`, or `''`, or ` `` ` are
+strings. The last ones (` `` `, backticks which are on your tilde key), are actually special in Javascript/Typescript, but we will talk about that later. So when you see any of these, your brain should think of
 these as starting and closing regions. When closed in these, numbers are also instead considered strings
-instead of numbers. So "3" is not the same as 3. They can still be compared, but more on that later.
+instead of numbers. So `"3"` is not the same as `3`. They can still be compared, but more on that later.
 
 How does the computer store the letters "B", "o", "b", and "a" individually to make up the entire string?
 The string is actually stored in something called an array. Specifically in this case the array is:
@@ -52,7 +52,7 @@ The string is actually stored in something called an array. Specifically in this
 ```
 
 You see, they are wrapped in another region with a starting position, and an ending position. This time
-it is brackets ("[]"). This lets the computer know that these letters belong together. A subtle caveat
+it is brackets (`[]`). This lets the computer know that these letters belong together. A subtle caveat
 is that strings actually contain another value in their array to tell the computer where the string
 ends. In C it would look like this:
 
@@ -60,9 +60,9 @@ ends. In C it would look like this:
 ['B', 'o', 'b', 'a', '\0']
 ```
 
-The "\0" is actually called the null character in C. It uses this to know when to stop for many
+The `\0` is actually called the null character in C. It uses this to know when to stop for many
 calculations and functions. Another interesting thing to point out since we're here, is the letters are
-written with single quotes here in C. For example the 'B'. In this case 'B' is actually called a "char"
+written with single quotes here in C. For example the `'B'`. In this case `'B'` is actually called a `char`
 (short for character), since it is a single letter. Strings are made up of an array of chars.
 
 In many modern languages I doubt you will encounter a string represented as an array in this manner.
@@ -72,8 +72,8 @@ Even in C they have the shorthand:
 char name[] = "Boba";
 ```
 
-It is evident they do not use the word "string" as a type here, instead using the type "char" and putting
-the "[]" next to the variable name to indicate it is a char array. This is referred to as a string in
+It is evident they do not use the word `string` as a type here, instead using the type `char` and putting
+the `[]` next to the variable name to indicate it is a `char` array. This is referred to as a string in
 this case, the abstraction for the type just came later. I show you this to point out that
 the computer is the only one who sees the string as the array. Knowing this will help you understand
 how the computer is able to figure out things like how many letters belong to a word and give you a deeper
@@ -88,10 +88,10 @@ why the computer has trouble counting:
 
 There are obviously four. Why is it hard for it to tell? The real answer is that the variable that contains
 that array is actually pointing to an address in memory on your computer. The computer has to have a
-starting point and ending point for that information. Your computer does not see the starting "[" and
-the closing "]" as we do. It may have something similar to these brackets, but in between them is all of
+starting point and ending point for that information. Your computer does not see the starting `[` and
+the closing `]` as we do. It may have something similar to these brackets, but in between them is all of
 the data available to the program itself. So to break up the memory, it needs characters like the
-null operator ("\0") to, in the colloquial phrase, work under the hood.
+null operator (`\0`) to, in the colloquial phrase, work under the hood.
 
 As a disclaimer, there are many things in place today to prevent a program you run from being allowed
 outside of its designated bounds memory wise. In the past, and still if done incorrectly (or purposely)
@@ -120,7 +120,7 @@ understanding. It took me years to grasp all of that accurately, so even underst
 puts you closer to my understanding in the matter of minutes. Really, a vast majority of the complicated
 things in programs are made of arrays. Often arrays with combinations of other arrays.
 
-Let's remark on something about position values. With our last string "Boba", each letter has a
+Let's remark on something about position values. With our last string `"Boba"`, each letter has a
 position value. These values are referred to as "indexes". Here is a table demonstrating:
 
 | Index | Character |
@@ -145,8 +145,8 @@ console.log(name[2]); // 'b'
 console.log(name[3]); // 'a'
 ```
 
-In this code snippet, you can see our variable "name" is set to "Boba". We then use the variable
-with its index in the array we would wish to access. Here, console.log() would print out the
+In this code snippet, you can see our variable `name` is set to `"Boba"`. We then use the variable
+with its index in the array we would wish to access. Here, `console.log()` would print out the
 corresponding letters of the name. Hopefully that makes sense! Now with that mapped out, let's look
 at what putting an array inside of an array would look like.
 
@@ -159,14 +159,14 @@ const ticTacToe: string[][] = [
 ```
 
 Hopefully it is not as scary as you had anticipated. I think the game of Tic-Tac-Toe is a very
-practical example. You see we declared a constant with the variable name "ticTacToe". The casing of
+practical example. You see we declared a constant with the variable name `ticTacToe`. The casing of
 the name of the variable is something called camelcase, and is a common convention in
 TypeScript/Javascript. The standard is to lead with a lowercase letter, and then capitalize the next
 letter anywhere there is typically a space or a separator before hand. You can see the type is
-string[][]. That would be an array of string arrays. We need this due to having multiple rows.
+`string[][]`. That would be an array of string arrays. We need this due to having multiple rows.
 Now that I said row, you may know where this is going next. This also gives us columns, just like
 with matrices in math. They are actually indexed in the same order, which is row then column.
-Here is how you would access the winning combination of "O".
+Here is how you would access the winning combination of `"O"`.
 
 ```ts
 const ticTacToe: string[][] = [
@@ -180,7 +180,7 @@ console.log(ticTacToe[1][1]); // 'O'
 console.log(ticTacToe[2][2]); // 'O'
 ```
 
-Those would be all of the "O" characters from the top left to the bottom right. You might be better at
+Those would be all of the `"O"` characters from the top left to the bottom right. You might be better at
 math than you thought. An interesting thing with computers is that we can separate the front end
 display that a user sees, from the actual logic that operates something. In this case with our
 Tic-Tac-Toe game, we could abstract the characters to numbers. They would then represent on and off
@@ -196,7 +196,7 @@ const ticTacToe: number[][] = [
 ```
 
 Here you see all the characters were replaced with numbers. Now somewhere else can decide what goes with
-the 1's, 2's, and 0's. In our case, the 1's were "O", the 2's were "X", and the 0's were "".
+the 1's, 2's, and 0's. In our case, the 1's were `"O"`, the 2's were `"X"`, and the 0's were `""`.
 
 Having this structure allows for many things, especially once you know how to manipulate it. There are
 several functions built into languages just for the purpose of working with arrays and their common use
@@ -232,10 +232,12 @@ run. This would make the same information much harder:
 // Do not layout data like this
 const maze: number[][] = [
   [0, 0, 0, 0, 0, 0, 0, 1],
-     [0, 0, 0, 0, 0, 0, 1, 1],
-    [0, 0, 0, 0, 0, 0, 1, 0],
-  [0, 0, 0, 0, 0, 0, 1, 0],[0, 0, 0, 0, 1, 1, 1, 0],    [0, 0, 0, 0, 1, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 1, 1],
+  [0, 0, 0, 0, 0, 0, 1, 0],
+  [0, 0, 0, 0, 0, 0, 1, 0],
+  [0, 0, 0, 0, 1, 1, 1, 0],
+  [0, 0, 0, 0, 1, 0, 0, 0],
+  [0, 0, 0, 0, 1, 0, 0, 0],
 ];
 ```
 
@@ -260,12 +262,12 @@ const person1: Record<string, number | string> = {
 
 This is an example of an associative array, or in Typescript/Javascript(TS/JS), an object. It has other
 names such as maps, dictionaries, or key-value stores. You see here that TypeScript uses the word Record
-to indicate the object type, and specifies that it contains a string in its first position, and
-either a number or a string in the other. In the expression "number|string" the "|" stands for the
+to indicate the object type, and specifies that it contains a `string` in its first position, and
+either a `number` or a `string` in the other. In the expression `number|string` the `|` stands for the
 logical OR condition. This works probably as you would expect, representing it can be one type or the
 other. In TypeScript they refer to this as a union, but you do not have to remember that.
 
-Now that the type is out of the way, let's look at what we can do with our variable person1.
+Now that the type is out of the way, let's look at what we can do with our variable `person1`.
 
 ```ts
 const person1: Record<string, number | string> = {
@@ -313,9 +315,9 @@ console.log(person1.lightsaber.power); // 97
 ```
 
 Here we had to add another data type, which is the same as our original, Record<string, number | string>.
-It is named "lightsaber", and inside of it contains two keys, "color" and "power". You can see the
-lightsaber is first accessed on the person1 object, and then itself accessed for values of the color and
-power keys. This access would have also been correct:
+It is named `lightsaber`, and inside of it contains two keys, `color` and `power`. You can see the
+`lightsaber` object is accessed by first accessing the `person1` object, and then itself accessed for
+the values of its keys `color` and `power`. This access would have also been correct:
 
 ```ts
 console.log(person1["lightsaber"]["color"]); // 'Blue'
@@ -324,8 +326,8 @@ console.log(person1["lightsaber"]["power"]); // 97
 
 Accessing the values through their keys in this manner just involves a bit more typing. It could also
 be necessary to use this access method depending on how the key is used, it's format (it has spaces
-or "-"), leading numbers, or is a symbol type in Javascript. Do not worry about the specifics, just
-know if you are using the dot notation, such as person1.lightsaber.color is called, and it does not work,
+or `-`), leading numbers, or is a symbol type in Javascript. Do not worry about the specifics, just
+know if you are using the dot notation, such as `person1.lightsaber.color` is called, and it does not work,
 you may need to use the other access method with array syntax.
 
 By the way syntax is a very common term thrown around. Here is a quick definition from Google AI:
@@ -345,8 +347,8 @@ time, it has more than one thing that belongs specifically to it.
 One thing may have been puzzling you up until now. If we went through all that trouble explaining
 what strings were, why was it so easy for the associative array (a.k.a. object in TS/JS) to use
 them? In the case with our object, a hash map is actually being used to generate the values of
-where to store the values in the object variable. This means that it takes a key like "id" and runs
-a function (numerical operation) on the characters "i" and "d", and then is returned an number at
+where to store the values in the object variable. This means that it takes a key like `"id"` and runs
+a function (numerical operation) on the characters `"i"` and `"d"`, and then is returned an number at
 the end. This can get as complicated or simple as you want. Usually the more cryptography involved,
 the more mathematically intensive this becomes. Luckily this is taken care of for us, so we do not
 have to worry about the specifics.
@@ -356,9 +358,9 @@ have to worry about the specifics.
 > string. In our case, this would result in the number two being generated. As a result our person1 object
 > would resemble an array that looks like this access wise internally:
 >
-> person1[2];
+> `person1[2]`;
 >
-> What we knew as "id" is now the number 2. The trick is that the hashing algorithm can almost be
+> What we knew as `"id"` is now the number 2. The trick is that the hashing algorithm can almost be
 > anything. I like to show this example because it points out something interesting. You might think, what
 > happens if we have another string key that is two characters long? In this case the value would
 > access the same index as our other key. This is referred to as a collision. Both inputs yielded the same
@@ -381,7 +383,7 @@ undefined
 symbol
 
 You have already seen the number and the string types. The ones we will be discussing will be the
-"boolean", "null", and "undefined". A boolean type can be one of two values, "true" or "false".
+`boolean`, `null`, and `undefined`. A boolean type can be one of two values, `true` or `false`.
 The null type represents a value that is deliberately empty. Undefined as a type represents a state
 of when a variable is created, but it is not assigned a value.
 
@@ -396,16 +398,16 @@ let second: null = null;
 let third: undefined;
 ```
 
-Above are basic examples. In these examples you see the use of let instead of const due to the typical
-nature of the types. A boolean variable typically switches between "true" and "false" often, possibly
+Above are basic examples. In these examples you see the use of `let` instead of `const` due to the typical
+nature of the types. A boolean variable typically switches between `true` and `false` often, possibly
 representing something as simple as "on" and "off" states like light switches.
 
-For the "second" variable, you can see it is directly assigned to null. This could be used to clear an
-object reference. So we could do this for our person1 object from before and change its value to null with
+For the `second` variable, you can see it is directly assigned to `null`. This could be used to clear an
+object reference. So we could do this for our person1 object from before and change its value to `null` with
 the intention to free its memory at some point. Languages do this through a process called garbage
 collection, and the decisions it makes can get quite involved and occur at certain times according to the
 language. In this case with TypeScript, it does not make much sense to only assign the value
-to null. It can never have another value at this point. You will see this commonly paired with another
+to `null`. It can never have another value at this point. You will see this commonly paired with another
 type.
 
 Originally this was handled manually by assigning pointers certain amounts of memory, and then
@@ -418,8 +420,8 @@ would have to be able to adjust. This can also be seen in cases where you are ad
 things from memory. For pointers it was quite common to start their values with null, indicating that they
 do not currently point to a valid space in memory.
 
-Last we have undefined. If you look at the "third" variable, you see it actually is missing an
-assignment operator ("="). Programming languages allow us to define variables without giving them a
+Last we have undefined. If you look at the `third` variable, you see it actually is missing an
+assignment operator (`=`). Programming languages allow us to define variables without giving them a
 value immediately. This is due to the nature of variables having the potential to be changed
 frequently. If something in TS/JS is declared but does not have a value assigned to it, then it
 will return undefined if accessed to be read. You will also encounter undefined if you try to access
@@ -437,7 +439,7 @@ general they ensure that a value will be unique.
 const mySymbol: symbol = Symbol("key");
 ```
 
-Here, "mySymbol" could be used as a key in an object and it would be guaranteed to be unique.
+Here, `mySymbol` could be used as a key in an object and it would be guaranteed to be unique.
 Symbols can also be used in other capacities, but feel free to look into them another time.
 This type is not even remotely as common as the other types.
 
@@ -482,22 +484,22 @@ any
 void
 never
 
-Let's go in order. Our first type "any" is actually pretty simple, it represents anything. This is the
+Let's go in order. Our first type `any` is actually pretty simple, it represents anything. This is the
 loosest type in TypeScript. JavaScript does not use types by itself, instead having TypeScript add types
-to it. So "any" is there to help transfer over code to types, but not force a type a be declared at the
+to it. So `any` is there to help transfer over code to types, but not force a type a be declared at the
 moment. This is typically looked down upon to use often, especially if you know a type beforehand. It
 is find to use this while you are learning though. In my opinion, just having exposure to the idea of
 types is going to put you way further ahead in the long run. Typescript also predicts types for you
 while you are using it, so it can actually help you learn types.
 
-Next is "void". This type is actually in C as well. This type is related to functions, so we will see
+Next is `void`. This type is actually in C as well. This type is related to functions, so we will see
 this again when we go into those. Mainly it involves the idea that nothing is generated to be given
 back to something that called a function to run. It is common that you use a function to get an answer
 or output of some kind, but some do things behind the scenes. This could be updating values, only going
 off for certain conditions, or providing output for logging or debugging purposes. The kind that do not
-provide an answer directly back are of type "void".
+provide an answer directly back are of type `void`.
 
-Finally we have "never". This is an interesting type, but you likely will only see this in advanced
+Finally we have `never`. This is an interesting type, but you likely will only see this in advanced
 use cases. It is not as general across languages like the other types. In practice it can be used
 to define behavior as never being able to occur, and this can be checked as a set of rules to check
 against when implemented correctly.
@@ -527,10 +529,10 @@ let myTuple: [number, string, boolean] = [1, "yes", true];
 
 We have actually already seen the Union type. This allows for a type to be one or the other. The
 Intersection type allows you to merge the two properties of types together. We will see later that
-you can make your own types in Typescript in order to extend its capabilities. Here we had "type1 &
-type2", but we could have also had something "Robot & Employee". This would theoretically be a type
-representing something that had all the properties needed in order to belong to both types at the
-same time. In these cases the "&" represents a logical AND, meaning both conditions must be met.
+you can make your own types in Typescript in order to extend its capabilities. Here we had
+`type1 & type2`, but we could have also had something like `Robot & Employee`. This would theoretically be a
+type representing something that had all the properties needed in order to belong to both types at the
+same time. In these cases the `&` represents a logical AND, meaning both conditions must be met.
 Last is the Tuple. This actually resembles something we already saw with the Record
 type with objects. Instead of just being a regular array of certain types, this array actually
 has a specific order in which the value types must be placed to satisfy the criteria.
