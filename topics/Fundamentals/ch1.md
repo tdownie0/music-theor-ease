@@ -50,11 +50,11 @@ const int example = 0;
 
 Fancy right? There is probably more to this than one would realize at first glance, and honestly after
 seeing it all the time you just skim by. What does this do? It sets a variable to the number 0, called
-example. You are probably familiar with the “=” sign, and it works in similar ways as it does in math.
-A single “=” assigns a provided name a value. What are the extra things (const, int and the ; character)?
-Here, "const" tells the program that the variable will not change, so it is constant. The "int" part is
-telling the computer to store the data it is being sent as a type of value the computer recognizes (in
-this case, "int" stands for integer). Lastly, the ; is important. It is very similar to the way a period
+example. You are probably familiar with the `=` sign, and it works in similar ways as it does in math.
+A single `=` assigns a provided name a value. What are the extra things (`const`, `int` and the `;`
+character)? Here, `const` tells the program that the variable will not change, so it is constant. The `int`
+part is telling the computer to store the data it is being sent as a type of value the computer recognizes (in
+this case, `int` stands for integer). Lastly, the `;` is important. It is very similar to the way a period
 works in English. When the computer sees this, it knows that it was a complete piece of knowledge, and can
 be ready for anything else.
 
@@ -78,7 +78,7 @@ const example = 0;
 const example = 0;
 ```
 
-Here are some examples in Typescript and Javascript. You will notice they also have "//" before some of
+Here are some examples in Typescript and Javascript. You will notice they also have `//` before some of
 the lines. Those designate a comment is being placed, and are not seen by the computer when the code
 compiles and runs. So they are strictly for the humans using the code. The characters indicating them may
 change from language to language, but you will often see some kind of indentation and character along with
@@ -92,12 +92,12 @@ philosophy snuck its way back into a more modern language. These comparisons wil
 the history of programming, and how philosophies have adapted.
 
 I'll start with the Typescript version, as the others are the same, just less cognitive load. So you see
-the first word is still "const". It actually does the same thing as staying constant too. Next, originally
-"int" came after to declare the data type, but here "example" (the name of the variable) is used. You
-can see the data type declaration was actually moved to the ": number" part. Also, our
-word is not "number" instead of "int". Just as "int" represented a type of number in C, this "number"
-represents a number as well. In this case "number" is actually less strict, representing many kinds of
-numbers. In C, "int" specifically references a number that is allowed an exact amount of bytes in the
+the first word is still `const`. It actually does the same thing as staying constant too. Next, originally
+`int` came after to declare the data type, but here `example` (the name of the variable) is used. You
+can see the data type declaration was actually moved to the `: number` part. Also, our
+word is not `number` instead of `int`. Just as `int` represented a type of number in C, this `number`
+represents a number as well. In this case `number` is actually less strict, representing many kinds of
+numbers. In C, `int` specifically references a number that is allowed an exact amount of bytes in the
 computer's memory. The amount depends on the type of cpu (whether 32-bit or 64-bit). It is specified by
 the language that it is not below 2 bytes (16-bits).
 
@@ -176,9 +176,9 @@ arise from the amount of memory we want to use with our data. Back to:
 const example: number = 0;
 ```
 
-In the TypeScript case, number actually takes on each of these cases, so you do no have to worry as much
+In the TypeScript case, `number` actually takes on each of these cases, so you do no have to worry as much
 about the details. This has been a common theme in many languages. You see ultimately the expression
-ends with "= 0;" which is the same as C. Now remember the other two examples:
+ends with `= 0;` which is the same as C. Now remember the other two examples:
 
 ```js
 const example = 0;
@@ -187,8 +187,8 @@ const example = 0;
 const example = 0;
 ```
 
-These are both Javascript. Neither of them have the data type ("number"), and one left out the semi-colon
-(";"). You see here that languages became looser after C. There were really a couple of reasons
+These are both Javascript. Neither of them have the data type (`number`), and one left out the semi-colon
+(`;`). You see here that languages became looser after C. There were really a couple of reasons
 for this. First, computers started getting much more memory, so things were not as tight memory wise.
 Before memory was often a huge concern with making a program work in a reasonable amount of time. Computers
 became much faster, and this started to matter less. Next, it allowed for quicker development and less
@@ -223,7 +223,7 @@ const example: number = 0;
 ```
 
 The variable example actually cannot be reassigned a value, due to the const declaration. To be able to
-reassign in TypeScript/JavaScript is to use the keyword "let":
+reassign in TypeScript/JavaScript is to use the keyword `let`:
 
 ```ts
 let example: number = 0;
@@ -235,9 +235,9 @@ console.log(example);
 ```
 
 We will go into this with much more detail later, but I just want to point out that this effectively
-changes the value that is stored in the "example" variable. The console.log(example) statement is actually
-a command to print something to the screen. So here, console.log() prints something that is between its
-parenthesis, or attempts to. In this case it prints the value of "example" to the development console in a
+changes the value that is stored in the `example` variable. The `console.log(example)` statement is actually
+a command to print something to the screen. So here, `console.log()` prints something that is between its
+parenthesis, or attempts to. In this case it prints the value of `example` to the development console in a
 browser.
 
 I feel this is worth pointing out because this may be something others are not used to, even coming from
@@ -297,7 +297,7 @@ assembly related strategies to make these operations quicker in a binary format.
 more technical than I intend to get at the moment, and will not be all that common to see unless
 you are specifically working at a very low level in the architecture programming wise.
 
-The modulo operator, denoted by '%', calculates the remainder of a division operation. For example, when
+The modulo operator, denoted by `%`, calculates the remainder of a division operation. For example, when
 you divide one number by another, the modulo operator returns the remainder after the division. It can be
 visualized as counting up to the divisor and then starting over from zero if the dividend is reached,
 always subtracting one from the dividend until it fits within the divisor. So in our case,
