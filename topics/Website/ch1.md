@@ -35,7 +35,7 @@ may be true, but the longer sections will have many moving parts to keep track o
 Once the code is on your computer, you are free to play with it as you like as well. You can
 comment parts out, change names, or move things around and see if such things lead to errors
 or changes in behavior. This is often helpful if you are trying to make sense of a portion of code,
-but you think you are missing something in the logic. You could also insert a console.log(), and see
+but you think you are missing something in the logic. You could also insert a `console.log()`, and see
 what a value is at a certain time. Using git, you will be able to undo any changes you may make, so
 you do not have to worry about breaking anything.
 
