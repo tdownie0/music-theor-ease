@@ -26,10 +26,10 @@ start to almost be familiar without experience in that specific circumstance.
 
 > **Note:**
 > Granted, you may be new to the concept of things like flags in a command line such as,
-> 'git commit -m "Hi!"'. Here the flag is "-m" indicating a message is going to be added. The logical
-> structure of the command is more apt to make sense to us though. Here the program is "git", and the
-> git command (function) would be "commit". Here the function "commit" is being told it will have
-> a message parameter being passed, which is the argument "Hi!". This is used instead of parenthesis,
+> `git commit -m "Hi!"`. Here the flag is `-m` indicating a message is going to be added. The logical
+> structure of the command is more apt to make sense to us though. Here the program is `git`, and the
+> git command (function) would be `commit`. Here the function `commit` is being told it will have
+> a message parameter being passed, which is the argument `"Hi!"`. This is used instead of parenthesis,
 > and using argument positioning to indicate which parameter the argument represents.
 
 My hope here is not to select one of these disciplines for you, but to give you the tools to be
