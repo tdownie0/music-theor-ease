@@ -70,7 +70,7 @@ const jobs = {
     dataSci: { pay: 20000, location: "On-Site" },
   },
   health: {
-    docotor: { pay: 30000, location: "On-Site" },
+    doctor: { pay: 30000, location: "On-Site" },
     nurse: { pay: 10000, location: "Hybrid" },
     xrayTech: { pay: 15000, location: "Hybrid" },
   },
@@ -118,7 +118,7 @@ const jobs = {
     dataSci: { pay: 20000, location: "On-Site" },
   },
   health: {
-    docotor: { pay: 30000, location: "On-Site" },
+    doctor: { pay: 30000, location: "On-Site" },
     nurse: { pay: 10000, location: "Hybrid" },
     xrayTech: { pay: 15000, location: "Hybrid" },
   },
@@ -402,8 +402,8 @@ populated an array with a new object for each value. Looking at the second examp
 multiplication, you can see that the `double` variable has every value in the `numbers` array multiplied
 by 2. We see that the original `numbers` array remains unchanged. This is due to `.map()` sending the data
 to wherever it is intended to be assigned upon performing the operation. The function does not directly
-manipulate the values contained in `numbers`. The values are not manipulated in a `.forEach()` method either,
-but they actually are not returned for assignment like with `.map()`. To actually change the values
+manipulate the values contained in `numbers`. The values are not manipulated in a `.forEach()` method
+either, but they actually are not returned for assignment like with `.map()`. To actually change the values
 the array would have to be assigned a value to the indexes it wished to assign.
 
 ```js
@@ -478,22 +478,22 @@ accumulator is returned.
 Next we are introduced to `.find()`. In the first example we see that a list (or array) of people
 objects are provided, and we look for someone who is greater or equal to 35. As a result, we
 find the object with the name `"Charlie"` as a match. We see the difference from `.filter()` here is that
-the object containing the name `"David"` also meets the criteria, but only the 'Charlie' object is returned.
-Unlike `.filter()`, `.find()` will only return the first result it finds.
+the object containing the name `"David"` also meets the criteria, but only the 'Charlie' object is
+returned. Unlike `.filter()`, `.find()` will only return the first result it finds.
 
 The second example with `.find()` is a bit more complicated. Here we use `.find()`, and in the comparison
-we access the `Math` object that comes with Javascript (built-in object), and access the max function, which
-returns the largest value from its passed parameters. We also see that our `.find()` method passes more
-than one parameter (just like all the others covered can optionally). These include the value `team`, the
-index `index`, and the array `array` which is the array itself that `.find()` was called against. With the
-array, we are able to perform a rather recent addition to the JS ecosystem, the spread operator (`...`).
-This actually expands the array from the object provided. So in this case `Math.max()` will actually look
-like this with the values, `Math.max(900, 500, 700)`. Using the spread operator is also useful for spreading
-itself in new arrays or objects to copy values. These copies only return shallow versions of their actual
-values, copying nested objects and arrays by reference. The term "shallow" will be explained in more
-detail shortly. With a copy of the original array, we then iterate over the original again, but this time
-with `.map()` to supply `Math.max()` with an array to spread for the score values, so that then `.find()` can
-compare itself against the highest value found within the teams object.
+we access the `Math` object that comes with Javascript (built-in object), and access the max function,
+which returns the largest value from its passed parameters. We also see that our `.find()` method passes
+more than one parameter (just like all the others covered can optionally). These include the value `team`,
+the index `index`, and the array `array` which is the array itself that `.find()` was called against. With
+the array, we are able to perform a rather recent addition to the JS ecosystem, the spread operator
+(`...`). This actually expands the array from the object provided. So in this case `Math.max()` will
+actually look like this with the values, `Math.max(900, 500, 700)`. Using the spread operator is also
+useful for spreading itself in new arrays or objects to copy values. These copies only return shallow
+versions of their actual values, copying nested objects and arrays by reference. The term "shallow" will
+be explained in more detail shortly. With a copy of the original array, we then iterate over the original
+again, but this time with `.map()` to supply `Math.max()` with an array to spread for the score values, so
+that then `.find()` can compare itself against the highest value found within the `teams` object.
 
 ## Reference in Memory and Shallow Copies
 
@@ -523,7 +523,7 @@ const shallowCopy = [...original];
 shallowCopy[2][0] = 5;
 console.log(original[2][0]); // 5, the value has mutated
 
-// Now we will see the other values are copies instead of referrences
+// Now we will see the other values are copies instead of references
 shallowCopy[0] = 10;
 shallowCopy[1] = 20;
 console.log(original[0]); // 1, Same
@@ -532,7 +532,7 @@ console.log(shallowCopy[0]); // 10, This updated correctly
 console.log(shallowCopy[1]); // 20, This updated correctly
 ```
 
-This is a very useful peace of information to hold onto, and reflects that Javascript is following the
+This is a very useful piece of information to hold onto, and reflects that Javascript is following the
 rules with regards to how memory references are passed around. I had found that I was aware of this
 behavior from C, but had not truly appreciated that this was occurring with the spread operator as well.
 If you forget about something like this, it may not immediately obvious that you are mutating your

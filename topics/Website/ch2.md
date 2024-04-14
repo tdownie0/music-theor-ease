@@ -60,7 +60,7 @@ common list of these tags.
 
 ### General Layout Section Tags
 
-|    Tag     | Desciription                                                                                                                                                        |
+|    Tag     | Description                                                                                                                                                         |
 | :--------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 |  `<html>`  | The root element of an HTML document and contains all other HTML elements. It typically includes attributes such as `lang` to specify the language of the document. |
 |  `<head>`  | Contains metadata about the HTML document, such as the title, character set, stylesheets, scripts, and other essential information for the browser.                 |
@@ -75,7 +75,7 @@ common list of these tags.
 
 ### Text and Image Section Tags
 
-|       Tag       | Desciription                                                                    |
+|       Tag       | Description                                                                     |
 | :-------------: | :------------------------------------------------------------------------------ |
 | `<h1>` - `<h6>` | Heading tags used to define headings of different levels, one through six.      |
 |      `<p>`      | Represents a paragraph of text.                                                 |
@@ -84,7 +84,7 @@ common list of these tags.
 
 ### Data Presentation Section Tags
 
-|    Tag    | Desciription                                                                                                                                                                                                                                  |
+|    Tag    | Description                                                                                                                                                                                                                                   |
 | :-------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `<table>` | Defines a table in HTML. It acts as a container for all other table-related elements such as rows (`<tr>`) and headers (`<th>`) or data cells (`<td>`).                                                                                       |
 |  `<tr>`   | Represents a table row within the `<table>` element. Each `<tr>` tag defines a new row in the table, containing one or more table cells (`<th>` or `<td>`).                                                                                   |
@@ -96,7 +96,7 @@ common list of these tags.
 
 ### Data Input Section Tags
 
-|     Tag      | Desciription                                                                                                                                                                                                                                                                                                                                                                                    |
+|     Tag      | Description                                                                                                                                                                                                                                                                                                                                                                                     |
 | :----------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |   `<form>`   | Defines an HTML form that allows users to input data which can be submitted to a server for processing. The <form> tag typically contains various input elements such as text fields, checkboxes, radio buttons, and buttons. It specifies the action to be performed when the form is submitted and may also include attributes like method and action to control the submission behavior.     |
 |  `<input>`   | Represents an input control within an HTML form, allowing users to enter data. The `<input>` tag can be used to create various types of input fields, such as text fields (type="text"), checkboxes (type="checkbox"), radio buttons (type="radio"), buttons (type="button"), and more. The specific type of input is defined using the type attribute.                                         |
@@ -273,7 +273,7 @@ type of HTML element, then that definition will apply to the element.
   }
   /* 1-0-0 */
   #sixth {
-    color: grey;
+    color: gray;
   }
   /* 2-0-0 */
   #fourth #sixth {
