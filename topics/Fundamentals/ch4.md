@@ -82,7 +82,7 @@ the value is incremented by one, the value is then printed to the screen giving 
 Like outlined in the comments above, once the program hits the end of the loop, it will go check
 the initial condition, and see if it is met. This repeats until the condition is met. You must
 be careful when defining the condition, due to being able to make the program stay in a loop
-infintely if the conditions are never met. An easy way for this to occur is to forget to increment
+infinitely if the conditions are never met. An easy way for this to occur is to forget to increment
 the counter variable in this case, and then it would forever have the value of 0. Due to this, the
 loop would run until the program was forcibly terminated by the user.
 
