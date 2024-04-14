@@ -231,13 +231,11 @@ run. This would make the same information much harder:
 ```ts
 // Do not layout data like this
 const maze: number[][] = [
-  [0, 0, 0, 0, 0, 0, 0, 1],
-  [0, 0, 0, 0, 0, 0, 1, 1],
+    [0, 0, 0, 0, 0, 0, 0, 1],
+      [0, 0, 0, 0, 0, 0, 1, 1],
   [0, 0, 0, 0, 0, 0, 1, 0],
-  [0, 0, 0, 0, 0, 0, 1, 0],
-  [0, 0, 0, 0, 1, 1, 1, 0],
-  [0, 0, 0, 0, 1, 0, 0, 0],
-  [0, 0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 1, 0],[0, 0, 0, 0, 1, 1, 1, 0],[0, 0, 0, 0, 1, 0, 0, 0],
+[0, 0, 0, 0, 1, 0, 0, 0],
 ];
 ```
 
@@ -462,7 +460,7 @@ let groceryList: string[] = ["carrots", "cheese", "cheesecake", "bread"];
 // Object
 const myCar: Record<string, number | string> = {
   licensePlate: "5X7-D13",
-  make: "Toyata",
+  make: "Toyota",
   year: 2019,
   color: "Blue",
 };
