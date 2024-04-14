@@ -90,7 +90,7 @@ It is fairly common to see a loop compared against some kind of number threshold
 figure out how long it should execute. These tasks tend to involve doing the operation for the
 length of the object passed, until the end of the length of a string, or until a number is met.
 They could also just as easily search for something specific, and once it is found set a "flag"
-to turn value from `true` to `false` (or vise versa).
+to turn value from `true` to `false` (or vice versa).
 
 Another structure for the loop that is very common is the for loop:
 
@@ -154,7 +154,7 @@ reliant on equivalence operators, so let's lay out some of those.
 |          !=           |  Loose Not Equals (TS/JS)  |
 |          !==          | Strict Not Equals (TS/JS)  |
 
-I want to mention that the `==` and `===` are used in some languages, and specifcally for us,
+I want to mention that the `==` and `===` are used in some languages, and specifically for us,
 in TypeScript/Javascript. Originally, in C, `==` was the equivalence operator to check if one value
 was equal to another, since the assignment `=` is already in use. The introduction of the triple
 equals is that some languages now allow you to compare other types to each other that may be related.
@@ -171,7 +171,7 @@ program to fail due to having a string representation of an age versus a number,
 for it to.
 
 Other than these conditions, the other operators that are left may be familiar from mathematics. As
-stated, this comparisons are seen as "boolean" values by the computer when checking.
+stated, these comparisons are seen as "boolean" values by the computer when checking.
 
 ```js
 // Greater Than
@@ -337,9 +337,9 @@ This approach may be useful when you have multiple `else if` portions of your co
 but the `else if` seems to take more to process mentally than the return. With the `else if` you
 could have other `if` conditions inside, which would make tracking the other conditions dependent
 on the `else if` more difficult. Returns are nice in the sense that we know the function is done,
-and we do not have to look any further logic when looking into a specific condition. You will also
+and we do not have to look at any further logic when looking into a specific condition. You will also
 note that the last statement in a function for Javascript has an implicit return. This means that
-the return will be assumed if it is the last line of the function. Some other lanugages exhibit
+the return will be assumed if it is the last line of the function. Some other languages exhibit
 this behavior as well, but it should be looked into before being assumed. Another approach
 would be the `switch` statement.
 
@@ -503,7 +503,7 @@ there was a parameter passed or not. At the end we also see that the main body o
 cannot access variables within functions that it contains. Javascript is actually a different
 from many other languages with regards to being able to define a variables scope type along with
 assigning it. Most programming languages behave much like `const` and `let` do, as used in most
-of our examples. They can referred to as block scoped (within the `{}`). Javascript has another
+of our examples. They can be referred to as block scoped (within the `{}`). Javascript has another
 scope type as well, `var`.
 
 ```js
@@ -529,9 +529,9 @@ console.log(test1); // ReferenceError: test1 is not defined (var is function-sco
 ```
 
 Here we see the uniqueness of `var`. It is accessible from outside of code blocks related to
-conditional statements such as `if`, as well as loops. When used inside of a funciton, `var` is
+conditional statements such as `if`, as well as loops. When used inside of a function, `var` is
 accessible to that specific function. No nested functions will have access to this `var`, nor will
-other functions have access to their's. If we were to try to `console.log(test1)` after the
+other functions have access to theirs. If we were to try to `console.log(test1)` after the
 `exampleScopeDifference()`, it would also return `ReferenceError: test1 is not defined`. In this
 example we also see that `var` is reassignable just like `let`.
 
@@ -543,10 +543,10 @@ can lead to naming conflicts and namespace pollution with `var` usage.
 
 Scope is a common consideration across all programming languages. It stands out in JS with closures,
 states within functions that are were called in the run time of the program. These were touched on
-in chapter three, but remember tha the variables within the called functions have a so called
+in chapter three, but remember that the variables within the called functions have a so called
 lifetime over the course of the program. Everything is created from scratch initially as the computer
 starts reading a program, and then that memory is let go of when the program's run time is over. That
-is true in this circumstances as well.
+is true in these circumstances as well.
 
 ## Conclusion
 
