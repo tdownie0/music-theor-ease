@@ -119,8 +119,8 @@ We see here that the same named tag for an element comes at the end of where the
 for the element, but has a prefix of `/` with it. This is referred to as a closing tag. Each section
 is thought of being wrapped in the previous areas content area, until it reaches that sections closing
 tag. There are also self closing tags, meaning there is only one tag provided instead of two. These are
-used typically when there would not be content to put between tag, instead expecting a value or linking to a
-resource. Examples of such tags would be `<input />` and `<img />`. Both of these rely on the HTML
+used typically when there would not be content to put between tag, instead expecting a value or linking to
+a resource. Examples of such tags would be `<input />` and `<img />`. Both of these rely on the HTML
 attributes they are passed as we will be seeing shortly. It is also acceptable to write these as `<input>`
 and `<img>`. You may find it preferable to include the closing `/`, as it will cue you that this tag does
 not have a closing tag as you scan over multiple HTML files.
@@ -128,9 +128,9 @@ not have a closing tag as you scan over multiple HTML files.
 We will be seeing multiple HTML layouts as we go over the site, so I just want to get across the basic
 structure. Another interesting thing we will see is that libraries like React allow us to make portions of
 HTML code and put them together. This allows us to break up the logic and interactions into smaller chunks,
-called components. They look similar to self closing tags, and an example component named "MyComponent" would
-be `<MyComponent />`. The added bonus of being able to do this, is that we can reuse components that will
-fit several needs, instead of having to write the portion of code over again.
+called components. They look similar to self closing tags, and an example component named "MyComponent"
+would be `<MyComponent />`. The added bonus of being able to do this, is that we can reuse components that
+will fit several needs, instead of having to write the portion of code over again.
 
 ## CSS
 
@@ -239,12 +239,12 @@ from left to right, if the number of selectors is greater in a selector definiti
 type of HTML element, then that definition will apply to the element.
 
 ```html
-<div id="first" class="first second">1st</div>
-<div id="second" class="second third">2nd</div>
+<div id="first" class="first second">One</div>
+<div id="second" class="second third">Two</div>
 <div id="fourth" class="fourth">
-  <div>4th</div>
-  <div class="fifth">5th</div>
-  <div id="sixth">6th</div>
+  <div>Three</div>
+  <div class="fifth">Four</div>
+  <div id="sixth">Five</div>
 </div>
 <style>
   /* 0-1-1 */
@@ -284,4 +284,171 @@ type of HTML element, then that definition will apply to the element.
 
 Looking at the above you probably noticed that HTML elements can have multiple classes. This is done
 by putting a space between their names when defining the element
-`<div id="first" class="first second">1st</div>`. By contrast, an element may only have one ID.
+`<div id="first" class="first second">1st</div>`. By contrast, an element may only have one ID. Let's
+start from top to bottom with the elements. We have `<div id="first" class="first second">1st</div>` for
+our first element. It also has an id and class of `first` as well as a class of `second`. Now, with
+this information we know that styles that affect id `first` will take precedence over all other
+specificity, unless there are multiple of the same rank. Things with class `first` or `second` could
+also influence the style, but would need an `id` selector along with them to override a single `id`
+selector. Last in consideration would be the element itself, which is a `div`. If we glance at the
+`<style>` section of the code, we see a list of CSS selectors and their associated styles within `{}`.
+The first selector is `div.first`, which would affect this element, since it is a `div` and has a class
+of `.first`. In this case the two are chained together, so the style only applies to elements that meet
+both requirements directly. The selector below, `.second` would also apply. Since we have two
+possibilities now, we can compare their specificity. Their specificities correspond to their comments
+above, being `0-1-1` and `0-1-0`. Looking at both, they both have the same number of ids `0` and classes
+`1`. The first also contains an element so it has a `1` where the other has a `0`. This would lead to
+the first style to apply over the other since it is more specific. With that in mind, the only other
+selector that would apply directly is the `#first` selector. We have an id of `first` so `#first` applies.
+Its specificity is `1-0-0`. Since this is greater than the `0-1-1`, this selector will override the
+previous two selectors, leaving us with the color green for text.
+
+I will let you attempt to figure out the others from here. The only tricky ones left may be
+`.fourth .fifth` and `#fourth #sixth`. With a space between the two, this indicates that the child of
+an HTML element must have the second selector listed, but the parent must have the first. These child
+elements are directly nested in the parent HTML element. Here is a table of the solution:
+
+| Text  | Colors |
+| :---- | ------ |
+| One   | green  |
+| Two   | brown  |
+| Three | orange |
+| Four  | purple |
+| Five  | red    |
+
+Knowing what selectors may apply can get tricky when things start to become deeply nested. Another
+aspect that can be difficult is that multiple styles can come from multiple selectors. Using the
+web inspector in your browser's developer tools can be helpful with this, allowing you to see which
+selectors are currently applying. We will go more into that shortly. Knowledge of this can be helpful
+when using other libraries (or packages from other developers) that have their own styles. Instead of
+having to redefine their logic, you just override them. A modern trend with recent CSS frameworks
+is to use multiple classes that define specific properties directly. By comparison, the approach
+above would be used to target specific elements on the page, and style them directly as you want. With
+these CSS frameworks approach, the idea is to never have to define a specific selector for an element,
+but to have it stack classes of all the properties it would like to include. Some take this approach
+as going against the ideal way of using CSS, which would take only as much room as necessary in the
+HTML. This could also shadow the use of native logic for CSS like its combinators, which specify
+more exact rules of elements relative to the element and the selector it is being placed on. At the
+same time, having these classes with specific properties saves us from defining selectors for elements
+on our pages over and over again, and can actually lead to consistency naturally since everything is
+composed of the same shared base of classes. There will be links at the end of this material to more
+advanced concepts of CSS and commonly used properties.
+
+## Margin, Border, and Padding
+
+Now we will get into some of the principle layout properties of CSS, and take a look at the developer
+tools. Personally, I use Google Chrome quite a bit for development, but also Firefox, Brave, and Edge.
+All of these browsers when open can be right clicked on in their background (so long as their is not
+and image or something natural in the way), and in the context menu that appears, you should see
+"Inspect" or something similar as the last option. I encourage you to open a web browser and follow
+along to see this (Chrome may be the easiest as some of the tabs can show slightly different information).
+If "Inspect" is selected and you end up on the "Elements" tab (which should be the left most tab next
+to "Console") you will see a box with the word "position" that has four 0's, one for the top, right,
+bottom, and left, as well as the words margin, border, and padding. Each of these is nested one inside
+of the other. Together, these dictate the position, sizing, and divisions of space with regards to the
+border. If you had `<p>Hello</p>`, this would be the region referred to as the content. The padding
+would be the space around the content of the element. The border would be the region that is typically
+used to outline an element, appearing to make a box around it. Then the margin is the additional space
+that surrounds this border region.
+
+Together, all these regions make up what is known as the "Box Model" (Content, padding, border, margin).
+If you had trouble opening the correct spot in your inspector, googling "Box Model" may help you find
+your place once you see an image representation. All of these respond to the same base property aspects,
+which are top, right, bottom, and left. It is convention and has been established that those properties
+are always referred to in that specific order, clockwise starting from the top.
+
+```css
+.first {
+  margin-top: 0px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  margin-left: 4px;
+}
+
+.first-condensed {
+  /* In order: top, right, bottom, left */
+  margin: 0 8px 8px 4px;
+}
+
+.second {
+  padding-top: 0px;
+  padding-right: 8px;
+  padding-bottom: 0px;
+  padding-left: 8px;
+}
+
+.second-condensed {
+  /* top & bottom, left & right */
+  padding: 0 8px;
+}
+
+.third {
+  border-style: solid;
+  border-width: 2px;
+  border-right-style: dotted;
+  border-bottom-style: double;
+  border-left-style: ridge;
+}
+
+.fourth {
+  /* border-width, border-style (required), border-color */
+  border: 2px solid blue;
+  border-radius: 6px;
+}
+```
+
+Above we have multiple examples of margin, padding, and border. Inside `.third`, we also see
+that border has some additional properties along with it. Border is probably the most diverse of the
+three since it has many style options. Across all of them, we see that they refer to a top, right,
+bottom, and left type of property. There shorthands are also present, since many of these are used
+together frequently. We see in `.first-condensed` that four values are listed
+`margin: 0 8px 8px 4px`. These values correspond to their positions in order from the comment above.
+Also, there is an example in `.second-condensed` where we see `padding: 0 8px;`. This will also work
+for margin, and the first value defines the top and bottom, while the second defines left and right, as
+stated in the comment above. Going back to `.third`, we see all the sides are defined but top. In this
+case border-style was also used, so this will be its default value, while the other sides are overrode
+by their corresponding properties. In `.fourth` we see a much shorter version. The property definition
+`border: 2px solid blue;` gives the element its width and style, just `.third` above, while also
+providing a color. I also included `border-radius: 6px;` as border-radius is a very common property
+to use in order to round out sharp edges from borders.
+
+## Flexbox and CSS Grid
+
+We have touched many of the essential aspects of CSS, and I do not intend to bog you down with much
+more information on the topic, as you will see plenty of examples first hand, and will have sites
+to explore further possibilities. Two CSS layout models in particular have become very common
+over the past years, allowing for easier placement of elements on the page, as well as their adaptations
+of the page changing in size. These two models are Flexbox and CSS Grid. There is quite a bit that
+you can do with both of these, and some of their properties have similar names.
+
+> **Note:** In my opinion, some interactive game sites cover the general use cases for these very well.
+> The first two sites listed will be games:
+>
+> [Flexbox Froggy](https://flexboxfroggy.com/)  
+> [Grid Garden](https://cssgridgarden.com/)
+>
+> Also, I will link the original videos where I had learned more about these layout models. This
+> resource also has a javascript course that I would highly recommend as well.
+>
+> [What The Flexbox?!](https://flexbox.io/)  
+> [CSS Grid](https://cssgrid.io/)  
+> [Javascript30](https://javascript30.com/)  
+> [Wes Bos (Creator's main site)](https://wesbos.com/)
+
+If you spend the time to go over "Flexbox Froggy" and "Grid Garden", you should have a decent
+understanding of what the two layouts can accomplish. The resources at the bottom also give great
+examples through a course format if you would like to build along with videos. I would check them out
+if you would like more information, but these courses should take much longer than the games above.
+When going through the sites, if you feel like you have enough of a general understanding, I am sure
+the website we will be going over will help solidify an understanding for some basic uses. Both of
+these layouts are very powerful. Resources like chatGPT may help you decide which setup will be more
+conducive to your site, or give you a basic template.
+
+## Conclusion
+
+This should cover the breadth of the general uses of HTML with CSS. There are far too many
+properties in both to fully cover here. With CSS there are things such as properties that allow for
+animations, CSS variables, and managing and importing fonts and icons. Then with HTML, as mentioned
+before, there are unique challenge sets to make sure that a site is 100% covered for accessibility
+standards. We will get a better look at animations with the site we will be covering, and see more
+advanced considerations for layout structures.
