@@ -312,7 +312,7 @@ would evaluate the operation like this (7/3 = 2). It will just throw away anythi
 
 ## What You Need To Know Prior
 
-Someone coming into this text should not feel there are any prerequisites they need to have in order to
+Someone coming into this text should not feel there are any prerequisites they need to have met in order to
 take away something from this reading experience. Having an understanding of math up to algebra would help
 with being familiar with expression structures and numerical properties. At the same time, it is my hope
 that there are recurring patterns to the point where much of each of the information just flows like a
