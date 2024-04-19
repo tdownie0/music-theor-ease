@@ -115,10 +115,11 @@ Bytes and Bits are commonly used terms, and good to have a basic understanding o
 0000 0000
 
 The space is not needed, but it makes it easier to read. Each position of a 0 represents a bit and is a
-power of 2. So the right most is 2^0, and the leftmost is 2^7. This leads to the range 1 through 64.
-Powers of 2 explain why you always see things related to computers like hard drives with amounts like
-1TB, 512GB, 256MB, 128KB, 64B. In all of those amounts the B is Bytes, the prefix is from the metric
-system (Shout out to the metric system). Here are the basics:
+power of 2. So the right most is 2^0, and the leftmost is 2^8. This leads to the range 0 through 255.
+Here the zero is included as a value since 2^8 would equal 256 when computed. Powers of 2 explain why you 
+always see things related to computers like hard drives with amounts like 1TB, 512GB, 256MB, 128KB, 64B. 
+In all of those amounts the B is Bytes, the prefix is from the metric system (Shout out to the metric 
+system). Here are the basics:
 
 | Binary | Number |
 | :----- | -----: |
@@ -184,7 +185,7 @@ ends with `= 0;` which is the same as C. Now remember the other two examples:
 const example = 0;
 
 // Using ";" is optional
-const example = 0;
+const example = 0
 ```
 
 These are both Javascript. Neither of them have the data type (`number`), and one left out the semi-colon
@@ -303,7 +304,7 @@ visualized as counting up to the divisor and then starting over from zero if the
 always subtracting one from the dividend until it fits within the divisor. So in our case,
 (7/3 = 2 + (1/3)). We see seven is not perfectly divided by three, so there is a remainder. The
 remainder is the only value the modulo is after, and it does not return a number like "1/3" because
-the divisor is implied by the operation. This leaves one as the result.
+the divisor is implied by the operation. This leaves `1` as the result.
 
 This operation is useful for telling if numbers are odd or even, amongst other things. We will be
 diving more into types in the next chapter, but there are some number types that only hold whole
@@ -315,7 +316,7 @@ would evaluate the operation like this (7/3 = 2). It will just throw away anythi
 Someone coming into this text should not feel there are any prerequisites they need to have met in order to
 take away something from this reading experience. Having an understanding of math up to algebra would help
 with being familiar with expression structures and numerical properties. At the same time, it is my hope
-that there are recurring patterns to the point where much of each of the information just flows like a
+that there will be enough recurring patterns that much of this information just starts flowing like a
 normal sentence. If you stick with this stuff long enough it reveals more about itself over time.
 
 Also! Do not be intimidated by math! The subject itself is quite deep and has varying degrees of
