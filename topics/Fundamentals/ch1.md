@@ -55,8 +55,8 @@ A single `=` assigns a provided name a value. What are the extra things (`const`
 character)? Here, `const` tells the program that the variable will not change, so it is constant. The `int`
 part is telling the computer to store the data it is being sent as a type of value the computer recognizes (in
 this case, `int` stands for integer). Lastly, the `;` is important. It is very similar to the way a period
-works in English. When the computer sees this, it knows that it was a complete piece of knowledge, and can
-be ready for anything else.
+works in English. When the computer sees this, it knows that it read a complete piece of logic, and can
+be ready for any following logic to be read in separately as well. 
 
 The code snippet you see above would be from the C language. It is one of the older languages in
 programming, and really inspired all modern languages there after. It was a portable language at a time
@@ -75,7 +75,7 @@ const example: number = 0;
 const example = 0;
 
 // Using ";" is optional
-const example = 0;
+const example = 0
 ```
 
 Here are some examples in Typescript and Javascript. You will notice they also have `//` before some of
@@ -95,7 +95,7 @@ I'll start with the Typescript version, as the others are the same, just less co
 the first word is still `const`. It actually does the same thing as staying constant too. Next, originally
 `int` came after to declare the data type, but here `example` (the name of the variable) is used. You
 can see the data type declaration was actually moved to the `: number` part. Also, our
-word is not `number` instead of `int`. Just as `int` represented a type of number in C, this `number`
+word is now `number` instead of `int`. Just as `int` represented a type of number in C, this `number`
 represents a number as well. In this case `number` is actually less strict, representing many kinds of
 numbers. In C, `int` specifically references a number that is allowed an exact amount of bytes in the
 computer's memory. The amount depends on the type of cpu (whether 32-bit or 64-bit). It is specified by
