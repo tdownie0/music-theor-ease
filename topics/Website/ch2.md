@@ -434,6 +434,18 @@ you can do with both of these, and some of their properties have similar names.
 > [CSS Grid](https://cssgrid.io/)  
 > [Javascript30](https://javascript30.com/)  
 > [Wes Bos (Creator's main site)](https://wesbos.com/)
+>
+> Another resource that I found very recently also covers much of the same material as this chapter
+> and has several helpful images and interactive portions that will help guide your learning. The site
+> is truly exceptional and really goes in depth for front-end related topics. I will link the pages that
+> directly relate to this content, but also the main site which actually covers modern frameworks in depth,
+> focusing on React, Angular, and Vue. The first two links relate directly to this chapter, but the last
+> would be great to keep as a resource to come back to if you would like a more holistic view of front-end
+> frameworks and a chance to really understand their inner workings.
+>
+> [CSS Fundamentals](https://unicorn-utterances.com/posts/css-fundamentals)  
+> [Understanding The DOM: How Browsers Show Content On-Screen](https://unicorn-utterances.com/posts/understanding-the-dom)  
+> [The Framework Field Guide](https://unicorn-utterances.com/collections/framework-field-guide)
 
 If you spend the time to go over "Flexbox Froggy" and "Grid Garden", you should have a decent
 understanding of what the two layouts can accomplish. The resources at the bottom also give great
