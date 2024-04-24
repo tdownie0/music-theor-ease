@@ -371,14 +371,14 @@ have to worry about the specifics.
 Now that you have made it through what I consider to be the more difficult data types, let's go over
 the more straightforward ones. Here are the primitive data types in TypeScript:
 
-| Primitive Types
-:--
-number
-string
-boolean
-null
-undefined
-symbol
+| Primitive Types |
+| :-------------- |
+| number          |
+| string          |
+| boolean         |
+| null            |
+| undefined       |
+| symbol          |
 
 You have already seen the number and the string types. The ones we will be discussing will be the
 `boolean`, `null`, and `undefined`. A boolean type can be one of two values, `true` or `false`.
@@ -445,11 +445,11 @@ This type is not even remotely as common as the other types.
 
 Now that you made it through the difficult types, these last ones you mostly already know.
 
-| Object Types
-:--
-object
-array
-function
+| Object Types |
+| :----------- |
+| object       |
+| array        |
+| function     |
 
 We already went over objects and arrays:
 
@@ -476,11 +476,11 @@ effortlessly, and possibly reuse logic so you have less code.
 
 This will be the last group of types we will go over.
 
-| Special Types
-:--
-any
-void
-never
+| Special Types |
+| :------------ |
+| any           |
+| void          |
+| never         |
 
 Let's go in order. Our first type `any` is actually pretty simple, it represents anything. This is the
 loosest type in TypeScript. JavaScript does not use types by itself, instead having TypeScript add types
@@ -508,11 +508,11 @@ These are types that have to do more with how types relate to each other. So in 
 these are logical relation types. They do not have specific keywords, but do have associated
 behavior.
 
-| Extra Types
-:--
-Union
-Intersection
-Tuple
+| Extra Types  |
+| :----------- |
+| Union        |
+| Intersection |
+| Tuple        |
 
 ```ts
 // Union

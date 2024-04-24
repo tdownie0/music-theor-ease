@@ -108,7 +108,7 @@ types. If types are used, the programmer can specify how much memory they want t
 its type. Here, if a programmer wanted a smaller or larger amount of memory for the number, they would
 use another keyword.
 
-## Bytes and Bits:
+## Bytes and Bits
 
 Bytes and Bits are commonly used terms, and good to have a basic understanding of. Here is a byte:
 
