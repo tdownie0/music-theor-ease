@@ -8,7 +8,8 @@ up initially. Personally, I develop on Windows through the Windows Subsystem for
 personal projects, and use Mac for my professional development. Mac OS behaves very similarly to
 Linux, but is actually closer to UNIX (the first operating system to be created). Linux was based
 on UNIX, but is open-source, where UNIX actually requires a license to use. Due to this, Mac and
-Linux can provide a similar experience from their terminals (Bash is both of their default shells). On the other hand, Windows has a unique shell from both of these, having its own syntax.
+Linux can provide a similar experience from their terminals (Bash is both of their default shells). On the 
+other hand, Windows has a unique shell from both of these, having its own syntax.
 
 > **Note**: The terminal is a program that allows you access to command-line interfaces (CLIs), and
 > the shell is what interprets and executes commands provided to the terminal.
@@ -61,3 +62,8 @@ your IDE, so you will have to have a web browser open while you are coding, and 
 forth between the two windows. This is also useful to have open anyway if you would like to ask for
 explanations about any code you come across or programming related questions, as it allows for a more
 conversational format.
+
+## Installing Plugins
+
+Lets walk through installing some plugins for our development. There are several helpful plugins that 
+satisfy several programming related needs, such as intellisense, debugging, formatting, 

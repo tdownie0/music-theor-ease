@@ -98,7 +98,7 @@ common list of these tags.
 
 |     Tag      | Description                                                                                                                                                                                                                                                                                                                                                                                     |
 | :----------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|   `<form>`   | Defines an HTML form that allows users to input data which can be submitted to a server for processing. The <form> tag typically contains various input elements such as text fields, checkboxes, radio buttons, and buttons. It specifies the action to be performed when the form is submitted and may also include attributes like method and action to control the submission behavior.     |
+|   `<form>`   | Defines an HTML form that allows users to input data which can be submitted to a server for processing. The `<form>` tag typically contains various input elements such as text fields, checkboxes, radio buttons, and buttons. It specifies the action to be performed when the form is submitted and may also include attributes like method and action to control the submission behavior.   |
 |  `<input>`   | Represents an input control within an HTML form, allowing users to enter data. The `<input>` tag can be used to create various types of input fields, such as text fields (type="text"), checkboxes (type="checkbox"), radio buttons (type="radio"), buttons (type="button"), and more. The specific type of input is defined using the type attribute.                                         |
 |  `<button>`  | Defines a clickable button within an HTML form. The `<button>` tag can be used to create buttons for submitting forms (type="submit"), resetting form fields (type="reset"), or executing custom JavaScript actions (type="button"). The content of the button is specified between the opening and closing `<button>` tags.                                                                    |
 |  `<select>`  | Represents a dropdown list within an HTML form, allowing users to select one or more options from a list of predefined choices. The `<select>` tag contains one or more `<option>` tags, each defining an individual option within the dropdown list. Users can choose an option by clicking on the dropdown arrow and selecting from the available options.                                    |
@@ -192,7 +192,7 @@ indicate which elements we wish to stylize.
 | Pseudo-class selector                                      | The specified element(s), but only when in the specified state. (For example, when a cursor hovers over a link.) | a:hover <br> selects `<a>`, but only when the mouse pointer is hovering over the link. |
 
 > **Note:** The above table, as well as the `<label>` and `<input>` examples are from
-> https://developer.mozilla.org. Mozilla is behind the creation of Firefox (web browser) and other
+> <https://developer.mozilla.org>. Mozilla is behind the creation of Firefox (web browser) and other
 > technologies. The entire site has multiple helpful resources for HTML, CSS, and Javascript development. I
 > highly encourage you to use this as a resource if you are ever curious to learn more.
 >
@@ -246,6 +246,7 @@ type of HTML element, then that definition will apply to the element.
   <div class="fifth">Four</div>
   <div id="sixth">Five</div>
 </div>
+
 <style>
   /* 0-1-1 */
   div.first {
