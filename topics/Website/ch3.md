@@ -8,7 +8,7 @@ up initially. Personally, I develop on Windows through the Windows Subsystem for
 personal projects, and use Mac for my professional development. Mac OS behaves very similarly to
 Linux, but is actually closer to UNIX (the first operating system to be created). Linux was based
 on UNIX, but is open-source, where UNIX actually requires a license to use. Due to this, Mac and
-Linux can provide a similar experience from their terminals (Bash is both of their default shells). On the 
+Linux can provide a similar experience from their terminals (Bash is both of their default shells). On the
 other hand, Windows has a unique shell from both of these, having its own syntax.
 
 > **Note**: The terminal is a program that allows you access to command-line interfaces (CLIs), and
@@ -36,22 +36,22 @@ of this is so that we can install the packages we need and get our local develop
 
 ## Installing Visual Studio Code
 
-Our next step will be installing our rich text editor, which will be Visual Studio Code. There are several 
-options when it comes to rich text editors and IDEs (Integrated Development Environment), and I am sure 
-you will have exposure to multiple if you decide to keep learning coding going forward. Using tools such 
-as these really can make a world of difference with your coding experience. There was a time when these 
+Our next step will be installing our rich text editor, which will be Visual Studio Code. There are several
+options when it comes to rich text editors and IDEs (Integrated Development Environment), and I am sure
+you will have exposure to multiple if you decide to keep learning coding going forward. Using tools such
+as these really can make a world of difference with your coding experience. There was a time when these
 tools did not exist, and you may come across curriculums that do not reach for these programs  
 right away. It is certainly possible to code without them, and may give you quicker access to start
 coding, but you will be missing out on many modern features that are pretty much expected in any
 professional environment. An analogy would be if you decided to write a paper and used Notepad instead of
 Microsoft Word or Google Docs. By doing so, you would be missing out on many features that have come to
 be expected when creating text documents, such as changing the font styles, font size, spell checking, and
-much more. 
+much more.
 
 Visual Studio Code is a free, feature rich, allows for plugins, and has many customizability
 options. A link can be found here, [VS Code](https://code.visualstudio.com/docs/introvideos/basics),
 and comes with a helpful video to explain the layout and some features of the editor. Do not feel that
-you will need to create any files along with the video, but it may be helpful for a general overview. 
+you will need to create any files along with the video, but it may be helpful for a general overview.
 Once this is up and running, we will go through the plugins that will be used alongside our project.
 Recently a very helpful plugin has become wildly popular (GitHub Co-Pilot), and allows AI auto-completion
 and code suggestions while you are writing your code through ChatGPT. For the moment this plugin requires
@@ -65,5 +65,10 @@ conversational format.
 
 ## Installing Plugins
 
-Lets walk through installing some plugins for our development. There are several helpful plugins that 
-satisfy several programming related needs, such as intellisense, debugging, formatting, 
+Lets walk through installing some plugins for our development. There are several helpful plugins that
+satisfy several programming related needs, such as intellisense, debugging, formatting, and much more.
+In VS Code you will see will see on the leftmost side of the screen a series of icons. Each of these
+will open a side panel when clicked on, and the one we will be looking for at the moment will be the
+extensions option. For now this looks like four tiles with the top right tile appearing that it will join
+the others to complete a square shape. If you are unsure which this is, hovering over each of the icons
+should display the name of the icon next to it, so ours should say "Extensions".
