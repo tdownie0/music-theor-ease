@@ -128,6 +128,6 @@ to download.
 > and has over 26 million downloads. Once this is done you may need to restart VS Code, but you will
 > actually see a separate area for plugins to be installed for WSL. On my machine there is a top
 > section for "LOCAL - INSTALLED" and another for "WSL: UBUNTU - INSTALLED". While working on code
-> with WSL, you will need to install your plugins in the WSL section. We will see later on that you
-> can open VS Code from your WSL terminal by navigating to the folder you would like to open and
-> typing `code .`. You may not see the section until this, so do not worry if that is the case.
+> with WSL, you will need to install your plugins in the WSL section. You can actually open VS Code
+> from within your WSL terminal by navigating to the folder you would like to open and typing `code .`. 
+> You may not see the section until this, so do not worry if that is the case.
