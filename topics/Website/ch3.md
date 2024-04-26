@@ -91,7 +91,7 @@ Here is a link to the main page of the repository: <https://github.com/Duncan06/
 you navigate to this page you will see the typical layout for a github page. You will see several tabs,
 the repository name, metrics, and many other things. What we are specifically are looking for is the
 green button that says "<> Code", and has a downwards arrow next to it. Once you click on this, you
-will see a tab labelled HTTPS that is currently selected with the web URL
+will see a tab labeled HTTPS that is currently selected with the web URL
 <https://github.com/Duncan06/music-theor-ease.git> in the text field. You can copy this link with the
 copy icon next to it that displays "Copy url to clipboard" in hover text. Once you do so, you can now
 navigate back to your terminal and type `git clone https://github.com/Duncan06/music-theor-ease.git`
@@ -176,10 +176,10 @@ counterparts. This statement is also true for setting up your coding environment
 such. Being able to setup your environment so that you can navigate swiftly through files and your code
 base can save you immense amounts of time in the long run.
 
-> **Note:** I will also be providing an auxillary section going over an editor known as "Vim". There is
+> **Note:** I will also be providing an auxiliary section going over an editor known as "Vim". There is
 > actually an extension you can download for VS code called "Vim" by vscodevim. This allows you to use
 > vim motions and some shortcuts associated with the editor, but some of its shortcuts may conflict with
-> preexisting shortcuts in VS Code. Many of these can be handled through adjusting keybindings, but the
+> pre existing shortcuts in VS Code. Many of these can be handled through adjusting keybindings, but the
 > process can be tedious and would ultimately requires familiarity to setup in the best way possible for
 > your needs.
 >
@@ -192,6 +192,7 @@ base can save you immense amounts of time in the long run.
 > paying for the resource unless you truly desire if you happen to reach the end. I believe navigating
 > through a text document is truly the best way to learn with the tool, however dull it may be at times.
 > Maybe after going through the section I provide you for the resource, if you still feel inclined to
-> go further in this site you can consider it as an option then.
+> go further in this site you can consider it as an option then. I do feel this may be a very useful
+> resource for younger audiences, and those who are teaching in classroom settings.
 >
 > [Vim-Adventures](https://vim-adventures.com/)
