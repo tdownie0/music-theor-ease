@@ -113,21 +113,85 @@ the local server is running.
 
 ## Installing Plugins
 
-Lets walk through installing some plugins for our development. There are several helpful plugins that
-satisfy many programming related needs, such as intellisense, debugging, formatting, and much more.
-In VS Code you will see will see on the leftmost side of the screen a series of icons. Each of these
-will open a side panel when clicked on, and the one we will be looking for at the moment will be the
-extensions option. For now this looks like four tiles with the top right tile appearing that it will join
-the others to complete a square shape. If you are unsure which this is, hovering over each of the icons
-should display the name of the icon next to it, so ours should say "Extensions". When this is openned
-you will see a search bar at the top where you can type in the names of the extensions you would like
-to download.
+Lets walk through installing some plugins for our development. If you are still in the
+"music-theor-ease" directory, you can actually type `code .` now that you have VS Code installed.
+This command opens the text editor through the `code` command, and here the `.` represents the
+current directory. You can actually navigate to the directory above your current location with
+`cd ..`, and you will see both of these dot shorthands extremely often throughout all of your
+programming endeavors, being very common in referencing "paths" to files. The term "path" is often
+used to refer to the location of a file relative to the location of a file or directory that you
+have in your system.
+
+There are several helpful plugins that satisfy many programming related needs, such as intellisense,
+debugging, formatting, and much more. In VS Code you will see will see on the leftmost side of the screen
+a series of icons. Each of these will open a side panel when clicked on, and the one we will be looking
+for at the moment will be the extensions option. For now this looks like four tiles with the top right
+tile appearing that it will join the others to complete a square shape. If you are unsure which this is,
+hovering over each of the icons should display the name of the icon next to it, so ours should say
+"Extensions". When this is opened you will see a search bar at the top where you can type in the names of
+the extensions you would like to download.
 
 > **Windows Users:** An additional plugin you will need to install is the WSL plugin so that you can
 > access your WSL files with VS Code. When you search for this you should it is created by Microsoft
 > and has over 26 million downloads. Once this is done you may need to restart VS Code, but you will
 > actually see a separate area for plugins to be installed for WSL. On my machine there is a top
 > section for "LOCAL - INSTALLED" and another for "WSL: UBUNTU - INSTALLED". While working on code
-> with WSL, you will need to install your plugins in the WSL section. You can actually open VS Code
+> with WSL, you will need to install your plugins in the WSL section. You may need to open VS Code
 > from within your WSL terminal by navigating to the folder you would like to open and typing `code .`
 > as a command. You may not see the section until this, so do not worry if that is the case.
+
+Here will be a list of some essential ones that will assist with this project and your day to day
+programming experiences.
+
+| Plugin Name                       | Publisher     | Purpose                                                                        |
+| :-------------------------------- | :------------ | :----------------------------------------------------------------------------- |
+| IntelliCode                       | Microsoft     | Auto-Complete and documentation references                                     |
+| IntelliCode API Usage Examples    | Microsoft     | Displays relevant API (Application Programming Interface) usage examples       |
+| Javascript and Typescript Nightly | Microsoft     | Gives you the latest versions of Typescript for intellisense (may be optional) |
+| Jest                              | Orta          | Allows you to run Jest in VS Code                                              |
+| Prettier - Code formatter         | Prettier      | Formats your code for you                                                      |
+| Tailwind CSS IntelliSense         | Tailwind Labs | Intellisense for Tailwind CSS                                                  |
+
+There are several more extensions you can download as well, but this should be enough to get us up and
+running. A recommendation for "Prettier" is to actually go to your "File" tab at the top left of your
+screen, then select "Preferences", and then "Keyboard Shortcuts". Once you do this you can type
+"Prettier" into the top search bar and you will see the keybinding associated with it. Personally I use
+"Shift + Alt + L" for my own keybinding, and you are free to change this to whatever is comfortable
+for you. I find that this does not interfere with my other keybindings. You will find many chances to
+use this as we work on our files. You are also free to google examples of these extensions and follow
+along with videos demonstrating their usages, though you may get enough experience first-hand as you
+work along with this.
+
+## Up and Running
+
+Now that we have worked through that, we should have the proper setup and environment to finally start
+checking out our code! I hope the setup went swiftly for you, and am thrilled you made it this far. I
+anticipate this is an area for hiccups to pop up in the process, due to different machine setups,
+operating systems, and unfamiliarity with the process. Google may help quite a bit with the process
+so do not hesitate to search anything that is causing you issues. Ultimately, this is one of the primary
+skills of being a programmer, looking up resources and doing research into how to resolve issues and
+obtain a better understanding of any task that you are currently undertaking. Knowing how to look for
+the correct resources can really make experienced programmers stand apart from their less experienced
+counterparts. This statement is also true for setting up your coding environment through extensions and
+such. Being able to setup your environment so that you can navigate swiftly through files and your code
+base can save you immense amounts of time in the long run.
+
+> **Note:** I will also be providing an auxillary section going over an editor known as "Vim". There is
+> actually an extension you can download for VS code called "Vim" by vscodevim. This allows you to use
+> vim motions and some shortcuts associated with the editor, but some of its shortcuts may conflict with
+> preexisting shortcuts in VS Code. Many of these can be handled through adjusting keybindings, but the
+> process can be tedious and would ultimately requires familiarity to setup in the best way possible for
+> your needs.
+>
+> I would hesitate reaching for it at the moment due to it drastically changing how you
+> interact with files when editing them. In the long run, mastering something like this can speed up all
+> your development tasks by allowing you to not have to reach for a mouse, instead navigating purely
+> through your keyboard. I find this is nice in VS Code and other text editors as well, as they also
+> allow you to interact with the GUI (Graphical User Interface), in addition to its motions. If you
+> would like a brief taste you can check out the resource I will link below, though I would not encourage
+> paying for the resource unless you truly desire if you happen to reach the end. I believe navigating
+> through a text document is truly the best way to learn with the tool, however dull it may be at times.
+> Maybe after going through the section I provide you for the resource, if you still feel inclined to
+> go further in this site you can consider it as an option then.
+>
+> [Vim-Adventures](https://vim-adventures.com/)
