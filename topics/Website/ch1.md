@@ -65,4 +65,9 @@ several branches listed, and we will be focusing on the ones with the prefix of 
 "levels/down_1" branch, you will see the code slightly changes. If you look slightly above the code
 section, you can also see the name of the person who made the last commit along with their message,
 in this case "Duncan06 Continue removing types.". Not all of the "levels" branches affect this particular
-file, but you will see the ones that do will affect the commit message displayed. 
+file, but you will see the ones that do will affect the commit message displayed. In most cases this
+will indicate that the code has been updated as well, but in some there may have just been inconsistencies
+that were corrected later.
+
+On this particular page, we will see the branches that have different code from one another are "main",
+"levels/down_1", "levels/down_3", and "levels/down_4".
