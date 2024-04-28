@@ -199,3 +199,22 @@ base can save you immense amounts of time in the long run.
 > resource for younger audiences, and those who are teaching in classroom settings.
 >
 > [Vim-Adventures](https://vim-adventures.com/)
+
+If you made it through, it is now time to start discussing the implementation details of the website. As
+mentioned before, I will be selecting the files that have a gentle introduction to all of this new
+knowledge we have outlined. With this in mind, that means we will not be going from top to bottom with
+the source code at first. After we get our bearings and are more familiar with the overall logic, we will
+begin to peel back the curtain and try to navigate the site from top to bottom as you would expect when
+walking through source code.
+
+In reality, if you are new to a project, you typically will only navigate to the files that are
+relevant to the task that you have at hand. It is typically unrealistic to understand every part of a site
+you are working on before you start contributing to the project. Especially now, some code bases have so
+much logic that it is most likely impossible for someone to have a complete understanding of the entirety
+of the code base. At that point, it may actually come down to certain specializations having an understanding of a particular unit. It may be helpful to gloss through certain sections and expose
+yourself to new ideas, but fixating on gaining a complete understanding at first may be an unproductive
+way to spend your time. As you continue working in the code base you will surely be exposed to more areas
+of it, and when the time naturally comes it can make more sense to invest your time in familiarizing
+yourself with these areas.
+
+With all of that said, let's move on to the website portion of this reading.
