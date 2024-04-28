@@ -2,8 +2,8 @@
 
 ## Chapter 1: The Rundown
 
-Welcome to the portion of this reading that will be dissecting a modern website
-built with JavaScript, implementing TypeScript in advanced versions. Through this,
+Welcome to the portion of this reading that will set you up for dissecting a modern website
+built with JavaScript (implementing TypeScript in advanced versions). Through this,
 you will given a chance to see what makes some modern web functionality work
 behind the scenes, and see the considerations that can be taken into account
 when building a system for such a purpose. We will use Next.js and React in
@@ -12,16 +12,16 @@ React is a javascript library that handles the frontend presentation, animations
 visual representation of the site. There are actually several frontend libraries like React
 in the programming community today. Many of them interact with HTML (HyperText Markup
 Language, which is used to present things on a web page) to add logic. React was made by Facebook,
-and used very commonly.
+and used very commonly in the web development community.
 
 We will have brief introductions into HTML and CSS (Cascading Style Sheets) so that logic related
 to positioning things on the web page are not too distracting for us to understand the logic
-manipulating values on the page. After this introduction we will be installing vscode for our
-IDE (Integrated Development Environment), and we will go over extensions that will be helpful
-in the process. Following this, we will go into git for a bit so that we can pull the source code,
-navigate within branches, and learn its general use. Once we have reached this point, you will then
-have an understanding of the basics of web page presentation, have an appropriate learning setup,
-and have the entirety of the code on your own machine.
+manipulating values on the page. After this introduction we will be installing visual studio
+code for our IDE (Integrated Development Environment), and we will go over extensions that
+will be helpful in the process. Following this, we will go into git for a bit so that we can
+pull the source code, navigate within branches, and learn its general use. Once we have reached this
+point, you will then have an understanding of the basics of web page presentation, have an appropriate
+learning setup, and have the entirety of the code on your own machine.
 
 With all of that in place, you will actually be able to run the code yourself and see a local
 version of the website we will be studying and learning from. Once you are at this point, you
