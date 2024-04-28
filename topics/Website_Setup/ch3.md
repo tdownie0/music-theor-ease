@@ -12,16 +12,19 @@ Linux can provide a similar experience from their terminals (Bash is both of the
 other hand, Windows has a unique shell from both of these, having its own syntax.
 
 > **Note**: The terminal is a program that allows you access to command-line interfaces (CLIs), and
-> the shell is what interprets and executes commands provided to the terminal.
+> the shell interprets and executes commands provided to the terminal.
 
-Since Windows behaves differently in it's terminal, things like PowerShell have come along to help
+Since Windows behaves differently in its terminal, things like PowerShell have come along to help
 developers use commands from operating systems like Linux and Mac (PowerShell also provides several
 more capabilities than Windows' default Command Prompt, but a more unified syntax is also helpful).
 WSL came out after PowerShell was created, and allows you to use a Linux kernel that runs directly
 on Windows. This is extremely helpful as it allows for a similar local development experience across all
 the operating systems. Virtual machines were also commonly used for this task in order to allow access to
 a Linux or Mac OS environment for development, since Windows tended to be much more difficult to set up on
-it's own.
+its own. The difference between a virtual machine and using WSL is that WSL does not require nearly as
+much memory as a virtual machine, as it does not have to have portions of your computer's resources
+directly devoted specifically to the virtual machine, such as RAM, disk space, CPU cores, and all the
+overhead of having a separate machine run within your own machine.
 
 We may go over some of the basic commands related to Linux and navigating directory structures from the
 command line, but there is no need to be overly focused on this material at the moment. The main purpose
@@ -48,7 +51,7 @@ Microsoft Word or Google Docs. By doing so, you would be missing out on many fea
 be expected when creating text documents, such as changing the font styles, font size, spell checking, and
 much more.
 
-Visual Studio Code is a free, feature rich, allows for plugins, and has many customizability
+Visual Studio Code (VS Code) is free, feature rich, allows for plugins, and has many customizability
 options. A link can be found here, [VS Code](https://code.visualstudio.com/docs/introvideos/basics),
 and comes with a helpful video to explain the layout and some features of the editor. Do not feel that
 you will need to create any files along with the video, but it may be helpful for a general overview.

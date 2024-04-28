@@ -1,4 +1,4 @@
-# How To Become A Programmer For Anybody: Website
+# How To Become A Programmer For Anybody: Website Technologies and Setup
 
 ## Chapter 1: The Rundown
 
