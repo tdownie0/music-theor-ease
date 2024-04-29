@@ -238,7 +238,7 @@ to this structure representation ((number of IDs)-(number of Classes)-(number of
 from left to right, if the number of selectors is greater in a selector definition for a certain
 type of HTML element, then that definition will apply to the element.
 
-```html
+```html & css
 <div id="first" class="first second">One</div>
 <div id="second" class="second third">Two</div>
 <div id="fourth" class="fourth">
