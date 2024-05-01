@@ -70,4 +70,19 @@ will indicate that the code has been updated as well, but in some there may have
 that were corrected later.
 
 On this particular page, we will see the branches that have different code from one another are "main",
-"levels/down_1", "levels/down_3", and "levels/down_4".
+"levels/down_1", "levels/down_3", and "levels/down_4". The "main" branch and "levels/down_1" are not all that
+different, the only difference is that the Typescript type has been removed, being `React.FC`. This stands
+for React.FunctionComponent, and is a type defined for React. If you were to actually open this file in your
+text editor, you would see a definition will pop up when you hover over the `.FC` portion. This will also
+show you quite a bit more information, but do not be worried about understanding all of that at the moment.
+Since this is a Typescript file, numerous portions of the page will actually provide definitions and
+descriptions when you hover over them. Even without you defining types, the Typescript will still try to
+infer types for you, and display as much information as it reasonably can. This is one of the biggest strengths
+of Typescript, as you can essentially ignore it until you are ready for the extra information.
+
+The information it provides is laid out to be as readable as possible for the programmer hovering over these
+parts of the page, but their layout will become much more intuitive in time. These can actually become very
+helpful so you do not have to leave your web browser to look up the definitions of things, and can allow you to
+see some documentation of custom types defined in the project. You will not be able to experience this from the
+web page for the code, but this can highlight the advantages of having a code editor with some GUI
+functionality.
