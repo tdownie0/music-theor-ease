@@ -154,13 +154,15 @@ programming experiences.
 | Jest                              | Orta          | Allows you to run Jest in VS Code                                              |
 | Prettier - Code formatter         | Prettier      | Formats your code for you                                                      |
 | Tailwind CSS IntelliSense         | Tailwind Labs | Intellisense for Tailwind CSS                                                  |
+| Material Icon Theme               | Philipp Kief  | Material Design Icons for VS Code (Styles sidebar icons)                       |
+| Gruvbox Theme                     | jdinhlife     | Color theme for your editor (I use Gruvbox Dark Hard at the moment)            |
 
 There are several more extensions you can download as well, but this should be enough to get us up and
-running. A recommendation for "Prettier" is to actually go to your "File" tab at the top left of your
-screen, then select "Preferences", and then "Keyboard Shortcuts". Once you do this you can type
+running. To change keyboard shortcuts you can actually go to your "File" tab at the top left of your
+screen, then select "Preferences", and then "Keyboard Shortcuts". Once you do this you can type something like
 "Prettier" into the top search bar and you will see the keybinding associated with it. Personally I use
-"Shift + Alt + L" for my own keybinding, and you are free to change this to whatever is comfortable
-for you. I find that this does not interfere with my other keybindings. You will find many chances to
+"Shift + Alt + F" for my own keybinding (which is the default), and you are free to change this to whatever is
+comfortable for you. I find that this does not interfere with my other keybindings. You will find many chances to
 use this as we work on our files. You are also free to google examples of these extensions and follow
 along with videos demonstrating their usages, though you may get enough experience first-hand as you
 work along with this.
