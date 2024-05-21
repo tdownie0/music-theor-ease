@@ -4,7 +4,7 @@ Now that you have the code base on your local machine, let's start going through
 to start with. If you have not gone through the "Website_Setup" section, I would encourage you to do so,
 especially if you are not familiar with these technologies at hand. You do not necessarily need to
 follow along in your own code editor if you choose not to, as you can navigate to the files just fine
-on the github repository. If you would like to experiment with the code and get first hand experience with
+on the GitHub repository. If you would like to experiment with the code and get first hand experience with
 running the code, I would encourage you to make sure you have your own local version.
 
 While going through these files I may point to particular branches for evaluating the layout of a file.
@@ -28,12 +28,12 @@ so all of your updates are then included on the main branch.
 
 After that brief explanation, I would like to point out that in our case I actually used the separate
 branches to separate different levels of difficulty regarding each of the files. As an example, let's
-look at the first file we will begin with on it's github page,
+look at the first file we will begin with on it's GitHub page,
 [Main Page](https://github.com/Duncan06/music-theor-ease/blob/main/app/page.tsx).
 
 Before going further, I would like to explain why this page is actually named "page.tsx". This page serves
-as the root of the "app" folder, and is actually the main page of our site, being the first one you land
-on. The main page of a site you visit (or called a home page) is often referred to as the index page. With
+as the root of the "app" folder, and is the main page of our site, being the first one you land
+on. The main page of a site you visit (also called a home page) is often referred to as the index page. With
 Next.js, using "page.(js/tsx)" is the convention for naming a page that has a specific route. In this case, the
 root page (main page) of a site has a route of `/`. This is standard for websites, and mimics a folder
 structure where `/` would be the top level folder. If you have the site running locally (which you can do
@@ -56,8 +56,8 @@ want the "page.tsx" located in the folder with the same name. In other routing s
 routes explicitly, but Next.js does this to simplify development, and to not require manually setting up the
 routing infrastructure.
 
-Now back to branches, if you visit the sites root page
-[Main Page](https://github.com/Duncan06/music-theor-ease/blob/main/app/page.tsx) you will see the code
+Now back to branches, if you visit the site's root page,
+[Main Page](https://github.com/Duncan06/music-theor-ease/blob/main/app/page.tsx), you will see the code
 for that particular page. Near the top left below the tab selections, you will see a dropdown with the
 word "main" inside (you can actually rename this, but it is named "main" by default). Next to it will be
 the file path for getting to the page, being "music-theor-ease/app/page.tsx". If you click on the dropdown
@@ -83,7 +83,7 @@ of Typescript, as you can essentially ignore it until you are ready for the extr
 
 The information it provides is laid out to be as readable as possible for the programmer hovering over these
 parts of the page, but their layout will become much more intuitive in time. These can actually become very
-helpful so you do not have to leave your web browser to look up the definitions of things, and can allow you to
+helpful so you do not have to leave your code editor to look up the definitions of things, and can allow you to
 see some documentation of custom types defined in the project. You will not be able to experience this from the
 web page for the code, but this can highlight the advantages of having a code editor with some GUI
 functionality.
