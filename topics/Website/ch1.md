@@ -35,7 +35,7 @@ Before going further, I would like to explain why this page is actually named "p
 as the root of the "app" folder, and is the main page of our site, being the first one you land
 on. The main page of a site you visit (also called a home page) is often referred to as the index page. With
 Next.js, using "page.(js/tsx)" is the convention for naming a page that has a specific route. In this case, the
-root page (main page) of a site has a route of `/`. This is standard for websites, and mimics a folder
+root page (main page) of our site has a route of `/`. This is standard for websites, and mimics a folder
 structure where `/` would be the top level folder. If you have the site running locally (which you can do
 by being in the directory of the source code you have downloaded on your machine through the `git clone`
 command from earlier and running `npm run dev`), you can see that if you add a `/` after `localhost:3000`,
