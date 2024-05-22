@@ -42,7 +42,7 @@ command from earlier and running `npm run dev`), you can see that if you add a `
 it will direct you to the same page as before, but removing the `/` automatically, as it is inferred.
 
 > **Note:** Here, `localhost:3000` is setup by Next.js for us, and `3000` refers to the port that it is
-> currently listening on. In a URL, the port for addresses always follow after the `:`. For some extra
+> currently listening on. In a URL, the port for addresses always follows after the `:`. For some extra
 > information if you are curious, `localhost` typically refers to the loopback address of your local
 > machine, meaning it points back to it. In IPv4 this address is usually `127.0.0.1`, and in IPv6 it is
 > `::1`. Modern browsers tend to prefer IPv6, so you could also access your local site like so if it is
@@ -54,14 +54,17 @@ running locally, and click on one of the tabs above the title ("Circles", "Modes
 see that the URL adds the `/` and the corresponding tab name you selected. This tells Next.js that you
 want the "page.tsx" located in the folder with the same name. In other routing systems you can name your
 routes explicitly, but Next.js does this to simplify development, and to not require manually setting up the
-routing infrastructure.
+routing infrastructure. This is related to a concept from frameworks referred to as convention over
+configuration. Other frameworks may prefer the opposite, configuration over convention, that allows you to
+have more control over the structure of a project you are working on. Using conventions can sometimes speed up
+development, as you do not need to build out as much of the setup manually.
 
-Now back to branches, if you visit the site's root page,
+Now back to branches. If you visit the site's root page,
 [Main Page](https://github.com/Duncan06/music-theor-ease/blob/main/app/page.tsx), you will see the code
-for that particular page. Near the top left below the tab selections, you will see a dropdown with the
+for that particular page. Near the top left below the tab selections, you will see a dropdown selection with the
 word "main" inside (you can actually rename this, but it is named "main" by default). Next to it will be
 the file path for getting to the page, being "music-theor-ease/app/page.tsx". If you click on the dropdown
-you will see that a dropdown appears and is titled "Switch branches/tags". Within this, you will see
+you will see that the dropdown options appear and are titled "Switch branches/tags". Within this, you will see
 several branches listed, and we will be focusing on the ones with the prefix of "levels". If you go to the
 "levels/down_1" branch, you will see that the code slightly changes. If you look slightly above the code
 section, you can also see the name of the person who made the last commit along with their message,
@@ -74,7 +77,7 @@ On this particular page, we will see the branches that have different code from 
 "levels/down_1", "levels/down_3", and "levels/down_4". The "main" branch and "levels/down_1" are not all that
 different, the only difference is that the Typescript type has been removed, being `React.FC`. This stands
 for React.FunctionComponent, and is a type defined for React. If you were to actually open this file in your
-text editor, you would see a definition will pop up when you hover over the `.FC` portion. This will also
+code editor, you would see a definition will pop up when you hover over the `.FC` portion. This will also
 show you quite a bit more information, but do not be worried about understanding all of that at the moment.
 Since this is a Typescript file, numerous portions of the page will actually provide definitions and
 descriptions when you hover over them. Even without you defining types, Typescript will still try to
@@ -82,7 +85,7 @@ infer types for you, and display as much information as it reasonably can. This 
 of Typescript, as you can essentially ignore it until you are ready for the extra information.
 
 The information it provides is laid out to be as readable as possible for the programmer hovering over these
-parts of the page, but their layout will become much more intuitive in time. These can actually become very
+parts of the page, and their layout will become much more intuitive in time. These can actually become very
 helpful so you do not have to leave your code editor to look up the definitions of things, and can allow you to
 see some documentation of custom types defined in the project. You will not be able to experience this from the
 web page for the code, but this can highlight the advantages of having a code editor with some GUI
