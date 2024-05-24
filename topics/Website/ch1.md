@@ -29,7 +29,7 @@ so all of your updates are then included on the main branch.
 After that brief explanation, I would like to point out that in our case I actually used the separate
 branches to separate different levels of difficulty regarding each of the files. As an example, let's
 look at the first file we will begin with on it's GitHub page,
-[Main Page](https://github.com/Duncan06/music-theor-ease/blob/main/app/page.tsx).
+[Main Page](https://github.com/tdownie0/music-theor-ease/blob/main/app/page.tsx).
 
 Before going further, I would like to explain why this page is actually named "page.tsx". This page serves
 as the root of the "app" folder, and is the main page of our site, being the first one you land
@@ -60,7 +60,7 @@ have more control over the structure of a project you are working on. Using conv
 development, as you do not need to build out as much of the setup manually.
 
 Now back to branches. If you visit the site's root page,
-[Main Page](https://github.com/Duncan06/music-theor-ease/blob/main/app/page.tsx), you will see the code
+[Main Page](https://github.com/tdownie0/music-theor-ease/blob/main/app/page.tsx), you will see the code
 for that particular page. Near the top left below the tab selections, you will see a dropdown selection with the
 word "main" inside (you can actually rename this, but it is named "main" by default). Next to it will be
 the file path for getting to the page, being "music-theor-ease/app/page.tsx". If you click on the dropdown
@@ -68,7 +68,7 @@ you will see that the dropdown options appear and are titled "Switch branches/ta
 several branches listed, and we will be focusing on the ones with the prefix of "levels". If you go to the
 "levels/down_1" branch, you will see that the code slightly changes. If you look slightly above the code
 section, you can also see the name of the person who made the last commit along with their message,
-in this case "Duncan06 Continue removing types.". Not all of the "levels" branches affect this particular
+in this case "tdownie0 Continue removing types.". Not all of the "levels" branches affect this particular
 file, but you will see the ones that do will affect the commit message displayed. In most cases this
 will indicate that the code has been updated as well, but in some there may have just been inconsistencies
 that were corrected later.

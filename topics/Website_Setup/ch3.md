@@ -90,14 +90,14 @@ that means you most likely currently at the code repository (the central locatio
 you are within your web browser. I will walk you through the cloning process as if you were visiting any
 source code that you wished to interact with on github.
 
-Here is a link to the main page of the repository: <https://github.com/Duncan06/music-theor-ease>. Once
+Here is a link to the main page of the repository: <https://github.com/tdownie0/music-theor-ease>. Once
 you navigate to this page you will see the typical layout for a github page. You will see several tabs,
 the repository name, metrics, and many other things. What we are specifically are looking for is the
 green button that says "<> Code", and has a downwards arrow next to it. Once you click on this, you
 will see a tab labeled HTTPS that is currently selected with the web URL
-<https://github.com/Duncan06/music-theor-ease.git> in the text field. You can copy this link with the
+<https://github.com/tdownie0/music-theor-ease.git> in the text field. You can copy this link with the
 copy icon next to it that displays "Copy url to clipboard" in hover text. Once you do so, you can now
-navigate back to your terminal and type `git clone https://github.com/Duncan06/music-theor-ease.git`
+navigate back to your terminal and type `git clone https://github.com/tdownie0/music-theor-ease.git`
 into it. Once this is done, you will then see that the repository has started downloading in your
 current directory, and afterwards you should be left with a directory named "music-theor-ease" with the
 source code from the repository. At this point, you have successfully downloaded the source code to your
