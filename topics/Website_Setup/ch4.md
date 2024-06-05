@@ -79,7 +79,7 @@ is also a consideration, and there are sites to help you make selections for thi
 of typography which begins dealing with multiple things such as multiple fonts interacting with each other,
 stylizing fonts to convey specific meanings (such as italicizing), and giving the text on any presented
 medium a specific type of voice. All of that considered, I chose to keep things simple by selecting one font.
-You can actually see at the top of the page in the header section I import a fairly commonly used font across
+You can actually see at the top of the page in the head section that I import a fairly commonly used font across
 the web, being "Roboto". This does not came with native CSS, and is imported with these lines in the `<head>`
 tags section of the site:
 
