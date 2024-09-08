@@ -145,8 +145,8 @@ console.log(name[2]); // 'b'
 console.log(name[3]); // 'a'
 ```
 
-In this code snippet, you can see our variable `name` is set to `"Boba"`. We then use the variable
-with its index in the array we would wish to access. Here, `console.log()` would print out the
+In this code snippet you can see our variable `name` is set to `"Boba"`. We then use the variable
+with an index in the array we would wish to access. Here, `console.log()` would print out the
 corresponding letters of the name. Hopefully that makes sense! Now with that mapped out, let's look
 at what putting an array inside of an array would look like.
 
@@ -180,11 +180,11 @@ console.log(ticTacToe[1][1]); // 'O'
 console.log(ticTacToe[2][2]); // 'O'
 ```
 
-Those would be all of the `"O"` characters from the top left to the bottom right. You might be better at
-math than you thought. An interesting thing with computers is that we can separate the front end
-display that a user sees, from the actual logic that operates something. In this case with our
+Those would be all of the `"O"` characters from the top left to the bottom right.
+An interesting thing about computers is that we can separate the front end
+display that a user sees, from the actual logic that operates on something. In this case with our
 Tic-Tac-Toe game, we could abstract the characters to numbers. They would then represent on and off
-states for each value. With this, we could then later ask for this information, and update the front
+states for each value. With this we could then later ask for this information, and update the front
 end to display whatever symbols or letters we wanted in those corresponding positions.
 
 ```ts
@@ -195,7 +195,7 @@ const ticTacToe: number[][] = [
 ];
 ```
 
-Here you see all the characters were replaced with numbers. Now somewhere else can decide what goes with
+Here we see all the characters were replaced with numbers. Now somewhere else can decide what goes with
 the 1's, 2's, and 0's. In our case, the 1's were `"O"`, the 2's were `"X"`, and the 0's were `""`.
 
 Having this structure allows for many things, especially once you know how to manipulate it. There are
@@ -219,14 +219,14 @@ const maze: number[][] = [
 
 With this, you could have the 1's represent the correct path. You could also add additional numbers
 to represent things like trees, rocks, water, lava, or several other things if you were making a game.
-You can do a lot with little.
+You can do a lot with just a little.
 
 As you can see, just having this simple layout has given us a chance to represent somewhat complicated
 ideas almost effortlessly. Ones and zeros may be the easiest to start with (Usually depicting "On" and
-"Off" states). These two examples are dimensional arrays. Also as a side note, you can see that since I
-gave each of these arrays their own line so it is much easier to read. Programmers often try to make code
+"Off" states). These two examples are two dimensional arrays. Also as a side note, you can see that I
+gave each of these arrays their own line so that it is much easier to read. Programmers often try to make code
 more appealing to the eye, and easier to sift through. It really helps with maintaining code in the long
-run. This would make the same information much harder:
+run. The formatting below would make the same information much harder to decipher:
 
 ```ts
 // Do not layout data like this
@@ -241,7 +241,7 @@ const maze: number[][] = [
 
 We'll go into sensible styling as well as tools to help automate the process for you later, so do
 not fret about getting things exact. It is often quicker to let tools like auto formatters adjust this
-for you, and they just tend to drastically improve consistency. Still, it is good to have the thought
+for you, and they tend to drastically improve consistency. Still, it is good to have the thought
 of trying to make data somewhat presentable when working with it as a consideration. In this case,
 our data appears to lose some of its visual meaning with the different shape.
 
@@ -263,7 +263,7 @@ names such as maps, dictionaries, or key-value stores. You see here that TypeScr
 to indicate the object type, and specifies that it contains a `string` in its first position, and
 either a `number` or a `string` in the other. In the expression `number|string` the `|` stands for the
 logical OR condition. This works probably as you would expect, representing it can be one type or the
-other. In TypeScript they refer to this as a union, but you do not have to remember that.
+other. In TypeScript they refer to this as a union, but you do not have to remember that for the moment.
 
 Now that the type is out of the way, let's look at what we can do with our variable `person1`.
 
@@ -315,7 +315,7 @@ console.log(person1.lightsaber.power); // 97
 Here we had to add another data type, which is the same as our original, Record<string, number | string>.
 It is named `lightsaber`, and inside of it contains two keys, `color` and `power`. You can see the
 `lightsaber` object is accessed by first accessing the `person1` object, and then itself accessed for
-the values of its keys `color` and `power`. This access would have also been correct:
+the values of its keys `color` and `power`. This access pattern would have also been correct:
 
 ```ts
 console.log(person1["lightsaber"]["color"]); // 'Blue'
@@ -324,7 +324,7 @@ console.log(person1["lightsaber"]["power"]); // 97
 
 Accessing the values through their keys in this manner just involves a bit more typing. It could also
 be necessary to use this access method depending on how the key is used, it's format (it has spaces
-or `-`), leading numbers, or is a symbol type in Javascript. Do not worry about the specifics, just
+or `-`), if it used leading numbers, or was a symbol type in Javascript. Do not worry about the specifics, just
 know if you are using the dot notation, such as `person1.lightsaber.color` is called, and it does not work,
 you may need to use the other access method with array syntax.
 
@@ -346,7 +346,7 @@ One thing may have been puzzling you up until now. If we went through all that t
 what strings were, why was it so easy for the associative array (a.k.a. object in TS/JS) to use
 them? In the case with our object, a hash map is actually being used to generate the values of
 where to store the values in the object variable. This means that it takes a key like `"id"` and runs
-a function (numerical operation) on the characters `"i"` and `"d"`, and then is returned an number at
+a function (defined operation) on the characters `"i"` and `"d"`, and then is returned a number at
 the end. This can get as complicated or simple as you want. Usually the more cryptography involved,
 the more mathematically intensive this becomes. Luckily this is taken care of for us, so we do not
 have to worry about the specifics.
@@ -401,10 +401,11 @@ nature of the types. A boolean variable typically switches between `true` and `f
 representing something as simple as "on" and "off" states like light switches.
 
 For the `second` variable, you can see it is directly assigned to `null`. This could be used to clear an
-object reference. So we could do this for our person1 object from before and change its value to `null` with
+object reference. So we could have done this for our person1 object from before if we declared it with `let`
+instead of `const`, and changed its value to `null` with
 the intention to free its memory at some point. Languages do this through a process called garbage
 collection, and the decisions it makes can get quite involved and occur at certain times according to the
-language. In this case with TypeScript, it does not make much sense to only assign the value
+language. In this case with TypeScript, it does not make much sense to only assign the value type
 to `null`. It can never have another value at this point. You will see this commonly paired with another
 type.
 
@@ -418,13 +419,13 @@ would have to be able to adjust. This can also be seen in cases where you are ad
 things from memory. For pointers it was quite common to start their values with null, indicating that they
 do not currently point to a valid space in memory.
 
-Last we have undefined. If you look at the `third` variable, you see it actually is missing an
+Last we have undefined. If you look at the `third` variable, we see it actually is missing an
 assignment operator (`=`). Programming languages allow us to define variables without giving them a
 value immediately. This is due to the nature of variables having the potential to be changed
 frequently. If something in TS/JS is declared but does not have a value assigned to it, then it
-will return undefined if accessed to be read. You will also encounter undefined if you try to access
-an object key that does not exist on the current object. Undefined is a practical type. C actually
-does not explicitly have a type for this, but the variables would still be said to be undefined.
+will return undefined if accessed to be read before it is assigned another value. You will also encounter
+undefined if you try to access an object key that does not exist on the current object. Undefined is a practical
+type. C actually does not explicitly have a type for this, but the variables would still be said to be undefined.
 This variable would also most likely not occur, due to not having much need for a value that can
 only be undefined. So it is commonly in a union with another type as well.
 
@@ -469,7 +470,7 @@ const myCar: Record<string, number | string> = {
 Functions are at the bottom of the list, and we will be covering those in quite some detail. There
 will be chapters dedicated to functions and different frameworks for conceptualizing how to use them
 together in order to build larger ideas. Ultimately, functions allow us to define units of logic to
-let us use in our programs. Structuring functions correctly can help you express complex ideas almost
+let us use them in our programs. Structuring functions correctly can help you express complex ideas almost
 effortlessly, and possibly reuse logic so you have less code.
 
 ## Special Types
@@ -486,7 +487,7 @@ Let's go in order. Our first type `any` is actually pretty simple, it represents
 loosest type in TypeScript. JavaScript does not use types by itself, instead having TypeScript add types
 to it. So `any` is there to help transfer over code to types, but not force a type a be declared at the
 moment. This is typically looked down upon to use often, especially if you know a type beforehand. It
-is find to use this while you are learning though. In my opinion, just having exposure to the idea of
+is fine to use this while you are learning though. In my opinion, just having exposure to the idea of
 types is going to put you way further ahead in the long run. Typescript also predicts types for you
 while you are using it, so it can actually help you learn types.
 
@@ -536,7 +537,7 @@ type with objects. Instead of just being a regular array of certain types, this 
 has a specific order in which the value types must be placed to satisfy the criteria.
 
 Typescript is capable of much more with its types, but my aim is really just to familiarize you with
-the general logic you will see across every language you work with. The good news is that I show you
+the general logic you will see across every language you work with. The good news is that I showed you
 all of this just to expose you to the nature of these variables, but you will not have to use any of this
 unwillingly. Like stated before, JavaScript does not use types, and everything in this book can be
 done just fine in JavaScript. One of my aims is to show you over time how introducing types to your
