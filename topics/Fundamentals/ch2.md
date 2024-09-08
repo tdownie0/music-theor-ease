@@ -4,8 +4,8 @@ We will go over the general types of data structures used in all programming
 languages. Some languages have quite a number of data types, each a little bit
 different than the other memory storage wise (as with our example of integer
 compared to number in chapter one). Knowing the categories of data is much more
-important than memorizing each specific type, and thankfully, Typescript uses
-really only the general types at its core. You can create more (and we will go
+important than memorizing each specific type, and thankfully, Typescript really
+only uses the general types at its core. You can create more (and we will go
 into that), but the language does not split hairs when it comes to memory size.
 This helps develop faster, and as previously mentioned, helps remove complexity
 that comes with knowing what data size would be best in a situation.
@@ -20,7 +20,7 @@ go deeper when the time is truly needed.
 All of that said, I think these two things I am about to show you are a major cornerstone in the
 foundation of why all of this stuff works. How they work themselves is quite involved, but you do not need
 to know how to make a car to drive one. I will cheat and show you something that looks simple to the
-human eye, but in actuality is already this complicated.
+human eye, but in actuality is already more complicated than it seems.
 
 ```ts
 const name: string = "Boba";
@@ -35,13 +35,13 @@ the quotations being associated with words, but often a common annoyance is tryi
 of another set of quotations. This is handled by wrapping the quotations in single quotes (`''`) or
 vice versa if desired. The first `"` denotes the start of the information provided, and the closing
 `"`, marks the end. They are used in a similar way that we use parentheses in writing to contain a unit
-of information, but parentheses are used in many ways in programming, so do not use parenthesis (eg. `()`)
+of information, but parentheses are used in many ways in programming, so do not use parenthesis (i.e. `()`)
 instead here.
 
 So in the example, the information provided to the `""` region are the letters "B", "o", "b", "a". The
 computer actually stores them individually as well. Anything you see with `""`, or `''`, or ` `` ` are
 strings. The last ones (` `` `, backticks which are on your tilde key), are actually special in Javascript/Typescript, but we will talk about that later. So when you see any of these, your brain should think of
-these as starting and closing regions. When closed in these, numbers are also instead considered strings
+these as starting and closing regions. When enclosed within these, numbers are also instead considered strings
 instead of numbers. So `"3"` is not the same as `3`. They can still be compared, but more on that later.
 
 How does the computer store the letters "B", "o", "b", and "a" individually to make up the entire string?
@@ -52,9 +52,9 @@ The string is actually stored in something called an array. Specifically in this
 ```
 
 You see, they are wrapped in another region with a starting position, and an ending position. This time
-it is brackets (`[]`). This lets the computer know that these letters belong together. A subtle caveat
-is that strings actually contain another value in their array to tell the computer where the string
-ends. In C it would look like this:
+it is square brackets (`[]`). This lets the computer know that these letters belong together. A subtle caveat
+is that strings actually contain another value, typically inferred by the computer, in their array to tell the 
+computer where the string ends. In C it would look like this:
 
 ```c
 ['B', 'o', 'b', 'a', '\0']
@@ -87,18 +87,18 @@ why the computer has trouble counting:
 ```
 
 There are obviously four. Why is it hard for it to tell? The real answer is that the variable that contains
-that array is actually pointing to an address in memory on your computer. The computer has to have a
-starting point and ending point for that information. Your computer does not see the starting `[` and
-the closing `]` as we do. It may have something similar to these brackets, but in between them is all of
-the data available to the program itself. So to break up the memory, it needs characters like the
-null operator (`\0`) to, in the colloquial phrase, work under the hood.
+that array is actually pointing to a section of memory on your computer, which starts at a memory address. The
+computer has to have a starting point and ending point for that information. Your computer does not see the
+starting `[` and the closing `]` as we do. It may have something analogous to these brackets for a program, but
+in between them is all of the data available to the program itself. So to break up the memory, it needs
+characters like the null operator (`\0`) to distinguish sections, or memory regions.
 
 As a disclaimer, there are many things in place today to prevent a program you run from being allowed
 outside of its designated bounds memory wise. In the past, and still if done incorrectly (or purposely)
 with lower level languages like C, these variables that held memory addresses caused many problems.
-These memory addresses are referred to as pointers. They literally hold the value of the address where
-the data you want lives. It is similar to knowing the address of your friend's home. You would often
-see this in C as below:
+These memory addresses can be referred to with what are known as pointers. They literally hold the value of the
+address where the data you want lives. It is similar to knowing the address of your friend's home. You would
+often see this in C as below:
 
 ```c
 // The "*" indicates the variable is a pointer
@@ -131,9 +131,9 @@ position value. These values are referred to as "indexes". Here is a table demon
 |   3   |     a     |
 
 So it can be seen that the first number used is actually 0. This is something that takes some getting
-used to, but it is interesting. Computer Science went ahead and used 0 as the first single digit.
-This may be more of a discussion between Mathematicians and Computer Scientists as to whether it
-should be 0 or 1. Here it represents the offset from the starting address of the array.
+used to, but it is interesting. Computer Science went ahead and used 0 as the first single digit instead of 1.
+As to why this is may be more of a discussion between Mathematicians and Computer Scientists. Here it represents
+the offset from the starting address of the array.
 
 Here is how you can use this information:
 
