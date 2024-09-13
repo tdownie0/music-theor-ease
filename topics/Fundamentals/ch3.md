@@ -1,33 +1,38 @@
 ## Chapter 3: Functions
 
 Now we will get into elaborating on functions. Functions are almost the life
-and blood of programming. Without functions, things we have today may very well
-be impossible to get working today, or would take far more work than is
-necessary. I think the most relatable comparison to a function is a cooking
+and blood of programming. Without functions, the programs we have today may very well
+be impossible to get working, or would take far more work than could be reasonably expected.
+I think the most relatable comparison to a function is a cooking
 recipe. A recipe tells you the exact steps and ingredients you need in order to
 get the result you are looking for. In essence that is all it is. There just
 tends to be many considerations we can factor in depending on what we are
 trying to accomplish.
 
-With functions, really the main focus should be giving it a responsibility
-for a task. The more focused the task is the easier it becomes to remember
-which task is responsible for which action. A quick example game that had
-three different slots, each corresponding to a certain amount of points. You
-could write the program in such a way that you always have all of the
-amounts for each slot wrapped up in the main logic. The other way you could
-do it is make a function for each slot, and then have the program call the
-function corresponding with that slot. These could be calls to functions
-called `scoreSlotOne()`, `scoreSlotTwo()`, and `scoreSlotThree()`. Now, anything
-you have setup for each specific slot can be completely independent of the
-others. If you scored in whichever one had the highest score you could make
-lights go off as well, or have a sound effect play. You could do this without
-having to constantly do checks of which task is actually being handled at the moment,
-possibly giving you less tracking variables.
+With functions, really the main focus should be giving it a single responsibility
+for a task. The more focused the task is, the easier it becomes to remember
+which task is responsible for which action. A quick example would be a game that had
+three different slots, each corresponding to a certain amount of points based on its contents. You
+could write a program in such a way that you always had each slot's individual contents
+wrapped up in the main logic of the program. The other way you could
+do it is make a function for each slot, and then have the program call those
+functions based on which ones you needed at the moment. These could be calls to functions
+named `getScoreSlotOne()`, `getScoreSlotTwo()`, and `getScoreSlotThree()`. Later we will also be introduced
+to objects, which can have their own functions that belong to them. If in this case they were all slot objects,
+we could have variables assigned to the objects named `slotOne`, `slotTwo`, and `slotThree`. With this each one
+could call their own getScore function as such, `slotOne.getScore()`. This would be one way to help us from
+duplicating logic.
 
-I wanted to give an abstract overview of what will be going on overall, but we will start
-laying out some real functions and using them. Different paradigms use functions in different ways,
-so we will touch on the layouts you can achieve by making certain structural decisions. We will go
-ahead and start with the first couple.
+Now anything you have setup for each specific slot would be completely independent of the
+others. If you were looking for whichever one had the highest score, or wanted to leave one out, you could also
+have a function that compared scores for you based on the ones you wanted to evaluate. Based on these results,
+you could have another function that would be responsible for turning a slot's lights on, or having a sound
+effect play. This becomes much easier to manage when you have a program that does several things.
+
+I wanted to briefly give an abstract overview of what will be going on overall, but we will start
+laying out some real functions and demonstrating examples of them in use. Different paradigms use functions in
+different ways, so we will touch on the layouts you can achieve by making certain structural decisions. We will
+go ahead and start with these first examples:
 
 ```ts
 // ---- Function Declaration Area ----
