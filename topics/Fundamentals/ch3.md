@@ -59,14 +59,13 @@ let myNumber: number = giveFour(); // 4
 Here we have `sayHello()` and `sayHelloWolrd()`. You see both of their return types are void, which means
 they do not pass back a physical value, instead printing to the console. The last function `giveFour()`
 does return a value, and in this case it would assign 4 to myNumber. I threw somewhat of a curve
-ball at you right from the start, and you may have noticed in `sayHelloWorld()`. The most interesting
-part about this function, is that it actually calls another function, and then runs itself.
+ball at you right from the start, and you may have noticed it in `sayHelloWorld()`. The most interesting
+part about this function, is that it actually calls another function, and then runs another line itself.
 
 I put the comments with "Function Declaration Area" around the functions to help illustrate that
-the section that is contained works differently than the code below it, marked as executing at
-run time. Specifically, what executed refers to is what code was called and had operations run
-over the course of the program's run time. The run time is the amount of time it takes for the program
-to effectively run all the tasks written in code.
+the section that is contained within works differently than the code below it, marked as executing at
+runtime. Specifically, what the executed portion refers to is the actual code that will be called and executed
+during the course of the program's runtime. If the functions were not called in this portion, they would still be read and stored, but their body's would not executed during this phase.
 
 With all of that said, the code at the bottom is the code ran at run time, and the functions are
 actually stored in memory. When the program runs and it sees a function call like sayHello(), it
