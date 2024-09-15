@@ -205,19 +205,23 @@ class Cat {
     private breed: string
   ) {}
 
-  private getBreed() {
-    this.breed;
+  secretInfo(): string {
+    return this.getBreed();
   }
 
-  secretInfo() {
-    return this.getBreed();
+  protected getAge(): number {
+    return this.age;
+  }
+
+  private getBreed(): string {
+    return this.breed;
   }
 }
 
 // Create Kitten Class
 class Kitten extends Cat {
-  getAge() {
-    return `${this.age} months`;
+  getKittenAge(): string {
+    return `${this.getAge()} months`;
   }
 }
 
@@ -227,71 +231,86 @@ console.log(testCat.age); // Error
 console.log(testCat.breed); // Error
 
 const testKitten = new Kitten("Whiskers", 3, "Tabby");
-console.log(testKitten.getAge()); // '3 months'
+console.log(testKitten.getKittenAge()); // '3 months'
 console.log(testKitten.getBreed()); // Error
 
 console.log(testCat.getBreed()); // 'Error'
 console.log(testCat.secretInfo()); // 'Calico'
+console.log(testKitten.secretInfo()); // 'Tabby'
 ```
 
 This really is a loaded example, but I think it shows a majority of features that come with using
 classes. With classes, their variables are referred to as "properties", and their functions are
 called "methods". This aligns more with the train of thought around classes. From a general stand
 point, classes resemble the layout of common taxonomies from biology (vertebrate, invertebrate,
-mammal, and such). Classes can inherit from other classes, and this is often referred to a "parent" and
+mammal, and such). Classes can inherit from other classes, and this is often referred to as a "parent" and
 "child" relationship. The parent is structured to allow for the child to exist based off its own
-properties. In our case, the `Kitten` class has a name, age, and breed property as well, their setup is just
-borrowed from the parent. It can also be observed that we do not need the function keyword to declare
-functions (methods) inside of class.
+properties and possibly methods. In our case, the `Kitten` class has its own name, age, and breed properties as
+well, their setup is just borrowed from the parent. This was done through the `extends` keyword, seen above with
+`extends Cat`. It can also be observed that we do not need the function keyword to declare functions (methods)
+inside of a class.
 
-You may have also noticed the new keywords `public`, `protected`, and `private`. These properties
-come with the philosophy of classes as well. At the top of the declaration we have `class Cat{}`. This
-names the class we wish to create. Inside of it is the first method that is optional, which is
-`constructor`. The constructor declares the parameters the class needs in order to create itself, as
-well as the logic to be run upon its creation. We see here that the `{}` for `constructor` is empty,
-so only the variables will be declared with no additional logic.
+You may have also noticed the new keywords `public`, `protected`, and `private`. These are referred to as
+access modifiers and relate to the philosophy of classes as well. We will touch on these in the following
+paragraphs. At the top of the declaration we have `class Cat{}`. This names the class we wish to create. Inside
+of it is the first method that is optional, which is `constructor`. The constructor declares the parameters the
+class needs in order to create itself, as well as the logic to be run upon its creation. We see here that the
+`{}` for `constructor` is empty, so only the variables will be declared with no additional logic.
 
-We see each parameter has a key word associated with it which actually dictates that variable's access
-modifier. First is `public`, which indicates that the property can be accessed wherever an instance of the
-class exists, or in any of its child classes. We see this with `testCat.name`. Using the new keyword
-and then specifying which class you would like to create is referred to as creating an instance of that
-class. This is its own individual copy of the class.
+We see that each parameter has a key word associated with it, being that variable's access modifier. First is
+`public`, which indicates that the property can be accessed wherever an instance of the class exists, or in any
+of its child classes. We see this with `testCat.name`. Using the `new` keyword and then specifying which class
+you would like to create is referred to as creating an instance of that class. This is its own individual copy
+of the class.
 
 > **Note:**
 > There is another keyword `static` which allows for a variable to exist across all of the classes that
 > are associated with it. This is useful for things such as having a counter (something that tracks a
-> number amount) which adds one to itself everytime a new instance of the class is created. This allows
+> number amount) which adds one to itself every time a new instance of the class is created. This allows
 > every existing instance the ability to share and access the value at any point in the program. Other
 > properties that are not defined as `static` will be unique to the class instance being created. In our
 > Cat example, the name, age, and breed properties are completely independent from any other instance,
 > having their own values directly tied to only them.
 
+---
+
+> **Additional Note:**
+> The following section specifying when errors will be thrown actually depends on the compiler options set for
+> Typescript in the tsconfig.json file. By default, Typescript will compile the code to Javascript regardless
+> if it detects errors or other issues. This can be changed to not compile based on varying degrees of criteria.
+> In other languages implementing these access modifiers, the code may not run or compile at all when used
+> incorrectly.
+
 You see the other two properties actually return errors to us. This is due to both `protected` and
 `private` having an increased set of conditions in order to be accessed. With `protected`, the property
 can only be directly accessed from within the class itself, or in a child class. Here we see in the
-`Kitten` class that it extends the `Cat` class with `extends Cat`. This means that Kitten inherits its
-definition and behavior from `Cat`. It is free to add additional things it would like specifically at its
-creation, but it will follow the parent's base template by default with Typescript. Other languages may
-require you to call a method to call the parent's constructor, which must be done if it requires
-arguments. You also have access to `public` and `protected` methods from within child classes. In the
-`Kitten` class we see a method `getAge()` that accesses `this.age` from the `Cat` class, which is
-`protected`. Since it is this access modifier, we can access the property directly in this case. If this
-were `private`, this would not be the case, and we would get an error denying us access. We see the the
-instance of `Kitten` (`testKitten`), calls the `getAge()` successfully. The method allows access to the
-property. We could not access it otherwise from this instance. You will notice that `getAge()` does not
-have a access modifier key word next to it. Due to this, the program will default to using `public`.
+`Kitten` class that it extends the `Cat` class. This means that Kitten inherits its
+definition and behavior from `Cat`. It is free to add additional properties and methods that it would like to use, but it will follow the parent's base template by default with Typescript. Other languages may
+require you to call a method to call the parent's constructor in its own constructor, which must be done if it
+requires arguments. You also have access to `public` and `protected` methods from the parent within child
+classes. In the `Kitten` class we see a method `getKittenAge()` that accesses its `age` property through
+`this.age()`. This is done by calling `this.getAge()`, which accesses the method passed down from the parent.
 
-Finally we get to `private`. As I assume you may expect, `private` is the first two levels of access
-restriction, and adds another layer. Private properties can only be accessed from within the class
-they originated in. We see in the call above, `testKitten.getBreed()`, which yields an error. This
-is due to the function being marked private. This prevents instances from calling the method, as well
-as child classes themselves. The next line below calls the same method, but this time on the original
-class it was defined on, `testCat.getBreed()`. It also receives an error due to not being able to call
-the method on an instance. Last we see the call to `testCat.secretInfo()`, which is successful. This
-is due to the method defaulting to `public` in the `Cat` class. Since we can access public methods
-on a class, and a method within a class can access any information contained within that class,
-the method is allowed to access the information. The private property belongs directly to the
-Cat class, so a method on that same class can access anything that is private for that class.
+Since `protected` was used as an access modifier, both the property and method can be accessed. If instead this
+were `private`, this would not be the case, and we would get an error denying us access. We see here that the
+instance of `Kitten` (`testKitten`), calls the Cat class's `getAge()` successfully from within its method
+`getKittenAge()`. Since the `getAge()` method is called, this allows us to access the protected
+property. We could not access the property otherwise from this instance without a method referring to it. This
+does not have to be a method from the parent, but instead could have just been a method in the Kitten class that
+used the statement `return this.age`, just like the `getAge()` method in the Cat class. You will also notice
+that `getSecretInfo()` does not have a access modifier key word next to it. Due to this, the program will
+default to using `public`.
+
+Finally we get to `private`. As I assume you may expect, `private` adds more restricted behavior to our code. Private properties and methods can only be accessed from within the class they originated in. We see this in the
+call above, `testKitten.getBreed()`, which yields an error. This is due to the function being marked private.
+This prevents instances from calling the method, as well as child classes themselves. The next line below calls
+the same method, but this time on the original class it was defined on, `testCat.getBreed()`. It also receives
+an error due to not being able to call the method on an instance. Last we see the call to
+`testCat.secretInfo()`, which is successful. This is due to the method defaulting to `public` in the `Cat`
+class. Since we can access public methods on a class, and a method within a class can access any information
+contained within that class, the method is allowed to access the information. The private property belongs
+directly to the Cat class, so a method on that same class can access anything that is private for that class.
+This also works for the `Kitten` class, as the method it uses is a public method that lives inside of `Cat`.
 
 ## The Functional Way
 
