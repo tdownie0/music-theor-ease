@@ -50,7 +50,7 @@ function giveFour(): number {
 }
 // ---- End of Function Declaration Area ----
 
-// Code that is actually executed at run time
+// Code that is actually executed at runtime
 sayHello(); // Prints "Hello" to the console
 sayHelloWorld(); // Prints "Hello" and "World" on separate lines to the console
 let myNumber: number = giveFour(); // 4
@@ -65,23 +65,21 @@ part about this function, is that it actually calls another function, and then r
 I put the comments with "Function Declaration Area" around the functions to help illustrate that
 the section that is contained within works differently than the code below it, marked as executing at
 runtime. Specifically, what the executed portion refers to is the actual code that will be called and executed
-during the course of the program's runtime. If the functions were not called in this portion, they would still be read and stored, but their body's would not executed during this phase.
+during the course of the program's runtime. If the functions were not called in this portion, they would still be read and stored in memory, but their body's would not be executed during this phase.
 
-With all of that said, the code at the bottom is the code ran at run time, and the functions are
-actually stored in memory. When the program runs and it sees a function call like sayHello(), it
+When the program runs and it sees a function call like sayHello(), it
 looks up if it has a reference to such a function, and if it does, it will run that code associated
-with that function. This also means that nothing executes when the program first reads
-the functions into its memory. This helps enormously. You can really put as much code as you want
+with that function. This helps enormously. You can really put as much code as you want
 in the functions, and then call them on a single line. This makes understanding a large code base
 manageable. The function calls could be anything, `startRobot()`, `generateDungeonBoss()`,
 `findAllSchrodingersCats()`, and `simulateLivingOrganism()` are examples. There is no telling how
-large or small any of these functions could be, but I feel I can tell you something about their
+large or small any of these functions could be, but I feel I could tell you something about their
 purpose just from their names.
 
 If you consistently use names that are as descriptive as possible, your code can almost read like a story.
 Giving yourself as many advantages as you can for reading code again in the future will pay yourself back
 many times over for actively maintained code. One of the realities with coding, and really with writing in
-general, is that we will read far more than we could ever possibly write. This even includes our own code.
+general, is that we will read far more than we could ever possibly write.
 In general, glancing over and reading something quickly is something we do almost mindlessly. Writing
 generally takes much more time due to physical limitations, and the process of juggling ideas.
 
@@ -89,7 +87,7 @@ generally takes much more time due to physical limitations, and the process of j
 
 Functions can accomplish quite a bit. One great thing they can do is accept arguments. Arguments
 are actual values passed into a function. A function can define a parameter that it expects as
-input when the function is called, this is the argument provided.
+input when the function is called, and this is considered the argument provided.
 
 ```ts
 function addNumbers(a: number, b: number): number {
@@ -108,9 +106,9 @@ involved in a program or library that uses many mathematical equations. It may b
 in those circumstances as well, so these could be good use cases. Most times though, you want to
 use descriptive names. In this case using `number1` or `first` may seem redundant or not help much.
 In general, I would try to avoid names with numbers like `number1`, due to the numbers possibly
-being confused as numbers. In some cases the `1` may resemble the letter "l" very closely.
+being confused as letters. In some cases the `1` may resemble the letter "l" very closely.
 
-So with the 2 and the 3 passed into add numbers the function will look like this when it runs:
+So here, with 2 and 3 passed into `addnumbers()`, the function will look like this when it runs:
 
 ```ts
 function addNumbers(2, 3): number {
@@ -162,13 +160,25 @@ with as many different kinds of plans we could come up with, so long as the plan
 same sets of basic rules, and interact with `createRobot()` almost the same way. That last part is
 hard to phrase because this leads you into conditions where you would like additional things, but
 also need to allow for the original things to work the way they were, or gain something from a new
-addition. This feels okay at times to stretch out the responsibility of a function to accommodate more use
+addition. This feels okay at times to stretch out the responsibility of a function to accommodate for more use
 cases, but it starts getting tricky when the functions have to share a large amount of unrelated logic to
 all the other use cases in order to keep working. A sign of this can be having large parameters for
-functions, usually three or more. You can pass objects as parameters which kind of stretches the amount
+functions, usually three or more. You can pass objects as parameters which sort of stretches the amount
 rule, but it would be something like `robotInformation` in the code above, so conceptually we would
 see it as one related entity. The trouble comes from trying to track too many moving parts that can
 seem independent of each other.
+
+Here, the `robotInformation` object may be used in createRobot before or after the `plansForRobot()` function.
+It may be things as simple as the name, size, color, and such. The waters would start to become
+muddied if you were to include things like model number, number of attachable parts, spare parts, power
+consumption, alternate settings, and other things such as this, as they may be more related to the type of robot
+that we were constructing. Properties such as these may be strange to pass through if one type did not expect to
+use this information, or worse, cause our construction to fail if a property were left out but was still
+attempted to be accessed. If the objects were expected to hold more complex data like this, it may be better
+to pass the `robotInformation` directly to the `plansForRobot()` function as a parameter, and specify the
+specific type of `robotInformation` object to be passed as an argument. If this approach were taken, a warning
+or error could be displayed early, indicating the wrong type was passed through, or default parameters could be
+added based on a check included in the logic to ensure that the program does not crash unexpectedly.
 
 Overall, the main goal of all of this is to abstract information from the main flow of our program
 so that we can visualize it from a higher level. There could easily be thousands of functions in a
@@ -179,10 +189,12 @@ to fix something.
 
 ## Classes
 
-Classes are another mental construct we use to organize logic. Using classes is related to a design
-pattern called object oriented programming. Above when we demonstrated the callback, this was leaning
-more towards functional programming design wise. Classes could be passed functions as well, and
-these are just simplified examples, but classes have another layer to differentiate their functions.
+Classes are another mental construct we use to organize logic. Using classes is related to a paradigm
+called Object Oriented Programming (OOP). Above when we demonstrated the callback, this was leaning
+more towards functional programming design wise. Classes could be passed functions as well, though typically
+this is done through passing different types of objects that adhere to a particular interface, a process referred
+to as dependency injection. We will touch on this later, but classes have a different approach to passing around
+functions that they anticipate to be used in their logic.
 
 ```ts
 // Create Cat Class
