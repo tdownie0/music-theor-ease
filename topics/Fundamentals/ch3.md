@@ -326,16 +326,17 @@ a bit of the behavior of classes can be mimicked this way as well. The functiona
 you could call a function to help set up the object, and return the object as the result.
 
 ```js
-function createPerson(name) {
-  let _name = name; // Private variable
+function createPerson(name: string) {
+  let _name: string = name; // Private variable
 
   return {
+    _name, // Now _name is a public property
+    // Public method
     getName: function () {
-      // Public method
       return _name;
     },
-    setName: function (newName) {
-      // Public method
+    // Public method
+    setName: function (newName: string) {
       _name = newName;
     },
     scopedVariable: function () {
@@ -350,9 +351,10 @@ function createPerson(name) {
 }
 
 const person = createPerson("John");
-console.log(person.getName()); // Accessing private variable
-person.setName("Alice"); // Modifying private variable
-console.log(person.getName()); // Accessing modified private variable
+console.log(person.getName()); // John
+console.log(person._name); // John, accessible despite private convention
+person.setName("Alice"); // Alice
+console.log(person.getName()); // Alice
 
 console.log(person.scopedVariable()); // Inside scopedVariable
 console.log(person.tryToAccessScopedVariable()); // Uncaught ReferenceError: within is not defined
@@ -366,29 +368,33 @@ a parent and child setup.
 
 I think this example illustrates something interesting. You can see `createPerson()` has a private variable
 named `_name`. The underscore is a convention, indicating to other developers that it is intended to be
-private. The location of the variable is important though. We see the setName key of the object has
+private. This is due to us no longer having access modifiers with this setup like we did with classes.
+The location of the variable is important. We see the setName key of the object has
 a function that has a parameter of `newName`. In it are the contents `_name = newName;`, which takes
-the argument provided for newName, and assigns it to `_name`. Even though `_name` declared outside
+the argument provided for `newName`, and assigns it to `_name`. Even though `_name` is declared outside
 of the object, the object can assign a value directly to it due to the object being in the function's
-scope. This makes the variable not truly private, but if these functions did not exist `_name` would be
-reasonably named for convention. This also demonstrates that functional programming may have less
-influence on accessibility restrictions according to its paradigm. If these methods existed on a
-similarly structured class, the variable would still be modifiable as well. The difference would be
-being able to truly put the access modifiers on the functions, like `protected` or `private`. This
-would indeed make modifying the variable outside of the class or child relationships restricted.
+scope. We can see the variable does not remain truly private due to it being passed as a property to the object
+that we are returning. Typically you would not want to do this in this circumstance, instead leaving the
+functions to be the only way to retrieve the private variable if desired. If we did not pass the variable
+as a property to the object, `_name` would be reasonably named by convention. This also demonstrates that
+functional programming may have less influence on accessibility restrictions according to its paradigm.
+If these methods existed on a similarly structured class, the variable would still be modifiable as well. The
+difference would be in being able to truly put the access modifiers on the functions and variables, like
+`protected` or `private`. This would indeed make accessing the variable directly from outside of the class or
+child relationships restricted.
 
-Another factor is the placement of the variable can determine where it can be used within
-the function. In our case, you can see the third function in the object held in the `scopedVariable` key.
-Currently, the placement of the variable within makes it inaccessible to calling functions or other
-functions at the same scope level. This is due to it belonging to the `scopedVariable` scope. No where
-outside of this can assign or mutate the variable with another value. The function would have to provide us with a function within it in order to access the variable. Otherwise, we could pass it as an argument
+Another factor is the placement of the variable, which can determine where it can be used within
+the function. In our case, you can see the third function within the object being held in the `scopedVariable`
+key. Currently, the placement of the variable `within` makes it inaccessible for reference with calls to the
+function or other functions at the same scope level. This is due to it belonging to the `scopedVariable` scope.
+No where outside of this can assign or mutate the variable with another value. The function would have to provide us with a function within it in order to access the variable. Otherwise, we could pass it as an argument
 as we did with newName, and keep track of it in the original function that supplied the object.
 
 The logic contained in a function like this is commonly referred to as a closure. Closures can be seen
 as the current functions that have their values being interacted with, but are currently no longer
 executing. Here, the `_name` variable can still be manipulated even though the function is not currently
 executing. This can be seen as the state of the closure, changing whenever the value of `_name` should
-change. I want to specify that a function may still be running why another piece of logic manipulates
+change. I want to specify that a function may still be running while another piece of logic manipulates
 its values, but it may be in a suspended state or going through iterations of logic.
 
 ## Benefits of Both
