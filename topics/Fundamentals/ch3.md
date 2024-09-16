@@ -402,70 +402,70 @@ its values, but it may be in a suspended state or going through iterations of lo
 This was a pretty high level overview of some abstract concepts like object oriented programming,
 and functional programming. You are free to use whichever style suits your needs. Being able to
 expose you to the core structure of both seems like it will really pay off in the future. Becoming
-a master in either discipline is something to truly admire. You do not have to be a master to use
-either of them though. Having the understanding of how to approach problems with this somewhat
+a master in either discipline is something to truly admire, but you do not have to be a master to use
+either of them. Having the understanding of how to approach problems with this somewhat
 subtle design decision will help you look at problems differently. Knowing how to approach
 something from multiple perspectives really helps with anticipating future needs, finding
-limitations, and really being able to justify the purpose and intent of the code.
+limitations, and really being able to justify the purpose and intent of the code you write or work on.
 
 This last point could be emphasized with a strategy from security, and that is the principle of least
 responsibility. According to this philosophy, you should not give anything in your system access
-to something that it does not have a need for, or should not be able to access. With classes,
+to something that it does not have a need for, or should not be able to access. With classes
 it is recommended to make everything private by default, and only move down to protected and
 public when necessary.
 
-Following this practice may not seem to make a big difference in this case. Coming up with a
-scenario that has tens or even hundreds of classes, you could begin seeing how limiting how
-much certain classes can talk to each other may be beneficial. This could be as simple as having
-a similarly named or same name variable, but knowing it is specific to the class you are looking at.
-We can go over some high level overall general recommendations for both methodologies, but
-really just start to see how ideas are constructed in programming. A common pattern is that we
-try to decompose logic (or chunk logic) into individual silos. This helps us reason with
-what actions are actually occurring, and what we need to be aware of.
+Following this practice may not seem to make a big difference in our specific case. Upon examining a
+scenario that has tens or even hundreds of classes, you could begin seeing how limiting the extent
+to which certain classes could talk to each other may be beneficial. This could be as simple as having
+a similarly named or identically named variable, but knowing it is specific to the class you are looking at.
+We could go over more high level general recommendations for both methodologies, but really it is more
+important to start observing how these ideas are constructed and used throughout programming. A common
+pattern is that programmers try to decompose logic (or chunk logic) into individual silos. This helps us reason
+with what actions are actually occurring, and what we need to be aware of.
 
 ## Breaking Down the Bigger Tasks
 
 A fair example of this is gathering input from a user, such as their email. This code is
 broken into multiple separate processes that can sometimes pass off to each other like a baton
 for runners in a marathon. First there is the presentation, which is the front end, showing the
-field to enter the email. When it is submitted the middleware will kick in before the information
-is submitted to the backend (which is responsible for saving data and sending out calls to other
-related parts of that system). This includes checking that the email looks like an email, called
-validation, and checking wherever this field was accessed from, that the current user
-(or possibly guest) had permission to be on that page, and perform that action. That last part
+field to enter the email. When it is submitted, the middleware will kick in before the information
+is passed along to the backend (which is responsible for saving data and sending out calls to other
+related parts of that system). This includes checking that the email looks like an email (referred to as
+validation) and checking that for wherever this field was accessed from, the current user
+(or possibly guest) had permission to be on that page, and perform this specific action. This last part
 is called authorization.
 
 So we already have three steps, front end, validation, and authorization. Each of these steps can be
 handled by their own functions. Validation is interesting because you can check different things on the
-front end before going to the backend where the middleware lives, but also do more secure checks on the
-actual backend. This leads to some of the logic being interwoven, but you will see there are many
-strategies to split logic across files, or have nicely structured functions/methods, leading to
+front end before going to middleware that lives closer to the backend, but can do more secure checks on the
+data passed through. This leads to some of the logic being interwoven, but you will see there are many
+strategies to split up logic across files, or have nicely structured functions/methods, leading to
 understandable code.
 
-We may lightly touch on the backend a bit, using databases and caching to save data. The goal of
+We may lightly touch on the backend a bit, which includes using databases and caching to save data. The goal of
 the backend is to be able to setup data for retrieval and updating, or firing off tasks behind the
 scenes, such as sending welcome emails, writing logs for errors, or changing the state of an
 overall program. There is quite a bit of automation that comes with programming, so you can have
 some intricate backend tasks accomplished on a time schedule you specify. The possibilities are
-really endless, but they could prune the databases if there was stale data detected, periodically
+really endless, but these tasks could prune the databases if there was stale data detected, periodically
 check if there are unauthorized users in the system, or fire off a warning if a certain threshold
 is met in a specified time window. All networking is considered as part of the backend as well.
 
-After mentioning all of that, I assume you can start imagine all of these individual tasks will
-take their own functions and setups to handle properly as well. Software developers often test
-all of these functions as well, making sure that their output is the desired result. The nice thing
-about having tests for your code is that it is easier to improve on it later without worrying that
+After mentioning all of that, I assume you can start to imagine all of these individual tasks will
+take their own functions and setups to be handled properly as well. Software developers will additionally often
+test all of these functions, making sure that their outputs are the desired results. The nice thing
+about having tests for your code is that it is easier to improve later on without having to worry about if
 you may have broken some of its functionality. Tests can help you catch bugs any time you make
 changes to your code base, and can serve as documentation for the code as well. It is sometimes
 easier to figure out how to implement a complicated process from a test that had to recreate the
-same setup to accomplish the same goal.
+same setup in order to facilitate that process.
 
 The reason I bring up tests is that they actually influence a big part of your design decisions
 when implementing something in your code. Structuring your code into smaller units of logic helps
 you test specific elements of your logic, instead of having to wait for the final result to check
 something. Coming up with quality tests is a valuable skill, and takes some refinement to get a
-decent grasp on. Recreating the proper state to test things can be a difficult task to tackle at
-first, involving creating multiple entities to test something.
+decent grasp on. Recreating the proper state to test things can be a difficult task to tackle, often
+involving creating multiple entities to test something specifically.
 
 Let's say you were going to check a post feature on a website. Ideally you would be able to create a new
 user in that test, give them the appropriate credentials to access the post functionality, whether that is
@@ -481,7 +481,7 @@ your actual database so that data is not created or destroyed unintentionally.
 
 You can see there is quite a bit to do for even seemingly straightforward tasks. The really
 nice thing about functions is that if you design your code in an intelligent manner, you
-can actually re-use quite a bit of your logic, so you do not have to repeat yourself in areas
+can actually re-use quite a bit of your logic so you do not have to repeat yourself in areas
 that are slightly different from each other. This encourages you to make functions and code that
 focuses on specific subtasks, and allows for them to slightly adapt and create boundaries.
 With these intentions, your functions will naturally develop to consider what is allowed and
