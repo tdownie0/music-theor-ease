@@ -15,8 +15,8 @@ Since loops were mentioned first, let us start there. A loop is a specific const
 that allows for the execution of a portion of code multiple times. Each time a section of code
 is operated on, it is said to have been iterated over. This process occurs as many times as
 the code specifies. To end a loop, usually a condition is met so that the loop knows that it is
-done executing its task. We will look at the first condition along with a loop, being the `if`
-condition. An `if` condition would be something like stopping at three if I said count to three.
+done iterating over its section of code. We will look at our first condition along with a loop, being the
+`if` condition. An `if` condition would be something like stopping at three if I said count to three.
 
 ```ts
 let counter: number = 0;
@@ -63,36 +63,36 @@ while (counter < 3) {
 > by itself multiple times. You then will close the entire comment portion with a closing `*/`.
 
 This will be the first loop we examine. You see right at the beginning it has `while (counter < 3)`,
-and this states the condition that it checks until it is met, stopping its execution. I hope
+and this states the condition that it checks until it is met, then stopping its execution. I hope
 the `counter < 3` part is familiar, but incase it is not that is checking whether the current
-value of counter is less than the number three. I'm sure many of you have see the equivalence
-operators such as this or greater than, and we will list all of them later in this section. They
-work the same in that subject as they do here, but are usually seen as returning a true or false
-condition as with the "boolean" type each time it is evaluated. This loop would also work if
-if it was initially set to true, and then set to false upon reaching the value of 3.
+value of counter is less than the number three. I'm sure many of you have seen the equivalence
+operators such as this or greater than in mathematics, and we will list all of them later in this section. They
+work the same in that subject as they do here, but are usually seen as returning a `true` or `false`
+condition ("boolean" type) each time they are evaluated. This loop would also work if
+it was initially set to `true`, and then set to `false` upon reaching the value of 3.
 
 Within the body of the loop, which is encapsulated by the `{}`, we first have the operation of
-counter++. As stated in the comments above, this is actually a shorthand for the operation of
+`counter++`. As stated in the comments above, this is actually a shorthand for the operation of
 `counter = counter + 1`, which takes the counter variable, adds one to it, and assigns that value to
 the counter value. Another shorthand is the `counter += 1`. This also does the same exact operation
 as `counter = counter + 1`. This behavior is exhibited in several programming languages. The same
 typically goes for subtraction, multiplication, division, and modulo operations. Once
 the value is incremented by one, the value is then printed to the screen giving us `1`.
 
-Like outlined in the comments above, once the program hits the end of the loop, it will go check
-the initial condition, and see if it is met. This repeats until the condition is met. You must
-be careful when defining the condition, due to being able to make the program stay in a loop
-infinitely if the conditions are never met. An easy way for this to occur is to forget to increment
+Like outlined in the comments above, once the program hits the end of the loop, it will check
+the initial condition, and see if it is met. This repeats until the condition is finally met. You must
+be careful when defining this condition, due to the possibility of being able to make the program stay in an
+infinite loop if the condition is never met. An easy way for this to occur is to forget to increment
 the counter variable in this case, and then it would forever have the value of 0. Due to this, the
 loop would run until the program was forcibly terminated by the user.
 
 It is fairly common to see a loop compared against some kind of number threshold in order to
-figure out how long it should execute. These tasks tend to involve doing the operation for the
-length of the object passed, until the end of the length of a string, or until a number is met.
+figure out how long it should execute. These tasks tend to involve doing operations equal to the
+length of the object (or objects) passed, the length of a string, or until a number or state is met.
 They could also just as easily search for something specific, and once it is found set a "flag"
-to turn value from `true` to `false` (or vice versa).
+to turn the value from `true` to `false` (or vice versa).
 
-Another structure for the loop that is very common is the for loop:
+Another structure of loop that is very common is the for loop:
 
 ```ts
 for (let countdown: number = 5; countdown > 0; countdown--) {
@@ -112,11 +112,11 @@ console.log("Blast Off!");
 ```
 
 You can see in this example we actually count down (`countdown--`), using 0 as the condition for when we
-will terminate our loop. The structure may feel very different since the parenthesis are actually
-accepting three conditions instead of one. First you define a variable to use in a for loop,
-then you define the condition to run until, and last you define something to happen at the end
-of each loop (usually manipulating the variable you created). Here would be the same result as a
-while loop:
+will terminate our loop. This structure may feel very different since the parenthesis are actually
+accepting three separate conditions instead of one. First you define a variable to use in the for loop,
+then you define the condition to run until, and last you define something that happens at the end
+of each iteration of the loop (usually manipulating the variable you created). Here would be the same
+result instead as a while loop:
 
 ```ts
 let countdown: number = 5;
