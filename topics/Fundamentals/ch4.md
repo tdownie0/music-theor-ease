@@ -340,11 +340,9 @@ This approach may be useful when you have multiple `else if` portions of your co
 but the `else if` seems to take more to process mentally than the return. With the `else if` you
 could have other `if` conditions inside, which would make tracking the other conditions dependent
 on the `else if` more difficult. Returns are nice in the sense that we know the function is done,
-and we do not have to look at any further logic when looking into a specific condition. You will also
-note that the last statement in a function for Javascript has an implicit return. This means that
-the return will be assumed if it is the last line of the function. Some other languages exhibit
-this behavior as well, but it should be looked into before being assumed. Another approach
-would be the `switch` statement.
+and we do not have to look at any further logic when looking into a specific condition. Here we did not
+need a final `return` statement due to the fact that `console.log()` prints to the screen regardless of a
+return statement. If a `return` is not specified in a regular JS function, then the implicit return will be `undefined`. Another approach we could take would be the `switch` statement.
 
 ```js
 let color = "orange";
