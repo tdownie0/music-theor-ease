@@ -218,8 +218,9 @@ type and a string type will return false for the condition evaluation.
 |             &&             | Logical AND |
 |            \|\|            | Logical OR  |
 
-One additional thing to all these types is that there are two types that allow logical chaining.
-These would be `&&` (AND), as well as `||` (OR). You can see their use below:
+One additional thing to all these equivalence operators is that there are two other operators
+that allow logical chaining. These would be `&&` (AND), as well as `||` (OR). You can see example
+uses below:
 
 ```ts
 // And
@@ -273,14 +274,14 @@ if (passToSubmit(userAge, userRegion)) {
 ```
 
 In this structure you see that we can decompose our logic into separate functions, and then pass it
-in a single area packaged together. This helps you define each piece of logic through the function
+into a single area packaged together. This helps us define each piece of logic through the function
 names, and break down complicated expressions into simpler ones. You may have also noticed that I
-used the key words `if` and `else`, which check conditions. These influence the execution flow of a
+used the keywords `if` and `else`, which check conditions. These influence the execution flow of a
 program, which we will be getting into next.
 
 ## Execution Flow
 
-There are a few key words languages that dictate which line of code will be executed, and they
+There are a few keywords that languages use to dictate which lines of code will be executed, and they
 all include evaluating against conditions. Below is a table of those keywords.
 
 | Execution Flow |
@@ -290,12 +291,13 @@ all include evaluating against conditions. Below is a table of those keywords.
 | else           |
 | switch         |
 
-We saw the usage of `if` and `else` in the above example. The way it works may be the way that you
+We saw the usage of `if` and `else` in the example above. The way they work may be how you
 already suspect. When the `if` has its conditions met in the parenthesis next to it, that section
 of the code (the area within the `{}` after the `()`) will be entered and executed. Otherwise, the `else`
-portion of the code will be entered and executed. With those two out of the way, now enters the
-`else if` condition. This is an in between state between the `if` and the `else`, allowing for
-more opportunities to catch specific `if` statements.
+portion of the code will be entered and executed. Only one of these condition's code sections (also
+referred to as code blocks) will be entered when used in a sequence together. In addition to both of
+these there is also a third possibility, the `else if` condition. This is an in between state between the `if`
+and the `else`, allowing for more opportunities to catch conditional `if` statements.
 
 ```ts
 if (color === "red") {
