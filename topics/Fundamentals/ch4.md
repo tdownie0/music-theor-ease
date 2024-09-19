@@ -130,15 +130,15 @@ console.log("Blast Off!");
 ```
 
 With it laid out like this, you can see that this approach is a bit more verbose. This takes six
-lines to write instead of four. Now, that's not a huge loss, but extra code lines like this can add
+lines to write instead of four. Now, that's not a huge loss, but extra lines of code like this can add
 up overtime. This could also be a style preference, but we will see later that `for` can actually
-behave in more ways than just this. I would say this is the classic structure of `for` loops, so
+behave in more ways than just this. Still, I would say this is the classic structure of `for` loops, so
 you will see this across many languages. Other structures for the `for` loop will be dependent
 on the language you have at hand.
 
 ## Comparisons and Equivalence Operators
 
-So hopefully this has cemented the purpose of loops `for` you. Being able to iterate over a chunk
+So hopefully this has cemented your understanding of the purpose of loops. Being able to iterate over a chunk
 of logic is a very common need in programming. You have also seen that these structures are heavily
 reliant on equivalence operators, so let's lay out some of those.
 
@@ -154,24 +154,24 @@ reliant on equivalence operators, so let's lay out some of those.
 |          !=           |  Loose Not Equals (TS/JS)  |
 |          !==          | Strict Not Equals (TS/JS)  |
 
-I want to mention that the `==` and `===` are used in some languages, and specifically for us,
-in TypeScript/Javascript. Originally, in C, `==` was the equivalence operator to check if one value
+I want to mention that the `===` and `!==` are only used in some languages, and specifically for us,
+in TypeScript/Javascript. Originally in C, `==` was the equivalence operator to check if one value
 was equal to another, since the assignment `=` is already in use. The introduction of the triple
-equals is that some languages now allow you to compare other types to each other that may be related.
-An example would be the string `"5"` and the number `5`. With the `==` you would get a `true` value when
-comparing the two. If you did this with the `===`, instead you would receive `false`, since they
-are not the same type. This is the difference between "loose" and "strict".
+equals came from the fact that some languages allow you to compare other types to each other that may in a
+way be related. An example would be the string `"5"` and the number `5`. With the `==` you would get a `true`
+value when comparing the two. If you did this with the `===`, instead you would receive `false`, since they
+are not the same type. This is the difference between "loose" and "strict" equivalence.
 
 For "loose" equivalence, the comparison is done through a process known as coercion. This process
 involves attempting to convert one or both of the values to a different type and seeing if
 they share the same value in that case. Languages that use looser type equivalences will tend to
-have this feature. This can cause unexpected errors if only a certain type is necessary, but it can
+have this feature. This can cause unexpected errors if only a certain type is expected, but it can
 also make situations like the number example above easier to handle. It would not be ideal for a
 program to fail due to having a string representation of an age versus a number, unless you intended
 for it to.
 
 Other than these conditions, the other operators that are left may be familiar from mathematics. As
-stated, these comparisons are seen as "boolean" values by the computer when checking.
+previously stated, these comparisons are seen as "boolean" values by the computer when evaluating.
 
 ```js
 // Greater Than
@@ -179,7 +179,7 @@ console.log(5 > 4); // true
 console.log(5 > 5); // false
 
 // Greater Than or Equals
-console.log(5 >= 4); // false
+console.log(5 >= 4); // true
 console.log(5 >= 5); // true
 
 // Less Than
@@ -207,8 +207,9 @@ console.log(4 !== "4"); // true
 ```
 
 These are some examples of using the comparisons. I point out the slight difference provided by the
-"equals" case, which is if the same number is provided, true will be returned. In the case it is
-not specified, the same number will return false for the condition evaluation.
+"loose" and "strict" equivalence case. If the same number is provided as a number type and a string, true will be
+returned for "loose" equivalence. In the case where "strict" is used, the same number comparison as a number
+type and a string type will return false for the condition evaluation.
 
 ## Logical Chaining
 
