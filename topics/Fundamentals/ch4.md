@@ -366,12 +366,12 @@ switch (color) {
 ```
 
 After seeing this I'm sure you can see a similarity in the structure. It does introduce another
-key word in languages, `break`, which exits the current scope that the program is running in. We
-will go over scope in more detail later. For now, know that the scope relates to the memory that
+keyword used across languages, `break`, which exits the current scope that the program is running in. We
+will go over scope in more detail shortly. For now, know that the scope relates to the memory that
 is able to be accessed within a section of code (enclosed in `{}`). This `break` key word can also
 be used to leave a loop prematurely, without meeting its base condition.
 
-Now that you have seen all of these, I will sure you another interesting use of an object
+Now that you have seen all of these, we can observe another interesting use of an object
 for situations similar to this.
 
 ```js
@@ -391,13 +391,13 @@ if (colorAnswers[color]) {
 }
 ```
 
-Positioning the logic this way, you see that the object could also retrieve different states
-if needed. The input could be check if it exists in the `if` condition, then have a default
-message in the else. This is a good option to keep in mind when weighing out your options. In
-the past this method may have been seen as wasteful, as it cost much more memory to build an object
-than to check against execution flow conditions. Currently with how code is compiled and optimized,
-some of these factors do not have to be as much of a concern. That and computers will typically have
-more memory than needed on modern systems.
+Laying out the logic this way, we see that an object could also be used to retrieve different states
+if needed. The input could be used to check if it exists in the object (here the `if` condition), then have a
+default message in the `else`. This setup is good to keep in mind when weighing out your options. In
+the past this choice may have been seen as wasteful, as it cost much more memory to build an object
+than to check against execution flow conditions. With that said, due to how code is currently compiled and
+optimized, some of these factors do not have to be as much of a concern. That and computers today will typically
+have more than enough memory needed on modern systems.
 
 The "Ternary Operator" is another style of condition check that has been around for
 quite some time, so you will see it often. Here is an example:
@@ -411,10 +411,10 @@ lightColor === "green" ? console.log("Proceed") : console.log("No Entry");
 ```
 
 As mentioned in the comment above, `"Proceed"` will be printed here. At the beginning of the ternary
-operator is the condition to check, `name === "green"`. If it is true, the code directly after
-the question mark is executed. If not, the code after the colon (`:`), is executed. This offers
+operator is the condition to check, `lightColor === "green"`. If it is true, the code directly after
+the question mark (`?`) is executed. If not, the code after the colon (`:`) is executed. This offers
 a convenient shorthand at times, but be careful not let the code become unreadable. It is
-often harder to write code where programmers put ternary operators in ternary operators.
+often harder to read code where programmers put ternary operators in ternary operators.
 
 ```ts
 const lightColor: string = "green";
@@ -429,15 +429,15 @@ lightColor === "green"
 ```
 
 Here, the code formatter placed this in a structure that is more readable, leaving the indentation
-to indicate to us the current level the comparison is at. I believe you may still agree with me
-that this code is much harder to reason with with the one nested condition. Using indentation
+to indicate to us the current level the comparison is at. I believe we may still agree
+that this code is much harder to reason with as compared to the one nested condition. Using indentation
 to group sections of code together has been something that has gradually worked its way into best
 practice. Older languages were not affected by indentation levels as much, using semicolons to
 designate the end of lines. While this is easy for the computer, you could end up declaring several
 things on a single line, taking much more time to read for a human. Languages like Python actually
 made indentation a necessary part of its language, making code that is directly next to other code
-and at the same indentation level considered to be in the same code block (Typically between `{}`,
-but it does not have to be, as with Python).
+and at the same indentation level considered to be in the same code block (typically between `{}`,
+but it does not have to be with Python).
 
 ## Scope
 
