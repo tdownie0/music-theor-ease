@@ -471,7 +471,7 @@ as a const. The difference is that each has their own scope, so none of the vari
 each other, or can access the others. Their respective functions return their values, but that is as
 far as we can interact with them. We see the curly brackets (`{}`) typically separate scopes, but
 the main body that runs the JS program could be thought of being wrapped in this as well, containing
-its scope's boundaries. We also see in his example that the order of the functions is switched from
+its own scope's boundaries. We also see in his example that the order of the functions is switched from
 their creation, to prove that the time they were created is not influencing this, and the variable is
 not being reassigned.
 
@@ -501,8 +501,8 @@ console.log(mainCannotReach); // Uncaught ReferenceError: mainCannotReach is not
 
 As you can see, both functions are able to print the correct values through `console.log()` whether
 there was a parameter passed or not. At the end we also see that the main body of the program
-cannot access variables within functions that it contains. Javascript is actually a different
-from many other languages with regards to being able to define a variables scope type along with
+cannot access variables within functions that it contains. Javascript is actually a bit different
+from many other languages with regards to being able to define a variable's scope type along with
 assigning it. Most programming languages behave much like `const` and `let` do, as used in most
 of our examples. They can be referred to as block scoped (within the `{}`). Javascript has another
 scope type as well, `var`.
@@ -531,10 +531,9 @@ console.log(test1); // ReferenceError: test1 is not defined (var is function-sco
 
 Here we see the uniqueness of `var`. It is accessible from outside of code blocks related to
 conditional statements such as `if`, as well as loops. When used inside of a function, `var` is
-accessible to that specific function. No nested functions will have access to this `var`, nor will
-other functions have access to theirs. If we were to try to `console.log(test1)` after the
-`exampleScopeDifference()`, it would also return `ReferenceError: test1 is not defined`. In this
-example we also see that `var` is reassignable just like `let`.
+accessible to that specific function, and other scopes within that function. If we were to try to
+`console.log(test1)` after the `exampleScopeDifference()`, it would also return
+`ReferenceError: test1 is not defined`. In this example we also see that `var` is reassignable just like `let`.
 
 Other related behavior would be that if the `var` variable is declared at the top level of a
 program, which is referred to as a global variable, it is actually added to the global object
@@ -542,24 +541,24 @@ that JS uses while executing. The other types `const` and `let` would also becom
 variables in this case, but they would not be added to the global object as with `var`. This
 can lead to naming conflicts and namespace pollution with `var` usage.
 
-Scope is a common consideration across all programming languages. It stands out in JS with closures,
-states within functions that are were called in the run time of the program. These were touched on
+Scope is a common consideration across all programming languages. It stands out in JS with closures
+(states within functions that were called in the runtime of the program). These were touched on
 in chapter three, but remember that the variables within the called functions have a so called
-lifetime over the course of the program. Everything is created from scratch initially as the computer
-starts reading a program, and then that memory is let go of when the program's run time is over. That
+"lifetime" over the course of the program. Everything is created from scratch initially as the computer
+starts reading a program, and then that memory is let go of when the program's runtime is over. That
 is true in these circumstances as well.
 
 ## Conclusion
 
 Being introduced to loops and conditions has now completed your formation of the basic
 underpinnings of programming. With this information, we will now be able to look at smaller
-programs and make sense of what is going on. Having several conditions through a piece of code
+programs and make sense of what is going on. Having several conditions within a piece of code
 can make analyzing it take much longer, and possibly increase the difficulty of the code. If
-there ever seem to be too many conditions flying around, decomposing logic into functions is
-always a helpful approach. Also looking at what information is truly necessary to determine something
-is a good exercise to go through.
+there ever seems to be too many conditions flying around, decomposing logic into functions is
+always a helpful approach. Also, analyzing what information is truly necessary to determine something
+in the code can be a good opportunity for refactoring.
 
-The next chapter will look at more interesting ways we can use looping behaviors. Javascript and
-some other languages have functions to use on arrays and objects in order to run a task on each
-individual value, or perform something over the entirety of the data. Now that we know how loops
+The next chapter will explore more interesting ways we can leverage looping behaviors. Javascript and
+some other languages have functions that can be used on arrays and objects in order to manipulate
+each individual value, or perform something over the entirety of the data. Now that we know how loops
 and conditions work, these functions will make much more sense.
