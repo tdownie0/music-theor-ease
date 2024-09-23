@@ -368,8 +368,9 @@ a parent and child setup.
 
 I think this example illustrates something interesting. You can see `createPerson()` has a private variable
 named `_name`. The underscore is a convention, indicating to other developers that it is intended to be
-private. This is due to us no longer having access modifiers with this setup like we did with classes.
-The location of the variable is important. We see the setName key of the object has
+private. This convention can be seen in other programming languages as well, but it is not enforced directly
+from the name of a variable. To properly enforce this we would need access modifiers like we had with classes.
+The location of the variable is important here. We see the setName key of the object has
 a function that has a parameter of `newName`. In it are the contents `_name = newName;`, which takes
 the argument provided for `newName`, and assigns it to `_name`. Even though `_name` is declared outside
 of the object, the object can assign a value directly to it due to the object being in the function's
