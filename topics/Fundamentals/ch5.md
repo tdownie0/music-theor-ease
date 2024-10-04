@@ -1,11 +1,11 @@
 ## Chapter 5: Functional Methods
 
-Since we are using a language like Javascript, we actually get some nice utility from our
-functions that deal with arrays and objects. The way we can interact with them almost seems
-more intuitive with real world examples. Normally, when we look at things we do not index their
-position and then retrieve the value. We typically grab what we are looking at, then decide what
-to do with it. Through functional methods, we will be able to make this interaction similar
-to handing your something directly.
+Since we are using a language like Javascript, we actually get some nice utility from built-in
+functions that deal with arrays and objects. The ways we can interact with them almost seems
+more intuitive with real world examples. Normally, when people look at things we do not index their
+position and then retrieve the value. We typically grab (mentally or physically) what we are looking at, then
+decide what to do with it. Through functional methods, we will be able to make this interaction similar
+to handing you something directly.
 
 ```ts
 const countDownNumbers: number[] = [5, 4, 3, 2, 1];
@@ -23,7 +23,7 @@ console.log("Blast Off!");
  */
 ```
 
-You may remember this same output from the last chapter. Here it is as a reminder:
+You may remember this same output from the last chapter. Here is the relevant code as a reminder:
 
 ```ts
 for (let countdown: number = 5; countdown > 0; countdown--) {
@@ -42,21 +42,21 @@ console.log("Blast Off!");
  */
 ```
 
-The structure of both of these is quite different, the first defining all the numbers, and the second
-going through a loop to generate them. In the first example, since all the countDownNumbers are
-defined, they still need to be looped over in order to be printed to the console. We see
-the line below `countDownNumbers.forEach((time) => console.log(time))` comes next. This statement
-calls a `.forEach()` method on the array we just defined, countDownNumbers. Javascript is
-constructed in a way that certain types have pre-existing functions and behaviors, such as arrays
-and objects. This method will go through each element of the array one by one, left from right. It
-actually does the same thing as the for loop you see in the second example, it just handles the incrementing,
-and in this case the indexing as well. In our second example we were just taking the value of 5
-directly, and subtracting from that. In the .forEach(), we are actually going through the array
-with the index internally (`countDownNumbers[0]`, `countDownNumbers[1]`,
-`countDownNumbers[2]`, ...). The index to access the elements is automatically incremented as
-mentioned. This is passed to us through a variable name that we define, in this case it was
-`time`. So the `time` variable represents each element of the array, being `countDownNumbers[]`
-with whichever increment it is currently at in the loop for the index.
+The structure of both of these is quite different, the first defining all the numbers as an array, and the second
+going through a loop to generate them. In the first example the countDownNumbers are
+defined, but still need to be looped over in order to be printed to the console. We see
+the line below the variable assignment, `countDownNumbers.forEach((time) => console.log(time))`. This statement
+calls a `.forEach()` method on the array we just defined, `countDownNumbers`. Javascript is
+constructed in such a way that certain types have pre-existing functions and behaviors, like arrays
+and objects. This particular method will go through each element of the array one by one, from left to right. It
+actually does the same thing as the for loop we see in the second example, it just handles the incrementing,
+and in this case the indexing as well. In our second example we were just taking a variable's value
+directly, and decrementing (subtracting from) it in each iteration of the loop. With the `.forEach()` function,
+we are actually going through the array with the value's index internally
+(`countDownNumbers[0]`, `countDownNumbers[1]`, `countDownNumbers[2]`, ...). The index to access the elements is
+automatically incremented as mentioned. The elements are passed to us through a variable name that we define, in
+this case `time`. So the `time` variable represents each element of the array, being `countDownNumbers[index]`
+with whichever value `index` is currently incremented to.
 
 This behavior is especially nice with objects as well. You may not know an object's keys
 beforehand, but functional methods let you interact with the keys and values, passing them
