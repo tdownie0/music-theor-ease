@@ -153,7 +153,7 @@ accessing it with the extracted key.
 
 If we were to do such a thing with purely OOP (Object Oriented Programming), we would have
 to create a `JobCategory` class that housed a job type, then have that class hold another class
-which would represent the `Job` class. Inside of this we could make methods to access the property
+which would represent the `Job`. Inside of this we could make methods to access the property
 for the pay. On top of these classes, we would need a `Jobs` class to hold all the jobs within their
 categories, much like the `jobs` object in the example above.
 
@@ -258,7 +258,7 @@ jobs.printAllJobPays();
 Even briefly looking at this, you can see it is much longer. This may indeed be overkill for our
 situation, but it is interesting to point out what differences this makes. Now we have error
 checking when we are directly defining or accessing values. The structure of the class object also
-seems to assure that the object will not change its structure as readily. Even if keys like
+seems to assure us that the object will not change its structure as readily. Even if property names like
 `pay` or `location` ended up changing, as long as their methods were updated internally, we would
 still be able to access their intended value through their respective methods, `getJobPay()` and
 `getJobLocation()`. This allows us to abstract the actual implementation from the end user. Reasons
@@ -274,9 +274,10 @@ to pass.
 
 There is actually something that can be improved in the class example that was provided above,
 considering this abstraction topic we were just discussing. Currently, both classes `Jobs` and
-`JobsCategory` access a property of the `Job` class directly. Neither of these classes should have to
-rely on the internal implementation of the `Job` class, such as its properties keys. If this were to
-change, we would have to change its usage everywhere it was implemented. Instead we could do this:
+`JobCategory` access properties of the `Job` class directly. Also, the `Jobs` class references the
+`jobs` object that belongs to `JobCategory` directly in `printAllJobs`. Neither of these classes should have to
+rely on the internal implementation of other classes, such as their property keys. If these were to
+change, we would have to change their usage everywhere they were implemented. Instead we could do this:
 
 ```js
 class Job {
@@ -303,6 +304,10 @@ class JobCategory {
 
   addJob(jobTitle, pay, location) {
     this.jobs[jobTitle] = new Job(pay, location);
+  }
+
+  getJobs() {
+    return this.jobs;
   }
 
   getJobPay(jobTitle) {
@@ -334,10 +339,9 @@ class Jobs {
   printAllJobPays() {
     for (const categoryName in this.categories) {
       const category = this.categories[categoryName];
-      for (const jobTitle in category.jobs) {
-        const job = category.jobs[jobTitle];
+      for (const jobTitle in category.getJobs()) {
         // Use getter instead of direct access
-        console.log(job.getPay());
+        console.log(category.getJobPay(jobTitle));
       }
     }
   }
@@ -363,9 +367,10 @@ jobs.printAllJobPays();
 
 Design like this can lead to better encapsulation of data overall. It separates concerns, and has
 the classes focus on what is their intended purpose. This does lead to more verbose code, but you
-will not have to update code that gets outdated due to changes in a child class that really should
-not concern other classes. It almost seems self defeating to split up your code and get this modularity,
-but then be bound to updating implementation details of several classes for one change in a child class.
+will not have to update code that gets outdated due to changes in another class that the class you are using
+utilizes. Updating property names and other changes like this should not concern classes outside of themselves.
+It almost seems self defeating to split up your code to get this modularity, but then be bound to updating
+implementation details of several classes for one change in another.
 
 ## More than forEach
 
