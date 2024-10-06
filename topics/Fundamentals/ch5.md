@@ -98,17 +98,17 @@ Object.values(jobs).forEach((category) => {
 
 With objects, we must first call the `Object` constructor function to delegate how we will
 manipulate the object at hand. Common calls to `Object` to extract values would be `Object.keys()`,
-`Object.values()`, and `Object.entries()`. The keys and values functions retrieve their respective
-items, and the entries function retrieves both at the same time. Once we use one of these methods,
+`Object.values()`, and `Object.entries()`. The `.keys()` and `.values()` functions retrieve their respective
+items, and the `.entries()` function retrieves both at the same time. Once we use one of these methods,
 we may operate on them just like we would any other loop.
 
-In this example you could see that we only need to have prior knowledge of the pay key existing.
+In this example you could see that we only need to have prior knowledge of the `pay` key existing.
 We do not need to know the key of the object representing the job position, or the key of the
 positions job category. The method `.values()` handles extracting the values of both for us. This
 allows for a great deal of flexibility when setting up data. These objects within objects can be
 as large as they are needed to be, and giving the data implicit meaning is much quicker in these
 circumstances. More modern languages have ways to loop over objects with for loops, and this would
-be an alternative in Javascript:
+be an alternative demonstration in Javascript:
 
 ```js
 const jobs = {
@@ -147,8 +147,8 @@ for (const key in jobs) {
  */
 ```
 
-Here we see that in order to access the object value, we must first use the for loop to extract
-the keys of the object. After, assign a variable to store the value of the object key by directly
+Here we see that in order to access the object values, we must first use the for loop to extract
+the keys of the object. After, a variable is assigned to store the value of the object key by directly
 accessing it with the extracted key.
 
 If we were to do such a thing with purely OOP (Object Oriented Programming), we would have
@@ -257,19 +257,19 @@ jobs.printAllJobPays();
 
 Even briefly looking at this, you can see it is much longer. This may indeed be overkill for our
 situation, but it is interesting to point out what differences this makes. Now we have error
-checking when we are directly defining or accessing values. The structure of the object also
+checking when we are directly defining or accessing values. The structure of the class object also
 seems to assure that the object will not change its structure as readily. Even if keys like
-`pay` or `location` ended up changing, as long as their methods were updated internally, you would
-still be able to access your intended value through their respective methods, `getJobPay()` and
+`pay` or `location` ended up changing, as long as their methods were updated internally, we would
+still be able to access their intended value through their respective methods, `getJobPay()` and
 `getJobLocation()`. This allows us to abstract the actual implementation from the end user. Reasons
 for this could include simplifying the interface for the user (not forcing them to know part of the
 internal workings in order to user it), and security (users in most circumstances do not need to know
 the implementation details). The concept of having a function that provides you the output
 you desire, but you do not have any information about its internal workings, is referred to as a
 "Black Box". It is a box that you do not have the access or the means to see inside of, but are free
-to use. This is a key role of abstraction, and really an essential part in making code usable and
+to use. This is a key role of abstraction, and really an essential part in making code reusable and
 readable. We could use a function that performs a ridiculously complicated math equation, or
-generates a response from an AI, and we just need to know what functions to call and what arguments
+generates a response from an AI, and we would just need to know what functions to call and what arguments
 to pass.
 
 There is actually something that can be improved in the class example that was provided above,
