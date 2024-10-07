@@ -605,7 +605,7 @@ blocks of all data manipulation. This is especially true for Javascript with the
 As always, it is up to you to decide if you would like to work with a more class oriented approach
 (OOP) or functional programming approach. Typically it is encouraged to use whichever paradigm is
 associated with the language. For Javascript, it is typically seen firstly as a functional programming
-language. It has the ability to use classes like Object Oriented Programming (OOP), but the innerworkings
+language. It has the ability to use classes like Object Oriented Programming (OOP), but the inner workings
 of the class implementation are actually done through Javascript prototypes. These prototypes are an
 internal property of objects used for inheritance, facilitating the functional programming philosophy.
 
