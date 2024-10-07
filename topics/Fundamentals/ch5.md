@@ -542,11 +542,9 @@ console.log(shallowCopy[1]); // 20, This updated correctly
 ```
 
 This is a very useful piece of information to hold onto, and reflects that Javascript is following the
-rules with regards to how memory references are passed around. I had found that I was aware of this
-behavior from C, but had not truly appreciated that this was occurring with the spread operator as well.
-If you forget about something like this, it may not immediately obvious that you are mutating your
-original data. This most likely is not what you would be intending if you were unaware of this.
-These comparisons really illustrate this.
+rules with regards to how memory references are passed around. If we forget about something like this, it may
+not be immediately obvious that the original data is being mutated. This most likely is not what would be
+intended if we were unaware of this. These comparisons illustrate the example further.
 
 ```js
 const original = [1, 2];
@@ -559,13 +557,13 @@ console.log(copyOfOriginal); // [10, 2]
 original = 2; // Uncaught TypeError: Assignment to constant variable.
 ```
 
-You may have been particularly keen and thought of this, but it seems this is a very common
+Some may have been particularly keen and thought of this, but it seems this is a very common
 misconception. We see the assignment of `const` to the variable `original`, which is the array
 `[1, 2]`. This variable does correctly behave as a `const`, as seen in the last line of the code
 snippet, not allowing itself to change its original value. We see that the array itself has its
 values manipulated though. Understanding the the value of the array is actually its memory
 address is the key in this puzzle. Since the original memory address is not changing, the value
-is indeed constant. Since we manipulate something in a memory address, all references reflect
+is indeed constant. Since we manipulated something in a memory address, all references reflect
 what is currently stored in this address.
 
 What we may have intended with all of this is to get an actual copy of what is stored at the memory
@@ -585,8 +583,8 @@ const test = deepCopy(jsonString);
 console.log(deepCopy(jsonString)); // {name: 'John', age: 30}
 ```
 
-This will work well for simple objects without functions or non-serializable values like `undefined`, but
-it doesn't work for objects containing functions or circular references. Using the JSON object we
+This will work well for simple objects without non-serializable values like `undefined`, but
+it does not work for objects containing functions or circular references. Here, using the JSON object we
 first turn the object into a JSON format using `.stringify()`. Afterwards, we `.parse()` this result
 to turn the JSON string back into a Javascript object. More accurate functions can be looked up
 through a Google search, or asking an LLM (Large Language Model) like ChatGPT. These sources are
@@ -613,7 +611,7 @@ internal property of objects used for inheritance, facilitating the functional p
 
 Staying with the a language's common design approaches typically makes it easier for others to assist
 in working on the code. Others may come to expect a certain structure of that language, making it
-easier to work on with a certain implementations approach from another due to the language naturally
+easier to work on with a certain implementation's approach from another due to the language naturally
 being centered around one or the other. In time, this also becomes useful in being able to distinguish
 one language from another more readily, recognizing the familiarity of structure. Usually, if you are
 working on a code base it is best to keep things as consistent as possible. Being adaptable will allow
