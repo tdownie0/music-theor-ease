@@ -8,24 +8,24 @@ your learning through practical applications, and giving you an experience of se
 more visually. Another added benefit is that most readers will have had experience with a web browser,
 and visiting websites online, so you may already have one installed.
 
-There also will be more related readings regarding some more topics related to programming, algorithms, and
-resources to find more information on particular topics. Initially, there will also be some setup
-to begin going through so that you can install a code editor, and all of the extensions that are needed
-to help you have a more professional setting (convenient as well). Several considerations come in to play
+There also will be more related readings regarding topics on programming, algorithms, and
+other resources to find more information on particular topics. Initially, there will be some setup
+to begin going through the material so that you can install a code editor. Extensions will also be suggested
+as well to facilitate a more professional setting (also convenient). Several considerations come in to play
 when setting up one's development environment, but being exposed to your options will play just as
-big a part being able to use it. Just like most programs, the more you dig into it, the more it can
+big a part as being able to use it. Just like most programs, the more you dig into it, the more it can
 do for you. In this case especially, that means saving large amounts of time by setting yourself up
-to help yourself.
+to have these benefits.
 
 Programming is a very broad topic, and almost all areas of study are affected by this. You could
 specialize in Data Science, Networking, Security, Web Development, Devops, Graphics, Games,
 Robotics, and Embedded Systems just to name a few. All of these topics each serve as an umbrella for
 vast amounts of subdomains in each domain respectively. If you have a solid grip on the fundamentals
-of programming and start recognizing these patterns, jumping to things like shell scripting can
+of programming and start recognizing patterns within each, jumping to things like shell scripting can
 start to almost be familiar without experience in that specific circumstance.
 
 > **Note:**
-> Granted, you may be new to the concept of things like flags in a command line such as,
+> For example, you may be new to the concept of things like flags in a command line such as,
 > `git commit -m "Hi!"`. Here the flag is `-m` indicating a message is going to be added. The logical
 > structure of the command is more apt to make sense to us though. Here the program is `git`, and the
 > git command (function) would be `commit`. Here the function `commit` is being told it will have
@@ -47,14 +47,58 @@ you incredible amounts of time in the future. Really, some of your career option
 limited if you do not understand the process of automating your tasks in order to get more things
 done on a daily basis.
 
-The theme of this message is really to see this as a constant learning experience. There will be many
-things that you learn that may not appear all that related at first, but you will inevitably recognize
+The theme of this message is really to see things as a constant learning experience. There will be many
+topics that you learn that may not appear all that related at first, but you will inevitably recognize
 a pattern somewhere due to these. Honestly, a surprising amount of coding can be improved by taking
 the time to write things in a thoughtful manner. Making sure readability is a primary concern will
 help everyone in the long run. If done properly, it could even serve as documentation on how things
-can be implemented, serving as learning material and being easily maintainable.
+can or should be implemented, serving as learning material and being easily maintainable.
 
 It is now your choice to jump into walking through the creation of a modern website, or going over
-related reading material. I would encourage possibly starting with the beginning of the website section
-to get a general feel and see what will be covered. This would make more sense than jumping
-into the advanced reading sections, unless you are already familiar with many of these topics.
+related reading material. I would encourage possibly starting with the beginning of the Website Setup section
+to get a general feel and see what will be covered. There you will introduced to languages that help facilitate
+making websites, settings up a programming environment, common tools, and other related readings pertaining to
+website creation. This would most likely make more sense than jumping into the advanced reading sections, unless
+you are already familiar with many of these topics.
+
+Below I will recommended courses, websites, and books to broaden your general programming knowledge. They will
+be given a general order to be studied so that the material feels applicable with
+the knowledge acquired by each. Some of the material will take serious time commitments, though you are free
+to browse through what they have to offer and study them in-depth when is appropriate, or when you have the
+time. At this point, you should have enough knowledge to follow through with the Website Setup, and possibly
+understand some of the code contained within the example site this learning is built around. With that said,
+brushing up on more topics can never hurt in adding to your knowledge base. Possibly if you feel overwhelmed by
+any particular portion, using these references may help you get back on course, or give you a chance to jump
+around to other topics. Being exposed to more ideas can sometimes shed light on others, or possibly other
+learning formats may be more beneficial to certain individuals. Good luck!
+
+> **Note:**
+> All of the material listed below is free, or should have corresponding free options associated with them.
+> For the edX courses, you have the option to pay money to receive a certificate of accomplishment, but the
+> material is the same regardless. Also, for the books I provide Amazon links just to show you the books being
+> referred to. You do not have to buy the books from this source, and some may have sites that are more
+> affiliated with the publications in specific.
+
+**Beginning Introductions:**
+
+| Category | Website | Title                                                               | Link                                                                                                                                                           | Notes                                                                                                    |
+| -------- | ------- | ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Course   | Wes Bos | Javascript30                                                        | [Javascript30](https://javascript30.com/)                                                                                                                      | Included in the Website Setup section as well. This also touches on HTML and CSS, focusing on Javascript |
+| Course   | edX     | CS50's Introduction to Computer Science                             | [CS50](https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science)                                                  | This is a well rounded course that exposes you to many concepts in computer science in general.          |
+| Course   | edX     | MITx: Introduction to Computer Science and Programming Using Python | [MIT CS Intro](https://www.edx.org/learn/computer-science/massachusetts-institute-of-technology-introduction-to-computer-science-and-programming-using-python) | This is also a well rounded course, but focuses on using Python and general algorithmic thinking.        |
+
+**Intermediate:**
+
+| Category             | Website          | Title                                                                                     | Link                                                                                                                                                    | Notes                                                                                                                                                                                                                                                                                                                                                          |
+| -------------------- | ---------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Course               | edX              | MITx: Introduction to Computational Thinking and Data Science                             | [MIT 6.00.2x](https://www.edx.org/learn/computer-science/massachusetts-institute-of-technology-introduction-to-computational-thinking-and-data-science) | Algorithms are explored in more depth with this course. At the time I did this course, which was right after the above MIT course, I only did the first half. The thinking gets much more difficult, but it is good to be exposed to these ideas if you can follow along.                                                                                      |
+| Web Course Catalogue | The Odin Project | Full Stack Web Development                                                                | [The Odin Project (TOP)](https://www.theodinproject.com/)                                                                                               | This is a well rounded and well structured web course. It focuses on multiple readings, and you are free to choose the sections that suit you. Personally when I used the site, I did the Foundations Course, as well as the Full Stack Ruby on Rails Course. The latter course may take considerable time to work through.                                    |
+| Course               | edX              | HarvardX: CS50's Web Programming with Python and JavaScript                               | [CS50 Web Programming](https://www.edx.org/learn/web-development/harvard-university-cs50-s-web-programming-with-python-and-javascript)                  | I personally only took a portion of this class, but it also tackles the full stack topics similar to The Odin Project above. You may enjoy this better if you like accompanying videos for every lesson. CS50 has multiple courses on various topics, and in general they are all very good.                                                                   |
+| Course               | edX              | HarvardX: CS50's Introduction to Artificial Intelligence with Python                      | [CS50 AI](https://www.edx.org/learn/artificial-intelligence/harvard-university-cs50-s-introduction-to-artificial-intelligence-with-python)              | This is another excellent CS50 course, especially when AI is becoming increasingly more relevant today. The difficulty of this course may border on advanced if you are comfortable with algorithms and some discrete mathematics. I found the visualizations and demonstrations in the course incredibly helpful with understanding the concepts in practice. |
+| Book                 | N/A              | The Pragmatic Programmer: Your Journey To Mastery, 20th Anniversary Edition (2nd Edition) | [The Pragmatic Programmer](https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary/dp/0135957052/)                                      | Within this book is much practical knowledge about coding in general. It gives some great rules of thumb and does not get intensely technical with code examples.                                                                                                                                                                                              |
+
+**Advanced:**
+
+| Category | Website | Title                                                  | Link                                                                                          | Notes                                                                                                                                                                              |
+| -------- | ------- | ------------------------------------------------------ | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Book     | N/A     | Clean Code: A Handbook of Agile Software Craftsmanship | [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) | This book is a classic in the software development community. The code may be dated, but the explanations of the meaning behind the structuring of the code is still very helpful. |
