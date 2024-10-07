@@ -370,7 +370,9 @@ the classes focus on what is their intended purpose. This does lead to more verb
 will not have to update code that gets outdated due to changes in another class that the class you are using
 utilizes. Updating property names and other changes like this should not concern classes outside of themselves.
 It almost seems self defeating to split up your code to get this modularity, but then be bound to updating
-implementation details of several classes for one change in another.
+implementation details of several classes for one change in another. Still, we may have to update a method name
+if it is changed in the class that implements it, which is a sacrifice we have to make. This is still much better
+than having to update the logic that is related to how another class's method works.
 
 ## More than forEach
 
@@ -401,12 +403,12 @@ console.log(double); // [2, 4, 6, 8, 10]
 console.log(numbers); // [1, 2, 3, 4, 5]
 ```
 
-Here is an example of the `.map()` method. It takes anything that can be looped over and returns an array
+Here is an example of the `.map()` method. It loops over arrays and returns an array
 for assignment to the desired variable. In this case it took all the values in the teams object, and
 populated an array with a new object for each value. Looking at the second example involving
 multiplication, you can see that the `double` variable has every value in the `numbers` array multiplied
-by 2. We see that the original `numbers` array remains unchanged. This is due to `.map()` sending the data
-to wherever it is intended to be assigned upon performing the operation. The function does not directly
+by 2. We see that the original `numbers` array remains unchanged. This is due to `.map()` creating a copy of
+the data for wherever it is intended to be assigned upon performing the operation. The function does not directly
 manipulate the values contained in `numbers`. The values are not manipulated in a `.forEach()` method
 either, but they actually are not returned for assignment like with `.map()`. To actually change the values
 the array would have to be assigned a value to the indexes it wished to assign.
@@ -420,8 +422,8 @@ console.log(numbers); // [2, 4, 6, 8, 10]
 This demonstrates that either functional method could reassign the values by directly assigning the
 indexes of the array. Another interesting point in this example is that we passed a `number` variable
 for the value, and an `index` variable for the index. Many of these methods automatically keep track
-of the indexes for you, and we will see another example shortly. Something else you might have seen
-is that it looks like we mutated the value of an array that is declared a constant. This will be
+of the indexes for you, and we will see another example shortly. Something else you might have noticed
+is that it appears we mutated the value of an array that is declared a constant. This will be
 explained in detail when we get to shallow copies.
 
 ```js
@@ -452,9 +454,9 @@ const people = [
   { name: "David", age: 40 },
 ];
 
-const personWithAge35 = people.find((person) => person.age >= 35);
+const personAge35OrOlder = people.find((person) => person.age >= 35);
 
-console.log(personWithAge35); // { name: 'Charlie', age: 35 }
+console.log(personAge35OrOlder); // { name: 'Charlie', age: 35 }
 
 // Using multiple (.find() and .map())
 const teams = {
@@ -470,35 +472,37 @@ const teamWithHighestScore = Object.values(teams).find((team, index, array) => {
 console.log(teamWithHighestScore); // { name: "Tigers", players: 25, score: 900 }
 ```
 
-Here we see two other common functional methods, `.filter()` and `.reduce()`. With `.filter()`, each value
-is compared against the logic condition provided, and only returns the values that evaluate to true.
-In the case of reduce, it takes two values which can be named anything but are referred to as the
-accumulator and the currentValue often. In this case we name the variables the same as well. In the
-function we see that both values are added together, and a 0 value is provided after the comma behind
-`currentValue`. This initializes the `accumulator` to a base value. In our first example we see that
-the values are looped over and we receive 15 as a final value. We see in the following example
-that a value of 10 is passed as a base beforehand, and we receive a value of 25. In both cases the
-accumulator is returned.
+Here we see other common functional methods. We will start with `.filter()` and `.reduce()`. With `.filter()`,
+each value is compared against the logic condition provided, and only returns the values that evaluate to true.
+In the case of `.reduce()`, it takes two values which can be named anything but are referred to as the
+`accumulator` and the `currentValue` often. In this case we follow this naming of the variables. In the
+function we see that both values are added together, and a 0 value is provided as a second parameter (after the
+comma behind `currentValue`). This initializes the `accumulator` to a base value. In our first example we see
+that the values are looped over and we receive 15 as a final value. For the example that follows
+a value of 10 is passed as a base beforehand, and we receive a value of 25. In both cases the
+`accumulator` is returned.
 
 Next we are introduced to `.find()`. In the first example we see that a list (or array) of people
-objects are provided, and we look for someone who is greater or equal to 35. As a result, we
+objects are provided, and we look for someone who is greater or equal to 35 in age. As a result, we
 find the object with the name `"Charlie"` as a match. We see the difference from `.filter()` here is that
 the object containing the name `"David"` also meets the criteria, but only the 'Charlie' object is
 returned. Unlike `.filter()`, `.find()` will only return the first result it finds.
 
 The second example with `.find()` is a bit more complicated. Here we use `.find()`, and in the comparison
-we access the `Math` object that comes with Javascript (built-in object), and access the max function,
+we access the `Math` object that comes with Javascript (built-in object), and access the `.max()` method,
 which returns the largest value from its passed parameters. We also see that our `.find()` method passes
 more than one parameter (just like all the others covered can optionally). These include the value `team`,
 the index `index`, and the array `array` which is the array itself that `.find()` was called against. With
 the array, we are able to perform a rather recent addition to the JS ecosystem, the spread operator
-(`...`). This actually expands the array from the object provided. So in this case `Math.max()` will
+(`...`). This actually expands an iterable object (something that can be looped over) into individual elements,
+here being an array from the object provided. So in this case `Math.max()` will
 actually look like this with the values, `Math.max(900, 500, 700)`. Using the spread operator is also
 useful for spreading itself in new arrays or objects to copy values. These copies only return shallow
 versions of their actual values, copying nested objects and arrays by reference. The term "shallow" will
 be explained in more detail shortly. With a copy of the original array, we then iterate over the original
-again, but this time with `.map()` to supply `Math.max()` with an array to spread for the score values, so
-that then `.find()` can compare itself against the highest value found within the `teams` object.
+again, but this time with `.map()` to supply `Math.max()` with a spread of an array for the score values. With
+this we do not have to assign an additional variable with the result of the operation. Afterwards,
+`.find()` can now compare itself against the highest `team.score` found within the `teams` object.
 
 ## Reference in Memory and Shallow Copies
 
