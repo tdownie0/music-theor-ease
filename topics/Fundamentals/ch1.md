@@ -56,7 +56,7 @@ character)? Here, `const` tells the program that the variable will not change, s
 part is telling the computer to store the data it is being sent as a type of value the computer recognizes (in
 this case, `int` stands for integer). Lastly, the `;` is important. It is very similar to the way a period
 works in English. When the computer sees this, it knows that it read a complete piece of logic, and can
-be ready for any following logic to be read in separately as well. 
+be ready for any following logic to be read in separately as well.
 
 The code snippet you see above would be from the C language. It is one of the older languages in
 programming, and really inspired all modern languages there after. It was a portable language at a time
@@ -75,7 +75,7 @@ const example: number = 0;
 const example = 0;
 
 // Using ";" is optional
-const example = 0
+const example = 0;
 ```
 
 You will notice they also have `//` before some of the lines. Those designate a comment is being placed, and are
@@ -184,7 +184,7 @@ other two examples:
 const example = 0;
 
 // Using ";" is optional
-const example = 0
+const example = 0;
 ```
 
 These are both Javascript. Neither of them have the data type (`number`), and one left out the semi-colon
@@ -332,3 +332,19 @@ code. This information would ideally only be visible to the company providing th
 call, and whoever this “data” belonged to.
 
 If all of this makes sense already, you are already further along than you think.
+
+<div style="display: flex; justify-content: flex-end; margin-top: 60px">
+    <a href="https://github.com/tdownie0/music-theor-ease/blob/main/topics/Fundamentals/ch2.md" style="
+        background-color: #1A6FFF;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        display: inline-block;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    " onmouseover="this.style.backgroundColor='#1A6FFF'" onmouseout="this.style.backgroundColor='#1763e3'">
+        Next
+    </a>
+</div>
+
