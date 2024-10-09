@@ -333,18 +333,4 @@ call, and whoever this “data” belonged to.
 
 If all of this makes sense already, you are already further along than you think.
 
-<div style="display: flex; justify-content: flex-end; margin-top: 60px">
-    <a href="https://github.com/tdownie0/music-theor-ease/blob/main/topics/Fundamentals/ch2.md" style="
-        background-color: #1A6FFF;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        display: inline-block;
-        text-decoration: none;
-        border-radius: 4px;
-        transition: background-color 0.3s ease;
-    " onmouseover="this.style.backgroundColor='#1A6FFF'" onmouseout="this.style.backgroundColor='#1763e3'">
-        Next
-    </a>
-</div>
-
+[![Next](https://img.shields.io/badge/Next-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Fundamentals/ch2.md)
