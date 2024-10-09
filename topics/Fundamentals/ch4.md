@@ -562,3 +562,7 @@ The next chapter will explore more interesting ways we can leverage looping beha
 some other languages have functions that can be used on arrays and objects in order to manipulate
 each individual value, or perform something over the entirety of the data. Now that we know how loops
 and conditions work, these functions will make much more sense.
+
+[![Previous](https://img.shields.io/badge/Previous-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Fundamentals/ch3.md)
+&nbsp;
+[![Next](https://img.shields.io/badge/Next-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Fundamentals/ch5.md)

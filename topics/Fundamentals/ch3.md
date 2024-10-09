@@ -490,3 +490,7 @@ what is not, giving them more use for rejecting input that should not go through
 useful a function becomes, the more people will tend to use it. Always be careful not to give
 one function or class too many responsibilities, as logic that should be unrelated could cause
 issues in the code that happens to be paired with it.
+
+[![Previous](https://img.shields.io/badge/Previous-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Fundamentals/ch2.md)
+&nbsp;
+[![Next](https://img.shields.io/badge/Next-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Fundamentals/ch4.md)

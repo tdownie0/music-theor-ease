@@ -543,3 +543,7 @@ unwillingly. Like stated before, JavaScript does not use types, and everything i
 done just fine in JavaScript. One of my aims is to show you over time how introducing types to your
 code may actually seem harder at first, but in the long run may help you organize better. That will
 be up to you to decide though!
+
+[![Previous](https://img.shields.io/badge/Previous-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Fundamentals/ch1.md)
+&nbsp;
+[![Next](https://img.shields.io/badge/Next-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Fundamentals/ch3.md)

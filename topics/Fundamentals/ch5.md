@@ -617,3 +617,7 @@ one language from another more readily, recognizing the familiarity of structure
 working on a code base it is best to keep things as consistent as possible. Being adaptable will allow
 you to suit these needs, as well as give you a good context for weighing the pros and cons of each
 implementation strategy.
+
+[![Previous](https://img.shields.io/badge/Previous-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Fundamentals/ch4.md)
+&nbsp;
+[![Next](https://img.shields.io/badge/Next-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Fundamentals/ch6.md)
