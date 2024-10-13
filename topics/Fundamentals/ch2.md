@@ -160,7 +160,7 @@ const ticTacToe: string[][] = [
 
 Hopefully it is not as scary as you had anticipated. I think the game of Tic-Tac-Toe is a very
 practical example. You see we declared a constant with the variable name `ticTacToe`. The casing of
-the name of the variable is something called camelcase, and is a common convention in
+the name of the variable is something called camel case (camelCase), and is a common convention in
 TypeScript/Javascript. The standard is to lead with a lowercase letter, and then capitalize the next
 letter anywhere there is typically a space or a separator before hand. You can see the type is
 `string[][]`. That would be an array of string arrays. We need this due to having multiple rows.
@@ -253,8 +253,8 @@ product is very useful.
 ```ts
 const person1: Record<string, number | string> = {
   id: 443,
-  name: "Obi",
-  occupation: "Jedi",
+  name: "Steve",
+  occupation: "Warrior",
 };
 ```
 
@@ -270,13 +270,13 @@ Now that the type is out of the way, let's look at what we can do with our varia
 ```ts
 const person1: Record<string, number | string> = {
   id: 443,
-  name: "Obi",
-  occupation: "Jedi",
+  name: "Steve",
+  occupation: "Warrior",
 };
 
 console.log(person1["id"]); // 443
-console.log(person1["name"]); // 'Obi'
-console.log(person1["occupation"]); // 'Jedi'
+console.log(person1["name"]); // 'Steve'
+console.log(person1["occupation"]); // 'Warrior'
 ```
 
 That is pretty cool. We no longer have to remember everything as number indexes. With this, we can now
@@ -286,8 +286,8 @@ interesting way to get the same data would be like this:
 
 ```ts
 console.log(person1.id); // 443
-console.log(person1.name); // 'Obi'
-console.log(person1.occupation); // 'Jedi'
+console.log(person1.name); // 'Steve'
+console.log(person1.occupation); // 'Warrior'
 ```
 
 As you continue to be exposed to languages you will see that some languages access data in different
@@ -300,32 +300,32 @@ const person1: Record<
   number | string | Record<string, number | string>
 > = {
   id: 443,
-  name: "Obi",
-  occupation: "Jedi",
-  lightsaber: {
+  name: "Steve",
+  occupation: "Warrior",
+  magicSword: {
     color: "Blue",
     power: 97,
   },
 };
 
-console.log(person1.lightsaber.color); // 'Blue'
-console.log(person1.lightsaber.power); // 97
+console.log(person1.magicSword.color); // 'Blue'
+console.log(person1.magicSword.power); // 97
 ```
 
 Here we had to add another data type, which is the same as our original, Record<string, number | string>.
-It is named `lightsaber`, and inside of it contains two keys, `color` and `power`. You can see the
-`lightsaber` object is accessed by first accessing the `person1` object, and then itself accessed for
+It is named `magicSword`, and inside of it contains two keys, `color` and `power`. You can see the
+`magicSword` object is accessed by first accessing the `person1` object, and then itself accessed for
 the values of its keys `color` and `power`. This access pattern would have also been correct:
 
 ```ts
-console.log(person1["lightsaber"]["color"]); // 'Blue'
-console.log(person1["lightsaber"]["power"]); // 97
+console.log(person1["magicSword"]["color"]); // 'Blue'
+console.log(person1["magicSword"]["power"]); // 97
 ```
 
 Accessing the values through their keys in this manner just involves a bit more typing. It could also
 be necessary to use this access method depending on how the key is used, it's format (it has spaces
 or `-`), if it used leading numbers, or was a symbol type in Javascript. Do not worry about the specifics, just
-know if you are using the dot notation, such as `person1.lightsaber.color` is called, and it does not work,
+know if you are using the dot notation, such as `person1.magicSword.color` is called, and it does not work,
 you may need to use the other access method with array syntax.
 
 By the way syntax is a very common term thrown around. Here is a quick definition from Google AI:
@@ -339,7 +339,7 @@ If you have stuck it out this far, you honestly know your fair share about data 
 Nested objects and arrays are often points of struggle at the start. Everyone has their hang ups with
 them. What is important is to see how this is another way to breaking up data to make it increasingly
 more specific as you go to different nesting levels. When I say nesting I am referring to how the
-lightsaber object was inside of the person1 object. It belongs to the person1 object, but at the same
+`magicSword` object was inside of the `person1` object. It belongs to the `person1` object, but at the same
 time, it has more than one thing that belongs specifically to it.
 
 One thing may have been puzzling you up until now. If we went through all that trouble explaining
