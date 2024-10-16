@@ -280,9 +280,9 @@ console.log(division); // 2
 console.log(modulo); // 1
 ```
 
-All of these operators are common across most programming languages. Most likely you are familiar
-with addition and subtraction. Multiplication and division are also probably familiar, but I would like
-to go over their basic definitions. Multiplication is an arithmetic operation that combines groups of
+All of these operators are common across most programming languages. Most likely all of us are familiar
+with addition and subtraction. Multiplication and division are also probably familiar, but we should
+go over their basic definitions. Multiplication is an arithmetic operation that combines groups of
 numbers to find their total or product. It involves repeatedly adding one number (the multiplicand) to
 itself a certain number of times (the multiplier). The result of multiplication is called the product.
 In our case, the two was added to itself four times in order to receive the product from the operation.
@@ -291,20 +291,20 @@ divisor) to find out how many times the divisor can be subtracted from the divid
 negative number. The result of division is called the quotient. So in this case eight is subtracted by
 four twice before it reaches zero.
 
-I wanted to make both of these definitions explicit, because that is exactly how the computer sees
+Both of these definitions were made explicit to demonstrate that this process is exactly how the computer sees
 these operations as well. The fact with computers is, they can add and subtract numbers ridiculously
 fast. As of January 2022, the average CPU for a mid-range desktop can perform tens of billions of
 operations a second. It is a bit daunting to think someone could reason with remembering the last
-ten billion things they did, nevermind perform them in a second. There are even bitwise operators and
+ten billion things they did, never mind perform them in a second. There are even bitwise operators and
 assembly related strategies to make these operations quicker in a binary format. This is a bit
-more technical than I intend to get at the moment, and will not be all that common to see unless
-you are specifically working at a very low level in the architecture programming wise.
+more technical than we will be getting into at the moment, and these operations are not all that common to see
+unless someone is specifically working at a very low level in the architecture programming wise.
 
 The modulo operator, denoted by `%`, calculates the remainder of a division operation. For example, when
-you divide one number by another, the modulo operator returns the remainder after the division. It can be
+we divide one number by another, the modulo operator returns the remainder after the division. It can be
 visualized as counting up to the divisor and then starting over from zero if the dividend is reached,
-always subtracting one from the dividend until it fits within the divisor. So in our case,
-(7/3 = 2 + (1/3)). We see seven is not perfectly divided by three, so there is a remainder. The
+always subtracting one from the dividend until it fits within the divisor. So for example,
+(7/3 = 2 + (1/3)). We see seven is not perfectly divisible by three, so there is a remainder. The
 remainder is the only value the modulo is after, and it does not return a number like "1/3" because
 the divisor is implied by the operation. This leaves `1` as the result.
 
@@ -325,15 +325,15 @@ that there will be enough recurring patterns that much of this information just 
 normal sentence. If you stick with this stuff long enough it reveals more about itself over time.
 
 Also! Do not be intimidated by math! The subject itself is quite deep and has varying degrees of
-complexity, but fundamentals really drive everything. You do not have to memorize anything to great
-degrees, just get used to walking through how to get to the end result and slowly building strategies
-along the way. For example, if we wanted to call our friend Bill, what would we need to know? We would need a
-phone number associated with Bill. If we had that number, we could use it to get in touch with Bill’s phone. When
-we use that number, it will be compared to which phone belongs to that number, and then the call will be sent
-to that phone. There could also be much more data stored with this number, such as an address, first name, last
-name, email, and zip code. This information would ideally only be visible to the company providing the service
-for the phone call, and whoever this data belonged to.
+complexity, but fundamentals really drive everything. Memorization will not be needed to any great
+degree. More important will be becoming used to walking through how to get to an end result and slowly building
+strategies along the way. For example, if we wanted to call our friend Bill, what would we need to know? We would
+need a phone number associated with Bill. If we had that number, we could use it to get in touch with Bill's
+phone. When we use that number, it will be compared to which phone belongs to that number, and then the call
+will be sent to that phone. There could also be much more data stored with this number, such as an address,
+first name, last name, email, and zip code. This information would ideally only be visible to the company
+providing the service for the phone call, and whoever this data belonged to.
 
-If all of this makes sense, you are already further along than you probably think.
+If all of this makes sense, you may already be further along than you think.
 
 [![Next](https://img.shields.io/badge/Next-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Fundamentals/ch2.md)
