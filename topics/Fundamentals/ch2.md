@@ -115,13 +115,13 @@ someone intended to, read information or execute programs for malicious means.
 
 ## Arrays and Objects
 
-If you just made it through the above, I want to congratulate you. That was much more information
-than I had intended to dump on everybody at first, but I feel like it is truly worth your time and
-understanding. It took me years to grasp all of that accurately, so even understanding some of it
-puts you closer to my understanding in the matter of minutes. Really, a vast majority of the complicated
+Making it through the above section is no small feat. Honestly, that was much more information
+than I had intended to explain at first, but also felt that it would truly be worth the time to gain
+more understanding. It took me years to grasp all of that accurately, so even understanding a portion of it
+puts someone closer to my understanding in the matter of minutes. Really, a vast majority of the complicated
 things in programs are made of arrays. Often arrays with combinations of other arrays.
 
-Let's remark on something about position values. With our last string `"Boba"`, each letter has a
+Let us remark on something about position values. With our last string `"Boba"`, each letter has a
 position value. These values are referred to as "indexes". Here is a table demonstrating:
 
 | Index | Character |
@@ -136,7 +136,7 @@ used to, but it is interesting. Computer Science went ahead and used 0 as the fi
 As to why this is may be more of a discussion between Mathematicians and Computer Scientists. Here it represents
 the offset from the starting address of the array.
 
-Here is how you can use this information:
+We can implement this information like so:
 
 ```ts
 const name: string = "Boba";
@@ -146,10 +146,10 @@ console.log(name[2]); // 'b'
 console.log(name[3]); // 'a'
 ```
 
-In this code snippet you can see our variable `name` is set to `"Boba"`. We then use the variable
-with an index in the array we would wish to access. Here, `console.log()` would print out the
-corresponding letters of the name. Hopefully that makes sense! Now with that mapped out, let's look
-at what putting an array inside of an array would look like.
+In this code snippet we can see our variable `name` is set to `"Boba"`. We then use the variable
+with an index of the array element that we would wish to access. Here, `console.log()` would print out the
+corresponding letters of the name. Hopefully that makes sense! With that mapped out, let us examine
+what putting an array inside of an array would look like.
 
 ```ts
 const ticTacToe: string[][] = [
@@ -159,15 +159,14 @@ const ticTacToe: string[][] = [
 ];
 ```
 
-Hopefully it is not as scary as you had anticipated. I think the game of Tic-Tac-Toe is a very
-practical example. You see we declared a constant with the variable name `ticTacToe`. The casing of
-the name of the variable is something called camel case (camelCase), and is a common convention in
+That may not have been as scary as some anticipated. Using the game of Tic-Tac-Toe seems like a very
+practical example. Here, we declared a constant with the variable name `ticTacToe`. The casing of
+the name of the variable is something called camel case (also spelled camelCase), and is a common convention in
 TypeScript/Javascript. The standard is to lead with a lowercase letter, and then capitalize the next
-letter anywhere there is typically a space or a separator before hand. You can see the type is
+letter anywhere there is typically a space or a separator before hand. We can see the type is
 `string[][]`. That would be an array of string arrays. We need this due to having multiple rows.
-Now that I said row, you may know where this is going next. This also gives us columns, just like
-with matrices in math. They are actually indexed in the same order, which is row then column.
-Here is how you would access the winning combination of `"O"`.
+This also gives us columns, just like with matrices in math. They are actually indexed in the same order too,
+which is row then column. Here is how we would access the winning combination of `"O"`.
 
 ```ts
 const ticTacToe: string[][] = [
@@ -199,12 +198,12 @@ const ticTacToe: number[][] = [
 Here we see all the characters were replaced with numbers. Now somewhere else can decide what goes with
 the 1's, 2's, and 0's. In our case, the 1's were `"O"`, the 2's were `"X"`, and the 0's were `""`.
 
-Having this structure allows for many things, especially once you know how to manipulate it. There are
+Having this structure allows for many things, especially once we know how to manipulate it. There are
 several functions built into languages just for the purpose of working with arrays and their common use
-cases. Now that we have this, constructing something like a word search would be easy to store in data.
+cases. Knowing this, constructing something like a word search would be easy to store in data.
 You would just make an array of arrays of the letters you were using.
 
-You could also have a maze like so:
+Constructing a maze could also be done like so:
 
 ```ts
 const maze: number[][] = [
@@ -218,14 +217,14 @@ const maze: number[][] = [
 ];
 ```
 
-With this, you could have the 1's represent the correct path. You could also add additional numbers
-to represent things like trees, rocks, water, lava, or several other things if you were making a game.
-You can do a lot with just a little.
+With this, we could have the 1's represent the correct path. We could also add additional numbers
+to represent things like trees, rocks, water, lava, or several other things if we were making a game.
+Quite a bit can be done with just a little.
 
-As you can see, just having this simple layout has given us a chance to represent somewhat complicated
+As can be seen, just having this simple layout has given us a chance to represent somewhat complicated
 ideas almost effortlessly. Ones and zeros may be the easiest to start with (Usually depicting "On" and
-"Off" states). These two examples are two dimensional arrays. Also as a side note, you can see that I
-gave each of these arrays their own line so that it is much easier to read. Programmers often try to make code
+"Off" states). These two examples were two dimensional arrays. Also as a side note, we can see that
+each of these arrays have their own line so that it is much easier to read. Programmers often try to make code
 more appealing to the eye, and easier to sift through. It really helps with maintaining code in the long
 run. The formatting below would make the same information much harder to decipher:
 
