@@ -334,12 +334,13 @@ in specific:
 Syntax is the set of rules that define the structure of a programming language, including the structure of
 words, punctuation, and symbols.
 
-## What Does It All Mean?
+## Nested Objects and Hashing
 
-Understanding what has been covered so far would leave someone with a decent knowledge of data in
-regards to programming. Being aware of types and memory management cover a substantial portion of the details.
-Nested objects and arrays are often points of struggle at the start. Everyone has their hang ups with
-them. What is important, is to see how this is another way of breaking up data to make it increasingly
+Understanding how computers see and operate on arrays and objects is a large subject. Pointers also lead
+to things such as linked lists, which we will not touch on here at great length. Conceptually, they and other
+data structures allow us to reference smaller units of data to make a larger whole, just like with arrays and
+objects. Nested objects and arrays are often points of struggle for people starting programming.
+What is important, is to see how this is another way of breaking up data to make it increasingly
 more specific, using different nesting levels. Nesting refers to the concept of how in our example the
 `magicSword` object was inside of the `person1` object. It belongs to the `person1` object, but at the same
 time, it has more than one thing that belongs specifically to itself.
@@ -370,7 +371,7 @@ have to worry about the specifics.
 
 ## Primitive Types
 
-Now that you have made it through what I consider to be the more difficult data types, let's go over
+Now that we have made it through what may be considered the more difficult data types, let us go over
 the more straightforward ones. Here are the primitive data types in TypeScript:
 
 | Primitive Types |
@@ -382,10 +383,11 @@ the more straightforward ones. Here are the primitive data types in TypeScript:
 | undefined       |
 | symbol          |
 
-You have already seen the number and the string types. The ones we will be discussing will be the
+We have already seen the `number` and the `string` types. The ones we will be discussing here are the
 `boolean`, `null`, and `undefined`. A boolean type can be one of two values, `true` or `false`.
 The null type represents a value that is deliberately empty. Undefined as a type represents a state
-of when a variable is created, but it is not assigned a value.
+where a variable is created, but it is not assigned a value. A function also returns `undefined` if another
+value is not returned. We will touch on functions in the next chapter.
 
 ```ts
 // Boolean
@@ -398,15 +400,15 @@ let second: null = null;
 let third: undefined;
 ```
 
-Above are basic examples. In these examples you see the use of `let` instead of `const` due to the typical
-nature of the types. A boolean variable typically switches between `true` and `false` often, possibly
+Above are basic examples. In these examples we see the use of `let` instead of `const` due to the typical
+nature of the types. A boolean variable commonly switches between `true` and `false` often, possibly
 representing something as simple as "on" and "off" states like light switches.
 
-For the `second` variable, you can see it is directly assigned to `null`. This could be used to clear an
+For the `second` variable, we can see it is directly assigned to `null`. This could be used to clear an
 object reference. So we could have done this for our person1 object from before if we declared it with `let`
 instead of `const`, and changed its value to `null` with
 the intention to free its memory at some point. Languages do this through a process called garbage
-collection, and the decisions it makes can get quite involved and occur at certain times according to the
+collection, and the decisions it makes can get quite involved and occur at predetermined times according to the
 language. In this case with TypeScript, it does not make much sense to only assign the value type
 to `null`. It can never have another value at this point. You will see this commonly paired with another
 type.
@@ -415,26 +417,26 @@ Originally this was handled manually by assigning pointers certain amounts of me
 remembering to free the memory. Many modern languages handle this automatically behind the scenes now.
 It is easy for the computer to determine the size of an exact data type in a languages like C, but
 pointers had to be given the ability to grow and shrink in memory dynamically. This is due to their values
-being an unknown length by nature. An easy example is someone's name. You could make a string to hold
+being an unknown length by nature. An easy example is someone's name. We could make a string to hold
 someone's name, but any name is valid. Not all names are the same length though, so something like this
-would have to be able to adjust. This can also be seen in cases where you are adding and removing
+would have to be able to adjust. This can also be seen in cases that involve adding and removing
 things from memory. For pointers it was quite common to start their values with null, indicating that they
 do not currently point to a valid space in memory.
 
-Last we have undefined. If you look at the `third` variable, we see it actually is missing an
+Last we have undefined. Looking at the `third` variable, we see it actually is missing an
 assignment operator (`=`). Programming languages allow us to define variables without giving them a
 value immediately. This is due to the nature of variables having the potential to be changed
 frequently. If something in TS/JS is declared but does not have a value assigned to it, then it
-will return undefined if accessed to be read before it is assigned another value. You will also encounter
-undefined if you try to access an object key that does not exist on the current object. Undefined is a practical
+will return undefined if accessed to be read before it is assigned another value. One will also encounter
+undefined if they try to access an object key that does not exist on the current object. Undefined is a practical
 type. C actually does not explicitly have a type for this, but the variables would still be said to be undefined.
 This variable would also most likely not occur, due to not having much need for a value that can
 only be undefined. So it is commonly in a union with another type as well.
 
-And there you have it. These types are important to know about, but you most likely will be using
-number, string, and boolean the most. The last on the list is Symbol, but this type is not as
+And there we have it. These types are important to know about, but the most common will likely be
+`number`, `string`, and `boolean`. The last on the list is `symbol`, but this type is not as
 common across programming languages. The other types are all included with other languages. In
-general they ensure that a value will be unique.
+general symbols ensure that a value will be unique.
 
 ```ts
 const mySymbol: symbol = Symbol("key");
