@@ -239,9 +239,9 @@ const maze: number[][] = [
 ];
 ```
 
-We'll go into sensible styling as well as tools to help automate the process for you later, so do
+We will go into sensible styling as well as tools to help automate this process later, so do
 not fret about getting things exact. It is often quicker to let tools like auto formatters adjust this
-for you, and they tend to drastically improve consistency. Still, it is good to have the thought
+for us, and they tend to drastically improve consistency. Still, it is good to have the thought
 of trying to make data somewhat presentable when working with it as a consideration. In this case,
 our data appears to lose some of its visual meaning with the different shape.
 
@@ -259,13 +259,13 @@ const person1: Record<string, number | string> = {
 ```
 
 This is an example of an associative array, or in Typescript/Javascript(TS/JS), an object. It has other
-names such as maps, dictionaries, or key-value stores. You see here that TypeScript uses the word Record
+names such as maps, dictionaries, or key-value stores. We see here that TypeScript uses the word Record
 to indicate the object type, and specifies that it contains a `string` in its first position, and
 either a `number` or a `string` in the other. In the expression `number|string` the `|` stands for the
-logical OR condition. This works probably as you would expect, representing it can be one type or the
-other. In TypeScript they refer to this as a union, but you do not have to remember that for the moment.
+logical OR condition. This works probably as most would expect, representing that we can use one type or the
+other. In TypeScript they refer to this as a union, but is not essential to know this at the moment.
 
-Now that the type is out of the way, let's look at what we can do with our variable `person1`.
+Now that the type is out of the way, let us look at what we can do with our variable `person1`.
 
 ```ts
 const person1: Record<string, number | string> = {
@@ -281,7 +281,7 @@ console.log(person1["occupation"]); // 'Warrior'
 
 That is pretty cool. We no longer have to remember everything as number indexes. With this, we can now
 store information under keys that are strings. Really looking at the layout this provides, it just
-feels like we have an intuitive sense of how to give things properties. In TS/JS another
+feels like we can have an intuitive sense of how to give objects properties. In TS/JS another
 interesting way to get the same data would be like this:
 
 ```ts
@@ -290,9 +290,9 @@ console.log(person1.name); // 'Steve'
 console.log(person1.occupation); // 'Warrior'
 ```
 
-As you continue to be exposed to languages you will see that some languages access data in different
-ways, and even in multiple ways. This is useful because it takes less to type, and makes accessing
-deeper object easier as well, for example:
+Upon exposure to more languages, it will become clear that some languages access data in different
+ways, and even in multiple ways. The dot operator above can be useful because it takes less to type, and makes
+accessing deeper objects easier as well, for example:
 
 ```ts
 const person1: Record<
@@ -312,8 +312,8 @@ console.log(person1.magicSword.color); // 'Blue'
 console.log(person1.magicSword.power); // 97
 ```
 
-Here we had to add another data type, which is the same as our original, Record<string, number | string>.
-It is named `magicSword`, and inside of it contains two keys, `color` and `power`. You can see the
+Here we had to add another data type, which is the same as our original, `Record<string, number | string>`.
+It is named `magicSword`, and inside of it contains two keys, `color` and `power`. We can see the
 `magicSword` object is accessed by first accessing the `person1` object, and then itself accessed for
 the values of its keys `color` and `power`. This access pattern would have also been correct:
 
@@ -323,12 +323,13 @@ console.log(person1["magicSword"]["power"]); // 97
 ```
 
 Accessing the values through their keys in this manner just involves a bit more typing. It could also
-be necessary to use this access method depending on how the key is used, it's format (it has spaces
-or `-`), if it used leading numbers, or was a symbol type in Javascript. Do not worry about the specifics, just
-know if you are using the dot notation, such as `person1.magicSword.color` is called, and it does not work,
-you may need to use the other access method with array syntax.
+be necessary to use this access method depending on how the key is used, its format (it has spaces
+or `-`), if it uses leading numbers, or if it is a symbol type in Javascript. Do not worry about the specifics,
+just know that using dot notation, such as `person1.magicSword.color`, may not always work. If it does not,
+the other access method with array syntax may be required.
 
-By the way syntax is a very common term thrown around. Here is a quick definition from Google AI:
+By the way syntax is a very common term thrown around. Here is a quick definition from Google AI for programming
+in specific:
 
 Syntax is the set of rules that define the structure of a programming language, including the structure of
 words, punctuation, and symbols.
