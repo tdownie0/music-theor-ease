@@ -73,33 +73,33 @@ Even in C they have the shorthand:
 char name[] = "Boba";
 ```
 
-It is evident they do not use the word `string` as a type here, instead using the type `char` and putting
+It is evident the word `string` is not used as a type here, instead using the type `char` and putting
 the `[]` next to the variable name to indicate it is a `char` array. This is referred to as a string in
-this case, the abstraction for the type just came later. I show you this to point out that
-the computer is the only one who sees the string as the array. Knowing this will help you understand
-how the computer is able to figure out things like how many letters belong to a word and give you a deeper
-peak into how memory really works.
+this case, the abstraction for the type just came later. This is pointed out to demonstrate that
+the computer is the only one who sees the string as the array. Knowing this will help with understanding
+how the computer is able to figure out things like how many letters belong to a word, and give us a deeper
+look into how memory really works.
 
-I do not want to go into this much further, but I am afraid you may be scratching your head wondering
-why the computer has trouble counting:
+We do not need to go into this much further, but it may be confusing to some as to why the computer has trouble
+counting:
 
 ```ts
 ["B", "o", "b", "a"];
 ```
 
-There are obviously four. Why is it hard for it to tell? The real answer is that the variable that contains
-that array is actually pointing to a section of memory on your computer, which starts at a memory address. The
-computer has to have a starting point and ending point for that information. Your computer does not see the
+There are obviously four elements. Why is it hard for it to tell? The real answer is that the variable that
+contains the array is actually pointing to a section of memory on the computer, which starts at a memory address.
+The computer has to have a starting point and ending point for that information. Computers do not see the
 starting `[` and the closing `]` as we do. It may have something analogous to these brackets for a program, but
 in between them is all of the data available to the program itself. So to break up the memory, it needs
 characters like the null operator (`\0`) to distinguish sections, or memory regions.
 
-As a disclaimer, there are many things in place today to prevent a program you run from being allowed
+As a disclaimer, there are many things in place today to prevent a program from being allowed
 outside of its designated bounds memory wise. In the past, and still if done incorrectly (or purposely)
 with lower level languages like C, these variables that held memory addresses caused many problems.
 These memory addresses can be referred to with what are known as pointers. They literally hold the value of the
-address where the data you want lives. It is similar to knowing the address of your friend's home. You would
-often see this in C as below:
+address where the data we want lives. It is similar to knowing the address of someone's home. This would
+often be seen as below in C:
 
 ```c
 // The "*" indicates the variable is a pointer
@@ -108,9 +108,9 @@ char *name = "Boba";
 
 Why is having an address so bad? Inherently it is not, and it is actually needed by design. The
 wrinkle starts to appear when programmers have trouble using the addresses properly, or forgetting
-to release the memory that it claimed during runtime. Everything used has to be asked for, and
+to release the memory that it claimed during runtime. All memory used has to be asked for, and
 then at the end, given back. At least in theory, this is how it is intended. Using addresses incorrectly
-can lead to overwriting information that is stored in other memory regions on your computer, or if
+can lead to overwriting information that is stored in other memory regions on a computer, or if
 someone intended to, read information or execute programs for malicious means.
 
 ## Arrays and Objects
