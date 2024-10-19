@@ -26,9 +26,9 @@ looks simple at first glance, but in actuality is already more complicated than 
 const name: string = "Boba";
 ```
 
-This data type is called a string. You can see the variable is a constant by the "const" keyword.
-The name of the variable `name`. The type comes where `: string` is, just like with where `: number` was
-before. And last, it is given the value of `Boba` through the `=` assignment operator. So in this
+This data type is called a string. We can see the variable is a constant by the `const` keyword.
+The name of the variable is `name`. The type comes where `: string` is, just like with where `: number` was
+in our other example. And last, it is given the value of `Boba` through the `=` assignment operator. So with this
 variable assignment, our `name` variable is equal to `Boba`. The quotations here actually denote a
 a region where information will be provided. It is perhaps convenient that we already are accustom to
 the quotations being associated with words, but often a common annoyance is trying to use `""` inside
@@ -38,10 +38,11 @@ vice versa if desired. The first `"` denotes the start of the information provid
 of information, but parentheses are used in many ways in programming, so do not use parenthesis (i.e. `()`)
 instead here.
 
-So in the example, the information provided to the `""` region are the letters "B", "o", "b", "a". The
+In this example, the information provided to the `""` region are the letters "B", "o", "b", "a". The
 computer actually stores them individually as well. Anything you see with `""`, or `''`, or ` `` ` are
-strings. The last ones (` `` `, backticks which are on your tilde key), are actually special in Javascript/Typescript, but we will talk about that later. So when you see any of these, your brain should think of
-these as starting and closing regions. When enclosed within these, numbers are also instead considered strings
+strings. The last ones (` `` `, backticks, which are on the tilde key), are actually special in Javascript/
+Typescript, but we will talk about that later. So when upon seeing any of these, it is good to think of
+them as starting and closing regions. When enclosed within these, numbers are also instead considered strings
 instead of numbers. So `"3"` is not the same as `3`. They can still be compared, but more on that later.
 
 How does the computer store the letters "B", "o", "b", and "a" individually to make up the entire string?
@@ -51,9 +52,9 @@ The string is actually stored in something called an array. Specifically in this
 ["B", "o", "b", "a"];
 ```
 
-You see, they are wrapped in another region with a starting position, and an ending position. This time
-it is square brackets (`[]`). This lets the computer know that these letters belong together. A subtle caveat
-is that strings actually contain another value, typically inferred by the computer, in their array to tell the 
+Here we see they are wrapped in another region with a starting position, and an ending position. This time
+with square brackets (`[]`). This lets the computer know that these letters belong together. A subtle caveat
+is that strings actually contain another value, typically inferred by the computer, in their array to tell the
 computer where the string ends. In C it would look like this:
 
 ```c
@@ -61,11 +62,11 @@ computer where the string ends. In C it would look like this:
 ```
 
 The `\0` is actually called the null character in C. It uses this to know when to stop for many
-calculations and functions. Another interesting thing to point out since we're here, is the letters are
-written with single quotes here in C. For example the `'B'`. In this case `'B'` is actually called a `char`
+calculations and functions. Another interesting thing to point out with this, is that the letters are
+written with single quotes in C. For example the `'B'`. In this case `'B'` is actually called a `char`
 (short for character), since it is a single letter. Strings are made up of an array of chars.
 
-In many modern languages I doubt you will encounter a string represented as an array in this manner.
+In many modern languages it would be rare to encounter a string represented as an array in this manner.
 Even in C they have the shorthand:
 
 ```c
