@@ -10,17 +10,17 @@ into that), but the language does not split hairs when it comes to memory size.
 This helps develop faster, and as previously mentioned, helps remove complexity
 that comes with knowing what data size would be best in a situation.
 
-Of course knowing this stuff can be useful, but it is often the case that computers
-nowadays are so strong that the wasted memory really is not a concern. Once you
-get into the deeper corners of programming being aware of this will certainly be
-useful. It is almost guaranteed that you will be exposed to these data types along
-the way without needing to put a huge deal of focus into them. So you can always
-go deeper when the time is truly needed.
+Of course knowing about various data types can be useful, but it is often the case that computers
+nowadays are powerful enough that the wasted memory really is not a concern. Once someone
+gets into the deeper corners of programming, being aware of specific types will certainly be
+useful. It is almost guaranteed that most will be exposed to these data types during their
+coding journey without needing to put a huge deal of focus into them. So it is always possible
+to study these topics deeper when the time comes.
 
-All of that said, I think these two things I am about to show you are a major cornerstone in the
-foundation of why all of this stuff works. How they work themselves is quite involved, but you do not need
-to know how to make a car to drive one. I will cheat and show you something that looks simple to the
-human eye, but in actuality is already more complicated than it seems.
+With that considered, it is my belief that these two data structures we are about explore are major cornerstones
+in the foundation of what makes programming work as it does today. How they work themselves is quite involved, but
+someone does not need to know how to make a car in order to drive one. We will cheat and explore something that
+looks simple at first glance, but in actuality is already more complicated than it seems.
 
 ```ts
 const name: string = "Boba";
