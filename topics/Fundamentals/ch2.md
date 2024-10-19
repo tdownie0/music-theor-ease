@@ -336,36 +336,37 @@ words, punctuation, and symbols.
 
 ## What Does It All Mean?
 
-If you have stuck it out this far, you honestly know your fair share about data programming wise.
+Understanding what has been covered so far would leave someone with a decent knowledge of data in
+regards to programming. Being aware of types and memory management cover a substantial portion of the details.
 Nested objects and arrays are often points of struggle at the start. Everyone has their hang ups with
-them. What is important is to see how this is another way to breaking up data to make it increasingly
-more specific as you go to different nesting levels. When I say nesting I am referring to how the
+them. What is important, is to see how this is another way of breaking up data to make it increasingly
+more specific, using different nesting levels. Nesting refers to the concept of how in our example the
 `magicSword` object was inside of the `person1` object. It belongs to the `person1` object, but at the same
-time, it has more than one thing that belongs specifically to it.
+time, it has more than one thing that belongs specifically to itself.
 
-One thing may have been puzzling you up until now. If we went through all that trouble explaining
+One thing may have been puzzling up until now. If we went through all that trouble of explaining
 what strings were, why was it so easy for the associative array (a.k.a. object in TS/JS) to use
-them? In the case with our object, a hash map is actually being used to generate the values of
+them? In the case of our object, a hash map is actually being used to generate the values (keys) of
 where to store the values in the object variable. This means that it takes a key like `"id"` and runs
 a function (defined operation) on the characters `"i"` and `"d"`, and then is returned a number at
-the end. This can get as complicated or simple as you want. Usually the more cryptography involved,
+the end. This can get as complicated or simple as we want. Usually the more cryptography involved,
 the more mathematically intensive this becomes. Luckily this is taken care of for us, so we do not
 have to worry about the specifics.
 
-> **Note:** If this interests you, there are quite a few considerations that play into creating an
-> appropriate hashing algorithm. It could be something as simple as counting how many letters are in a
+> **Note:** If the reader is interested, there are quite a few considerations that come into play when creating
+> an appropriate hashing algorithm. It could be something as simple as counting how many letters are in a
 > string. In our case, this would result in the number two being generated. As a result our person1 object
 > would resemble an array that looks like this access wise internally:
 >
 > `person1[2]`;
 >
 > What we knew as `"id"` is now the number 2. The trick is that the hashing algorithm can almost be
-> anything. I like to show this example because it points out something interesting. You might think, what
+> anything. This example points out something interesting. One may think, what
 > happens if we have another string key that is two characters long? In this case the value would
 > access the same index as our other key. This is referred to as a collision. Both inputs yielded the same
 > output. Behind the scenes many modern languages will do things like putting an array for the key's value,
 > and then index the additional entries, keeping track somewhere else. A hashing algorithm with a
-> minimal collision space is often considered more secure.
+> minimal collision space is often considered more secure. This usually requires much more complex math.
 
 ## Primitive Types
 
