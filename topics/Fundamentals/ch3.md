@@ -4,35 +4,38 @@ Now we will get into elaborating on functions. Functions are almost the life
 and blood of programming. Without functions, the programs we have today may very well
 be impossible to get working, or would take far more work than could be reasonably expected.
 I think the most relatable comparison to a function is a cooking
-recipe. A recipe tells you the exact steps and ingredients you need in order to
-get the result you are looking for. In essence that is all it is. There just
+recipe. A recipe tells someone the exact steps and ingredients they need in order to
+get the result they are looking for. In essence, that is all a function is. There just
 tends to be many considerations we can factor in depending on what we are
 trying to accomplish.
 
 With functions, really the main focus should be giving it a single responsibility
 for a task. The more focused the task is, the easier it becomes to remember
-which task is responsible for which action. A quick example would be a game that had
-three different slots, each corresponding to a certain amount of points based on its contents. You
-could write a program in such a way that you always had each slot's individual contents
-wrapped up in the main logic of the program. The other way you could
-do it is make a function for each slot, and then have the program call those
-functions based on which ones you needed at the moment. These could be calls to functions
-named `getScoreSlotOne()`, `getScoreSlotTwo()`, and `getScoreSlotThree()`. Later we will also be introduced
-to objects, which can have their own functions that belong to them. If in this case they were all slot objects,
-we could have variables assigned to the objects named `slotOne`, `slotTwo`, and `slotThree`. With this each one
-could call their own getScore function as such, `slotOne.getScore()`. This would be one way to help us from
-duplicating logic.
+which task is responsible for which action. A quick example would be a game like a slot machine that has
+three different rows and columns, each corresponding to a certain amount of points based on their contents. One
+could write a program in such a way that they always have each row's individual contents
+wrapped up in the main logic of the program. Another way somebody could write this would be by
+making a function for each row, and then have the program call those
+functions based on which ones it needed at the moment. These could be calls to functions
+named `getScoreRowOne()`, `getScoreRowTwo()`, and `getScoreRowThree()`. Later we will also be introduced
+to objects which can have their own functions that belong to them. If in this case they were all row objects,
+we could have variables assigned to the objects named `rowOne`, `rowTwo`, and `rowThree`. With this, each one
+could call their own getScore function as such, `rowOne.getScore()`. This would be one way to help us from
+duplicating logic. This could also handle different combinations of rows, such as putting them together
+diagonally, or vertically (columns), instead of just horizontally as implied by row. This example may be able
+to be left as a plain array in this case, but it may be cleaner to make explicit functions or objects
+for different combinations.
 
-Now anything you have setup for each specific slot would be completely independent of the
-others. If you were looking for whichever one had the highest score, or wanted to leave one out, you could also
-have a function that compared scores for you based on the ones you wanted to evaluate. Based on these results,
-you could have another function that would be responsible for turning a slot's lights on, or having a sound
-effect play. This becomes much easier to manage when you have a program that does several things.
+Now anything we would have setup for each specific row would be completely independent of the
+others. If we were looking for whichever one had the highest score, or wanted to leave one out, we could also
+have a function that compared scores for us based on the ones we wanted to evaluate. Based on these results,
+we could have another function that would be responsible for turning a row's lights on, or having a sound
+effect play. This becomes much easier to manage when a program does several things.
 
 I wanted to briefly give an abstract overview of what will be going on overall, but we will start
 laying out some real functions and demonstrating examples of them in use. Different paradigms use functions in
-different ways, so we will touch on the layouts you can achieve by making certain structural decisions. We will
-go ahead and start with these first examples:
+different ways, so we will touch on the layouts that can be achieved by making certain structural decisions. We
+will go ahead and start with these first examples:
 
 ```ts
 // ---- Function Declaration Area ----
@@ -56,30 +59,29 @@ sayHelloWorld(); // Prints "Hello" and "World" on separate lines to the console
 let myNumber: number = giveFour(); // 4
 ```
 
-Here we have `sayHello()` and `sayHelloWolrd()`. You see both of their return types are void, which means
+Here we have `sayHello()` and `sayHelloWorld()`. Both of their return types are void, which means
 they do not pass back a physical value, instead printing to the console. The last function `giveFour()`
-does return a value, and in this case it would assign 4 to myNumber. I threw somewhat of a curve
-ball at you right from the start, and you may have noticed it in `sayHelloWorld()`. The most interesting
+does return a value, and in this case it would assign `4` to `myNumber`. I threw somewhat of a curve
+ball right from the start, and it can be seen in `sayHelloWorld()`. The most interesting
 part about this function, is that it actually calls another function, and then runs another line itself.
 
-I put the comments with "Function Declaration Area" around the functions to help illustrate that
+There are comments with "Function Declaration Area" around the functions to help illustrate that
 the section that is contained within works differently than the code below it, marked as executing at
 runtime. Specifically, what the executed portion refers to is the actual code that will be called and executed
-during the course of the program's runtime. If the functions were not called in this portion, they would still be read and stored in memory, but their body's would not be executed during this phase.
+during the course of the program's runtime. If the functions were not called in this portion, they would still be read and stored in memory at runtime, but their body's would not be executed during this phase.
 
 When the program runs and it sees a function call like sayHello(), it
 looks up if it has a reference to such a function, and if it does, it will run that code associated
-with that function. This helps enormously. You can really put as much code as you want
-in the functions, and then call them on a single line. This makes understanding a large code base
-manageable. The function calls could be anything, `startRobot()`, `generateDungeonBoss()`,
-`findAllSchrodingersCats()`, and `simulateLivingOrganism()` are examples. There is no telling how
-large or small any of these functions could be, but I feel I could tell you something about their
+with that function. This helps enormously. We can really put as much code as we want
+into the functions, and then call them on a single line. This makes understanding a large code base
+manageable. The function calls could be for anything. Functions named `startRobot()`, `generateDungeonBoss()`,
+`findAllSchrodingersCats()`, or `simulateLivingOrganism()` are all examples. There is no telling how
+large or small any of these functions could be, but we could hopefully tell something about their
 purpose just from their names.
 
-If you consistently use names that are as descriptive as possible, your code can almost read like a story.
-Giving yourself as many advantages as you can for reading code again in the future will pay yourself back
-many times over for actively maintained code. One of the realities with coding, and really with writing in
-general, is that we will read far more than we could ever possibly write.
+If a programmer consistently uses names that are as descriptive as possible, their code can almost read like a story. Giving yourself as many advantages as one can, especially for reading code again in the future, will pay
+itself back many times over for actively maintaining code. One of the realities with coding, and really with
+writing in general, is that we will read far more than we could ever possibly write.
 In general, glancing over and reading something quickly is something we do almost mindlessly. Writing
 generally takes much more time due to physical limitations, and the process of juggling ideas.
 
