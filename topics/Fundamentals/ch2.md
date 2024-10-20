@@ -448,7 +448,7 @@ This type is not even remotely as common as the other types.
 
 ## Object Types
 
-Now that you made it through the difficult types, these last ones you mostly already know.
+Now that we made it through the other types, we are somewhat familiar with the rest.
 
 | Object Types |
 | :----------- |
@@ -473,9 +473,9 @@ const myCar: Record<string, number | string> = {
 
 Functions are at the bottom of the list, and we will be covering those in quite some detail. There
 will be chapters dedicated to functions and different frameworks for conceptualizing how to use them
-together in order to build larger ideas. Ultimately, functions allow us to define units of logic to
-let us use them in our programs. Structuring functions correctly can help you express complex ideas almost
-effortlessly, and possibly reuse logic so you have less code.
+together in order to build larger ideas. Ultimately, functions allow us to define units of logic to later
+use in our programs. Structuring functions correctly can help express complex ideas almost
+effortlessly, and possibly reuse logic so there is less code.
 
 ## Special Types
 
@@ -487,24 +487,24 @@ This will be the last group of types we will go over.
 | void          |
 | never         |
 
-Let's go in order. Our first type `any` is actually pretty simple, it represents anything. This is the
+Starting in order, our first type `any` is actually pretty simple, it represents anything. This is the
 loosest type in TypeScript. JavaScript does not use types by itself, instead having TypeScript add types
-to it. So `any` is there to help transfer over code to types, but not force a type a be declared at the
-moment. This is typically looked down upon to use often, especially if you know a type beforehand. It
-is fine to use this while you are learning though. In my opinion, just having exposure to the idea of
-types is going to put you way further ahead in the long run. Typescript also predicts types for you
-while you are using it, so it can actually help you learn types.
+to it. So `any` is there to help transfer over code to types, but not force a type to be declared at the
+moment. This is typically looked down upon if used often, especially if someone knows a type beforehand. It
+is fine to use this while learning though. In my opinion, just having exposure to the idea of
+types is going to put the reader way further ahead in the long run. Typescript also predicts types for us
+while we are using it, so it can actually help with learning types.
 
 Next is `void`. This type is actually in C as well. This type is related to functions, so we will see
-this again when we go into those. Mainly it involves the idea that nothing is generated to be given
-back to something that called a function to run. It is common that you use a function to get an answer
-or output of some kind, but some do things behind the scenes. This could be updating values, only going
-off for certain conditions, or providing output for logging or debugging purposes. The kind that do not
+this again when we go into more detail with those. Mainly, it involves the idea that nothing is generated to be
+given back upon calling a function to run. It is common that to use a function in order to get an answer
+or output of some kind, but some do things behind the scenes as well. Some possibilities would be updating values,
+executing for certain conditions, or providing output for logging or debugging purposes. The functions that do not
 provide an answer directly back are of type `void`.
 
-Finally we have `never`. This is an interesting type, but you likely will only see this in advanced
+Finally we have `never`. This is an interesting type, but likely will only be seen in advanced
 use cases. It is not as general across languages like the other types. In practice it can be used
-to define behavior as never being able to occur, and this can be checked as a set of rules to check
+to define behavior as never being able to occur, and this can be checked as a set of rules to be compared
 against when implemented correctly.
 
 ## Extra Types
@@ -530,23 +530,23 @@ type1 & type2;
 let myTuple: [number, string, boolean] = [1, "yes", true];
 ```
 
-We have actually already seen the Union type. This allows for a type to be one or the other. The
-Intersection type allows you to merge the two properties of types together. We will see later that
-you can make your own types in Typescript in order to extend its capabilities. Here we had
+We have actually already seen the `Union` type. This allows for a type to be one or the other. The
+`Intersection` type allows us to merge the two properties of types together. We will see later that
+it is possible to make your own types in Typescript in order to extend its capabilities. Here we had
 `type1 & type2`, but we could have also had something like `Robot & Employee`. This would theoretically be a
 type representing something that had all the properties needed in order to belong to both types at the
 same time. In these cases the `&` represents a logical AND, meaning both conditions must be met.
-Last is the Tuple. This actually resembles something we already saw with the Record
-type with objects. Instead of just being a regular array of certain types, this array actually
+Last is the `Tuple`. This actually resembles something we already saw with the `Record`
+type when using objects. Instead of just being a regular array of certain types, this array actually
 has a specific order in which the value types must be placed to satisfy the criteria.
 
-Typescript is capable of much more with its types, but my aim is really just to familiarize you with
-the general logic you will see across every language you work with. The good news is that I showed you
-all of this just to expose you to the nature of these variables, but you will not have to use any of this
+Typescript is capable of much more with its types, but my aim is really just to familiarize the reader with
+the general logic that will be seen across every language they work with. The good news is that we touched on
+all of this while being exposed to the nature of these variables, but no one will have to use any of this
 unwillingly. Like stated before, JavaScript does not use types, and everything in this book can be
-done just fine in JavaScript. One of my aims is to show you over time how introducing types to your
-code may actually seem harder at first, but in the long run may help you organize better. That will
-be up to you to decide though!
+done just fine in JavaScript. One of my aims is to demonstrate over time how introducing types to your
+code may actually seem harder at first, but in the long run may help with better organization. Ultimately, that
+will be a personal decision going forward.
 
 [![Previous](https://img.shields.io/badge/Previous-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Fundamentals/ch1.md)
 &nbsp;
