@@ -88,8 +88,8 @@ generally takes much more time due to physical limitations, and the process of j
 ## Passing Parameters
 
 Functions can accomplish quite a bit. One great thing they can do is accept arguments. Arguments
-are actual values passed into a function. A function can define a parameter that it expects as
-input when the function is called, and this is considered the argument provided.
+are actual values passed into a function. A function can define a set of parameters that it expects as
+input when it is called, and these will be considered the arguments provided when implemented.
 
 ```ts
 function addNumbers(a: number, b: number): number {
@@ -99,18 +99,18 @@ function addNumbers(a: number, b: number): number {
 console.log(addNumbers(2, 3));
 ```
 
-Here is an example. You see in the function definition it actually has `a` and `b` between its
+Here is an example. We see in the function definition that it actually has `a` and `b` between its
 parenthesis. This indicates that they are parameters necessary to run the function, as the
-function's output depends on them. In most cases, `a` and `b` as names is terrible as they
-are not descriptive, but we can almost get away with it here thanks to TypeScript specifying
-that they are numbers. Short names like this or "x, y, z" and such could be common if it were
+function's output generally depends on them. In most cases, using `a` and `b` as names is a terrible practice
+as they are not descriptive, but we can almost get away with it here thanks to TypeScript specifying
+that they are numbers. Short names like this or "x, y, z" and such could be common if they were
 involved in a program or library that uses many mathematical equations. It may be common notation
-in those circumstances as well, so these could be good use cases. Most times though, you want to
-use descriptive names. In this case using `number1` or `first` may seem redundant or not help much.
-In general, I would try to avoid names with numbers like `number1`, due to the numbers possibly
+in those circumstances as well, so these could be good use cases. Most times though, descriptive names
+are preferred. In this case, using `number1` or `first` may seem redundant and may not be of much help.
+In general, it is better to try and avoid names with numbers like `number1`, due to the numbers possibly
 being confused as letters. In some cases the `1` may resemble the letter "l" very closely.
 
-So here, with 2 and 3 passed into `addnumbers()`, the function will look like this when it runs:
+So here, with 2 and 3 passed into `addnumbers()`, the function will end up looking like this when it runs:
 
 ```ts
 function addNumbers(2, 3): number {
@@ -118,13 +118,13 @@ function addNumbers(2, 3): number {
 }
 ```
 
-At least in memory that is what it will resemble while it is running. So just like in algebra, we
+At least in memory this is what it would resemble while running. So just like in algebra, we
 replace the placeholder values with the values we currently need to use. It should be noted that
 the order of the arguments passed to the function will determine which parameter they will represent
 inside of the function. In programming, these arguments can be many different types, including all of the
 primitive types, and even functions. When functions are passed to functions as parameters, they are
-referred to as callbacks. You could think of it as leaving a phone number for a function to call and use
-when it is time. It really is that straight forward, and allows for some great flexibility. You could
+referred to as callbacks. This could be thought of as leaving a phone number for a function to call and use
+when it is time. It really is that straight forward, and allows for some great flexibility. We could
 think of doing something like passing a set of plans:
 
 ```js
@@ -157,18 +157,19 @@ const costEfficientRobot = createRobot(
 );
 ```
 
-If you can follow that logic, that really is a huge leap. We get to reuse our `createRobot()` function
-with as many different kinds of plans we could come up with, so long as the plans all follow the
-same sets of basic rules, and interact with `createRobot()` almost the same way. That last part is
-hard to phrase because this leads you into conditions where you would like additional things, but
-also need to allow for the original things to work the way they were, or gain something from a new
-addition. This feels okay at times to stretch out the responsibility of a function to accommodate for more use
-cases, but it starts getting tricky when the functions have to share a large amount of unrelated logic to
-all the other use cases in order to keep working. A sign of this can be having large parameters for
-functions, usually three or more. You can pass objects as parameters which sort of stretches the amount
-rule, but it would be something like `robotInformation` in the code above, so conceptually we would
-see it as one related entity. The trouble comes from trying to track too many moving parts that can
-seem independent of each other.
+Understanding this concept can really open up some doors for us. We get to reuse our `createRobot()` function
+with as many different kinds of plans that we can come up with, so long as those plans all follow the
+same implementation pattern. This would constitute interacting with `createRobot()` in almost the same ways. The
+word "almost" is used here, anticipating for situations where we would like to add additional options, but would
+still need to allow for our original design to work the way it was intended. To accomplish this, we could call
+some arguments conditionally, or implement empty returns for some plans where others will do extra work.
+At times it feels okay to stretch out the responsibility of a function to accommodate for more use
+cases, but it starts getting tricky when the functions have to share a large amount of unrelated logic with
+all of the others in order to keep working. An early sign of this can be having large parameters for
+functions, usually three or more. We can pass objects as parameters, which in a way stretches the amount
+rule, being something like `robotInformation` in the code above. So with this, conceptually we would
+see it as one related entity. The real trouble starts to come from trying to track too many moving parts,
+especially when the parts seem independent of each other.
 
 Here, the `robotInformation` object may be used in createRobot before or after the `plansForRobot()` function.
 It may be things as simple as the name, size, color, and such. The waters would start to become
