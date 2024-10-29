@@ -162,7 +162,7 @@ with as many different kinds of plans that we can come up with, so long as those
 same implementation pattern. This would constitute interacting with `createRobot()` in almost the same ways. The
 word "almost" is used here, anticipating for situations where we would like to add additional options, but would
 still need to allow for our original design to work the way it was intended. To accomplish this, we could call
-some arguments conditionally, or implement empty returns for some plans where others will do extra work.
+some arguments conditionally, or implement empty returns for some plans where others would do extra work.
 At times it feels okay to stretch out the responsibility of a function to accommodate for more use
 cases, but it starts getting tricky when the functions have to share a large amount of unrelated logic with
 all of the others in order to keep working. An early sign of this can be having large parameters for
@@ -171,24 +171,26 @@ rule, being something like `robotInformation` in the code above. So with this, c
 see it as one related entity. The real trouble starts to come from trying to track too many moving parts,
 especially when the parts seem independent of each other.
 
-Here, the `robotInformation` object may be used in createRobot before or after the `plansForRobot()` function.
-It may be things as simple as the name, size, color, and such. The waters would start to become
-muddied if you were to include things like model number, number of attachable parts, spare parts, power
-consumption, alternate settings, and other things such as this, as they may be more related to the type of robot
-that we were constructing. Properties such as these may be strange to pass through if one type did not expect to
-use this information, or worse, cause our construction to fail if a property were left out but was still
-attempted to be accessed. If the objects were expected to hold more complex data like this, it may be better
-to pass the `robotInformation` directly to the `plansForRobot()` function as a parameter, and specify the
-specific type of `robotInformation` object to be passed as an argument. If this approach were taken, a warning
-or error could be displayed early, indicating the wrong type was passed through, or default parameters could be
-added based on a check included in the logic to ensure that the program does not crash unexpectedly.
+Here, the `robotInformation` object may be used in `createRobot` before or after the `plansForRobot()` function.
+Our `robotInformation` object may contain things such as a name, size, color, and such. Besides generic properties
+like these, things like a model number, number of attachable parts, spare parts, power consumption, alternate
+settings, and other various attributes might be included. These additions may start to be more related to a
+particular type of robot being constructed though. Properties such as these may be strange to pass through if
+one type did not expect to use or require this information, or worse, cause our construction to fail. This
+would be due to a property being left out but still attempted to be accessed during the build process for use.
+
+If we were expecting the objects to hold more complex data like this, it may be more suitable
+to pass the `robotInformation` directly to the `plansForRobot()` function as a parameter. With this, we could
+specify the specific type of `robotInformation` object being passed as an argument also (or if we were using
+TypeScript we could rely on defining the specific types expected for the particular function). Using this approach,
+we would have the option to display a warning or error message if something was unexpectedly passed through.
+Default parameters could also be added to the logic in order to ensure that the program does not crash unexpectedly.
 
 Overall, the main goal of all of this is to abstract information from the main flow of our program
 so that we can visualize it from a higher level. There could easily be thousands of functions in a
-code base, and having it broken up into units helps to isolate things from each other. This makes
-things easier to reason with, as well as track down when things start to go wrong. It is not much
-help if something goes wrong and you have to search the entire program every time that you need
-to fix something.
+code base, and having it broken up into units helps to isolate parts from one another. This makes the
+logic much easier to reason with, and helps simplify tracking things down if they go wrong. It is not very
+helpful if something goes wrong and you have to search the entire program anytime you need to fix something.
 
 ## Classes
 
