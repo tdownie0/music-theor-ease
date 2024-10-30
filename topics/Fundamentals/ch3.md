@@ -194,12 +194,47 @@ helpful if something goes wrong and you have to search the entire program anytim
 
 ## Classes
 
-Classes are another mental construct we use to organize logic. Using classes is related to a paradigm
-called Object Oriented Programming (OOP). Above when we demonstrated the callback, this was leaning
-more towards functional programming design wise. Classes could be passed functions as well, though typically
-this is done through passing different types of objects that adhere to a particular interface, a process referred
-to as dependency injection. We will touch on this later, but classes have a different approach to passing around
-functions that they anticipate to be used in their logic.
+Classes are yet another mental construct we use to organize logic. Using classes is related to a paradigm
+called Object Oriented Programming (OOP). Above when we demonstrated the callback, this was related
+more towards functional programming design wise. Classes can be passed functions as parameters as well, though
+typically this is done through passing different types of objects that adhere to a particular interface, a
+process referred to as dependency injection. To describe an interface briefly, they are focused on defining
+the contents and variable types of an object or class. They are very similar to what we have seen already with
+TypeScript, but go one step further in abstraction. Instead of defining the type directly with the variable being
+assigned, they define the type separately to be referenced. Here is a quick example:
+
+```ts
+interface Cat {
+  name: string;
+  age: number;
+  breed: string;
+}
+
+let sirMuffins: Cat = {
+  name: "Sir Muffins",
+  age: 10,
+  breed: "Tabby",
+};
+
+function speak(cat: Cat) {
+  return cat.name + " says meow!";
+}
+```
+
+This gives us a quick glance at an interface (TypeScript also allows a type alias, which is very similar but has
+a few differences in how they can be manipulated). Interfaces are very common across OOP languages, and share
+a portion of the underlying philosophy of classes, specifically regarding having a defined structure. As we see
+in this example, one of the interface's prime advantages is that we do not have to write out the entirety of
+the type definition for variables and parameters we expect to use repeatedly. This is especially useful if they
+have long definitions, allowing us to not repeat identical definitions, instead defining them in a unit
+of logic and then passing the definition for reference. The interface also serves the purpose of being a contract,
+as it is often referred, so that anything that uses or expects to use something of a particular interface can
+operate as anticipated (this is related to allowing the various robot types in our other example).
+
+Interfaces can use many different keywords with their definitions in order to be more specific, especially for
+classes, even defining methods and their parameters for a class (we will see methods in the next example), but in general their goal is outlined in our provided example. Now, let us go into more detail with classes. Classes
+encapsulate a different approach for structure and passing around functions that they anticipate to be used
+with their logic.
 
 ```ts
 // Create Cat Class
