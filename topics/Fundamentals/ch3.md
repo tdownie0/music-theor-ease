@@ -430,7 +430,7 @@ difference would be in being able to truly put the access modifiers on the funct
 child relationships restricted.
 
 Another factor is the placement of the variable, which can determine where it can be used within
-the function. In our case, you can see the third function within the object being held in the `scopedVariable`
+the function. In our case, we can see the third function within the object being held in the `scopedVariable`
 key. Currently, the placement of the variable `within` makes it inaccessible for reference with calls to the
 function or other functions at the same scope level. This is due to it belonging to the `scopedVariable` scope.
 No where outside of this can assign or mutate the variable with another value. The function would have to provide
@@ -441,19 +441,19 @@ The logic contained in a function like this is commonly referred to as a closure
 as the current functions that have their values being interacted with, but are currently no longer
 executing. Here, the `_name` variable can still be manipulated even though the function is not currently
 executing. This can be seen as the state of the closure, changing whenever the value of `_name` should
-change. I want to specify that a function may still be running while another piece of logic manipulates
+change. It is possible that a function may still be running while another piece of logic manipulates
 its values, but it may be in a suspended state or going through iterations of logic.
 
 ## Benefits of Both
 
 This was a pretty high level overview of some abstract concepts like object oriented programming,
-and functional programming. You are free to use whichever style suits your needs. Being able to
-expose you to the core structure of both seems like it will really pay off in the future. Becoming
-a master in either discipline is something to truly admire, but you do not have to be a master to use
+and functional programming. We are free to use whichever style suits our current needs. Being
+exposed to the core structure of both will likely provide a good amount of advantages in the future. Becoming
+a master in either discipline is something to truly admire, but one does not have to be a master to use
 either of them. Having the understanding of how to approach problems with this somewhat
-subtle design decision will help you look at problems differently. Knowing how to approach
+subtle design decision helps us look at problems differently. Knowing how to approach
 something from multiple perspectives really helps with anticipating future needs, finding
-limitations, and really being able to justify the purpose and intent of the code you write or work on.
+limitations, and really being able to justify the purpose and intent of the code we write or work on.
 
 This last point could be emphasized with a strategy from security, and that is the principle of least
 responsibility. According to this philosophy, you should not give anything in your system access
