@@ -68,7 +68,8 @@ part about this function, is that it actually calls another function, and then r
 There are comments with "Function Declaration Area" around the functions to help illustrate that
 the section that is contained within works differently than the code below it, marked as executing at
 runtime. Specifically, what the executed portion refers to is the actual code that will be called and executed
-during the course of the program's runtime. If the functions were not called in this portion, they would still be read and stored in memory at runtime, but their body's would not be executed during this phase.
+during the course of the program's runtime. If the functions were not called in this portion, they would still
+be read and stored in memory at runtime, but their body's would not be executed during this phase.
 
 When the program runs and it sees a function call like sayHello(), it
 looks up if it has a reference to such a function, and if it does, it will run that code associated
@@ -79,7 +80,8 @@ manageable. The function calls could be for anything. Functions named `startRobo
 large or small any of these functions could be, but we could hopefully tell something about their
 purpose just from their names.
 
-If a programmer consistently uses names that are as descriptive as possible, their code can almost read like a story. Giving yourself as many advantages as one can, especially for reading code again in the future, will pay
+If a programmer consistently uses names that are as descriptive as possible, their code can almost read like a story.
+Giving yourself as many advantages as one can, especially for reading code again in the future, will pay
 itself back many times over for actively maintaining code. One of the realities with coding, and really with
 writing in general, is that we will read far more than we could ever possibly write.
 In general, glancing over and reading something quickly is something we do almost mindlessly. Writing
@@ -232,7 +234,8 @@ as it is often referred, so that anything that uses or expects to use something 
 operate as anticipated (this is related to allowing the various robot types in our other example).
 
 Interfaces can use many different keywords with their definitions in order to be more specific, especially for
-classes, even defining methods and their parameters for a class (we will see methods in the next example), but in general their goal is outlined in our provided example. Now, let us go into more detail with classes. Classes
+classes, even defining methods and their parameters for a class (we will see methods in the next example), but
+in general their goal is outlined in our provided example. Now, let us go into more detail with classes. Classes
 encapsulate a different approach for structure and passing around functions that they anticipate to be used
 with their logic.
 
@@ -279,7 +282,7 @@ console.log(testCat.secretInfo()); // 'Calico'
 console.log(testKitten.secretInfo()); // 'Tabby'
 ```
 
-This really is a loaded example, but I think it shows a majority of features that come with using
+This really is a loaded example, but it demonstrates a good amount of features that come with using
 classes. With classes, their variables are referred to as "properties", and their functions are
 called "methods". This aligns more with the train of thought around classes. From a general stand
 point, classes resemble the layout of common taxonomies from biology (vertebrate, invertebrate,
@@ -290,9 +293,9 @@ well, their setup is just borrowed from the parent. This was done through the `e
 `extends Cat`. It can also be observed that we do not need the function keyword to declare functions (methods)
 inside of a class.
 
-You may have also noticed the new keywords `public`, `protected`, and `private`. These are referred to as
+We are also introduced to the new keywords `public`, `protected`, and `private`. These are referred to as
 access modifiers and relate to the philosophy of classes as well. We will touch on these in the following
-paragraphs. At the top of the declaration we have `class Cat{}`. This names the class we wish to create. Inside
+paragraphs. At the top of the declaration we have `class Cat{}`. This names the class being created. Inside
 of it is the first method that is optional, which is `constructor`. The constructor declares the parameters the
 class needs in order to create itself, as well as the logic to be run upon its creation. We see here that the
 `{}` for `constructor` is empty, so only the variables will be declared with no additional logic.
@@ -321,27 +324,29 @@ of the class.
 > In other languages implementing these access modifiers, the code may not run or compile at all when used
 > incorrectly.
 
-You see the other two properties actually return errors to us. This is due to both `protected` and
+It can be observed that the two other properties actually return errors to us. This is due to both `protected` and
 `private` having an increased set of conditions in order to be accessed. With `protected`, the property
 can only be directly accessed from within the class itself, or in a child class. Here we see in the
 `Kitten` class that it extends the `Cat` class. This means that Kitten inherits its
-definition and behavior from `Cat`. It is free to add additional properties and methods that it would like to use, but it will follow the parent's base template by default with Typescript. Other languages may
-require you to call a method to call the parent's constructor in its own constructor, which must be done if it
-requires arguments. You also have access to `public` and `protected` methods from the parent within child
+definition and behavior from `Cat`. It is free to add additional properties and methods that it would like to use,
+but it will follow the parent's base template by default with Typescript. Other languages may
+require us to use a method to call the parent's constructor in its own constructor, which must be done if it
+requires arguments. We also have access to `public` and `protected` methods from the parent within child
 classes. In the `Kitten` class we see a method `getKittenAge()` that accesses its `age` property through
 `this.age()`. This is done by calling `this.getAge()`, which accesses the method passed down from the parent.
 
 Since `protected` was used as an access modifier, both the property and method can be accessed. If instead this
 were `private`, this would not be the case, and we would get an error denying us access. We see here that the
 instance of `Kitten` (`testKitten`), calls the Cat class's `getAge()` successfully from within its method
-`getKittenAge()`. Since the `getAge()` method is called, this allows us to access the protected
+`getKittenAge()`. Our instance calls the `getKittenAge()` method, which allows us to access the protected
 property. We could not access the property otherwise from this instance without a method referring to it. This
 does not have to be a method from the parent, but instead could have just been a method in the Kitten class that
-used the statement `return this.age`, just like the `getAge()` method in the Cat class. You will also notice
+used the statement `return this.age`, just like the `getAge()` method in the Cat class. It can also be noted
 that `getSecretInfo()` does not have a access modifier key word next to it. Due to this, the program will
 default to using `public`.
 
-Finally we get to `private`. As I assume you may expect, `private` adds more restricted behavior to our code. Private properties and methods can only be accessed from within the class they originated in. We see this in the
+Finally we get to `private`. As I assume you may expect, `private` adds more restricted behavior to our code.
+Private properties and methods can only be accessed from within the class they originated in. We see this in the
 call above, `testKitten.getBreed()`, which yields an error. This is due to the function being marked private.
 This prevents instances from calling the method, as well as child classes themselves. The next line below calls
 the same method, but this time on the original class it was defined on, `testCat.getBreed()`. It also receives
@@ -428,7 +433,8 @@ Another factor is the placement of the variable, which can determine where it ca
 the function. In our case, you can see the third function within the object being held in the `scopedVariable`
 key. Currently, the placement of the variable `within` makes it inaccessible for reference with calls to the
 function or other functions at the same scope level. This is due to it belonging to the `scopedVariable` scope.
-No where outside of this can assign or mutate the variable with another value. The function would have to provide us with a function within it in order to access the variable. Otherwise, we could pass it as an argument
+No where outside of this can assign or mutate the variable with another value. The function would have to provide
+us with a function within it in order to access the variable. Otherwise, we could pass it as an argument
 as we did with newName, and keep track of it in the original function that supplied the object.
 
 The logic contained in a function like this is commonly referred to as a closure. Closures can be seen
