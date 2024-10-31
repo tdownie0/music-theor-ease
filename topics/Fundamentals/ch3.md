@@ -408,10 +408,10 @@ console.log(person.tryToAccessScopedVariable()); // Uncaught ReferenceError: wit
 Here is a simple demonstration of a function that acts like a class. The idea of inheritance gets very
 tricky to implement early on with this design architecture. From my personal view point,
 functional programming feels more adaptable for smaller tasks. Object oriented programming is nice
-for laying out systems that you know will have similarities to pass between your data as with
+for laying out systems that will have similarities to pass between the data being used as with
 a parent and child setup.
 
-I think this example illustrates something interesting. You can see `createPerson()` has a private variable
+This example illustrates something interesting. We can see `createPerson()` has a private variable
 named `_name`. The underscore is a convention, indicating to other developers that it is intended to be
 private. This convention can be seen in other programming languages as well, but it is not enforced directly
 from the name of a variable. To properly enforce this we would need access modifiers like we had with classes.
@@ -419,8 +419,8 @@ The location of the variable is important here. We see the setName key of the ob
 a function that has a parameter of `newName`. In it are the contents `_name = newName;`, which takes
 the argument provided for `newName`, and assigns it to `_name`. Even though `_name` is declared outside
 of the object, the object can assign a value directly to it due to the object being in the function's
-scope. We can see the variable does not remain truly private due to it being passed as a property to the object
-that we are returning. Typically you would not want to do this in this circumstance, instead leaving the
+scope. We can also see the variable does not remain truly private due to it being passed as a property to the
+object that we are returning. Typically we would not want to do so in this circumstance, instead leaving the
 functions to be the only way to retrieve the private variable if desired. If we did not pass the variable
 as a property to the object, `_name` would be reasonably named by convention. This also demonstrates that
 functional programming may have less influence on accessibility restrictions according to its paradigm.
