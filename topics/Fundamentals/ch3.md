@@ -345,30 +345,30 @@ used the statement `return this.age`, just like the `getAge()` method in the Cat
 that `getSecretInfo()` does not have a access modifier key word next to it. Due to this, the program will
 default to using `public`.
 
-Finally we get to `private`. As I assume you may expect, `private` adds more restricted behavior to our code.
+Finally we get to `private`. As may be expected, `private` adds even more restrictive behavior to our code.
 Private properties and methods can only be accessed from within the class they originated in. We see this in the
-call above, `testKitten.getBreed()`, which yields an error. This is due to the function being marked private.
+call above, `testKitten.getBreed()`, which yields an error. This is due to the method being marked private.
 This prevents instances from calling the method, as well as child classes themselves. The next line below calls
 the same method, but this time on the original class it was defined on, `testCat.getBreed()`. It also receives
 an error due to not being able to call the method on an instance. Last we see the call to
 `testCat.secretInfo()`, which is successful. This is due to the method defaulting to `public` in the `Cat`
 class. Since we can access public methods on a class, and a method within a class can access any information
-contained within that class, the method is allowed to access the information. The private property belongs
+defined within that class, the method is allowed to access the information. The private property belongs
 directly to the Cat class, so a method on that same class can access anything that is private for that class.
 This also works for the `Kitten` class, as the method it uses is a public method that lives inside of `Cat`.
 
 ## The Functional Way
 
-Making it to this point, you have covered some serious ground. Typically the concept of loops would
+Making it to this point, we have covered some serious ground. Typically the concept of loops would
 have been brought up and explained at this point, but I felt functions and classes deserved the
 special attention first. Usually classes are covered much later when giving a programming overview.
-To me, classes can almost be seen as objects with methods. Really at the heart of functional
-programming languages like JavaScript, they went with this idea of giving objects properties
-whose values are actually functions. With the functions, you do not have to give a name after `function()`,
-so they would technically be called anonymous functions. You can see in the example below
-that the keys for the functions almost serve as their names (though different) despite this. Quite
-a bit of the behavior of classes can be mimicked this way as well. The functional part is that
-you could call a function to help set up the object, and return the object as the result.
+In some ways, classes can almost be seen as objects with methods. Really at the heart of functional
+programming languages like JavaScript, they went with this idea, giving objects properties
+whose values are actually functions. With the functions, we do not have to give a name after the
+declaration (`function()`), so they would technically be called anonymous functions. This can be seen in
+the example below where the keys for the functions almost serve as their names (though different)
+despite this. Quite a bit of the behavior of classes can be mimicked this way as well. The functional
+aspect of this is that we could call a function to help set up the object, and return the object as the result.
 
 ```js
 function createPerson(name: string) {
