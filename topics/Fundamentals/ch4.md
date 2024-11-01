@@ -1,10 +1,9 @@
 ## Chapter 4: Loops And Conditions
 
-Now the time has come to discuss loops. You may have noticed that I mentioned them towards
-the end of the last chapter. Overall, I believe the idea of loops is much easier than the
-material that you just tackled. The reason I introduce them so late is that they tend to add
+Now the time has come to discuss loops. Overall, the idea of loops is much easier than the
+material that we just tackled. The reasoning for introducing them at this point is that they tend to add
 quite a bit of complication to the logic of programs, especially when they are interacting
-with conditional statements as we will see. An approachable way to begin explaining the essence
+with conditional statements, as we will see. An approachable way to begin explaining the essence
 of both would be that they are temporal constructs. They either dictate how many
 times something should occur (loops), or influence if/when a piece of code should execute (conditions).
 Conditions could also be seen as rules for states, which decide what action we will take, removing the
@@ -13,7 +12,7 @@ in a system moment by moment, so the point in time is implied.
 
 Since loops were mentioned first, let us start there. A loop is a specific construct in programming
 that allows for the execution of a portion of code multiple times. Each time a section of code
-is operated on, it is said to have been iterated over. This process occurs as many times as
+is operated on once inside the loop, it is said to have been iterated over. This process occurs as many times as
 the code specifies. To end a loop, usually a condition is met so that the loop knows that it is
 done iterating over its section of code. We will look at our first condition along with a loop, being the
 `if` condition. An `if` condition would be something like stopping at three if I said count to three.
