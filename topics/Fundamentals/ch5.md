@@ -479,25 +479,25 @@ console.log(teamWithHighestScore); // { name: "Tigers", players: 25, score: 900 
 Here we see other common functional methods. We will start with `.filter()` and `.reduce()`. With `.filter()`,
 each value is compared against the logic condition provided, and only returns the values that evaluate to true.
 In the case of `.reduce()`, it takes two values which can be named anything but are referred to as the
-`accumulator` and the `currentValue` often. In this case we follow this naming of the variables. In the
+`accumulator` and the `currentValue` often. In this case we followed this naming of the variables. In the
 function we see that both values are added together, and a 0 value is provided as a second parameter (after the
-comma behind `currentValue`). This initializes the `accumulator` to a base value. In our first example we see
-that the values are looped over and we receive 15 as a final value. For the example that follows
+comma behind `currentValue`). This initializes the `accumulator` to a base value. In our first example,
+the values are looped over and we receive 15 as a final value. For the example that follows
 a value of 10 is passed as a base beforehand, and we receive a value of 25. In both cases the
 `accumulator` is returned.
 
-Next we are introduced to `.find()`. In the first example we see that a list (or array) of people
+Next we are introduced to `.find()`. As seen in the first example, a list (or array) of people
 objects are provided, and we look for someone who is greater or equal to 35 in age. As a result, we
-find the object with the name `"Charlie"` as a match. We see the difference from `.filter()` here is that
-the object containing the name `"David"` also meets the criteria, but only the 'Charlie' object is
+find the object with the name `"Charlie"` as a match. Notably, the difference from `.filter()` here is that
+the object containing the name `"David"` also meets the criteria, but only the "Charlie" object is
 returned. Unlike `.filter()`, `.find()` will only return the first result it finds.
 
 The second example with `.find()` is a bit more complicated. Here we use `.find()`, and in the comparison
-we access the `Math` object that comes with Javascript (built-in object), and access the `.max()` method,
-which returns the largest value from its passed parameters. We also see that our `.find()` method passes
-more than one parameter (just like all the others covered can optionally). These include the value `team`,
-the index `index`, and the array `array` which is the array itself that `.find()` was called against. With
-the array, we are able to perform a rather recent addition to the JS ecosystem, the spread operator
+we access the `Math` object that comes with Javascript (referred to as a built-in object), and access the
+`.max()` method, which returns the largest value from its passed parameters. We also see that our `.find()`
+method passes more than one parameter (just like all the others covered can optionally). These include the value
+`team`, the index `index`, and the array `array` which is the array itself that `.find()` was called against.
+With the array, we are able to perform a rather recent addition to the JS ecosystem, the spread operator
 (`...`). This actually expands an iterable object (something that can be looped over) into individual elements,
 here being an array from the object provided. So in this case `Math.max()` will
 actually look like this with the values, `Math.max(900, 500, 700)`. Using the spread operator is also
