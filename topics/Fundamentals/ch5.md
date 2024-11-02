@@ -371,10 +371,10 @@ jobs.printAllJobPays();
 ```
 
 Design like this can lead to better encapsulation of data overall. It separates concerns, and has
-the classes focus on what is their intended purpose. This does lead to more verbose code, but you
-will not have to update code that gets outdated due to changes in another class that the class you are using
-utilizes. Updating property names and other changes like this should not concern classes outside of themselves.
-It almost seems self defeating to split up your code to get this modularity, but then be bound to updating
+the classes focus on what is their intended purpose. This does lead to more verbose code, but we
+will not have to update code that gets outdated due to changes in another class that our class may
+utilize. Updating property names and other changes like this should not concern classes outside of themselves.
+It almost seems self defeating to split up code to achieve this modularity, but then be bound to updating
 implementation details of several classes for one change in another. Still, we may have to update a method name
 if it is changed in the class that implements it, which is a sacrifice we have to make. This is still much better
 than having to update the logic that is related to how another class's method works.
@@ -384,7 +384,6 @@ than having to update the logic that is related to how another class's method wo
 Luckily for us there are more functional methods to choose from than just `forEach()`.
 
 ```js
-// Example with creating a new object
 const teams = {
   tigers: { name: "Tigers", players: 25, score: 900 },
   bears: { name: "Bears", players: 24, score: 500 },
@@ -411,8 +410,8 @@ console.log(numbers); // [1, 2, 3, 4, 5]
 Here is an example of the `.map()` method. It loops over arrays and returns an array
 for assignment to the desired variable. In this case it took all the values in the teams object, and
 populated an array with a new object for each value. Looking at the second example involving
-multiplication, you can see that the `double` variable has every value in the `numbers` array multiplied
-by 2. We see that the original `numbers` array remains unchanged. This is due to `.map()` creating a copy of
+multiplication, we can see that the `double` variable has every value in the `numbers` array multiplied
+by 2. Here, the original `numbers` array remains unchanged. This is due to `.map()` creating a copy of
 the data for wherever it is intended to be assigned upon performing the operation. The function does not directly
 manipulate the values contained in `numbers`. The values are not manipulated in a `.forEach()` method
 either, but they actually are not returned for assignment like with `.map()`. To actually change the values
@@ -427,7 +426,7 @@ console.log(numbers); // [2, 4, 6, 8, 10]
 This demonstrates that either functional method could reassign the values by directly assigning the
 indexes of the array. Another interesting point in this example is that we passed a `number` variable
 for the value, and an `index` variable for the index. Many of these methods automatically keep track
-of the indexes for you, and we will see another example shortly. Something else you might have noticed
+of the indexes for us, and we will see another example shortly. Something else that might have been noticed
 is that it appears we mutated the value of an array that is declared a constant. This will be
 explained in detail when we get to shallow copies.
 
