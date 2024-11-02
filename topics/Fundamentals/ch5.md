@@ -2,10 +2,10 @@
 
 Since we are using a language like Javascript, we actually get some nice utility from built-in
 functions that deal with arrays and objects. The ways we can interact with them almost seems
-more intuitive with real world examples. Normally, when people look at things we do not index their
-position and then retrieve the value. We typically grab (mentally or physically) what we are looking at, then
-decide what to do with it. Through functional methods, we will be able to make this interaction similar
-to handing you something directly.
+more intuitive with real world examples. Normally, when people look at things they do not index their
+position and then retrieve the value. People typically grab (mentally or physically) what they are looking at,
+then decide what to do with it. Through functional methods, we will be able to make this interaction similar
+to handing something directly to ourselves.
 
 ```ts
 const countDownNumbers: number[] = [5, 4, 3, 2, 1];
@@ -23,7 +23,8 @@ console.log("Blast Off!");
  */
 ```
 
-You may remember this same output from the last chapter. Here is the relevant code as a reminder:
+This same output was achieved in the last chapter, but with a for and while loop. Here is one of the relevant
+code pieces as a reminder:
 
 ```ts
 for (let countdown: number = 5; countdown > 0; countdown--) {
@@ -58,8 +59,8 @@ automatically incremented as mentioned. The elements are passed to us through a 
 this case `time`. So the `time` variable represents each element of the array, being `countDownNumbers[index]`
 with whichever value `index` is currently incremented to.
 
-This behavior is especially nice with objects as well. You may not know an object's keys
-beforehand, but functional methods let you interact with the keys and values, passing them
+This behavior is especially nice with objects as well. An object's key may not be known
+beforehand, but functional methods let us interact with the keys and values, passing them
 one by one just like with the array example above.
 
 ```js
@@ -102,13 +103,13 @@ manipulate the object at hand. Common calls to `Object` to extract values would 
 items, and the `.entries()` function retrieves both at the same time. Once we use one of these methods,
 we may operate on them just like we would any other loop.
 
-In this example you could see that we only need to have prior knowledge of the `pay` key existing.
+In this example it can be observed that we only need to have prior knowledge of the `pay` key existing.
 We do not need to know the key of the object representing the job position, or the key of the
 positions job category. The method `.values()` handles extracting the values of both for us. This
 allows for a great deal of flexibility when setting up data. These objects within objects can be
-as large as they are needed to be, and giving the data implicit meaning is much quicker in these
-circumstances. More modern languages have ways to loop over objects with for loops, and this would
-be an alternative demonstration in Javascript:
+as large needed for a given situation. Data can also acquire an implicit meaning through this structure,
+which can be much quicker in these circumstances as well. Many modern languages have ways to loop over
+objects with for loops, and this would be an alternative demonstration in Javascript:
 
 ```js
 const jobs = {
@@ -148,7 +149,7 @@ for (const key in jobs) {
 ```
 
 Here we see that in order to access the object values, we must first use the for loop to extract
-the keys of the object. After, a variable is assigned to store the value of the object key by directly
+the keys of the object. After, a variable is assigned to store the value of the object's key by directly
 accessing it with the extracted key.
 
 If we were to do such a thing with purely OOP (Object Oriented Programming), we would have
