@@ -412,7 +412,7 @@ lightColor === "green" ? console.log("Proceed") : console.log("No Entry");
 ```
 
 As mentioned in the comment above, `"Proceed"` will be printed here. At the beginning of the ternary
-operator is the condition to check, `lightColor === "green"`. If it is true, the code directly after
+operator is the condition to check, `lightColor === "green"`. If it evaluates to `true`, the code directly after
 the question mark (`?`) is executed. If not, the code after the colon (`:`) is executed. This offers
 a convenient shorthand at times, but be careful not let the code become unreadable. It is
 often harder to read code where programmers put ternary operators in ternary operators.
@@ -430,11 +430,11 @@ lightColor === "green"
 ```
 
 Here, the code formatter placed this in a structure that is more readable, leaving the indentation
-to indicate to us the current level the comparison is at. I believe we may still agree
-that this code is much harder to reason with as compared to the one nested condition. Using indentation
+to indicate to us the current level the comparison is at. Some may still agree that this code is much
+harder to reason with as compared to the previous example without a nested condition. Using indentation
 to group sections of code together has been something that has gradually worked its way into best
 practice. Older languages were not affected by indentation levels as much, using semicolons to
-designate the end of lines. While this is easy for the computer, you could end up declaring several
+designate the end of lines. While this is easy for the computer, someone could end up declaring several
 things on a single line, taking much more time to read for a human. Languages like Python actually
 made indentation a necessary part of its language, making code that is directly next to other code
 and at the same indentation level considered to be in the same code block (typically between `{}`,
@@ -472,9 +472,9 @@ as a const. The difference is that each has their own scope, so none of the vari
 each other, or can access the others. Their respective functions return their values, but that is as
 far as we can interact with them. We see the curly brackets (`{}`) typically separate scopes, but
 the main body that runs the JS program could be thought of being wrapped in this as well, containing
-its own scope's boundaries. We also see in his example that the order of the functions is switched from
-their creation, to prove that the time they were created is not influencing this, and the variable is
-not being reassigned.
+its own scope's boundaries. We also see in this example that the order of the functions is switched from
+their creation. This was done to prove that the time they were created is not influencing the results, and
+the variable is not being reassigned.
 
 We have also seen that functions allow us to pass parameters, effectively passing values from one
 scope to the other. Usually higher up variables in a nesting structure are accessible by the lower
@@ -500,7 +500,7 @@ noParameter(); // 5
 console.log(mainCannotReach); // Uncaught ReferenceError: mainCannotReach is not defined
 ```
 
-As you can see, both functions are able to print the correct values through `console.log()` whether
+As can be seen, both functions are able to print the correct values through `console.log()` whether
 there was a parameter passed or not. At the end we also see that the main body of the program
 cannot access variables within functions that it contains. Javascript is actually a bit different
 from many other languages with regards to being able to define a variable's scope type along with
@@ -534,7 +534,8 @@ Here we see the uniqueness of `var`. It is accessible from outside of code block
 conditional statements such as `if`, as well as loops. When used inside of a function, `var` is
 accessible to that specific function, and other scopes within that function. If we were to try to
 `console.log(test1)` after the `exampleScopeDifference()`, it would also return
-`ReferenceError: test1 is not defined`. In this example we also see that `var` is reassignable just like `let`.
+`ReferenceError: test1 is not defined` like our `test2` variable. In this example we also see that
+`var` is able to be reassigned just like `let`.
 
 Other related behavior would be that if the `var` variable is declared at the top level of a
 program, which is referred to as a global variable, it is actually added to the global object
@@ -551,7 +552,7 @@ is true in these circumstances as well.
 
 ## Conclusion
 
-Being introduced to loops and conditions has now completed your formation of the basic
+Being introduced to loops and conditions has now completed our formation of the basic
 underpinnings of programming. With this information, we will now be able to look at smaller
 programs and make sense of what is going on. Having several conditions within a piece of code
 can make analyzing it take much longer, and possibly increase the difficulty of the code. If
