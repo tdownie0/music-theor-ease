@@ -206,7 +206,7 @@ console.log(4 != "4"); // false
 console.log(4 !== "4"); // true
 ```
 
-These are some examples of using the comparisons. I point out the slight difference provided by the
+These are some examples of using the comparisons. Here, they point out the slight difference provided by the
 "loose" and "strict" equivalence case. If the same number is provided as a number type and a string, true will be
 returned for "loose" equivalence. In the case where "strict" is used, the same number comparison as a number
 type and a string type will return false for the condition evaluation.
@@ -218,7 +218,7 @@ type and a string type will return false for the condition evaluation.
 |             &&             | Logical AND |
 |            \|\|            | Logical OR  |
 
-One additional thing to all these equivalence operators is that there are two other operators
+One additional consideration with all of these equivalence operators is that there are two other operators
 that allow logical chaining. These would be `&&` (AND), as well as `||` (OR). You can see example
 uses below:
 
@@ -234,15 +234,15 @@ console.log((true && false) || true || false); // true
 ```
 
 Above are demonstrations of how this chaining occurs. Any condition with an equivalence operator
-could be used in place of either `true` or `false`. These can take some getting use to if you are
-not familiar, but using parenthesis is very important with these. Like in mathematics, anything
+could be used in place of either `true` or `false`. These can take some getting use to for someone that is
+not familiar with them, but using parenthesis is very important with these. Like in mathematics, anything
 in parenthesis is evaluated as a unit by itself, before being exposed to outside information. The
 `&&` operator looks for the first instance of false and then returns false, otherwise it will return
 true. On the other hand, the `||` operator will return the first instance of `true`, or otherwise
 will return `false`.
 
 These can get rather tricky to evaluate manually as more conditions come into play. They should
-be read from left to right, and broken up as best as you can. Now that we have already learned
+be read from left to right, and broken up as best as possible. Now that we have already learned
 about functions, it is often useful to put a longer logical chaining inside of its own function,
 making it easier to read.
 
