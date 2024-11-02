@@ -111,11 +111,11 @@ console.log("Blast Off!");
  */
 ```
 
-You can see in this example we actually count down (`countdown--`), using 0 as the condition for when we
+In this example we actually count down (`countdown--`), using 0 as the condition for when we
 will terminate our loop. This structure may feel very different since the parenthesis are actually
 accepting three separate conditions instead of one. First you define a variable to use in the for loop,
 then you define the condition to run until, and last you define something that happens at the end
-of each iteration of the loop (usually manipulating the variable you created). Here would be the same
+of each iteration of the loop (usually manipulating the variable created). Here would be the same
 result instead as a while loop:
 
 ```ts
@@ -129,17 +129,17 @@ while (countdown > 0) {
 console.log("Blast Off!");
 ```
 
-With it laid out like this, you can see that this approach is a bit more verbose. This takes six
+With it laid out like this, we can see that this approach is a bit more verbose. This takes six
 lines to write instead of four. Now, that's not a huge loss, but extra lines of code like this can add
 up overtime. This could also be a style preference, but we will see later that `for` can actually
-behave in more ways than just this. Still, I would say this is the classic structure of `for` loops, so
-you will see this across many languages. Other structures for the `for` loop will be dependent
-on the language you have at hand.
+behave in more ways than just this. Still, this may be considered the classic structure of `for` loops, so
+it will be seen across many languages. Other structures of the `for` loop will be dependent
+on the language presently at hand.
 
 ## Comparisons and Equivalence Operators
 
-So hopefully this has cemented your understanding of the purpose of loops. Being able to iterate over a chunk
-of logic is a very common need in programming. You have also seen that these structures are heavily
+Hopefully this has provided a decent understanding of the purpose of loops. Being able to iterate over a chunk
+of logic is a very common need in programming. We have also seen that these structures are heavily
 reliant on equivalence operators, so let's lay out some of those.
 
 | Equivalence Operators |           Names            |
@@ -158,8 +158,8 @@ I want to mention that the `===` and `!==` are only used in some languages, and 
 in TypeScript/Javascript. Originally in C, `==` was the equivalence operator to check if one value
 was equal to another, since the assignment `=` is already in use. The introduction of the triple
 equals came from the fact that some languages allow you to compare other types to each other that may in a
-way be related. An example would be the string `"5"` and the number `5`. With the `==` you would get a `true`
-value when comparing the two. If you did this with the `===`, instead you would receive `false`, since they
+way be related. An example would be the string `"5"` and the number `5`. With the `==` we would get a `true`
+value when comparing the two. If we did this with the `===`, instead we would receive `false`, since they
 are not the same type. This is the difference between "loose" and "strict" equivalence.
 
 For "loose" equivalence, the comparison is done through a process known as coercion. This process
@@ -167,7 +167,7 @@ involves attempting to convert one or both of the values to a different type and
 they share the same value in that case. Languages that use looser type equivalences will tend to
 have this feature. This can cause unexpected errors if only a certain type is expected, but it can
 also make situations like the number example above easier to handle. It would not be ideal for a
-program to fail due to having a string representation of an age versus a number, unless you intended
+program to fail due to having a string representation of an age versus a number, unless someone intended
 for it to.
 
 Other than these conditions, the other operators that are left may be familiar from mathematics. As
