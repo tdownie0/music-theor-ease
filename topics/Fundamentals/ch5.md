@@ -592,34 +592,33 @@ it does not work for objects containing functions or circular references. Here, 
 first turn the object into a JSON format using `.stringify()`. Afterwards, we `.parse()` this result
 to turn the JSON string back into a Javascript object. More accurate functions can be looked up
 through a Google search, or asking an LLM (Large Language Model) like ChatGPT. These sources are
-useful for weighing your options in circumstances like this, and giving you popular solutions. You
-are also free to use libraries like lodash to handle this task. We will go into libraries in later
-chapters.
+useful for weighing out options in circumstances like this, and providing popular solutions. Using
+libraries such as lodash can also help in handling this task.
 
 ## Parting Thoughts
 
 Great work getting to the end of this chapter. We went into rather dense material at the end. The
-flexibility we get with being able to pass functions to operate on arrays and objects gives us the
+flexibility we get from being able to pass functions to operate on arrays and objects gives us the
 ability to extract a good amount of information from such structures rather simply. We must remain
 aware that situations involving nesting could deal with shallow copies, which use memory
 references to pass arrays and objects instead of copying them. Feel free to look over parts of this
-chapter again in your free time. These structures and function concepts are really the building
-blocks of all data manipulation. This is especially true for Javascript with the functional methods.
+chapter again as needed. These structures and function concepts are really the building
+blocks of all data manipulation. This is especially true for Javascript with functional methods.
 
-As always, it is up to you to decide if you would like to work with a more class oriented approach
+As always, it is up to the individual to decide if they would like to work with a more class oriented approach
 (OOP) or functional programming approach. Typically it is encouraged to use whichever paradigm is
 associated with the language. For Javascript, it is typically seen firstly as a functional programming
 language. It has the ability to use classes like Object Oriented Programming (OOP), but the inner workings
 of the class implementation are actually done through Javascript prototypes. These prototypes are an
 internal property of objects used for inheritance, facilitating the functional programming philosophy.
 
-Staying with the a language's common design approaches typically makes it easier for others to assist
+Staying with a language's common design approaches typically makes it easier for others to assist
 in working on the code. Others may come to expect a certain structure of that language, making it
 easier to work on with a certain implementation's approach from another due to the language naturally
 being centered around one or the other. In time, this also becomes useful in being able to distinguish
-one language from another more readily, recognizing the familiarity of structure. Usually, if you are
-working on a code base it is best to keep things as consistent as possible. Being adaptable will allow
-you to suit these needs, as well as give you a good context for weighing the pros and cons of each
+one language from another more readily, recognizing the familiarity of structure. Usually, while
+working on a code base it is best to keep things as consistent as possible. Being adaptable allows
+us to suit these needs, and provides us a good context for weighing the pros and cons of each
 implementation strategy.
 
 [![Previous](https://img.shields.io/badge/Previous-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Fundamentals/ch4.md)
