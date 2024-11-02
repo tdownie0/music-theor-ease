@@ -57,14 +57,14 @@ while (counter < 3) {
 }
 ```
 
-> **Note**: You may have noticed the usage of the `/*` along with the `//` for comments now. You
-> can see the slight difference is that when you use the star or asterisk (`*`), you can use it
-> by itself multiple times. You then will close the entire comment portion with a closing `*/`.
+> **Note**: Some may have noticed the usage of `/*` along with the `//` for comments now. We
+> can see the slight difference is that when using the star or asterisk (`*`), it can be
+> by itself multiple times. The entire comment portion will end with a closing `*/`.
 
-This will be the first loop we examine. You see right at the beginning it has `while (counter < 3)`,
-and this states the condition that it checks until it is met, then stopping its execution. I hope
-the `counter < 3` part is familiar, but incase it is not that is checking whether the current
-value of counter is less than the number three. I'm sure many of you have seen the equivalence
+This will be the first loop we examine. Right at the beginning it has `while (counter < 3)`,
+and this states the condition that the loop checks until it is met, then stopping its execution. Hopefully
+the `counter < 3` part is familiar, but incase it is not, it is checking whether the current
+value of counter is less than the number three. Many have likely seen the equivalence
 operators such as this or greater than in mathematics, and we will list all of them later in this section. They
 work the same in that subject as they do here, but are usually seen as returning a `true` or `false`
 condition ("boolean" type) each time they are evaluated. This loop would also work if
@@ -79,7 +79,8 @@ typically goes for subtraction, multiplication, division, and modulo operations.
 the value is incremented by one, the value is then printed to the screen giving us `1`.
 
 Like outlined in the comments above, once the program hits the end of the loop, it will check
-the initial condition, and see if it is met. This repeats until the condition is finally met. You must
+the initial condition, and see if it is met. This repeats until the condition is finally met. Following this,
+the other numbers will be printed until `(counter < 3)` no longer holds true. One must
 be careful when defining this condition, due to the possibility of being able to make the program stay in an
 infinite loop if the condition is never met. An easy way for this to occur is to forget to increment
 the counter variable in this case, and then it would forever have the value of 0. Due to this, the
@@ -89,7 +90,7 @@ It is fairly common to see a loop compared against some kind of number threshold
 figure out how long it should execute. These tasks tend to involve doing operations equal to the
 length of the object (or objects) passed, the length of a string, or until a number or state is met.
 They could also just as easily search for something specific, and once it is found set a "flag"
-to turn the value from `true` to `false` (or vice versa).
+to change the value from `true` to `false` (or vice versa).
 
 Another structure of loop that is very common is the for loop:
 
