@@ -273,10 +273,10 @@ if (passToSubmit(userAge, userRegion)) {
 }
 ```
 
-In this structure you see that we can decompose our logic into separate functions, and then pass it
+In this structure it is shown that we can decompose our logic into separate functions, and then pass it
 into a single area packaged together. This helps us define each piece of logic through the function
-names, and break down complicated expressions into simpler ones. You may have also noticed that I
-used the keywords `if` and `else`, which check conditions. These influence the execution flow of a
+names, and break down complicated expressions into simpler ones. Some may have also noticed the use of
+the keywords `if` and `else`, which check conditions. These influence the execution flow of a
 program, which we will be getting into next.
 
 ## Execution Flow
@@ -291,7 +291,7 @@ all include evaluating against conditions. Below is a table of those keywords.
 | else           |
 | switch         |
 
-We saw the usage of `if` and `else` in the example above. The way they work may be how you
+We saw the usage of `if` and `else` in the example above. The way they work may be how some
 already suspect. When the `if` has its conditions met in the parenthesis next to it, that section
 of the code (the area within the `{}` after the `()`) will be entered and executed. Otherwise, the `else`
 portion of the code will be entered and executed. Only one of these condition's code sections (also
@@ -313,9 +313,9 @@ if (color === "red") {
 }
 ```
 
-In the example you see that we can extend the amount of conditions we would like to check against
-to whatever amount we need. It has become more mainstream to use early returns if you are within
-a function while using `if` checks. Using this strategy is referred to as guard clauses. Here
+In this example it is seen that we can extend the amount of conditions we would like to check against
+to whatever amount is needed. It has become more mainstream to use early returns while within
+a function using `if` checks. Using this strategy is referred to as guard clauses. Here
 would be an implementation:
 
 ```js
@@ -336,9 +336,9 @@ function checkColor(color) {
 }
 ```
 
-This approach may be useful when you have multiple `else if` portions of your code. They are equivalent,
-but the `else if` seems to take more to process mentally than the return. With the `else if` you
-could have other `if` conditions inside, which would make tracking the other conditions dependent
+This approach may be useful when there are multiple `else if` portions of the code. They are equivalent,
+but the `else if` seems to take more mental effort to process than the return. With the `else if` there
+could be other `if` conditions inside, which would make tracking the other conditions dependent
 on the `else if` more difficult. Returns are nice in the sense that we know the function is done,
 and we do not have to look at any further logic when looking into a specific condition. Here we did not
 need a final `return` statement due to the fact that `console.log()` prints to the screen regardless of a
@@ -365,14 +365,15 @@ switch (color) {
 }
 ```
 
-After seeing this I'm sure you can see a similarity in the structure. It does introduce another
+After seeing this, some may see a striking similarity in the structure. It does introduce another
 keyword used across languages, `break`, which exits the current scope that the program is running in. We
-will go over scope in more detail shortly. For now, know that the scope relates to the memory that
-is able to be accessed within a section of code (enclosed in `{}`). This `break` key word can also
-be used to leave a loop prematurely, without meeting its base condition.
+touched on scope briefly in the last chapter, and will go over it again in more detail shortly. For now,
+know that the scope relates to the memory that is able to be accessed within a section of code
+(enclosed in `{}`). This `break` key word can also be used to leave a loop prematurely, without meeting
+its base condition.
 
-Now that you have seen all of these, we can observe another interesting use of an object
-for situations similar to this.
+Now that we have been exposed to all of this, we can observe another interesting use of an object
+for situations that are fairly similar.
 
 ```js
 let colorAnswers = {
@@ -387,20 +388,20 @@ let color = "purple";
 if (colorAnswers[color]) {
   console.log(colorAnswers[color]);
 } else {
-  console.log("Sorry, please select a color.");
+  console.log("Sorry, please select an existing color.");
 }
 ```
 
 Laying out the logic this way, we see that an object could also be used to retrieve different states
 if needed. The input could be used to check if it exists in the object (here the `if` condition), then have a
-default message in the `else`. This setup is good to keep in mind when weighing out your options. In
+default message in the `else`. This setup is good to keep in mind when weighing out other options. In
 the past this choice may have been seen as wasteful, as it cost much more memory to build an object
 than to check against execution flow conditions. With that said, due to how code is currently compiled and
 optimized, some of these factors do not have to be as much of a concern. That and computers today will typically
 have more than enough memory needed on modern systems.
 
 The "Ternary Operator" is another style of condition check that has been around for
-quite some time, so you will see it often. Here is an example:
+quite some time, so it will be seen often. Here is an example:
 
 ```ts
 const lightColor: string = "green";
