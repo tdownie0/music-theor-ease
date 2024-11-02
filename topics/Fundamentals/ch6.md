@@ -5,7 +5,7 @@ with all of this. Building things with all of this new found knowledge tends to 
 but breaking things down to their essential parts really helps with making progress. That is why,
 there is actually a website to go along with this learning. This was made with the intent of guiding
 your learning through practical applications, and giving you an experience of seeing some of your efforts
-more visually. Another added benefit is that most readers will have had experience with a web browser,
+more visually. Another added benefit is that most readers will have had experience with a web browser
 and visiting websites online, so you may already have one installed.
 
 There also will be more related readings regarding topics on programming, algorithms, and
@@ -22,7 +22,7 @@ specialize in Data Science, Networking, Security, Web Development, Devops, Graph
 Robotics, and Embedded Systems just to name a few. All of these topics each serve as an umbrella for
 vast amounts of subdomains in each domain respectively. If you have a solid grip on the fundamentals
 of programming and start recognizing patterns within each, jumping to things like shell scripting can
-start to almost be familiar without experience in that specific circumstance.
+start to almost be familiar without experience in that specific domain.
 
 > **Note:**
 > For example, you may be new to the concept of things like flags in a command line such as,
@@ -30,7 +30,7 @@ start to almost be familiar without experience in that specific circumstance.
 > structure of the command is more apt to make sense to us though. Here the program is `git`, and the
 > git command (function) would be `commit`. Here the function `commit` is being told it will have
 > a message parameter being passed, which is the argument `"Hi!"`. This is used instead of parenthesis,
-> and using argument positioning to indicate which parameter the argument represents.
+> and uses argument positioning to indicate which parameter the argument represents.
 
 My hope here is not to select one of these disciplines for you, but to give you the tools to be
 effective at any. The basics are still the basics across all of them. Programming is similar to other
@@ -49,7 +49,7 @@ done on a daily basis.
 
 The theme of this message is really to see things as a constant learning experience. There will be many
 topics that you learn that may not appear all that related at first, but you will inevitably recognize
-a pattern somewhere due to these. Honestly, a surprising amount of coding can be improved by taking
+a pattern somewhere due to these experiences. Honestly, a surprising amount of coding can be improved by taking
 the time to write things in a thoughtful manner. Making sure readability is a primary concern will
 help everyone in the long run. If done properly, it could even serve as documentation on how things
 can or should be implemented, serving as learning material and being easily maintainable.
@@ -67,7 +67,7 @@ the knowledge acquired by each. Some of the material will take serious time comm
 to browse through what they have to offer and study them in-depth when it is appropriate, or when you have the
 time. At this point, you should have enough knowledge to follow through with the Website Setup, and possibly
 understand some of the code contained within the example site this learning is built around. With that said,
-brushing up on more topics can never hurt in adding to your knowledge base. Possibly if you feel overwhelmed by
+brushing up on more topics can never hurt in adding to your knowledge base. Possibly, if you feel overwhelmed by
 any particular portion, using these references may help you get back on course, or give you a chance to jump
 around to other topics. Being exposed to more ideas can sometimes shed light on others, or possibly other
 learning formats may be more beneficial to certain individuals. Good luck!
