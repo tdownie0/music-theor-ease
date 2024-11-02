@@ -179,6 +179,7 @@ class JobCategory {
     if (this.jobs[jobTitle]) {
       return this.jobs[jobTitle].pay;
     } else {
+      console.error(`The job, "${jobTitle}", does not exist in this category.`);
       return null;
     }
   }
@@ -187,6 +188,7 @@ class JobCategory {
     if (this.jobs[jobTitle]) {
       return this.jobs[jobTitle].location;
     } else {
+      console.error(`The job, "${jobTitle}", does not exist in this category.`);
       return null;
     }
   }
@@ -205,7 +207,7 @@ class Jobs {
     if (this.categories[categoryName]) {
       this.categories[categoryName].addJob(jobTitle, pay, location);
     } else {
-      console.error(`Category '${categoryName}' does not exist.`);
+      console.error(`Category "${categoryName}" does not exist.`);
     }
   }
 
@@ -213,7 +215,7 @@ class Jobs {
     if (this.categories[categoryName]) {
       return this.categories[categoryName].getJobPay(jobTitle);
     } else {
-      console.error(`Category '${categoryName}' does not exist.`);
+      console.error(`Category "${categoryName}" does not exist.`);
       return null;
     }
   }
@@ -222,7 +224,7 @@ class Jobs {
     if (this.categories[categoryName]) {
       return this.categories[categoryName].getJobLocation(jobTitle);
     } else {
-      console.error(`Category '${categoryName}' does not exist.`);
+      console.error(`Category "${categoryName}" does not exist.`);
       return null;
     }
   }
@@ -256,25 +258,25 @@ jobs.printAllJobPays();
  */
 ```
 
-Even briefly looking at this, you can see it is much longer. This may indeed be overkill for our
+Even briefly looking at this, we can see it is much longer. This may indeed be overkill for our
 situation, but it is interesting to point out what differences this makes. Now we have error
 checking when we are directly defining or accessing values. The structure of the class object also
 seems to assure us that the object will not change its structure as readily. Even if property names like
 `pay` or `location` ended up changing, as long as their methods were updated internally, we would
-still be able to access their intended value through their respective methods, `getJobPay()` and
+still be able to access their values through their respective methods, `getJobPay()` and
 `getJobLocation()`. This allows us to abstract the actual implementation from the end user. Reasons
-for this could include simplifying the interface for the user (not forcing them to know part of the
-internal workings in order to user it), and security (users in most circumstances do not need to know
-the implementation details). The concept of having a function that provides you the output
-you desire, but you do not have any information about its internal workings, is referred to as a
-"Black Box". It is a box that you do not have the access or the means to see inside of, but are free
-to use. This is a key role of abstraction, and really an essential part in making code reusable and
+for this could include simplifying the interface for the user (not forcing them to know the
+internal representations in order to use the class), and security (users in most circumstances do not need
+to know the implementation details). The concept of having a function that provides the output
+desired while we do not have any information about its internal workings, is referred to as a
+"Black Box". It is a box that we do not have the access or the means to see inside of, but are free
+to use. This is a key role of abstraction, and really an essential part of making code reusable and
 readable. We could use a function that performs a ridiculously complicated math equation, or
-generates a response from an AI, and we would just need to know what functions to call and what arguments
+generates a response from an AI, while just needing to know what functions to call and what arguments
 to pass.
 
 There is actually something that can be improved in the class example that was provided above,
-considering this abstraction topic we were just discussing. Currently, both classes `Jobs` and
+taking into account the abstraction topic we were just discussing. Currently, both classes `Jobs` and
 `JobCategory` access properties of the `Job` class directly. Also, the `Jobs` class references the
 `jobs` object that belongs to `JobCategory` directly in `printAllJobs`. Neither of these classes should have to
 rely on the internal implementation of other classes, such as their property keys. If these were to
@@ -316,6 +318,7 @@ class JobCategory {
       // Use getter instead of direct access
       return this.jobs[jobTitle].getPay();
     } else {
+      console.error(`The job, "${jobTitle}", does not exist in this category.`);
       return null;
     }
   }
@@ -325,6 +328,7 @@ class JobCategory {
       // Use getter instead of direct access
       return this.jobs[jobTitle].getLocation();
     } else {
+      console.error(`The job, "${jobTitle}", does not exist in this category.`);
       return null;
     }
   }
