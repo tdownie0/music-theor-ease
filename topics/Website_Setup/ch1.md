@@ -64,8 +64,8 @@ we should also be able to realize when a situation like this is stopping us from
 This is actually one of the beauties of programming. We do our best to make sure something is great
 and as perfect as it can be before we deliver it and present it to users (hopefully), but inevitably
 things can go wrong. With code, we have the ability to update things and improve them over time.
-This leaves room for you to create working solutions so that users can enjoy the benefits of the
-software that you provide. So long as the software you created can be used, you may be able to generate
-income so that you can spend time on improving parts of the system you wanted to allocate more time
-to. Now you could always be making something just as a hobby, but it is a good exercise to be able
-to know when to implement practical parts of a solution instead of never having a finished product.
+This leaves room for us to create working solutions so that users can enjoy the benefits of the
+software that we provide. So long as the software we create can be used, it may be able to generate
+income so that we can spend more time on improving parts of the system we originally wanted to later on.
+Now, something could always be made just as a hobby, but being able to know when to implement practical
+parts of a solution instead of never having a finished product is a good habit to learn.
