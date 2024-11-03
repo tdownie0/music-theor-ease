@@ -48,18 +48,18 @@ animations, UI/UX (User Interface/Experience) practices, retrieving data, passin
 design patterns, testing, and much more. The structure was designed with the intention of revealing how
 many of these sites with large amounts of data and sections are able to be mass produced and maintained.
 
-While going over the site we will go over all the design decisions that were made along the way,
+While touching on portions of the site we will go over all the design decisions that were made along the way,
 and discuss when trade offs were made. Being able to create a site with an unlimited amount of time
-allows for you to spend vast amounts of time on features you would like to add to your site. In
-most professional settings, you most likely will not have unlimited time. This leads to optimizing your
-time effectively and balancing what is a realistic expectation versus unrealistic. If you start to
+allows for one to spend vast amounts of time on features they would like to add to their site. In
+most professional settings, we most likely will not have unlimited time. This leads to optimizing our
+time effectively and balancing what is a realistic expectation, versus unrealistic. When we start to
 notice that something is becoming painful or taking much longer than anticipated, sometimes there is
-another choice that can give you a working solution much faster and simpler. By this I do not mean
-to imply the easy route is being chosen, but more so that we can get stuck in situations where we
+another choice that can give us a working solution much more quickly and simply. This is not meant
+to imply that the "easy route" should be chosen, but more so that we can get stuck in situations where we
 become blind to other acceptable alternatives. This can be the case for many situations, but often
-it can be that you envisioned something a very particular way, only stopping once you have exactly
-that. Having the conviction to follow things through and finish them is a very admirable trait, but you
-need to realize when one of those things is stopping you from everything else.
+it can be that we envisioned something a very particular way, and are only willing to stop once this has been
+achieved. Having the conviction to follow things through and finish them is a very admirable trait, but
+we should also be able to realize when a situation like this is stopping us from finishing everything else.
 
 This is actually one of the beauties of programming. We do our best to make sure something is great
 and as perfect as it can be before we deliver it and present it to users (hopefully), but inevitably
