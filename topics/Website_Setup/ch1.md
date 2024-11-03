@@ -40,13 +40,12 @@ what a value is at a certain time can also be helpful. Using git, we will be abl
 
 ## Music Theor-ease
 
-Our example site is named Music Theor-ease. If you are familiar with music, some of the terminology
-may already be familiar to you, but there is no concern if this is not the case. Initially one of
-my hopes to explain arrays was to use music scales and modes as examples, and you will see them
-as we look through the site. You will have a chance to navigate the site freely once it is downloaded,
-and explore all of its contents. With this site we will see examples of animations, UI/UX
-(User Interface/Experience) practices, retrieving data, passing data between components,
-design patterns, testing, and much more. It is my hope that the structure itself reveals how
+Our example site is named Music Theor-ease. If the reader happens to be familiar with music, they may recognize
+some of the terminology, but there is no concern if this is not the case. Initially, one of the original
+thoughts with this reading was to explain arrays by comparing them to music scales and modes as examples.
+We will be exposed to these as we look through the site. While exploring this site we will see examples of
+animations, UI/UX (User Interface/Experience) practices, retrieving data, passing data between components,
+design patterns, testing, and much more. The structure was designed with the intention of revealing how
 many of these sites with large amounts of data and sections are able to be mass produced and maintained.
 
 While going over the site we will go over all the design decisions that were made along the way,
