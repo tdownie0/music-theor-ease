@@ -238,19 +238,19 @@ example = 2;
 console.log(example);
 ```
 
-We will go into this with much more detail later on, but thought it should be pointed out that this effectively
-changes the value that is stored in the `example` variable. The `console.log(example)` statement is actually
+We will go into this with much more detail later on, but this code sample highlights that the `example`
+variable effectively changes its value that is stored. The `console.log(example)` statement is actually
 a command to print something to the screen. So here, `console.log()` prints something that is between its
 parenthesis, or attempts to. In this case it prints the value of `example` to the development console in a
 browser, which is `2`.
 
-This was pointed out due to possibly being something others are not used to, even coming from
-mathematics. It is not typical to redefine variables or an initial set of conditions constantly when
-evaluating a function or equation in mathematics. When programming, this happens constantly. Often,
+This was pointed out due to possibly being something others are not used to, even despite familiarity
+with mathematics. It is not typical to redefine variables or an initial set of conditions many times when
+evaluating a function or equation in mathematics. When programming, this happens quite frequently. Often,
 key information will be stored in distinct variables so that the variable's information can be accessed readily.
 This could be the name of the current user, the current page being shown, or even someone's current cart or
-order on sites such as Uber, Amazon, or any other shopping platform. These values change frequently,
-but it is nice to have one spot where we can get all the information we need.
+order on sites such as Uber, Amazon, or any other shopping platform. These values change and update with great
+frequency, but it is nice to have one spot where we can get all the information we need.
 
 ## Mathematical Operations
 
