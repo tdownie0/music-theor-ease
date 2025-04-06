@@ -15,8 +15,8 @@ Language, which is used to present things on a web page) to add logic. React was
 and is used very commonly by the web development community today.
 
 We will have brief introductions into HTML and CSS (Cascading Style Sheets) so that the logic related
-to positioning things on a web page is not too distracting, otherwise possibly leading to the detraction of our
-understanding regarding logic manipulating elements and values on a page. After this introduction, we will go
+to positioning things on a web page is not too distracting, otherwise they would possibly detract from our
+understanding of the logic manipulating elements and values on a page. After this introduction, we will go
 through the steps of installing visual studio code for our IDE (Integrated Development Environment), and we will
 go over extensions that will be helpful in the process. Following this, we will touch on git for a bit so that
 we can pull the source code, navigate within branches, and learn its general use. Once we have reached this
