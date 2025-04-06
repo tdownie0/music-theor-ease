@@ -17,11 +17,10 @@ and is used very commonly by the web development community today.
 We will have brief introductions into HTML and CSS (Cascading Style Sheets) so that the logic related
 to positioning things on a web page is not too distracting, otherwise they would possibly detract from our
 understanding of the logic manipulating elements and values on a page. After this introduction, we will go
-through the steps of installing visual studio code for our IDE (Integrated Development Environment), and we will
-go over extensions that will be helpful in the process. Following this, we will touch on git for a bit so that
-we can pull the source code, navigate within branches, and learn its general use. Once we have reached this
-point, those following along will then have an understanding of the basics of web page presentation, have an
-appropriate learning setup, and have the entirety of this codebase on their own machine.
+through the steps of installing Visual Studio Code (VS Code) for our IDE (Integrated Development Environment), and we will go over extensions that will be helpful in the process. Following this, we will touch on git for a
+bit so that we can pull the source code, navigate within branches, and learn its general use. Once we have
+reached this point, those following along will then have an understanding of the basics of web page
+presentation, have an appropriate learning setup, and have the entirety of this codebase on their own machine.
 
 With all of that in place, the reader will actually be able to run the code themselves and see a local
 version of the website we will be studying and learning from. Upon getting to this point, every part of
