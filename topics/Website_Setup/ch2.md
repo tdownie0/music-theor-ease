@@ -11,14 +11,14 @@ placing elements eventually in their expected position.
 
 The basics of both of these languages come from a fairly simple set of rules, and we will be touching
 on all of these. HTML has quite a vast amount of possible elements that can be declared on a page,
-and being fully aware of all of them is pretty impressive. There really are only a few essential
-tags to be aware of along with their properties. Once we have these, you will be able
-to manage putting most things on a page correctly. The more specific you get with these HTML tags,
-the more they have implicit CSS rules associated with them. Tags are also important to use in the
-manner that they were designed for, so that people with accessibility concerns that use screen
-readers and such still have access to your content. It is very confusing for these users if tags
-are used when they are not intended to be used in certain circumstances, possibly preventing them from
-interacting with the content as you anticipated.
+and being fully aware of all of them is pretty impressive. With that said, there really are only a few
+essential tags to be aware of along with their properties. After being introduced to these, managing
+how things are placed on a page will be much easier. The more specific one is with these HTML tags,
+the more they will have implicit CSS rules associated with them, and possibly more default functionality as
+well. Tags are also important to use in the manner that they were designed for. This enables people with
+accessibility concerns using devices like screen readers and such to still have access to your content. It is
+very confusing for these users if tags are used when they are not intended to be used in certain circumstances,
+possibly preventing them from interacting with the content as anticipated.
 
 All of that said, you are not expected to be a master at the subject right from the beginning. Going
 into properly handling accessibility on websites is also its own speciality. If you look for
