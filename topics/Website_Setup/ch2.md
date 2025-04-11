@@ -20,17 +20,17 @@ accessibility concerns using devices like screen readers and such to still have 
 very confusing for these users if tags are used when they are not intended to be used in certain circumstances,
 possibly preventing them from interacting with the content as anticipated.
 
-All of that said, you are not expected to be a master at the subject right from the beginning. Going
-into properly handling accessibility on websites is also its own speciality. If you look for
-relevant positions, you will often see government jobs specifying that they would like somebody
-who has an understanding or a familiarity with Section 508 and WCAG 2.0 standards. Both of these
-have detailed requirements for several contexts where you would have to structure HTML to present
-certain information to a user.
+With all of that said, no one is expected to be a master of the subject right from the beginning. Diving
+into properly handling accessibility on websites is also its own specialty. There are numerous
+government jobs that specify that they would like hire somebody with this skill set, often listed as having
+an understanding or familiarity with Section 508 and WCAG 2.0 standards in their descriptions. Both of these
+have detailed requirements for several contexts where one would have to structure HTML a specific way
+in order to present information correctly to all users.
 
 > **Note:** Section 508 is from the Rehabilitation Act of 1973 requiring Federal agencies
 > to make their electronic and information technology (EIT), also referred to as information and
-> communication technology (ICT), accessible to people with disabilities. WCAG 2.0 standards comes
-> from W3C (World Wide Web Consortium), which is the main international standards organization for
+> communication technology (ICT), accessible to people with disabilities. WCAG 2.0 standards come
+> from the W3C (World Wide Web Consortium), which is the main international standards organization for
 > World Wide Web. This organization was founded by Tim Berners-Lee, who also created the World Wide
 > Web, HTML, the URL system, and HTTP.
 
