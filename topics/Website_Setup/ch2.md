@@ -104,8 +104,11 @@ common list of these tags.
 |  `<select>`  | Represents a dropdown list within an HTML form, allowing users to select one or more options from a list of predefined choices. The `<select>` tag contains one or more `<option>` tags, each defining an individual option within the dropdown list. Users can choose an option by clicking on the dropdown arrow and selecting from the available options.                                    |
 | `<textarea>` | Defines a multiline text input control within an HTML form, allowing users to enter multiple lines of text. The `<textarea>` tag is used when longer text input is required, such as for user comments or messages. The size of the textarea can be customized using attributes like rows and cols, and the initial content can be specified between the opening and closing `<textarea>` tags. |
 
-With the tags above, you can go a surprisingly long way. You can see that these tags serve multiple
-purposes, and when they are actually used on a page they are laid out such as this:
+Another note about the data input section tags directly above is that they can be used outside of the `<form>`
+tag as well. These can be wired up to have functionality with JavaScript, as we will see, but have default
+behavior associated with them when contained within a `<form>` tag. With all of the tags above, we can go a
+surprisingly long way. It can be observed that many of them serve multiple purposes as well, especially when
+combined together. Here is a demonstration of the result for a simple page:
 
 ```html
 <html>
