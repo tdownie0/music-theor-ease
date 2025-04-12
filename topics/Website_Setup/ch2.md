@@ -34,24 +34,24 @@ in order to present information correctly to all users.
 > World Wide Web. This organization was founded by Tim Berners-Lee, who also created the World Wide
 > Web, HTML, the URL system, and HTTP.
 
-I point this out just to highlight that individuals in these positions study HTML deeply. Many
-frontend developers do not have a thorough understanding of these standards. That is why you may
+Accessibility was highlighted here to point out that individuals in these positions study HTML deeply. Many
+frontend developers do not have a thorough understanding of these standards. That is why it is common to
 see these positions open as well as other general front-end positions. These individuals may be more
 responsible for adjusting the final product to work, instead of having to deal with building it
 as well. Google Analytics is also a common service on websites nowadays, allowing for gathering data
-about how users use your website. This can also become a specialty with regards to setting it up
+about how users use our websites. This can also become a specialty with regards to setting it up
 properly and utilizing the service.
 
-There are actually websites that are designed to help you create websites, referred to as a CMS (Content
+There are actually websites that are designed to help people create websites, referred to as a CMS (Content
 Management System), such as WordPress, Wix, Drupal, Shopify, and plenty of others. These sites often
 provide tools to integrate services like Google Analytics, abstracting the code needed to implement the
-features. By contrast, we will be making our website completely from our own source code, not relying on
-these services. This may require more effort, but in the long run it often allows for more
-customizability, no overhead costs from the third party and all their included services, and ultimately
-more control over your website. Developers can still find jobs related to CMS roles, focused on things
-such as setting up plugins and streamlining services like Google Analytics. This may also be a development
-option if the person you are working for is unable to run website by themselves, but would still like to
-actively manage the site themselves.
+features. By contrast, we will be creating our website from our own source code, not relying on
+these tools. This may require more effort, but in the long run it often allows for far more
+customizability, no overhead costs from third parties and all their included services, and ultimately
+more control over our website. Despite this, developers can still find jobs related to CMS roles, focused on
+things such as setting up plugins and streamlining services like Google Analytics. This may also be a
+development option if a client is unable maintain code to run a website by themselves, but would still
+like to actively manage the site themselves with drag and drop features and other options.
 
 ## HTML
 
