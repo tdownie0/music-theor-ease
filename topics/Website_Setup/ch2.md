@@ -122,11 +122,11 @@ We see here that the same named tag for an element comes at the end of where the
 for the element, but has a prefix of `/` with it. This is referred to as a closing tag. Each section
 is thought of being wrapped in the previous areas content area, until it reaches that sections closing
 tag. There are also self closing tags, meaning there is only one tag provided instead of two. These are
-used typically when there would not be content to put between tag, instead expecting a value or linking to
+used typically when there would not be content to put between the tags, instead expecting a value or linking to
 a resource. Examples of such tags would be `<input />` and `<img />`. Both of these rely on the HTML
 attributes they are passed as we will be seeing shortly. It is also acceptable to write these as `<input>`
-and `<img>`. You may find it preferable to include the closing `/`, as it will cue you that this tag does
-not have a closing tag as you scan over multiple HTML files.
+and `<img>`. Some may find it preferable to include the closing `/`, as it can cue to us that this tag does
+not have a complementary closing tag whenever we scan over files containing HTML.
 
 We will be seeing multiple HTML layouts as we go over the site, so I just want to get across the basic
 structure. Another interesting thing we will see is that libraries like React allow us to make portions of
