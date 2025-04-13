@@ -128,12 +128,13 @@ attributes they are passed as we will be seeing shortly. It is also acceptable t
 and `<img>`. Some may find it preferable to include the closing `/`, as it can cue to us that this tag does
 not have a complementary closing tag whenever we scan over files containing HTML.
 
-We will be seeing multiple HTML layouts as we go over the site, so I just want to get across the basic
-structure. Another interesting thing we will see is that libraries like React allow us to make portions of
-HTML code and put them together. This allows us to break up the logic and interactions into smaller chunks,
-called components. They look similar to self closing tags, and an example component named "MyComponent"
-would be `<MyComponent />`. The added bonus of being able to do this, is that we can reuse components that
-will fit several needs, instead of having to write the portion of code over again.
+We will be seeing multiple HTML layouts as we go over the site our studies will be focused on, so this just
+illustrates some basic structure. Another interesting concept we will observe is that libraries like React allow
+us to make portions of HTML code and put them together. This allows us to break up the logic and interactions
+into smaller chunks, called components. These look similar to self closing tags, and for example, if a
+component was named "MyComponent", it would appear as `<MyComponent />`. An added bonus of being able to do
+this is that we can reuse components that serve specific, or potentially several needs. This saves us from
+having to write the same portion of code multiple times.
 
 ## CSS
 
