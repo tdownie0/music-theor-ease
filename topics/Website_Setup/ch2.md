@@ -140,16 +140,20 @@ having to write the same portion of code multiple times.
 
 Now that there is content for a webpage, we need a way to add font-styles, colors, shapes, animations,
 and placement. This is where CSS comes in. Just like HTML tags, CSS has several property names that affect
-different aspects of the content being presented. In general, setting up a layout you desire can be
-tricky at first, but learning layout systems like Flexbox and CSS Grid Layout can help quite a bit.
-Nowadays, if you wish to style something ChatGPT can be extremely helpful in trying to provide a
-layout to work off of. With this, you would not have to look up all the specific property names and
-may get a simple example as a basis. There will also be links to sites that have CSS learning material
-through games that allow you to experience a gradual introduction, as well as more advanced
-selectors. Last, you can always visit a site you like and inspect the page. We will go over developer
-tools within the browser more in depth, but if you right click a web page and select the "inspect"
-option, the developer tools will open. If you performed this action on a specific part of the page,
-it typically highlights that portion of HTML and will show you all the CSS properties.
+different aspects of the content being presented. In general, setting up a desired layout can be
+tricky at first, but learning layout systems like Flexbox and CSS Grid Layout can help us quite a bit.
+Nowadays, tools like ChatGPT can be extremely helpful when trying to style something, as it can provide us with
+a base layout to work off of or rapid samples. With tools such as this, we can spend less time looking up
+specific property names that are needed for our concepts, and additionally may be provided with simple examples
+as a basis.
+
+Later in this chapter there will be links to various sites that have CSS learning material, through games,
+videos, and readings. These will allow for a gradual introduction to the subject, as well as exposure to more
+advanced concepts and structures. In addition, one could always visit a site they like and inspect the page or
+pages themselves. We will go over developer tools within the browser at more depth later on, but by right
+clicking a web page and then selecting the "Inspect" option, one's developer tools will open. If this was
+performed on a specific part of the page, it typically highlights that portion of HTML and will display all
+the CSS properties, among other useful information.
 
 Another trend in web development is actually CSS frameworks. These provide shorthand class names to
 quickly add properties to HTML elements, as well as taking care of typical CSS properties associated
