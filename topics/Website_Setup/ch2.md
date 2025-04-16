@@ -155,18 +155,19 @@ clicking a web page and then selecting the "Inspect" option, one's developer too
 performed on a specific part of the page, it typically highlights that portion of HTML and will display all
 the CSS properties, among other useful information.
 
-Another trend in web development is actually CSS frameworks. These provide shorthand class names to
+Another common set of tools in web development are CSS frameworks. These provide shorthand class names to
 quickly add properties to HTML elements, as well as taking care of typical CSS properties associated
-with certain HTML elements like buttons. Depending on the framework, you may be able to add simple
-animations as well. In our case, this site actually used Tailwind CSS as a framework. This is a very
-popular framework in the industry at the moment. The site also used another library, DaisyUI, which
-is built around using the CSS framework. These were used to show how much power can be leveraged out
-of tools like this for quick and consistent development.
+with certain HTML elements like buttons. Depending on the framework, one may be able to add simple
+animations as well. In our case, the site in study actually uses Tailwind CSS as a framework. This is a very
+popular framework in the industry at the moment. The site also uses another library, DaisyUI, which
+is built around using this CSS framework. These technologies were selected in order to demonstrate how
+much power can be leveraged out of such tools, providing for quick and consistent development.
 
-Though the site uses the Tailwind CSS framework, I would still like to introduce you to some of the
-fundamentals with CSS. There are many aspects to it, but once you have a bit of an understanding
-of how it works by itself, the frameworks will make much more sense. The shorthands may help you remember
-some of the full property names as well, highlighting where properties share similarities.
+Though the site uses the Tailwind CSS framework, we will still be going over some of the
+fundamentals with CSS. There are many aspects to CSS, but frameworks related to it will make much more sense
+once we establish an understanding of how it works by itself. The shorthands associated with these frameworks
+may also prove helpful in remembering some of the full property names as well, highlighting where properties
+share similarities with others.
 
 ## Attributes & Selectors
 
