@@ -171,8 +171,8 @@ share similarities with others.
 
 ## Attributes & Selectors
 
-HTML allows for attributes to be added to its elements, allowing for us to use CSS selectors to
-indicate which elements we wish to stylize.
+HTML allows for attributes to be added to its elements, which enables us to use CSS selectors for
+indicating which elements we wish to stylize.
 
 ```html
 <div>1st</div>
