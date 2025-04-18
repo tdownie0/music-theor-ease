@@ -172,7 +172,7 @@ share similarities with others.
 ## Attributes & Selectors
 
 HTML allows for attributes to be added to its elements, which enables us to use CSS selectors for
-indicating which elements we wish to stylize.
+indicating which elements we wish to stylize, as well as other tasks.
 
 ```html
 <div>1st</div>
@@ -202,8 +202,9 @@ indicating which elements we wish to stylize.
 
 > **Note:** The above table, as well as the `<label>` and `<input>` examples are from
 > <https://developer.mozilla.org>. Mozilla is behind the creation of Firefox (web browser) and other
-> technologies. The entire site has multiple helpful resources for HTML, CSS, and Javascript development. I
-> highly encourage you to use this as a resource if you are ever curious to learn more.
+> technologies. The entire site has multiple helpful resources for HTML, CSS, and Javascript development.
+> This resource is extremely valuable and highly recommended as a reference for anyone curious about learning
+> more.
 >
 > [Input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) and
 > [Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) by
@@ -211,25 +212,26 @@ indicating which elements we wish to stylize.
 > are licensed under [CC-BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
 
 In the code section above we see examples of HTML elements with multiple types of attributes, and one
-without any. I presented the HTML elements to go along with the order of the table above. If we were
-to do an element selector for the first HTML `<div>` element, we would only need to specify we are
-selecting `div`. The next element `<div id="second">` could be selected by `#second`. Next, the
-`<div class="third">` would be selected by `.third`. Next, we have `<img src="image.jpg" />`. Like
-the table above indicates, we can actually specify that only `<img>` tags with a `src` attribute will
-be selected with `img[src]`. This can also be used for specific types like `button[type="submit"]`.
+without any. These elements were presented in an order corresponding with the table above. If we were
+to use an element selector for the first HTML `<div>` element, we would only need to specify `div` for our
+selection. The next element `<div id="second">` could be selected by `#second`. Next, the
+`<div class="third">` would be selected by `.third`. Following this, we have `<img src="image.jpg" />`.
+Just as the table above indicates, we can actually specify that only `<img>` tags with a `src` attribute
+will be selected with `img[src]`. This can also be used for specific types like `button[type="submit"]`.
 
 For the last part, there is a `<label>` and an `<input>` element. We see `label` accepts an attribute,
-`<label for='name'>`. This actually indicates that the label belongs to the HTML element, in this case
-`<input id='name'>` (I'm only providing a portion of this element at a time due to its length). This is
-specified so that screen readers and other assistive technology have a description of things, such as an
-input field here. The link to the input page in the citation above goes over the vast amount of types,
-attributes, pseudo-classes, and much more that an `<input>` tag may accept. I would not worry about
-feeling the need to remember all of that information, but getting a sense of its capabilities will be
-helpful to know if you may be able to reach for it as a resource. A nice thing about staying with native
-HTML elements is that assistive technology is automatically handled with HTML elements for their specific
-purposes. Here the name attribute was also set to name, `<input name='name'>`. When this input is
-submitted, the input is submitted as a key value pair to the server, so the name specified will be the key,
-and the value the input actually holds will be the value.
+`<label for='name'>`. This indicates that the label belongs to an HTML element, in this case
+`<input id='name'>` (The `<input>` element will be presented in portions here, due to the length of its
+attributes). This is specified so that screen readers and other assistive technologies may have an accurate
+description of what is being presented, such as the input field here. The link to the input page included in the
+citation above goes over a vast amount of types, attributes, pseudo-classes, and much more that an `<input>` tag
+can accept. There is no need to memorize all of this information, but getting a sense of an input's
+capabilities may prove helpful in determining when to reach for it as a resource. Utilizing native HTML
+elements has the added benefit of providing default functionality, as well as handling presentation for
+assistive technologies when used properly, and for their intended purposes. Here, we see the name attribute
+was also set to a value of name, `<input name='name'>`. When this input is submitted, it will be submitted as a
+key value pair to the server, so that the name specified will be the key, and the value will be the contents of
+the input field itself.
 
 ## Specificity
 
