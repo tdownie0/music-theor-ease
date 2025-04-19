@@ -244,10 +244,10 @@ CSS has a hierarchy of importance when it comes to declaring styles to associate
 | Class Selector   | Medium specificity (0-1-0)  | `.class`              |
 | Element Selector | Lowest specificity (0-0-1)  | `div`, `p`, `a`, etc. |
 
-Here we see that the ID selector is the highest specificity. The number next to it (1-0-0) corresponds
-to this structure representation ((number of IDs)-(number of Classes)-(number of Elements)). Starting
-from left to right, if the number of selectors is greater in a selector definition for a certain
-type of HTML element, then that definition will apply to the element.
+Here we see that the ID selector is the highest specificity. The number scheme next to it, (1-0-0), corresponds
+to the following structural representation, ((number of IDs)-(number of Classes)-(number of Elements)).
+Starting from left to right, a style is applied to an element based on its highest level of specificity, and
+then by the amount of that selector's specificity. The following is a demonstration of this.
 
 ```html
 <div id="first" class="first second">One</div>
@@ -296,26 +296,29 @@ type of HTML element, then that definition will apply to the element.
 </style>
 ```
 
-Looking at the above you probably noticed that HTML elements can have multiple classes. This is done
-by putting a space between their names when defining the element
-`<div id="first" class="first second">1st</div>`. By contrast, an element may only have one ID. Let's
-start from top to bottom with the elements. We have `<div id="first" class="first second">1st</div>` for
-our first element. It also has an id and class of `first` as well as a class of `second`. Now, with
-this information we know that styles that affect id `first` will take precedence over all other
-specificity, unless there are multiple of the same rank. Things with class `first` or `second` could
-also influence the style, but would need an `id` selector along with them to override a single `id`
-selector. Last in consideration would be the element itself, which is a `div`. If we glance at the
-`<style>` section of the code, we see a list of CSS selectors and their associated styles within `{}`.
-The first selector is `div.first`, which would affect this element, since it is a `div` and has a class
-of `.first`. In this case the two are chained together, so the style only applies to elements that meet
-both requirements directly. The selector below, `.second` would also apply. Since we have two
-possibilities now, we can compare their specificity. Their specificities correspond to their comments
-above, being `0-1-1` and `0-1-0`. Looking at both, they both have the same number of ids `0` and classes
-`1`. The first also contains an element so it has a `1` where the other has a `0`. This would lead to
-the first style to apply over the other since it is more specific. With that in mind, the only other
-selector that would apply directly is the `#first` selector. We have an id of `first` so `#first` applies.
-Its specificity is `1-0-0`. Since this is greater than the `0-1-1`, this selector will override the
-previous two selectors, leaving us with the color green for text.
+After analyzing the HTML elements above, we see that one HTML element can have multiple classes. This is done
+by putting a space between their names when defining the element,
+`<div id="first" class="first second">1st</div>`. By contrast, an element may only have one ID. Let us
+start from top to bottom with these elements.
+
+We have `<div id="first" class="first second">1st</div>` for our first element. This has an ID and class of
+`first`, as well as a class of `second`. Now with our current knowledge, we know that styles pertaining to the
+ID `first` will take precedence over all other specificity, unless there are multiple of the same rank.
+CSS selectors that include the `first` or `second` class as well could also influence the style, but would
+need an ID selector for `first` along with them to override a single ID selector. Our last consideration would
+be the element itself, which is a `<div>`.
+
+If we glance at the `<style>` section of the code, we see a list of CSS selectors and
+their associated styles within `{}`. The first selector is `div.first`, which would affect this element, since
+it is a `<div>` and has a class of `first`. In this case the two selectors are chained together, so the style
+would only apply to elements that match both requirements directly. The selector below this, `.second`, would
+also apply. Since we have two possibilities now, we can compare their specificity. Their specificities
+correspond to their comments above, being `0-1-1` and `0-1-0`. Looking at both, we see that they have the same
+number of IDs, `0`, and classes, `1`. The first selector additionally contains an element, so it has a `1` where
+the other has a `0`. This would lead to the first style selector applying to the HTML element, as it is more
+specific. With that in mind, the only other selector that would apply directly is the `#first` selector. Here we
+have an id of `first`, so `#first` applies. Its specificity is `1-0-0`, and since this is greater than the
+`0-1-1`, this selector will override the previous two selectors, leaving us with the color green for our text.
 
 I will let you attempt to figure out the others from here. The only tricky ones left may be
 `.fourth .fifth` and `#fourth #sixth`. With a space between the two, this indicates that the child of
