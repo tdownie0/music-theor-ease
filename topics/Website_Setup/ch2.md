@@ -320,10 +320,11 @@ specific. With that in mind, the only other selector that would apply directly i
 have an id of `first`, so `#first` applies. Its specificity is `1-0-0`, and since this is greater than the
 `0-1-1`, this selector will override the previous two selectors, leaving us with the color green for our text.
 
-I will let you attempt to figure out the others from here. The only tricky ones left may be
-`.fourth .fifth` and `#fourth #sixth`. With a space between the two, this indicates that the child of
-an HTML element must have the second selector listed, but the parent must have the first. These child
-elements are directly nested in the parent HTML element. Here is a table of the solution:
+Anyone who wishes to try and correctly identify the resulting colors for the text above is invited to. Some of
+these may be tricky, for example, `.fourth .fifth` and `#fourth #sixth`. With a space between the selectors, this
+indicates that the second selector will work on a child HTML element containing the selector, but only if
+the parent contains the first selector. Elements that are directly nested in another HTML element are referred
+to as children, and the element containing these children is referred to as a parent. Here is a table of the solution:
 
 | Text  | Colors |
 | :---- | ------ |
@@ -332,6 +333,22 @@ elements are directly nested in the parent HTML element. Here is a table of the 
 | Three | orange |
 | Four  | purple |
 | Five  | red    |
+
+> **Note**: To verify these results, one could copy all of the `<div>` elements, as well as the `<style>`
+> section. Following this, they would then paste both portions in the same file, which would then need to be
+> saved and named with `.html` at the end (e.g. `test.html`). This could be done with a text editor such
+> as notepad, or any other editor that allows us to specify the file extension type while saving (the portion
+> after the `.`). After this, when the file is opened, it should open in the user's web browser.
+>
+> If anyone is looking for something slightly more interactive, they could use a site like
+> [CodePen](https://codepen.io/pen/). This particular link will lead to their interactive editor. Once here, we
+> can paste the HTML section in the HTML window, and the CSS in the CSS window. The results should then appear
+> on screen.
+>
+> Whichever option is explored, it may interesting to remove the spaces in the two examples noted above,
+> `.fourth .fifth` and `#fourth #sixth`. After saving these changes and refreshing the browser, or waiting for
+> the browser to update in CodePen's case, we should observe the colors changing
+> for the elements that were previously matching these selectors.
 
 Knowing what selectors may apply can get tricky when things start to become deeply nested. Another
 aspect that can be difficult is that multiple styles can come from multiple selectors. Using the
