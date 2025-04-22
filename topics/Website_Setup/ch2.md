@@ -350,23 +350,25 @@ to as children, and the element containing these children is referred to as a pa
 > the browser to update in CodePen's case, we should observe the colors changing
 > for the elements that were previously matching these selectors.
 
-Knowing what selectors may apply can get tricky when things start to become deeply nested. Another
+Knowing which selectors may apply can get tricky when things start to become deeply nested. Another
 aspect that can be difficult is that multiple styles can come from multiple selectors. Using the
-web inspector in your browser's developer tools can be helpful with this, allowing you to see which
-selectors are currently applying. We will go more into that shortly. Knowledge of this can be helpful
-when using other libraries (or packages from other developers) that have their own styles. Instead of
-having to redefine their logic, you just override them. A modern trend with recent CSS frameworks
-is to use multiple classes that define specific properties directly. By comparison, the approach
-above would be used to target specific elements on the page, and style them directly as you want. With
-these CSS frameworks approach, the idea is to never have to define a specific selector for an element,
-but to have it stack classes of all the properties it would like to include. Some take this approach
-as going against the ideal way of using CSS, which would take only as much room as necessary in the
-HTML. This could also shadow the use of native logic for CSS like its combinators, which specify
-more exact rules of elements relative to the element and the selector it is being placed on. At the
-same time, having these classes with specific properties saves us from defining selectors for elements
-on our pages over and over again, and can actually lead to consistency naturally since everything is
-composed of the same shared base of classes. There will be links at the end of this material to more
-advanced concepts of CSS and commonly used properties.
+web inspector in our browser's developer tools can be very helpful with this, allowing us to see which
+selectors are currently being applied. We will explore the basics of accessing this shortly. Knowledge of how
+to use the various tools provided by developer tools can be extremely useful, especially in specific cases. One
+such example would be when we are using libraries (or packages from other developers) that have their
+own styles within our codebase. Instead of having to redefine their logic, we just override them.
+
+A modern trend with recent CSS frameworks is to use multiple classes that define specific properties directly.
+By comparison, the approach above would be used to target specific elements on the page, and style them
+directly. With the approach from these CSS frameworks, the idea is to never have to define a specific selector
+for an element. Instead, they stack the classes of all the properties they would like an element to include.
+Some consider this approach as going against the ideal way of using CSS, which typically only takes as much room
+as necessary in the HTML. This structure can also shadow the use of native logic included with CSS. For example,
+CSS combinators, which specify more exact rules for selectors of elements relative to the element and the
+selector they are being placed on. At the same time, having these classes with specific properties can save us
+from defining selectors over and over again for our elements. This can actually lead to a natural consistency on
+our pages, since everything is composed of the same base classes. There will be links at the end of this
+material for more details about advanced concepts in CSS and its commonly used properties.
 
 ## Margin, Border, and Padding
 
