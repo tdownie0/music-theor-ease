@@ -373,12 +373,14 @@ material for more details about advanced concepts in CSS and its commonly used p
 ## Margin, Border, and Padding
 
 Now we will get into some of the principle layout properties of CSS, and take a look at the developer
-tools. Personally, I use Google Chrome quite a bit for development, but also Firefox, Brave, and Edge.
-All of these browsers when open can be right clicked on in their background (so long as their is not
-and image or something natural in the way), and in the context menu that appears, you should see
-"Inspect" or something similar as the last option. I encourage you to open a web browser and follow
-along to see this (Chrome may be the easiest as some of the tabs can show slightly different information).
-If "Inspect" is selected and you end up on the "Elements" tab (which should be the left most tab next
+tools. There are a variety of web browsers to select from, such as Google Chrome, Firefox, Edge, and Brave.
+All of these browsers, when open, can be right clicked inside of their window display, and a context menu
+should appear. Within the context menu, we should see an "Inspect" option or something similar to this as the
+last selection. The reader is encouraged to open a web browser and follow along to see this behavior (Chrome was
+used in this example, so it may be the easiest to follow along with as some of the tabs can show slightly
+different information).
+
+Once "Inspect" is selected and we should end up on the "Elements" tab (which should be the left most tab next
 to "Console") you will see a box with the word "position" that has four 0's, one for the top, right,
 bottom, and left, as well as the words margin, border, and padding. Each of these is nested one inside
 of the other. Together, these dictate the position, sizing, and divisions of space with regards to the
