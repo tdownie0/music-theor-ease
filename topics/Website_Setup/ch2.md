@@ -372,28 +372,28 @@ material for more details about advanced concepts in CSS and its commonly used p
 
 ## Margin, Border, and Padding
 
-Now we will get into some of the principle layout properties of CSS, and take a look at the developer
-tools. There are a variety of web browsers to select from, such as Google Chrome, Firefox, Edge, and Brave.
-All of these browsers, when open, can be right clicked inside of their window display, and a context menu
+Now we will getting into some of the principle layout properties of CSS, and taking a look at the developer
+tools. There are a variety of web browsers for us to select from, such as Google Chrome, Firefox, Edge, and
+Brave. All of these browsers, when open, can be right clicked inside of their window display, and a context menu
 should appear. Within the context menu, we should see an "Inspect" option or something similar to this as the
-last selection. The reader is encouraged to open a web browser and follow along to see this behavior (Chrome was
-used in this example, so it may be the easiest to follow along with as some of the tabs can show slightly
-different information).
+last selection. The reader is encouraged to open a web browser and follow along to observe this behavior
+(Chrome was used while creating this example, so it may be the easiest to follow along with, as some of the tabs
+can show slightly different information).
 
-Once "Inspect" is selected and we should end up on the "Elements" tab (which should be the left most tab next
-to "Console") you will see a box with the word "position" that has four 0's, one for the top, right,
-bottom, and left, as well as the words margin, border, and padding. Each of these is nested one inside
-of the other. Together, these dictate the position, sizing, and divisions of space with regards to the
-border. If you had `<p>Hello</p>`, this would be the region referred to as the content. The padding
-would be the space around the content of the element. The border would be the region that is typically
-used to outline an element, appearing to make a box around it. Then the margin is the additional space
-that surrounds this border region.
+Once "Inspect" is selected, the developer tools should open and we should end up with multiple panels, one having "Elements" tab selected (which should be the left most tab next to "Console"). This presents to us
+the HTML structure of the current page. We will also see multiple squares in one panel, with the outer most
+square containing the word "position". This should also have four 0's surrounding it, one for the top, right,
+bottom, and left of the square. The nested squares inside should appear in order with the words margin, border,
+and padding. Together, these dictate the position, sizing, and divisions of space with the border separating
+the margin and padding. If we had `<p>Hello</p>` on the page, the region containing "Hello", would be referred
+to as the content. The padding would be the space around the content of the element. The border would be the
+region that is typically used to outline an element, appearing to make a box around it. Then the margin is the
+additional space that surrounds this border region.
 
-Together, all these regions make up what is known as the "Box Model" (Content, padding, border, margin).
-If you had trouble opening the correct spot in your inspector, googling "Box Model" may help you find
-your place once you see an image representation. All of these respond to the same base property aspects,
-which are top, right, bottom, and left. It is convention and has been established that those properties
-are always referred to in that specific order, clockwise starting from the top.
+Together, all these regions make up what is known as the "Box Model" (content, padding, border, and margin).
+All of these respond to the same base property aspects, which are top, right, bottom, and left. The established
+convention is that these properties are always referred to in this specific order, going clockwise, starting
+from the top.
 
 ```css
 .first {
