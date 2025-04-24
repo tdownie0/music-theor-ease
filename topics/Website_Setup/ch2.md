@@ -392,8 +392,8 @@ additional space that surrounds this border region.
 
 Together, all these regions make up what is known as the "Box Model" (content, padding, border, and margin).
 All of these respond to the same base property aspects, which are top, right, bottom, and left. The established
-convention is that these properties are always referred to in this specific order, going clockwise, starting
-from the top.
+convention is that these properties are always referred to in this specific order. Visually this is
+represented by starting from the top, and proceeding clockwise.
 
 ```css
 .first {
@@ -437,18 +437,22 @@ from the top.
 
 Above we have multiple examples of margin, padding, and border. Inside `.third`, we also see
 that border has some additional properties along with it. Border is probably the most diverse of the
-three since it has many style options. Across all of them, we see that they refer to a top, right,
-bottom, and left type of property. There shorthands are also present, since many of these are used
-together frequently. We see in `.first-condensed` that four values are listed
-`margin: 0 8px 8px 4px`. These values correspond to their positions in order from the comment above.
-Also, there is an example in `.second-condensed` where we see `padding: 0 8px;`. This will also work
-for margin, and the first value defines the top and bottom, while the second defines left and right, as
-stated in the comment above. Going back to `.third`, we see all the sides are defined but top. In this
-case border-style was also used, so this will be its default value, while the other sides are overrode
-by their corresponding properties. In `.fourth` we see a much shorter version. The property definition
-`border: 2px solid blue;` gives the element its width and style, just `.third` above, while also
-providing a color. I also included `border-radius: 6px;` as border-radius is a very common property
-to use in order to round out sharp edges from borders.
+three, due to its various styling options. Across all of them, we see that they refer to top, right,
+bottom, and left, respective of each property. Their shorthands are also present in the example, since
+many of these properties are used together frequently. We see inside `.first-condensed` that four values are
+listed in a property's definition, `margin: 0 8px 8px 4px`. Each value's position corresponds to the ordering
+mentioned earlier, but there is also a comment directly above the selector's definition as a reminder.
+
+For another example, within `.second-condensed` we see `padding: 0 8px;`. Here, the first value defines the top
+and bottom pair, while the second defines the left and right pair (as also stated in the comment directly above
+it). This shorthand will also work for the margin property. Touching back on `.third`, we see that all the
+sides have a defined border-style except for top. In this particular case, we also have a general border-style
+definition, so this will become the default value for the top's border-style. The other sides override this
+default value with their respective properties. Lastly, in `.fourth` we see a much shorter version. The
+property definition `border: 2px solid blue;` gives the element its width and style, just as `.third` above,
+while also providing a color. An additional property was defined in the selector's definition as well,
+`border-radius: 6px;`. Border-radius is a very common property to use when implementing borders, serving
+the purpose of rounding out the edges of their corners.
 
 ## Flexbox and CSS Grid
 
