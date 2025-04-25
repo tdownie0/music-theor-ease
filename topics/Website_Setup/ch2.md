@@ -456,25 +456,26 @@ the purpose of rounding out the edges of their corners.
 
 ## Flexbox and CSS Grid
 
-We have touched many of the essential aspects of CSS, and I do not intend to bog you down with much
-more information on the topic, as you will see plenty of examples first hand, and will have sites
-to explore further possibilities. Two CSS layout models in particular have become very common
+We have touched on many of the essential aspects of CSS, and of course there is still plenty more to learn.
+With the site we will be studying there will be plenty of examples for us to learn from first hand. In
+addition to this, there are links below pointing to other sites and resources that can cater to this specific
+learning experience. Two CSS layout models in particular have become very common
 over the past years, allowing for easier placement of elements on the page, as well as their adaptations
-of the page changing in size. These two models are Flexbox and CSS Grid. There is quite a bit that
-you can do with both of these, and some of their properties have similar names.
+to the page changing in size. These two models are Flexbox and CSS Grid. There is quite a bit that
+can be done with both models, and some of their properties share similar names.
 
-> **Note:** In my opinion, some interactive game sites cover the general use cases for these very well.
-> The first two sites listed will be games:
+> **Note:** Some interactive game sites cover the general use cases for these models very well.
+> The first two links here point to such sites.
 >
 > [Flexbox Froggy](https://flexboxfroggy.com/)  
 > [Grid Garden](https://cssgridgarden.com/)
 >
-> Also, I will link the original videos where I had learned more about these layout models. This
-> resource also has a javascript course that I would highly recommend as well.
+> Next are some short web courses that also teach about these subjects. In addition, there is a short JavaScript
+> course as well. All of these resources are highly recommended.
 >
 > [What The Flexbox?!](https://flexbox.io/)  
 > [CSS Grid](https://cssgrid.io/)  
-> [Javascript30](https://javascript30.com/)  
+> [JavaScript30](https://javascript30.com/)  
 > [Wes Bos (Creator's main site)](https://wesbos.com/)
 >
 > Another resource that I found very recently also covers much of the same material as this chapter
