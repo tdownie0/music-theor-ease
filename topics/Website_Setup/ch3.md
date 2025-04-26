@@ -1,15 +1,15 @@
 ## Chapter 3: Setting Up a Development Environment
 
-We are almost ready to start coding and interacting with the site we will be learning with. The
-initial setup may take several steps based on the operating system that you are currently using
-(Windows, Mac, or Linux), but I hope to provide you the necessary resources to accomplish this
-in the current chapter. If you are using Mac or Linux, you may have an easier time setting everything
-up initially. Personally, I develop on Windows through the Windows Subsystem for Linux (WSL) for my
-personal projects, and use Mac for my professional development. Mac OS behaves very similarly to
+We are almost ready to start coding and interacting with the site that we will be learning with. The
+initial setup may take several steps based on the operating system that the reader is currently using
+(Windows, Mac, or Linux), but this chapter will hopefully provide enough resources to accomplish
+this task successfully. Individuals using Mac or Linux may have an easier time setting everything
+up initially. This project was actually developed on Windows through the Windows Subsystem for Linux (WSL),
+so anyone using Windows should be able to follow along as well. Mac OS behaves very similarly to
 Linux, but is actually closer to UNIX (the first operating system to be created). Linux was based
 on UNIX, but is open-source, where UNIX actually requires a license to use. Due to this, Mac and
-Linux can provide a similar experience from their terminals (Bash is both of their default shells). On the
-other hand, Windows has a unique shell from both of these, having its own syntax.
+Linux can provide a similar experience from their terminals (Both use Bash as their default shell). On the
+other hand, Windows has a unique shell apart from the others, Command Prompt, which has its own syntax.
 
 > **Note**: The terminal is a program that allows you access to command-line interfaces (CLIs), and
 > the shell interprets and executes commands provided to the terminal.
