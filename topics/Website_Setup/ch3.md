@@ -4,27 +4,33 @@ We are almost ready to start coding and interacting with the site that we will b
 initial setup may take several steps based on the operating system that the reader is currently using
 (Windows, Mac, or Linux), but this chapter will hopefully provide enough resources to accomplish
 this task successfully. Individuals using Mac or Linux may have an easier time setting everything
-up initially. This project was actually developed on Windows through the Windows Subsystem for Linux (WSL),
-so anyone using Windows should be able to follow along as well. Mac OS behaves very similarly to
-Linux, but is actually closer to UNIX (the first operating system to be created). Linux was based
-on UNIX, but is open-source, where UNIX actually requires a license to use. Due to this, Mac and
-Linux can provide a similar experience from their terminals (Both use Bash as their default shell). On the
-other hand, Windows has a unique shell apart from the others, Command Prompt, which has its own syntax.
+up initially. This project was actually developed on Windows through the Windows Subsystem for Linux (WSL,
+specifically WSL 2 in this case), so anyone using Windows should be able to follow along as well.
 
-> **Note**: The terminal is a program that allows you access to command-line interfaces (CLIs), and
+Mac OS behaves very similarly to Linux, but is actually closer to UNIX (the first operating system to be
+created). Linux was based on UNIX, but is open-source, where UNIX actually requires a license to use. Due to
+this, Mac and Linux can provide a similar experience from their terminals (Both use Bash as their default
+shell). On the other hand, Windows has a unique shell apart from the others, Command Prompt, which has its own
+syntax.
+
+> **Note**: The terminal is a program that allows us access to command-line interfaces (CLIs), and
 > the shell interprets and executes commands provided to the terminal.
 
-Since Windows behaves differently in its terminal, things like PowerShell have come along to help
-developers use commands from operating systems like Linux and Mac (PowerShell also provides several
-more capabilities than Windows' default Command Prompt, but a more unified syntax is also helpful).
-WSL came out after PowerShell was created, and allows you to use a Linux kernel that runs directly
-on Windows. This is extremely helpful as it allows for a similar local development experience across all
-the operating systems. Virtual machines were also commonly used for this task in order to allow access to
-a Linux or Mac OS environment for development, since Windows tended to be much more difficult to set up on
-its own. The difference between a virtual machine and using WSL is that WSL does not require nearly as
-much memory as a virtual machine, as it does not have to have portions of your computer's resources
-directly devoted specifically to the virtual machine, such as RAM, disk space, CPU cores, and all the
-overhead of having a separate machine run within your own machine.
+Since Windows behaves differently in its terminal, tools like PowerShell have come along to help
+developers use some of the commands from operating systems such as Linux and Mac (PowerShell also provides
+several more capabilities than Windows' default Command Prompt, but a more unified syntax is helpful).
+WSL came out after PowerShell was created, and allows us to use a Linux kernel that runs directly
+on Windows. This is extremely helpful, as it allows for a similar local development experience across all
+the operating systems.
+
+Virtual machines (VMs) were also commonly used for this task in the past, allowing access to
+Linux or Mac OS environments for development. Windows had tended to be much more difficult to set up for
+local development on its own. Some of the key differences between a VM and using WSL is that WSL is
+more tightly integrated with Windows, acting as a lighter weight VM (in the WSL 2 case) and having direct
+access the to Windows file system. When using a VM we have to divide up portions of the computer's
+resources to be allocated to each machine (the main machine and the virtual machine). Such resources include
+RAM, disk space, CPU cores, and all the additional overhead of having a separate machine run within another
+machine. Much of this is handled for us already with WSL.
 
 We may go over some of the basic commands related to Linux and navigating directory structures from the
 command line, but there is no need to be overly focused on this material at the moment. The main purpose
