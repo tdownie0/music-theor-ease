@@ -478,13 +478,14 @@ can be done with both models, and some of their properties share similar names.
 > [JavaScript30](https://javascript30.com/)  
 > [Wes Bos (Creator's main site)](https://wesbos.com/)
 >
-> Another resource that I found very recently also covers much of the same material as this chapter
-> and has several helpful images and interactive portions that will help guide your learning. The site
-> is truly exceptional and really goes in depth for front-end related topics. I will link the pages that
-> directly relate to this content, but also the main site which actually covers modern frameworks in depth,
-> focusing on React, Angular, and Vue. The first two links relate directly to this chapter, but the last
-> would be great to keep as a resource to come back to if you would like a more holistic view of front-end
-> frameworks and a chance to really understand their inner workings.
+> Another resource that was created more recently is linked to below. This also covers much of the same material
+> as this chapter, in addition to having several helpful images and interactive portions that will help guide
+> the reader's learning. This resource is truly exceptional, covering much more than what was touched on
+> here, as well as really going in depth for front-end related topics. The first two links provided
+> directly relate to the content of this chapter, but there is also a link to the main site which actually
+> covers modern frameworks in depth, focusing on React, Angular, and Vue. The last link is a great
+> resource to come back to for anyone that would like a more holistic view of front-end frameworks and a chance
+> to really understand their inner workings.
 >
 > [CSS Fundamentals](https://unicorn-utterances.com/posts/css-fundamentals)  
 > [Understanding The DOM: How Browsers Show Content On-Screen](https://unicorn-utterances.com/posts/understanding-the-dom)  
