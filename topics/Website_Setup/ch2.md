@@ -502,9 +502,9 @@ which of these layouts would be the most conducive for our sites, possibly provi
 
 ## Conclusion
 
-This should cover the breadth of the general uses of HTML with CSS. There are far too many
-properties in both to fully cover here. With CSS there are things such as properties that allow for
+This should cover the breadth of the general implementations when using HTML with CSS. There are far too many
+properties in both to fully cover here. With CSS, there are properties that allow for
 animations, CSS variables, and managing and importing fonts and icons. Then with HTML, as mentioned
-before, there are unique challenge sets to make sure that a site is 100% covered for accessibility
-standards. We will get a better look at animations with the site we will be covering, and see more
-advanced considerations for layout structures.
+before, there are unique challenge sets when making sure that a site is 100% covered for accessibility
+standards. We will get a better look at animations with the site we will be studying, as well as
+exposure to more advanced considerations for layout structures.
