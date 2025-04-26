@@ -491,14 +491,14 @@ can be done with both models, and some of their properties share similar names.
 > [Understanding The DOM: How Browsers Show Content On-Screen](https://unicorn-utterances.com/posts/understanding-the-dom)  
 > [The Framework Field Guide](https://unicorn-utterances.com/collections/framework-field-guide)
 
-If you spend the time to go over "Flexbox Froggy" and "Grid Garden", you should have a decent
-understanding of what the two layouts can accomplish. The resources at the bottom also give great
-examples through a course format if you would like to build along with videos. I would check them out
-if you would like more information, but these courses should take much longer than the games above.
-When going through the sites, if you feel like you have enough of a general understanding, I am sure
-the website we will be going over will help solidify an understanding for some basic uses. Both of
-these layouts are very powerful. Resources like chatGPT may help you decide which setup will be more
-conducive to your site, or give you a basic template.
+Spending time to go over "Flexbox Froggy" and "Grid Garden" should provide a decent
+understanding of what the two layouts can accomplish. The resources directly below these two also provide
+great examples through a course format, which would be valuable for anyone that would like to build along with
+videos. These courses will take longer than the games sites to go through, but provide much more detailed
+information. After exploring these resources, once the reader feels that they have a general understanding of
+these topics, the website we will be going over should also help with solidifying this knowledge. Both of
+these layouts are very powerful, and have their own strengths. Resources like ChatGPT can help us decide
+which of these layouts would be the most conducive for our sites, possibly providing basic templates as well.
 
 ## Conclusion
 
