@@ -47,31 +47,48 @@ and get our local development environment up and running.
 ## Installing Visual Studio Code
 
 Our next step will be installing our rich text editor, which will be Visual Studio Code. There are several
-options when it comes to rich text editors and IDEs (Integrated Development Environment), and I am sure
-you will have exposure to multiple if you decide to keep learning coding going forward. Using tools such
-as these really can make a world of difference with your coding experience. There was a time when these
-tools did not exist, and you may come across curriculums that do not reach for these programs  
-right away. It is certainly possible to code without them, and may give you quicker access to start
-coding, but you will be missing out on many modern features that are pretty much expected in any
-professional environment. An analogy would be if you decided to write a paper and used Notepad instead of
-Microsoft Word or Google Docs. By doing so, you would be missing out on many features that have come to
-be expected when creating text documents, such as changing the font styles, font size, spell checking, and
-much more.
+options when it comes to rich text editors and IDEs (Integrated Development Environment), and the reader
+will likely have exposure to multiple if they decide to continue learning about programming. Using tools such
+as these can really make a world of difference with our coding experience. There was a time when these
+tools did not exist, and some may come across curriculums that do not reach for these programs  
+right away. It is certainly possible to code without them, and it may be quicker to start coding without them.
+Though ultimately, missing out on many of the modern features these tools provide would likely deprive the user
+of experiencing what most have come to expect for a professional programming environment. An analogy for this
+would be akin to someone deciding to write a paper in Notepad instead of Microsoft Word or Google Docs. By doing
+so, this individual would be missing out on many features that have come to be staples in text editing
+software, such as changing the font styles, font size, spell checking, and much more.
 
 Visual Studio Code (VS Code) is free, feature rich, allows for plugins, and has many customizability
 options. A link can be found here, [VS Code](https://code.visualstudio.com/docs/introvideos/basics),
-and comes with a helpful video to explain the layout and some features of the editor. Do not feel that
-you will need to create any files along with the video, but it may be helpful for a general overview.
-Once this is up and running, we will go through getting the code for our project as well as installing
-the plugins that will be used alongside it. Recently a very helpful plugin has become wildly popular
-(GitHub Co-Pilot), and allows AI auto-completion and code suggestions while you are writing your code
-through ChatGPT. For the moment this plugin requires a subscription to use, so we will not be relying on
-it, but this may change in the future. As an alternative, you can always copy and paste your code on the
-[ChatGPT Website](https://chat.openai.com/) for AI assistance. The main difference with this method is
-that the suggestions will not be directly in your IDE, so you will have to have a web browser open while
-you are coding, and have to jump back and forth between the two windows. This is also useful to have open
-anyway if you would like to ask for explanations about any code you come across or programming related
-questions, as it allows for a more conversational format.
+and comes with a helpful video to explain the layout and some of the features included with the editor. It is
+not necessary to create any files along with the video, but it may be helpful for a general overview.
+Once this is up and running, we will go through the process of downloading the code for our project, as well as
+installing the plugins that will be used alongside it. Recently a very helpful plugin has become wildly popular,
+being GitHub Co-Pilot. This plugin allows for AI auto-completion and code suggestions while we are writing our
+code in the editor through ChatGPT and other LLMs (Large Language Models). Currently, this tool allows for a
+certain amount of free interactions per month with a github account (which is free), and also provides
+subscription plans for those who would like to use it more heavily.
+
+When this portion of the reading was first written, this plugin did not have a free option. Due to this, it was
+not anticipated to be used by a large number of readers. Currently, this tool space is one of the largest
+changes to modern development. Readers are encouraged to explore its capabilities as we explore plugins further,
+but it is not absolutely essential for the moment. It is very convenient to have everything directly in our
+editor, but LLMs can still be leveraged without this setup.
+
+As an alternative, we can always copy and paste our code into LLMs through their respective websites for AI
+assistance, such as [ChatGPT](https://chat.openai.com/) (or a number of other LLMs, some common ones would
+include [Claude](https://claude.ai/) and [Gemini](https://gemini.google.com/)). The main difference with this
+method is that the suggestions will not be directly in our IDE. In addition, the model will also not be able to
+scan our local files for additional context and make suggestions for automatic revisions or file creation (these
+aspects are some of the latest developments in the AI tool space).
+
+With all of this in mind, using one of these sites along with our editor requires us to have a web browser open
+while we are coding (which is common in web development), jumping back and forth between the
+two windows. Ultimately, this is useful anyway, as we may be seeking longer explanations about
+our code (though this is available with Co-Pilot as well now), or other code that we come across while
+researching implementation details. Accessing these tools in this manner allows for a more conversational
+layout format, possibly provides access to more of the latest models, enables additional free usage of the
+models, and can enable access to additional features.
 
 ## Retrieving the Source Code
 
