@@ -32,13 +32,14 @@ resources to be allocated to each machine (the main machine and the virtual mach
 RAM, disk space, CPU cores, and all the additional overhead of having a separate machine run within another
 machine. Much of this is handled for us already with WSL.
 
-We may go over some of the basic commands related to Linux and navigating directory structures from the
-command line, but there is no need to be overly focused on this material at the moment. The main purpose
-of this is so that we can install the packages we need and get our local development environment running.
+While setting up our environment, we will be exposed to some basic commands related to Linux and navigating
+directory structures from within the command line. With that said, there is no need to be overly focused on
+learning all of this material at the moment. The main focus of this chapter is to install the packages we need
+and get our local development environment up and running.
 
-> **Windows Users**: Here is a link to Microsoft's documentation. In most cases it is probably better to
-> link their resources instead of providing manual steps here as their process may change due to future
-> updates. These resources will be maintained by Microsoft, so they will be updated alongside any
+> **Windows Users**: Here is a link to Microsoft's documentation. In most cases, it is probably better to
+> link their resources instead of providing manual steps here as their processes may change in the future
+> due to updates. These resources will be maintained by Microsoft, so they will be updated alongside any
 > occurrences such as this.
 >
 > [How to install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
