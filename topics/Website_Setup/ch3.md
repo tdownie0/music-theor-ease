@@ -93,13 +93,13 @@ models, and can enable access to additional features.
 ## Retrieving the Source Code
 
 In order to get the source code on our machines, we will be using a program called git. This is an
-industry standard and is a distributed version control system. It allows you to track the history of
-your code, create multiple versions, and enables you to collaborate with other programmers for your
-source code. We will be covering some of the features of git in more depth later on, but for now will
-be using it to specifically get the source code that we will be working with on your local machine.
-If you are on windows, you will be running these commands in your WSL terminal, and if you are on
-Mac OS or Linux you will be doing this in their respective terminals. Once the terminal is open there
-will be a few basic commands we will run so that we can create a directory and organize where we will
+industry standard and is described as a distributed version control system. It allows us to track the history of
+our code, create multiple versions, and enables us to collaborate with other programmers on the same
+source code. We will be covering some of the features of git in more depth later on, but for now we will
+be using it specifically to get the source code that we will be working with on our local machines.
+Windows users will be running these commands in the WSL terminal. Mac OS and Linux
+users will be using their respective native terminals. Once the terminal is open, we will run
+a few basic commands so that we can create a directory and organize where we will
 be storing our code.
 
 With your terminal open, you will use the command `mkdir tutorial` (you may replace tutorial with any
