@@ -99,20 +99,19 @@ source code. We will be covering some of the features of git in more depth later
 be using it specifically to get the source code that we will be working with on our local machines.
 Windows users will be running these commands in the WSL terminal. Mac OS and Linux
 users will be using their respective native terminals. Once the terminal is open, we will run
-a few basic commands so that we can create a directory and organize where we will
-be storing our code.
+a few basic commands so that we can create a directory and organize where we will be storing our code.
 
-With your terminal open, you will use the command `mkdir tutorial` (you may replace tutorial with any
-name that you wish for your directory, referred to as folders from the Windows graphical interface).
-Here `mkdir` stands for "make directory" and will create a new directory in order to store the source code
-that we will be working on. This step is not necessary, but will help stay organized in the future if you
-create multiple directories and files. Next, you will need to use `cd tutorial` if you used tutorial as
-your directory name, or replace it with whatever directory name you chose. The `cd` command stands for
-"change directory", and will navigate your current location in the terminal to the directory that you
-specified. Once inside this directory we will now clone our code repository. If you are reading this,
-that means you most likely currently at the code repository (the central location for our source code) if
-you are within your web browser. I will walk you through the cloning process as if you were visiting any
-source code that you wished to interact with on github.
+With our terminal open, we will run the command `mkdir tutorial` (the reader may replace "tutorial" with any
+name that they wish for their directory, which is referred to as a folder in a Windows graphical interface).
+Here `mkdir` stands for "make directory", and will create a new directory for us to store the source code
+that we will be working on. This step is not absolutely necessary, but helps with staying organized, especially
+when there are multiple directories and files. Next, we will use `cd tutorial` (only if "tutorial" was
+used as the directory name, otherwise replace it with whichever directory name was chosen). The `cd` command
+stands for "change directory", and navigates our current location in the terminal to the directory that was
+specified. Once inside this directory, we will now clone our code repository (the central location for our
+source code). The original source of this reading is actually inside the code repository that will be cloned,
+so it is likely that the reader is already in the right place. This cloning process will be
+the same for any source code that we should wish to interact with on github.
 
 Here is a link to the main page of the repository: <https://github.com/tdownie0/music-theor-ease>. Once
 you navigate to this page you will see the typical layout for a github page. You will see several tabs,
