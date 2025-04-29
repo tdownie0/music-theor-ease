@@ -114,16 +114,16 @@ so it is likely that the reader is already in the right place. This cloning proc
 the same for any source code that we should wish to interact with on github.
 
 Here is a link to the main page of the repository: <https://github.com/tdownie0/music-theor-ease>. Once
-you navigate to this page you will see the typical layout for a github page. You will see several tabs,
-the repository name, metrics, and many other things. What we are specifically are looking for is the
-green button that says "<> Code", and has a downwards arrow next to it. Once you click on this, you
-will see a tab labeled HTTPS that is currently selected with the web URL
-<https://github.com/tdownie0/music-theor-ease.git> in the text field. You can copy this link with the
-copy icon next to it that displays "Copy url to clipboard" in hover text. Once you do so, you can now
-navigate back to your terminal and type `git clone https://github.com/tdownie0/music-theor-ease.git`
-into it. Once this is done, you will then see that the repository has started downloading in your
-current directory, and afterwards you should be left with a directory named "music-theor-ease" with the
-source code from the repository. At this point, you have successfully downloaded the source code to your
+this page is navigated to, we will see the typical layout for a github page. There are several tabs here
+including the repository name, metrics, and many other things. What we are specifically looking for is the
+green button that contains "<> Code", and has a downwards arrow next to it. Once this is clicked, a window
+should appear and we will see a tab labeled HTTPS that is currently selected with the web URL
+<https://github.com/tdownie0/music-theor-ease.git> in the text field. We can copy this link with the
+copy icon directly next to it, which displays "Copy url to clipboard" when hovered upon. Once this is done, we
+can now navigate back to our terminal and type `git clone https://github.com/tdownie0/music-theor-ease.git`
+into it. Following this, we should see that the repository starts downloading inside of our
+current directory. Afterwards, there should be a directory named "music-theor-ease" with the source code
+from the repository inside. At this point we have successfully downloaded the source code to our
 local machine.
 
 Once you reach this point, you can now use `cd music-theor-ease` to navigate to the directory. As a side
