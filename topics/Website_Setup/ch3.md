@@ -126,16 +126,16 @@ current directory. Afterwards, there should be a directory named "music-theor-ea
 from the repository inside. At this point we have successfully downloaded the source code to our
 local machine.
 
-Once you reach this point, you can now use `cd music-theor-ease` to navigate to the directory. As a side
-note, you may press tab after entering `cd m`, and your terminal will attempt to auto-complete what you
-are typing based on the folders and files currently stored in the directory. As long as you do not have
-any other files or folders starting with "m" in this directory, your terminal should correctly fill in
-the remaining letters for you. This can greatly speed you up as you navigate through the command line
-interface (CLI). Once inside the directory, you can now run `npm run dev` and either "ctrl + click" the
-part that says <http://localhost:3000>, or manually type the address in your web browser to explore the
-site that we will be studying in detail. This command runs a local development server so you can experience
-the sites that you are currently working on. The site will only be available to you locally as long as
-the local server is running.
+Once this point is reached, using `cd music-theor-ease` will navigate us inside the directory. As a side
+note, pressing the tab key after entering `cd m` will cause the terminal to attempt auto-completion. This
+auto-completion is based on the directories and files currently stored in a directory. If there are not
+any other files or directories starting with "m" in the current directory, our terminal should correctly fill in
+the remaining letters for us. This can greatly speed up as anyone's navigation through the command line
+interface (CLI). Once inside the directory, we can now run `npm run dev` and either "ctrl + click" the
+part that appears with <http://localhost:3000>, or manually type this address into our web browser to explore the
+site that we will be studying in detail. This command runs a local development server so that we can experience
+using the web browser with the sites that we are working on. The site will only be available to us locally as
+long as the local server is running.
 
 ## Installing Plugins
 
