@@ -139,14 +139,13 @@ long as the local server is running.
 
 ## Installing Plugins
 
-Lets walk through installing some plugins for our development. If you are still in the
-"music-theor-ease" directory, you can actually type `code .` now that you have VS Code installed.
+Lets walk through installing some plugins for our development. From inside of the
+"music-theor-ease" directory, we can type `code .` now that we have VS Code installed.
 This command opens the text editor through the `code` command, and here the `.` represents the
-current directory. You can actually navigate to the directory above your current location with
-`cd ..`, and you will see both of these dot shorthands extremely often throughout all of your
-programming endeavors, being very common in referencing "paths" to files. The term "path" is often
-used to refer to the location of a file relative to the location of a file or directory that you
-have in your system.
+current directory. We can actually navigate to the directory above our current location with
+`cd ..` as a command. Both of these dot shorthands are extremely common to see throughout
+programming, often being used for referencing "paths" to files. The term "path"
+describes the location of a file relative to the location of another file or directory within a system.
 
 There are several helpful plugins that satisfy many programming related needs, such as intellisense,
 debugging, formatting, and much more. In VS Code you will see will see on the leftmost side of the screen
