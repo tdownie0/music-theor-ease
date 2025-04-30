@@ -147,14 +147,20 @@ current directory. We can actually navigate to the directory above our current l
 programming, often being used for referencing "paths" to files. The term "path"
 describes the location of a file relative to the location of another file or directory within a system.
 
-There are several helpful plugins that satisfy many programming related needs, such as intellisense,
-debugging, formatting, and much more. In VS Code you will see will see on the leftmost side of the screen
-a series of icons. Each of these will open a side panel when clicked on, and the one we will be looking
-for at the moment will be the extensions option. For now this looks like four tiles with the top right
-tile appearing that it will join the others to complete a square shape. If you are unsure which this is,
-hovering over each of the icons should display the name of the icon next to it, so ours should say
-"Extensions". When this is opened you will see a search bar at the top where you can type in the names of
-the extensions you would like to download.
+There are dozens of helpful plugins available to us which satisfy a variety of programming related needs.
+A short list of tasks that they may assist with are intellisense, debugging, formatting, and much more.
+In VS Code the leftmost side of the screen has a "primary sidebar" which has a series of icons along
+the top. At the time of this writing, there are a series of icons at the top right of VS Code's display that
+enable us to toggle different sidebars, layouts, and access "manage" (which is the cogwheel icon). If
+there is any difficulty locating or accessing any of the features within VS Code, adjusting and looking
+through "Keyboard Shortcuts" within "manage" may be very helpful.
+
+Within the primary sidebar, each icon along the top will open a different view when clicked on. The one we are
+currently looking for is the "Extensions" option. Currently, this icon appears as four tiles with the top
+right tile separate from the others, otherwise creating a square. If there is any uncertainty about which icon
+this is, hovering over each of them should display the name of the icon, so in this case it should say
+"Extensions". When this is clicked upon, we will see a search bar at the top where we can type in the names of
+the extensions we would wish to download.
 
 > **Windows Users:** An additional plugin you will need to install is the WSL plugin so that you can
 > access your WSL files with VS Code. When you search for this you should it is created by Microsoft
