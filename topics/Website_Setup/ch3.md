@@ -162,17 +162,18 @@ this is, hovering over each of them should display the name of the icon, so in t
 "Extensions". When this is clicked upon, we will see a search bar at the top where we can type in the names of
 the extensions we would wish to download.
 
-> **Windows Users:** An additional plugin you will need to install is the WSL plugin so that you can
-> access your WSL files with VS Code. When you search for this you should it is created by Microsoft
-> and has over 26 million downloads. Once this is done you may need to restart VS Code, but you will
-> actually see a separate area for plugins to be installed for WSL. On my machine there is a top
+> **Windows Users:** An additional plugin that will be needed is the WSL plugin, enabling
+> access to WSL files within VS Code. The correct plugin should be created by Microsoft
+> and has over 26 million downloads. Once this is done VS Code may need to be restarted, but there will
+> be a separate area for plugins to be installed specifically for WSL. Currently there is a
 > section for "LOCAL - INSTALLED" and another for "WSL: UBUNTU - INSTALLED". While working on code
-> with WSL, you will need to install your plugins in the WSL section. You may need to open VS Code
-> from within your WSL terminal by navigating to the folder you would like to open and typing `code .`
-> as a command. You may not see the section until this, so do not worry if that is the case.
+> with WSL, many plugins will need to be installed in the WSL section. This may require opening VS Code
+> from within the WSL terminal by navigating to the folder we would like to open and typing `code .`
+> as a command. The section may not appear until this is done, so there is no need for concern if that
+> is the case.
 
-Here will be a list of some essential ones that will assist with this project and your day to day
-programming experiences.
+Below is a list of the more essential plugins that will assist us with our project, as well as our day to
+day programming experiences.
 
 | Plugin Name                       | Publisher     | Purpose                                                                        |
 | :-------------------------------- | :------------ | :----------------------------------------------------------------------------- |
