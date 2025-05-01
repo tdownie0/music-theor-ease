@@ -64,7 +64,7 @@ and comes with a helpful video to explain the layout and some of the features in
 not necessary to create any files along with the video, but it may be helpful for a general overview.
 Once this is up and running, we will go through the process of downloading the code for our project, as well as
 installing the plugins that will be used alongside it. Recently a very helpful plugin has become wildly popular,
-being GitHub Co-Pilot. This plugin allows for AI auto-completion and code suggestions while we are writing our
+being GitHub Copilot. This plugin allows for AI auto-completion and code suggestions while we are writing our
 code in the editor through ChatGPT and other LLMs (Large Language Models). Currently, this tool allows for a
 certain amount of free interactions per month with a github account (which is free), and also provides
 subscription plans for those who would like to use it more heavily.
@@ -85,7 +85,7 @@ aspects are some of the latest developments in the AI tool space).
 With all of this in mind, using one of these sites along with our editor requires us to have a web browser open
 while we are coding (which is common in web development), jumping back and forth between the
 two windows. Ultimately, this is useful anyway, as we may be seeking longer explanations about
-our code (though this is available with Co-Pilot as well now), or other code that we come across while
+our code (though this is available with Copilot as well now), or other code that we come across while
 researching implementation details. Accessing these tools in this manner allows for a more conversational
 layout format, possibly provides access to more of the latest models, enables additional free usage of the
 models, and can enable access to additional features.
@@ -175,16 +175,17 @@ the extensions we would wish to download.
 Below is a list of the more essential plugins that will assist us with our project, as well as our day to
 day programming experiences.
 
-| Plugin Name                       | Publisher     | Purpose                                                                        |
-| :-------------------------------- | :------------ | :----------------------------------------------------------------------------- |
-| IntelliCode                       | Microsoft     | Auto-Complete and documentation references                                     |
-| IntelliCode API Usage Examples    | Microsoft     | Displays relevant API (Application Programming Interface) usage examples       |
-| Javascript and Typescript Nightly | Microsoft     | Gives you the latest versions of Typescript for intellisense (may be optional) |
-| Jest                              | Orta          | Allows you to run Jest in VS Code                                              |
-| Prettier - Code formatter         | Prettier      | Formats your code for you                                                      |
-| Tailwind CSS IntelliSense         | Tailwind Labs | Intellisense for Tailwind CSS                                                  |
-| Material Icon Theme               | Philipp Kief  | Material Design Icons for VS Code (Styles sidebar icons)                       |
-| Gruvbox Theme                     | jdinhlife     | Color theme for your editor (I use Gruvbox Dark Hard at the moment)            |
+| Plugin Name                       | Publisher     | Purpose                                                                                         |
+| :-------------------------------- | :------------ | :---------------------------------------------------------------------------------------------- |
+| IntelliCode                       | Microsoft     | Auto-Complete and documentation references                                                      |
+| IntelliCode API Usage Examples    | Microsoft     | Displays relevant API (Application Programming Interface) usage examples                        |
+| Javascript and Typescript Nightly | Microsoft     | Provides the latest versions of Typescript for intellisense (may be optional)                   |
+| Jest                              | Orta          | Allows us to run Jest in VS Code                                                                |
+| Prettier - Code formatter         | Prettier      | Formats our code for us                                                                         |
+| Tailwind CSS IntelliSense         | Tailwind Labs | Intellisense for Tailwind CSS                                                                   |
+| Material Icon Theme               | Philipp Kief  | Material Design Icons for VS Code (Styles sidebar icons)                                        |
+| Gruvbox Theme                     | jdinhlife     | Color theme for our editor (Gruvbox Dark Hard is an option, but any theme will be helpful).     |
+| GitHub Copilot                    | GitHub        | AI auto-completions, as well as other capabilities. A GitHub account may be needed to use this. |
 
 There are several more extensions you can download as well, but this should be enough to get us up and
 running. To change keyboard shortcuts you can actually go to your "File" tab at the top left of your
