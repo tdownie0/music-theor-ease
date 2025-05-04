@@ -187,15 +187,15 @@ day programming experiences.
 | Gruvbox Theme                     | jdinhlife     | Color theme for our editor (Gruvbox Dark Hard is an option, but any theme will be helpful).     |
 | GitHub Copilot                    | GitHub        | AI auto-completions, as well as other capabilities. A GitHub account may be needed to use this. |
 
-There are several more extensions you can download as well, but this should be enough to get us up and
-running. To change keyboard shortcuts you can actually go to your "File" tab at the top left of your
-screen, then select "Preferences", and then "Keyboard Shortcuts". Once you do this you can type something like
-"Prettier" into the top search bar and you will see the keybinding associated with it. Personally I use
-"Shift + Alt + F" for my own keybinding (which is the default), and you are free to change this to whatever is
-comfortable for you. I find that this does not interfere with my other keybindings. You will find many chances to
-use this as we work on our files. You are also free to google examples of these extensions and follow
-along with videos demonstrating their usages, though you may get enough experience first-hand as you
-work along with this.
+There are several more extensions that can be download as well, but these should be enough to get us up and
+running. As a note, another way of navigating to "Keyboard Shortcuts" is by selecting the "File" tab at the top
+left of VS Code window, then selecting "Preferences". Once here we can type something like
+"Prettier" into the top search bar and we will see the keybinding(s) associated with it. The default should be
+`Shift + Alt + F`, but this is free to be changed to whatever is the most comfortable. Often a case for
+switching key bindings would be if it interferes with another existing binding. There will be many opportunities
+for us to use this "Prettier" key binding as we work on our files. Googling examples of these extensions
+and following along with videos demonstrating their usages may also prove useful. In addition, having firsthand
+exposure to their capabilities will help with cementing our understanding of their uses.
 
 ## Up and Running
 
