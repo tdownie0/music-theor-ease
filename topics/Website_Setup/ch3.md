@@ -199,17 +199,20 @@ exposure to their capabilities will help with cementing our understanding of the
 
 ## Up and Running
 
-Now that we have worked through that, we should have the proper setup and environment to finally start
-checking out our code! I hope the setup went swiftly for you, and am thrilled you made it this far. I
-anticipate this is an area for hiccups to pop up in the process, due to different machine setups,
-operating systems, and unfamiliarity with the process. Google may help quite a bit with the process
-so do not hesitate to search anything that is causing you issues. Ultimately, this is one of the primary
-skills of being a programmer, looking up resources and doing research into how to resolve issues and
-obtain a better understanding of any task that you are currently undertaking. Knowing how to look for
-the correct resources can really make experienced programmers stand apart from their less experienced
-counterparts. This statement is also true for setting up your coding environment through extensions and
-such. Being able to setup your environment so that you can navigate swiftly through files and your code
-base can save you immense amounts of time in the long run.
+After making it to this point, we should now have the proper setup and environment to finally start
+checking out our code! If there was, or currently still is any trouble along the way, Google can be very helpful
+with this process. Asking for the assistance of an LLM is also an option. Since there are various machine setups,
+operating systems, and other random variables for each individual, there may be a few extra steps in addition
+to the ones that were already noted in this process.
+
+Ultimately, pushing through issues and following instructions to properly setup things are some of the primary
+skills of being a programmer. Looking up resources and researching how to resolve issues often leads to a better
+understanding of the tasks that we are undertaking. With this, the process of finding resources that are the
+most relevant to what we are actually searching for becomes more refined. Skills such as these can really
+set apart experienced programmers from their less experienced counterparts. Another aspect that is closely
+related to this is setting up an environment that is ideal for our optimal workflow. This can save immense
+amounts of time in the long run, facilitating the ability to swiftly navigate through files and the code we are
+working with, as well as other tasks.
 
 > **Note:** I will also be providing an auxiliary section going over an editor known as "Vim". There is
 > actually an extension you can download for VS code called "Vim" by vscodevim. This allows you to use
