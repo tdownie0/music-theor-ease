@@ -214,24 +214,20 @@ related to this is setting up an environment that is ideal for our optimal workf
 amounts of time in the long run, facilitating the ability to swiftly navigate through files and the code we are
 working with, as well as other tasks.
 
-> **Note:** I will also be providing an auxiliary section going over an editor known as "Vim". There is
-> actually an extension you can download for VS code called "Vim" by vscodevim. This allows you to use
-> vim motions and some shortcuts associated with the editor, but some of its shortcuts may conflict with
-> pre existing shortcuts in VS Code. Many of these can be handled through adjusting keybindings, but the
-> process can be tedious and would ultimately requires familiarity to setup in the best way possible for
-> your needs.
+> **Note:** A tool worth noting here is an editor known as "Vim". There is actually an extension that can
+> can be downloaded in VS code called "Vim" by vscodevim. This allows the user to use vim motions and
+> other shortcuts associated with the editor. Some of its shortcuts may conflict with
+> preexisting shortcuts in VS Code (favoring VS Code), but adjustments can be made in one's keybindings if
+> desired.
 >
-> I would hesitate reaching for it at the moment due to it drastically changing how you
-> interact with files when editing them. In the long run, mastering something like this can speed up all
-> your development tasks by allowing you to not have to reach for a mouse, instead navigating purely
-> through your keyboard. I find this is nice in VS Code and other text editors as well, as they also
-> allow you to interact with the GUI (Graphical User Interface), in addition to its motions. If you
-> would like a brief taste you can check out the resource I will link below, though I would not encourage
-> paying for the resource unless you truly desire if you happen to reach the end. I believe navigating
-> through a text document is truly the best way to learn with the tool, however dull it may be at times.
-> Maybe after going through the section I provide you for the resource, if you still feel inclined to
-> go further in this site you can consider it as an option then. I do feel this may be a very useful
-> resource for younger audiences, and those who are teaching in classroom settings.
+> It may be worth looking into the tool before making the switch, as it drastically changes how a user
+> interacts with files when editing them. In the long run, mastering a tool like this can greatly speed up
+> development tasks, taking away the need for reliance on a mouse, instead navigating purely
+> through the keyboard. This can be nice to use in VS Code and other text editors as well, as they also
+> allow us to interact with the GUI (Graphical User Interface) while providing its motions. The link below can
+> provide a quick introduction to this experience, though paying for the resource is likely not necessary
+> unless one truly desires. Navigating through code and text are probably the purist ways to learn the
+> tool, however dull it may be at times. That said, some may enjoy the gamification provided by this site.
 >
 > [Vim-Adventures](https://vim-adventures.com/)
 
