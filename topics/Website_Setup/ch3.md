@@ -220,7 +220,7 @@ working with, as well as other tasks.
 > preexisting shortcuts in VS Code (favoring VS Code), but adjustments can be made in one's keybindings if
 > desired.
 >
-> It may be worth looking into the tool before making the switch, as it drastically changes how a user
+> It may be worth looking into this tool before making the switch, as it drastically changes how a user
 > interacts with files when editing them. In the long run, mastering a tool like this can greatly speed up
 > development tasks, taking away the need for reliance on a mouse, instead navigating purely
 > through the keyboard. This can be nice to use in VS Code and other text editors as well, as they also
@@ -231,21 +231,30 @@ working with, as well as other tasks.
 >
 > [Vim-Adventures](https://vim-adventures.com/)
 
-If you made it through, it is now time to start discussing the implementation details of the website. As
-mentioned before, I will be selecting the files that have a gentle introduction to all of this new
-knowledge we have outlined. With this in mind, that means we will not be going from top to bottom with
-the source code at first. After we get our bearings and are more familiar with the overall logic, we will
-begin to peel back the curtain and try to navigate the site from top to bottom as you would expect when
-walking through source code.
+Now that we have reached the end of this section, the time has come to start discussing the implementation
+details of the website. As a precursor, there is a bonus chapter directly after this chapter for a practical
+introduction to a web page built with HTML, CSS, and minimal JavaScript. This will guide the reader through
+creating a site for their resume, and may be a helpful portfolio piece for the future. Originally this web page
+was designed as a concept, but after considering the difficulty of jumping straight into a full blown React
+frontend site, this was added as a supplement. An additional benefit of this bonus chapter is that it will
+introduce the reader to GitHub Pages, which will allow the reader to host a similar site that others can
+navigate to on the internet.
 
-In reality, if you are new to a project, you typically will only navigate to the files that are
-relevant to the task that you have at hand. It is typically unrealistic to understand every part of a site
-you are working on before you start contributing to the project. Especially now, some code bases have so
-much logic that it is most likely impossible for someone to have a complete understanding of the entirety
-of the code base. At that point, it may actually come down to certain specializations having an understanding of a particular unit. It may be helpful to gloss through certain sections and expose
-yourself to new ideas, but fixating on gaining a complete understanding at first may be an unproductive
-way to spend your time. As you continue working in the code base you will surely be exposed to more areas
-of it, and when the time naturally comes it can make more sense to invest your time in familiarizing
-yourself with these areas.
+If the reader is already comfortable with web development they may choose to skip this bonus portion. From the
+beginning of the main site's discussion, files will be presented based on their difficulty and relation to other
+files. The intent of this is to allow for a gentle introduction to all of the new concepts we have outlined
+here. With this in mind, that means we will not be going from top to bottom with the source code at first.
+After settling into the source code, as well as becoming more familiar with the overall logic, we will begin to
+peel back the curtains to greater degrees. Eventually, we will being dissecting files from top to bottom,
+attempting to demonstrate how a developer may walk through a set of files they are working on.
 
-With all of that said, let's move on to the website portion of this reading.
+In reality, when someone is new to a project, they typically will only navigate to the files that are
+relevant to the task that they have at hand. It is usually unrealistic to gain an understanding of every part of
+a site just to start contributing to a project. Especially today, some code bases have so much logic that it is
+likely impossible for one person to have a complete understanding of these code bases. At this point, it usually
+comes down to certain roles and specializations having an understanding of particular units of the code.
+
+It may be helpful to gloss through some sections of the site we will be studying in order to gain more of a
+general understanding, or be exposed to new ideas. Though, fixating on gaining a complete understanding at first
+may be unproductive. As we continue exploring the site through the reading, it will make more sense to devote
+time to understanding specific sections of it after having been exposed to similar concepts.
