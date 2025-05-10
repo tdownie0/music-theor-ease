@@ -12,14 +12,15 @@ sprinkled into the site, allowing for some basic user interaction capabilities, 
 static web page (a page where the content is always the same, never having its content swapped out based on
 state or retrieving more data to display).
 
-With this, I hope it will scratch the surface of what you can do with mostly just HTML and CSS, as well as
-a slight amount of JS sprinkled in. In some cases, this may be more than enough for a site you are planning
-to create, without including the overhead from a frontend library like React. Sometimes less is more. Another
-interesting aspect is that we will be able to go over some of the UI/UX decisions for the site, including
-resetting/normalizing the site for multiple browsers, selecting a color palette, and deciding on font sizing.
-The main site this book was created for uses Tailwind to address resetting and normalizing the site across
-multiple browsers, as well as font and color selections, and DaisyUI takes care of the color palette with those
-colors.
+With this example, the hope is to demonstrate what can be done with mostly just HTML and CSS, as well as
+a slight amount of JS included. In some cases, this may be more than enough for a site that we are planning
+to create, avoiding having to add the overhead from a frontend library such as React. Sometimes less is more.
+Other interesting aspects of this example will be able going over UI/UX decisions, including
+resetting/normalizing the site for multiple browsers, selecting a color palette, using non-native fonts, and
+deciding on font sizings. The main site this reading was created for uses Tailwind, which already
+addresses resetting and normalizing sites across multiple browsers, as well as font and color selections. In
+addition, this site uses the DaisyUI library, which provides color palettes for working with these base colors
+Tailwind provides and more.
 
 Knowledge of these topics will help you in the future if you decide to custom make sites from scratch, including
 the design decisions. It will also give you a deeper appreciation of what CSS frameworks like Tailwind take
