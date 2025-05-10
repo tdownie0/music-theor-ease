@@ -1,14 +1,16 @@
 ## Chapter 4: Additional Site with HTML and CSS Examples (Bonus)
 
-I decided to add this chapter after the setup chapter for our main site as it would be easier to walk through
-with a code editor for the example. After starting the chapters for the main site we will be covering, I was
-concerned that React with Typescript may be quite a bit to tackle without a simpler introduction site that
-focused mainly on HTML and CSS. There was actually a personal project I had started a while back to make a
-personal resume site, but I had thought this book may be a better fit for that purpose. At the same time,
-having a site that potential employers can see your basic understanding of websites most likely will never
-count against you. There was a bit of flare I added to it so that it had some user interaction capabilities,
-but in essence it is still a static page (a page where the content is always the same, never having its content
-swapped out based on state or retrieving more data to display).
+The intent of this chapter is to provide additional source code that will be easier to walk through as an
+example, as compared to the main site's code. Some may find that being exposed to React with Typescript can be
+quite difficult to tackle at first, especially without a simpler introduction that focuses mainly on
+HTML and CSS. As mentioned in the last chapter, this was more of a toy experiment when it was made, but it seems
+like a suitable start for our purposes. The focus of this example site is to provide an interactive resume. In
+general, sites such as this can become very complicated, as they are intended to catch the eyes of potential
+employers. At the same time, having a site that these potential employers can interact with and observe some of
+our basic understanding of websites can only count in our favor. There was a bit of interactivity
+sprinkled into the site, allowing for some basic user interaction capabilities, but in essence it is still a
+static web page (a page where the content is always the same, never having its content swapped out based on
+state or retrieving more data to display).
 
 With this, I hope it will scratch the surface of what you can do with mostly just HTML and CSS, as well as
 a slight amount of JS sprinkled in. In some cases, this may be more than enough for a site you are planning
