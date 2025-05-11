@@ -22,13 +22,15 @@ addresses resetting and normalizing sites across multiple browsers, as well as f
 addition, this site uses the DaisyUI library, which provides color palettes for working with these base colors
 Tailwind provides and more.
 
-Knowledge of these topics will help you in the future if you decide to custom make sites from scratch, including
-the design decisions. It will also give you a deeper appreciation of what CSS frameworks like Tailwind take
-care of ahead of time for you. This chapter is labelled as a "bonus" chapter as it will include an additional
-site to look it, though minimal in its content. If you are already familiar with HTML and CSS from past
-experience you may not need this chapter, but it may also touch on design decisions you may not be fully
-familiar with. I would also encourage you to make your own version of this site, possibly using this one as
-a template, so that you could have your own personal resume site to exhibit to other professionals.
+Knowledge of these topics will be helpful for anyone that decides to make custom CSS and styling for sites.
+This understanding will also provide a deeper appreciation for what CSS frameworks like Tailwind actually take
+care of for us. If the reader happens to already be familiar with HTML and CSS from past experience they may not
+need to go through this chapter. At the same time, delving into topics such as design decisions could impart
+new knowledge that they are not already familiar with.
+
+It is encouraged that the reader makes their own custom rendition of this site. This could include restyling
+things as far as colors, positioning, or adding more elaborate interactions. The example given here can serve as
+a base template, but a personal resume should be suited towards the specific individual.
 
 ## Resume Web Page
 
