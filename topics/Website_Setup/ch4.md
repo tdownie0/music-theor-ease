@@ -34,9 +34,9 @@ a base template, but a personal resume should be suited towards the specific ind
 
 ## Resume Web Page
 
-As with the last chapter, I will actually link the github repo this chapter will be discussing. There will
-also be a link of the live site that is hosted by GitHub Pages, which is a service that GitHub provides to host
-personal repos with static content.
+The github repo for this chapter is linked to directly below. There is also a link to the live version of
+the site that is hosted by GitHub Pages. This is a service that GitHub provides to host personal repos
+with static content.
 
 > **Resume Site Links**  
 > [Resume GitHub Repo](https://github.com/tdownie0/resume)  
