@@ -42,14 +42,14 @@ with static content.
 > [Resume GitHub Repo](https://github.com/tdownie0/resume)  
 > [Resume site hosted by GitHub Pages](https://tdownie0.github.io/resume/)
 
-The second link will display to you the actual site we will be discussing, and you can interact with it to see
-its features and capabilities. You can get a feel for the site, and see if you would like to create something
-similar. In summary the page mainly has links to its separate sections that are display, has tiles that hover
-when they are hovered over, and has a "Back to Top" button that will scroll you back to the top of the page (
-this button is the only part that includes any Javascript for functionality.)
+As mentioned, The second link displays the actual site we will be discussing, and can be interacted with to see
+its features and capabilities. This will allow for anyone to get a feel for the site, and see if they would like
+to create something similar. In summary, the page mainly has links to the separate sections being displayed,
+tiles that hover when they are hovered over, and a "Back to Top" button that will scroll a viewer back to the top
+of the page (this button is the only part that includes any Javascript for functionality.)
 
 We have already covered how to apply classes to HTML elements and how they are used, so we will not be covering
-that in depth, but this should give you some more real life examples to get familiar with.
+that in depth, but this should give us some more real life examples to get familiar with.
 
 ## Reset and Normalization
 
