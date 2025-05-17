@@ -53,13 +53,15 @@ that in depth, but this should give us some more real life examples to get famil
 
 ## Reset and Normalization
 
-First, I would like to tackle the resetting/normalization topic included in the site. This is a process that
-sets the HTML elements on the page so that they can display as closely to identical as possible across browsers.
-Each browser sets up its own predefined styling rules for HTML elements, leading to less or more spacing and
-display behaviors for that specific browser. This ultimately causes your site to look different when visited from
-different browsers. In the some cases the difference is hardly notable, but in others it can cause your site to
-appear broken or organize it in ways you had not intended. In order to correct this, we can use
-resetting/normalization.
+First, let us tackle the resetting/normalization topic used with this site. This is a process that manually sets
+defaults for HTML elements on a page, with the goal of having them appear identically across all browsers.
+Each browser has their own default styling rules for HTML elements. This leads to mostly minor differences in
+display behaviors across browsers. For example, the spacing and margins of elements
+could be smaller or larger. With enough minor differences though, this can ultimately cause our sites to look
+very different on other browsers, possibly leading to content not wrapping properly or being awkwardly placed.
+In the some cases these differences are hardly noticeable. Other times they can cause our sites to
+appear broken, or possibly organize content in ways we had not intended. In order to correct this behavior, we
+can apply resetting/normalization strategies.
 
 If you scroll down to the `<style>` tags section of the site, you will see there is a commented section at the
 very top that includes multiple HTML elements being listed. Along with these, there are default styles being
