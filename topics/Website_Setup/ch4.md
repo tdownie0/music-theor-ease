@@ -63,13 +63,14 @@ In the some cases these differences are hardly noticeable. Other times they can 
 appear broken, or possibly organize content in ways we had not intended. In order to correct this behavior, we
 can apply resetting/normalization strategies.
 
-If you scroll down to the `<style>` tags section of the site, you will see there is a commented section at the
-very top that includes multiple HTML elements being listed. Along with these, there are default styles being
-applied, often zeroing out values, and giving similar elements basic styling behavior. This is referred to as
-a CSS reset. The one used here cited in the comments
-[http://meyerweb.com/eric/tools/css/reset/](http://meyerweb.com/eric/tools/css/reset/) is fairly popular. As
-stated above, CSS frameworks like Tailwind may take care of this for you, but this is a good to be knowledgeable
-of if you are running into issues of your site appearing differently on different browsers.
+Once the source code has been opened (which can be done by following the link above and clicking on
+`index.html`), we can observe this portion of the code by scrolling down to the `<style>` tags section. Here, we
+see a commented portion at the very top, and also multiple HTML elements being listed. Default styles are being
+applied to these elements, often zeroing out values, as well as providing basic styling behavior. This is
+referred to as a CSS reset. The particular one being implemented here has its source cited in the comments,
+[Meyerweb CSS Reset](http://meyerweb.com/eric/tools/css/reset/), and is fairly popular. As
+stated above, CSS frameworks like Tailwind typically take care of this for us. Still, this is good to be
+knowledgeable of incase we are running into issues where our sites are appearing differently across different browsers.
 
 To give a brief explanation, resetting focuses on removing all the styling applied by the base web browser so
 that you can specifically define how you would like to display each element of the page. Normalizing intends to
