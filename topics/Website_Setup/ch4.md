@@ -83,14 +83,14 @@ provides a more detailed breakdown of the topic:
 
 ## Typography & Font Sizes
 
-From a design point of view, it is good to keep things as consistent as possible. Choosing fonts that go together
-is also a consideration, and there are sites to help you make selections for this. This stretches into the realm
-of typography which begins dealing with multiple things such as multiple fonts interacting with each other,
-stylizing fonts to convey specific meanings (such as italicizing), and giving the text on any presented
-medium a specific type of voice. All of that considered, I chose to keep things simple by selecting one font.
-You can actually see at the top of the page in the head section that I import a fairly commonly used font across
-the web, being "Roboto". This does not came with native CSS, and is imported with these lines in the `<head>`
-tags section of the site:
+From a design point of view, it is often good to keep things as consistent as possible. Choosing fonts that go
+together is also part of this consideration. Luckily for us, there are resources that can help guide us with
+making appropriate selections in this regard. This stretches into the realm of typography, which begins
+dealing with multiple topics. Some examples would be multiple fonts interacting with each other, stylizing fonts
+to convey specific meanings (such as _italicizing_), and giving the text on any presented medium a specific type
+of voice. Considering all of this, for our site we kept things simple by selecting one font. At the top of the
+source code, we see in the head section that we imported a font that is fairly common across the web, "Roboto".
+This does not come with native CSS, and is imported with these specific lines in the `<head>` tags section:
 
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com" />
