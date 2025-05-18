@@ -72,12 +72,13 @@ referred to as a CSS reset. The particular one being implemented here has its so
 stated above, CSS frameworks like Tailwind typically take care of this for us. Still, this is good to be
 knowledgeable of incase we are running into issues where our sites are appearing differently across different browsers.
 
-To give a brief explanation, resetting focuses on removing all the styling applied by the base web browser so
-that you can specifically define how you would like to display each element of the page. Normalizing intends to
-leave some of base styling associated with HTML elements, but making them as consistent as possible across all
-browsers. This may also take in to account handling older browsers that need to adapt with more modern ones,
-adding behavior so they can function as identical to each other as possible. This Stack Overflow page gives a
-more detailed breakdown and can allow you to explore the topic further:
+To give a brief explanation, resetting focuses on removing all base styling applied by web browsers so
+that we can specifically define how we would like to display each element on a page. Normalizing intends to
+leave in place some of the base styling associated with HTML elements, but ensures those styles are as
+consistent as possible across all browsers. This may also take in to account handling older browsers that need
+to adapt with more modern ones. In some cases, this may require adding behavior to these older browsers so that
+they can function as closely as possible to their modern counter parts. The following Stack Overflow page
+provides a more detailed breakdown of the topic:
 [Normalizing Versus Resetting](https://stackoverflow.com/questions/6887336/what-is-the-difference-between-normalize-css-and-reset-css).
 
 ## Typography & Font Sizes
