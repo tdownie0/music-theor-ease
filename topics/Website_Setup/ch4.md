@@ -101,12 +101,11 @@ This does not come with native CSS, and is imported with these specific lines in
 />
 ```
 
-You can pick your own selection of fonts by visiting the Google site that provides these fonts:
-[Google Fonts](https://fonts.google.com/). Once you select the fonts you would like, you can add them to the list
-of fonts you would like to use, and then at the end choose to get the embed code like above, or download the
-fonts to use. How this is done may change in the future, but the site itself has several helpful resources with
-making design decisions, and can give you examples of how to use the api. Using Google to find videos on how
-to make selections and implement your selections may also be useful.
+The reader is also free to pick their own selection of fonts. One option to do so would be by visiting the
+Google site referenced above: [Google Fonts](https://fonts.google.com/). Once the fonts desired are selected,
+they can be added to a list of fonts on the site. This enables the user to have the options of generating an embed code like above, or downloading the fonts. How this is done may change in the future, but the site itself
+has several helpful resources for making design decisions, and provides examples of how to use their api. Using
+Google to search for videos on how to make selections and implement these selections may also be useful.
 
 The site I used to choose my font sizes came from this or another similar site:
 [Typescale](https://typescale.com/). With this I choose my scale to be a perfect fourth, and went with "rem" as
