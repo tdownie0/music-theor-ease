@@ -107,12 +107,16 @@ they can be added to a list of fonts on the site. This enables the user to have 
 has several helpful resources for making design decisions, and provides examples of how to use their api. Using
 Google to search for videos on how to make selections and implement these selections may also be useful.
 
-The site I used to choose my font sizes came from this or another similar site:
-[Typescale](https://typescale.com/). With this I choose my scale to be a perfect fourth, and went with "rem" as
-a unit of measurement, as it is recommended with fonts. Looking at the numbers and selection it provides may
-seem like quite a bit of over information, but people tend to be pretty good at picking out when things happen
-to be out of ratio with each other. Using tools like this greatly increases your consistency, and helps give
-you reliable calculations.
+While creating this resume site, the following website was used to decide on font sizings (there are multiple
+similar sites): [Typescale](https://typescale.com/). Perfect fourth was selected for scale, and "rem" was used as
+a unit of measurement (1 rem is typically 16px on most browsers), as it is recommended for fonts. Being
+presented with all the numbers and selection options here may seem quite overwhelming. Despite this, even
+without having a total understanding of all the information, people tend to be able to discern what works
+visually. Usually if visual ratios are off by a great degree, it really stands out. This can be helpful
+if intended, but otherwise it may be disorienting or confusing. In contrast, if ratios are consistent and
+uniform, visual information tends to be more appealing and easier to look at. Additionally, conveying the
+information's voice, purpose, and desired impact may also be more evident. Using tools such as the site
+referenced can greatly increase our consistency, and help with providing reliable calculations.
 
 ## Color Palette
 
