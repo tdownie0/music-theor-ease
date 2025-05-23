@@ -120,11 +120,14 @@ referenced can greatly increase our consistency, and help with providing reliabl
 
 ## Color Palette
 
-Deciding what colors mesh together can take a considerable amount of time, and starts to become fairly difficult
-with the more colors that you add in. Once you pick the colors, you would also want to identify what will
-be your primary, secondary, and accent colors. Using them in the appropriate manner can be the difference of
-having your website "pop" and grab the eye of your users, or having users finding difficulty in identifying
-the focal points of the site and appearing rather drab.
+Deciding which colors complement each other and go together well can take a considerable amount of time. This
+also becomes increasingly difficult as more colors are used. Once a set of colors is decided on, the next
+task is to identify which will serve as the primary, secondary, and accent colors. Utilizing colors in the
+appropriate manner can make all the difference in having a website that is visually appealing. It never hurts
+to have a website that "pops", catching the eye of our users. This also aids the users in identifying the
+intention of the visual elements within a display. In contrast to this, an unappealing site may cause the users
+to have difficulty in identifying the focal points of a site, appear rather drab, and lower user engagement.
+At worst, users may go looking for other sites that serve the same purpose, or ignore the site all together.
 
 To aid with this, I use a color wheel from Adobe to help,
 [Adobe Color](https://color.adobe.com/create/color-wheel). This site has several features, but I have used the
