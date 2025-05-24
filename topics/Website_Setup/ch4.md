@@ -145,13 +145,15 @@ color palette can be quite helpful in making our sites feel more professional. H
 disposal can truly help with making our sites stand apart from the crowd. They can also serve as supporting
 references for any design conclusions we arrive at.
 
-Many types of professionals can study fonts and colors in depth, so it is easy to be overloaded with this
-information while you are also trying to get your sites working from a technological standpoint. Seeing what
-types of decisions have to be made while putting together things like a design system can also make you
-appreciate the multiple sides of putting together a website, and slowly even creeping into creating a brand for
-a company. I would like to leave you with two very professional design systems that really exemplify this, and
-make it fully apparent why there are so many types of professionals that come into play when working on such
-projects.
+Many types of professionals can study fonts, colors, and general visual design in depth. Pursuing this
+knowledge while also trying to get a website up and running can easily be overwhelming. The result ends up
+with a mixture of creative and technical knowledge, typically leading individuals to lean one way or the other.
+Being aware of what types of decisions have to be made while constructing a design system can help us
+appreciate the multiple dimensions of such an endeavor. Putting together a website can sometimes slowly creep
+into the territory of creating a brand for a company, so this knowledge often proves valuable. Below there are
+references to two very professional design systems that really exemplify all the aspects we touched on here and
+more. They will also likely make it fully apparent why there are so many types of professionals that come into
+play when working on such projects.
 
 > **Design Systems**:  
 > [Starbucks Creative Expression](https://creative.starbucks.com/)  
