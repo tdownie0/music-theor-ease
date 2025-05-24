@@ -140,10 +140,10 @@ color wheel, so it is encouraged to seek these out as needed.
 ## Closing Thoughts
 
 Putting together a website can consist of many factors and considerations, as compared to just slapping some
-things together on a page. Having familiarity with resetting/normalization, font selection, and selecting a
-color palette can be quite helpful in making your sites feel more professional. Having tools like this in your
-back pocket to pull from can also help make your sites stand apart from the crowd, while also giving you talking
-points about what influenced your determination of these selections.
+things together on a page. Familiarity with resetting/normalization, font selection, and selecting a
+color palette can be quite helpful in making our sites feel more professional. Having tools such as these at our
+disposal can truly help with making our sites stand apart from the crowd. They can also serve as supporting
+references for any design conclusions we arrive at.
 
 Many types of professionals can study fonts and colors in depth, so it is easy to be overloaded with this
 information while you are also trying to get your sites working from a technological standpoint. Seeing what
