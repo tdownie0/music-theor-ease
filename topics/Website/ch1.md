@@ -49,15 +49,16 @@ before, but removing the `/` automatically, as it is inferred.
 > currently running, [http://[::1]:3000](http://[::1]:3000). This is purely for extra information, so do
 > not feel the need to memorize this.
 
-With Next.js, the folder structure actually dictates the routes of our website. So if you have the site
-running locally, and click on one of the tabs above the title ("Circles", "Modes", "Quizzes"), you will
-see that the URL adds the `/` and the corresponding tab name you selected. This tells Next.js that you
-want the "page.tsx" located in the folder with the same name. In other routing systems you can name your
-routes explicitly, but Next.js does this to simplify development, and to not require manually setting up the
-routing infrastructure. This is related to a concept from frameworks referred to as convention over
-configuration. Other frameworks may prefer the opposite, configuration over convention, that allows you to
-have more control over the structure of a project you are working on. Using conventions can sometimes speed up
-development, as you do not need to build out as much of the setup manually.
+With Next.js, the folder structure actually dictates the routes of our website. So if we have the site
+running locally, and then click on one of the tabs above the title ("Circles", "Modes", "Quizzes"), we will
+see that the URL adds the `/` as well as the corresponding tab name that was selected. This tells Next.js that we
+want the "page.tsx" file located in the directory of the same name. In other routing systems, names of routes
+can be set explicitly, but Next.js does this to simplify development. Without this, it would be required that
+we have a separate file defining our routing infrastructure. Next.js providing this functionality is an example
+of a concept, usually from frameworks, referred to as convention over configuration. Other frameworks may prefer
+the opposite, configuration over convention, which allows us to have more control over the structure of a project
+we are working on. Using conventions can sometimes speed up development, as we do not need to build out as much
+of the initial setup manually.
 
 Now back to branches. If you visit the site's root page,
 [Main Page](https://github.com/tdownie0/music-theor-ease/blob/main/app/page.tsx), you will see the code
