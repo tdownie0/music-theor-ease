@@ -94,3 +94,11 @@ intuitive over time with more examples to reference. These can actually become v
 definitions and examples without having to leave our code editor. They can also provide some documentation of
 our custom types defined in the project. This is not available on the GitHub pages of our files, though it
 highlights the advantages of having a code editor with some GUI functionality.
+
+> **Note**: This portion of the reading is currently a work in progress (WIP). Readers are encouraged to look
+> through the `app` directory of this codebase, and explore files that they find of interest. While looking at
+> these files, also feel free to switch between the `levels` branches as mentioned before. During this time,
+> also try to reason about what changes are being made, why, and possibly figure out where extra code is coming
+> from. On the GitHub page for each file, this can be done with the dropdown selection as mentioned. If the
+> codebase is on the reader's local machine, this can be done by having the terminal open, and then using
+> `git checkout <name_of_branch>`. For example `git checkout levels/down_1` or `git checkout main`.
