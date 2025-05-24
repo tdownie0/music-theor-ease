@@ -77,17 +77,19 @@ code has been updated as well, but in some there may have just been inconsistenc
 On this particular page, we will see the branches that have different code from one another are "main",
 "levels/down_1", "levels/down_3", and "levels/down_4". The "main" branch and "levels/down_1" are not all that
 different, the only difference is that the Typescript type has been removed, being `React.FC`. This stands
-for React.FunctionComponent, and is a type defined for React. If you were to actually open this file in your
-code editor, you would see a definition will pop up when you hover over the `.FC` portion. This will also
-show you quite a bit more information, but do not be worried about understanding all of that at the moment.
-Since this is a Typescript file, numerous portions of the page will actually provide definitions and
-descriptions when you hover over them. Even without you defining types, Typescript will still try to
-infer types for you, and display as much information as it reasonably can. This is one of the biggest strengths
-of Typescript, as you can essentially ignore it until you are ready for the extra information.
+for React.FunctionComponent, and is a type defined for React. If we were to actually open this file in our
+code editor, we would see a definition pop up when we hover over the `.FC` portion (granted that the user has
+the proper IntelliSense extensions installed). This also shows us quite a bit of extra information, but do not
+worry about understanding all of this at the moment.
 
-The information it provides is laid out to be as readable as possible for the programmer hovering over these
-parts of the page, and their layout will become much more intuitive in time. These can actually become very
-helpful so you do not have to leave your code editor to look up the definitions of things, and can allow you to
-see some documentation of custom types defined in the project. You will not be able to experience this from the
-web page for the code, but this can highlight the advantages of having a code editor with some GUI
-functionality.
+Since this is a Typescript file, numerous portions of the page will actually provide definitions and
+descriptions when hovered upon in an editor. Even without us defining types, Typescript will still try to
+infer types for us, and display as much information as it reasonably can. This is one of the biggest strengths
+of Typescript, as we can essentially ignore it until we are ready for the extra information.
+
+The information contained in these pop up windows is laid out to be as readable as possible for the programmers
+using an IntelliSense extension. It may be overwhelming at first, but their structure will become more intuitive
+over time with more examples as reference. These can actually become very helpful, allowing us see definitions
+and examples without having to leave our code editor. They can also provide some documentation of our custom
+types defined in the project. This is not available on the GitHub page of our files, but also highlights the
+advantages of having a code editor with some GUI functionality.
