@@ -129,13 +129,13 @@ intention of the visual elements within a display. In contrast to this, an unapp
 to have difficulty in identifying the focal points of a site, appear rather drab, and lower user engagement.
 At worst, users may go looking for other sites that serve the same purpose, or ignore the site all together.
 
-To aid with this, I use a color wheel from Adobe to help,
-[Adobe Color](https://color.adobe.com/create/color-wheel). This site has several features, but I have used the
-color wheel specifically in the past. Choosing the correct colors may be fairly subjective, but if you are
-familiar with color theory, you may recognize the color harmony selection in the dropdown. These colors tend to
-pair together nicely based on mathematical principles, and can be used in a consistent manner. There are
-several videos online diving more into the details of applying color theory and using tools like the Adobe
-color wheel, so feel free to browse as you see fit.
+To assist with this undertaking, tools such as the color wheel provided by Adobe can help immensely,
+[Adobe Color](https://color.adobe.com/create/color-wheel). This site has several features, and showcases
+several examples of color themes being implemented. Choosing the correct colors may be fairly subjective, but
+for those aware of color theory, the color harmony selection in the dropdown may be familiar. These colors tend
+to pair together nicely based on mathematical principles, and can be used in a consistent manner. There are
+several videos online that dive into the specifics of applying color theory and using tools such as the Adobe
+color wheel, so it is encouraged to seek these out as needed.
 
 ## Closing Thoughts
 
