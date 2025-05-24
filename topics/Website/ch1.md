@@ -7,22 +7,22 @@ needed, as the files can be navigated through just fine on the GitHub repository
 experiment with the code and get first hand experience with running it locally, it is recommended to download
 the code on their machine.
 
-While going through these files I may point to particular branches for evaluating the layout of a file.
-With git, we get a concept of "branches", which allow for modifications of the code you are working on
-without affecting the main code base. This is typically done for developing features and correcting
-issues for a site. The reason for this is that it allows the main code base to function as you would
-expect while you or others work on updating portions of the main site. With this you do not have to
-worry about breaking any current functionality that may be on your live site until you have tested the
-particular branch and choose to include it in the main branch. This is typically done through "merging" the
-branches, where the main branch of your site in a sense absorbs the branch you had been working on,
-so all of your updates are then included on the main branch.
+While going through these files, particular branches will be pointed to for evaluating and comparing versions of
+a file. With git, we get a concept of "branches", which allow for modifications of the code we are working on
+without affecting the main code base. These are typically used for developing features and correcting
+issues within a site or codebase. The reason for this is that it allows the main code base to function as we
+would expect while others, or ourselves, work on updating portions of the main site. With branches, we do not
+have to worry about breaking any current functionality that may be on our live site until we have tested the
+particular branch, and then choose to include it in the main branch. This is typically done through "merging" the
+branches, where the main branch of a codebase, in a sense, absorbs the branch we had been working on
+so that all of our updates are then included on the main branch.
 
-> **Note:** Git itself has several capabilities, and the subject alone can go quite in depth. For
-> our purposes you should be able to follow along with the reading and have the portions that are
-> relevant laid out so you can have a basic understanding of its uses for navigating between branches
-> and creating your own commits. If you would like to dig further in to the topic I would encourage you
-> to search for resources related to what you are curious about, and visit the site below as a resource
-> to further your learning. The "About" and "Documentation" sections should be particularly helpful.
+> **Note:** Git itself has several capabilities, and the subject alone can go quite in depth. Those following
+> along with the reading will have the technology gradually laid out in portions as they are relevant, providing
+> a basic understanding of its uses. Some examples include navigating between branches and creating commits.
+> If anyone would like to dig further into the topic, it is encouraged that they search for resources related
+> to what they are curious about. The following site is a great resource to further any learning about the
+> technology. The "About" and "Documentation" sections may be particularly helpful.
 >
 > [git](https://git-scm.com/)
 
