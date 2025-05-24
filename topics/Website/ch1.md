@@ -1,11 +1,11 @@
 # How To Become A Programmer For Anybody: Website
 
-Now that you have the code base on your local machine, let's start going through some particular files
-to start with. If you have not gone through the "Website_Setup" section, I would encourage you to do so,
-especially if you are not familiar with these technologies at hand. You do not necessarily need to
-follow along in your own code editor if you choose not to, as you can navigate to the files just fine
-on the GitHub repository. If you would like to experiment with the code and get first hand experience with
-running the code, I would encourage you to make sure you have your own local version.
+Now that the code base is downloaded locally, let us start by exploring certain files to begin with.
+If the reader has not gone through the "Website_Setup" section of this reading, it is encouraged to do so,
+especially if these technologies at hand are unfamiliar. Following along in a code editor is not necessarily
+needed, as the files can be navigated through just fine on the GitHub repository. Though, for anyone wishing to
+experiment with the code and get first hand experience with running it locally, it is recommended to download
+the code on their machine.
 
 While going through these files I may point to particular branches for evaluating the layout of a file.
 With git, we get a concept of "branches", which allow for modifications of the code you are working on
