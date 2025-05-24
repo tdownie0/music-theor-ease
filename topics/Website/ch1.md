@@ -102,3 +102,5 @@ highlights the advantages of having a code editor with some GUI functionality.
 > from. On the GitHub page for each file, this can be done with the dropdown selection as mentioned. If the
 > codebase is on the reader's local machine, this can be done by having the terminal open, and then using
 > `git checkout <name_of_branch>`. For example `git checkout levels/down_1` or `git checkout main`.
+
+[![Previous](https://img.shields.io/badge/Previous-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Website_Setup/ch4.md)

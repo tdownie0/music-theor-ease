@@ -258,3 +258,7 @@ It may be helpful to gloss through some sections of the site we will be studying
 general understanding, or be exposed to new ideas. Though, fixating on gaining a complete understanding at first
 may be unproductive. As we continue exploring the site through the reading, it will make more sense to devote
 time to understanding specific sections of it after having been exposed to similar concepts.
+
+[![Previous](https://img.shields.io/badge/Previous-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Website_Setup/ch2.md)
+&nbsp;
+[![Next](https://img.shields.io/badge/Next-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Website_Setup/ch4.md)

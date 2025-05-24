@@ -158,3 +158,7 @@ play when working on such projects.
 > **Design Systems**:  
 > [Starbucks Creative Expression](https://creative.starbucks.com/)  
 > [IBM's Carbon Design System](https://carbondesignsystem.com/)
+
+[![Previous](https://img.shields.io/badge/Previous-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Website_Setup/ch3.md)
+&nbsp;
+[![Next](https://img.shields.io/badge/Next-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Website/ch1.md)

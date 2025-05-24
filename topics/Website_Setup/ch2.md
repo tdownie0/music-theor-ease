@@ -508,3 +508,7 @@ animations, CSS variables, and managing and importing fonts and icons. Then with
 before, there are unique challenge sets when making sure that a site is 100% covered for accessibility
 standards. We will get a better look at animations with the site we will be studying, as well as
 exposure to more advanced considerations for layout structures.
+
+[![Previous](https://img.shields.io/badge/Previous-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Website_Setup/ch1.md)
+&nbsp;
+[![Next](https://img.shields.io/badge/Next-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Website_Setup/ch3.md)

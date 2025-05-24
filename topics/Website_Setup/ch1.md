@@ -68,3 +68,5 @@ software that we provide. So long as the software we create can be used, it may 
 income so that we can spend more time on improving parts of the system we originally wanted to later on.
 Now, something could always be made just as a hobby, but being able to know when to implement practical
 parts of a solution instead of never having a finished product is a good habit to learn.
+
+[![Next](https://img.shields.io/badge/Next-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Website_Setup/ch2.md)
