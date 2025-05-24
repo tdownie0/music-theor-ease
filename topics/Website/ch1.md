@@ -42,10 +42,10 @@ by being in the directory of the source code we downloaded earlier with `git clo
 before, but removing the `/` automatically, as it is inferred.
 
 > **Note:** Here, `localhost:3000` is setup by Next.js for us, and `3000` refers to the port that it is
-> currently listening on. In a URL, the port for addresses always follows after the `:`. For some extra
-> information if you are curious, `localhost` typically refers to the loopback address of your local
-> machine, meaning it points back to it. In IPv4 this address is usually `127.0.0.1`, and in IPv6 it is
-> `::1`. Modern browsers tend to prefer IPv6, so you could also access your local site like so if it is
+> currently listening on. In a URL, the port for addresses always follows after the `:`. Some extra
+> information for those curious, `localhost` typically refers to the loopback address of our local
+> machine, meaning that it points back to itself. In IPv4 this address is usually `127.0.0.1`, and in IPv6 it is
+> `::1`. Modern browsers also allow IPv6, so we could also access our local site like so if it is
 > currently running, [http://[::1]:3000](http://[::1]:3000). This is purely for extra information, so do
 > not feel the need to memorize this.
 
