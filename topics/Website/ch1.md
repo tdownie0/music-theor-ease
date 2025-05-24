@@ -26,20 +26,20 @@ so that all of our updates are then included on the main branch.
 >
 > [git](https://git-scm.com/)
 
-After that brief explanation, I would like to point out that in our case I actually used the separate
-branches to separate different levels of difficulty regarding each of the files. As an example, let's
-look at the first file we will begin with on it's GitHub page,
+After that brief explanation, it needs to be pointed out that the branches of this site were actually used
+to separate different levels of difficulty and refactoring regarding each of the files. As an example, let us
+take a look at the first file we will begin with on its GitHub page,
 [Main Page](https://github.com/tdownie0/music-theor-ease/blob/main/app/page.tsx).
 
-Before going further, I would like to explain why this page is actually named "page.tsx". This page serves
-as the root of the "app" folder, and is the main page of our site, being the first one you land
-on. The main page of a site you visit (also called a home page) is often referred to as the index page. With
+Before going further, we need to explain why this page is actually named "page.tsx". This page serves
+as the root of the "app" folder, and is the main page of our site (being the first one users land
+on). The main page of any site we visit (also called a home page) is often referred to as the index page. With
 Next.js, using "page.(js/tsx)" is the convention for naming a page that has a specific route. In this case, the
-root page (main page) of our site has a route of `/`. This is standard for websites, and mimics a folder
-structure where `/` would be the top level folder. If you have the site running locally (which you can do
-by being in the directory of the source code you have downloaded on your machine through the `git clone`
-command from earlier and running `npm run dev`), you can see that if you add a `/` after `localhost:3000`,
-it will direct you to the same page as before, but removing the `/` automatically, as it is inferred.
+root page (index page) of our site has a route of `/`. This is standard for websites, and mimics a directory
+structure where `/` would be the top level directory. If we have the site running locally (which we can do
+by being in the directory of the source code we downloaded earlier with `git clone`, and then running
+`npm run dev`), we can see that if we add a `/` after `localhost:3000`, it will direct us to the same page as
+before, but removing the `/` automatically, as it is inferred.
 
 > **Note:** Here, `localhost:3000` is setup by Next.js for us, and `3000` refers to the port that it is
 > currently listening on. In a URL, the port for addresses always follows after the `:`. For some extra
