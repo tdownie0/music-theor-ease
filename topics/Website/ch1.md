@@ -83,13 +83,14 @@ the proper IntelliSense extensions installed). This also shows us quite a bit of
 worry about understanding all of this at the moment.
 
 Since this is a Typescript file, numerous portions of the page will actually provide definitions and
-descriptions when hovered upon in an editor. Even without us defining types, Typescript will still try to
-infer types for us, and display as much information as it reasonably can. This is one of the biggest strengths
-of Typescript, as we can essentially ignore it until we are ready for the extra information.
+descriptions when hovered upon in an editor (this can be enabled with the extensions suggested for use in VS
+Code, found in chapter 3 of this reading in the Web_Setup section). Even without us defining types, Typescript
+will still try to infer types for us, and display as much information as it reasonably can. This is one of the
+biggest strengths of Typescript, as we can essentially ignore it until we are ready for the extra information.
 
 The information contained in these pop up windows is laid out to be as readable as possible for the programmers
-using an IntelliSense extension. It may be overwhelming at first, but their structure will become more intuitive
-over time with more examples as reference. These can actually become very helpful, allowing us see definitions
-and examples without having to leave our code editor. They can also provide some documentation of our custom
-types defined in the project. This is not available on the GitHub page of our files, but also highlights the
-advantages of having a code editor with some GUI functionality.
+using an IntelliSense extension. It may be overwhelming at first, but their structure will become more
+intuitive over time with more examples to reference. These can actually become very helpful, allowing us see
+definitions and examples without having to leave our code editor. They can also provide some documentation of
+our custom types defined in the project. This is not available on the GitHub pages of our files, though it
+highlights the advantages of having a code editor with some GUI functionality.
