@@ -69,4 +69,6 @@ income so that we can spend more time on improving parts of the system we origin
 Now, something could always be made just as a hobby, but being able to know when to implement practical
 parts of a solution instead of never having a finished product is a good habit to learn.
 
+[![Previous](https://img.shields.io/badge/Previous-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Fundamentals/ch6.md)
+&nbsp;
 [![Next](https://img.shields.io/badge/Next-blue?style=for-the-badge)](https://github.com/tdownie0/music-theor-ease/blob/main/topics/Website_Setup/ch2.md)
